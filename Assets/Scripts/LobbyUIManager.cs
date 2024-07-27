@@ -12,6 +12,7 @@ public class LobbyUIManager : MonoBehaviour
     public GameObject _popup;
     public TMP_Text _CoinText;
     public TMP_Text _CashText;
+    public GameObject _shopUI;
 
     private void Start()
     {
@@ -21,6 +22,18 @@ public class LobbyUIManager : MonoBehaviour
         if (_gpgsManager != null)
         {
             _name.text = _gpgsManager.TakeNick();
+        }
+    }
+
+    public void ShopPanel()
+    {
+        if (_shopUI.activeSelf)
+        {
+            _shopUI.SetActive(false);
+        }
+        else
+        {
+            _shopUI.SetActive(true);
         }
     }
 
