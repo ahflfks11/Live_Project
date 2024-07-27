@@ -1,0 +1,1335 @@
+fileFormatVersion: 2
+guid: d6fd1c23e23fdaa47bedec8386ed1b9f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7557962286115679882
+    second: _W_Dungeon_A1_5_2_00
+  - first:
+      213: -8456216093460329700
+    second: _W_Dungeon_A1_5_2_01
+  - first:
+      213: -911647768014760458
+    second: _W_Dungeon_A1_5_2_02
+  - first:
+      213: -5094166848253704481
+    second: _W_Dungeon_A1_5_2_03
+  - first:
+      213: 5109857737011037827
+    second: _W_Dungeon_A1_5_2_04
+  - first:
+      213: 2757060995099318852
+    second: _W_Dungeon_A1_5_2_05
+  - first:
+      213: 6441492173906789070
+    second: _W_Dungeon_A1_5_2_06
+  - first:
+      213: 443078396011900178
+    second: _W_Dungeon_A1_5_2_07
+  - first:
+      213: -5587844823403805640
+    second: _W_Dungeon_A1_5_2_08
+  - first:
+      213: 2169744712275777055
+    second: _W_Dungeon_A1_5_2_09
+  - first:
+      213: -3432331770661350332
+    second: _W_Dungeon_A1_5_2_10
+  - first:
+      213: 3283053087852857211
+    second: _W_Dungeon_A1_5_2_11
+  - first:
+      213: 5695891231074015146
+    second: _W_Dungeon_A1_5_2_12
+  - first:
+      213: 3842940435462258662
+    second: _W_Dungeon_A1_5_2_13
+  - first:
+      213: -4100589782664721483
+    second: _W_Dungeon_A1_5_2_14
+  - first:
+      213: 2862949114866634062
+    second: _W_Dungeon_A1_5_2_15
+  - first:
+      213: 1833669214630753128
+    second: _W_Dungeon_A1_5_2_16
+  - first:
+      213: -5807159848848292932
+    second: _W_Dungeon_A1_5_2_17
+  - first:
+      213: 1904553273904322141
+    second: _W_Dungeon_A1_5_2_18
+  - first:
+      213: -7753270733750386470
+    second: _W_Dungeon_A1_5_2_19
+  - first:
+      213: 6492179998138834881
+    second: _W_Dungeon_A1_5_2_20
+  - first:
+      213: 3397942104231634340
+    second: _W_Dungeon_A1_5_2_21
+  - first:
+      213: -4725069816001972208
+    second: _W_Dungeon_A1_5_2_22
+  - first:
+      213: 1261706591035300883
+    second: _W_Dungeon_A1_5_2_23
+  - first:
+      213: 5604659483583508888
+    second: _W_Dungeon_A1_5_2_24
+  - first:
+      213: 3251247875110971293
+    second: _W_Dungeon_A1_5_2_25
+  - first:
+      213: -4000684970967122587
+    second: _W_Dungeon_A1_5_2_26
+  - first:
+      213: -2588071413721664653
+    second: _W_Dungeon_A1_5_2_27
+  - first:
+      213: 7883110732531220030
+    second: _W_Dungeon_A1_5_2_28
+  - first:
+      213: -4905708050495312397
+    second: _W_Dungeon_A1_5_2_29
+  - first:
+      213: 6261563821270436761
+    second: _W_Dungeon_A1_5_2_30
+  - first:
+      213: 2050829026946771266
+    second: _W_Dungeon_A1_5_2_31
+  - first:
+      213: 1563624336253562034
+    second: _W_Dungeon_A1_5_2_32
+  - first:
+      213: -6955390637462581520
+    second: _W_Dungeon_A1_5_2_33
+  - first:
+      213: 9057686991345759299
+    second: _W_Dungeon_A1_5_2_34
+  - first:
+      213: 2317379678435608513
+    second: _W_Dungeon_A1_5_2_35
+  - first:
+      213: -864491852228874440
+    second: _W_Dungeon_A1_5_2_36
+  - first:
+      213: -4081614856094657373
+    second: _W_Dungeon_A1_5_2_37
+  - first:
+      213: -4494648953147507465
+    second: _W_Dungeon_A1_5_2_38
+  - first:
+      213: -3843076378497761325
+    second: _W_Dungeon_A1_5_2_39
+  - first:
+      213: 3575588605270911863
+    second: _W_Dungeon_A1_5_2_40
+  - first:
+      213: -679788627222839130
+    second: _W_Dungeon_A1_5_2_41
+  - first:
+      213: 8600038278297321608
+    second: _W_Dungeon_A1_5_2_42
+  - first:
+      213: -2117916141399977122
+    second: _W_Dungeon_A1_5_2_43
+  - first:
+      213: 169502719862034494
+    second: _W_Dungeon_A1_5_2_44
+  - first:
+      213: 1559442977971236671
+    second: _W_Dungeon_A1_5_2_45
+  - first:
+      213: 7874059555564580691
+    second: _W_Dungeon_A1_5_2_46
+  - first:
+      213: -5810957369460185300
+    second: _W_Dungeon_A1_5_2_47
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e69b9c7a643e860800000000000000
+      internalID: 7557962286115679882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_01
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b0b55144c75aa80800000000000000
+      internalID: -8456216093460329700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_02
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5d3336f2d2953f0800000000000000
+      internalID: -911647768014760458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_03
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd64447dd32ed49b0800000000000000
+      internalID: -5094166848253704481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_04
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3860353e98cd9e640800000000000000
+      internalID: 5109857737011037827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_05
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44adaf41e5c034620800000000000000
+      internalID: 2757060995099318852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_06
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec24c21f007c46950800000000000000
+      internalID: 6441492173906789070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_07
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d60f12471262600800000000000000
+      internalID: 443078396011900178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834c2012dbcf372b0800000000000000
+      internalID: -5587844823403805640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_09
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16da7ce15b7c1e10800000000000000
+      internalID: 2169744712275777055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 444517a9078ed50d0800000000000000
+      internalID: -3432331770661350332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b770838936fbf8d20800000000000000
+      internalID: 3283053087852857211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7dd6385eedb0f40800000000000000
+      internalID: 5695891231074015146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef76bc17fdd45530800000000000000
+      internalID: 3842940435462258662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_14
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb4caa8157c717c0800000000000000
+      internalID: -4100589782664721483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_15
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d05a92d0d3bb720800000000000000
+      internalID: 2862949114866634062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863b2ad7f60827910800000000000000
+      internalID: 1833669214630753128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb38c7792e2d86fa0800000000000000
+      internalID: -5807159848848292932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_18
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56dfd2ac155e6a10800000000000000
+      internalID: 1904553273904322141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad04063a859d66490800000000000000
+      internalID: -7753270733750386470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf16feaf4bd81a50800000000000000
+      internalID: 6492179998138834881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_21
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5e11a375ae72f20800000000000000
+      internalID: 3397942104231634340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018384e690e2d6eb0800000000000000
+      internalID: -4725069816001972208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_23
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c9d61b57b728110800000000000000
+      internalID: 1261706591035300883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891f4060b10c7cd40800000000000000
+      internalID: 5604659483583508888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d97abb077b0ce1d20800000000000000
+      internalID: 3251247875110971293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56db2472736ba78c0800000000000000
+      internalID: -4000684970967122587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_27
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 373f6cbe2c2551cd0800000000000000
+      internalID: -2588071413721664653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3eb799d17f666d60800000000000000
+      internalID: 7883110732531220030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_29
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fde376058c6bebb0800000000000000
+      internalID: -4905708050495312397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_30
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99b0349ce1b85e650800000000000000
+      internalID: 6261563821270436761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_31
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249e83e5222067c10800000000000000
+      internalID: 2050829026946771266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bcac84ac0c13b510800000000000000
+      internalID: 1563624336253562034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe07f3011d797f90800000000000000
+      internalID: -6955390637462581520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_34
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34437d5345e53bd70800000000000000
+      internalID: 9057686991345759299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_35
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c70dde1a8cf82020800000000000000
+      internalID: 2317379678435608513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83fadac9d35b004f0800000000000000
+      internalID: -864491852228874440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_37
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a45588e9e03b57c0800000000000000
+      internalID: -4081614856094657373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_38
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fcbf8d379ccf91c0800000000000000
+      internalID: -4494648953147507465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_39
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df32fe2566aaaac0800000000000000
+      internalID: -3843076378497761325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b6b1864ea0f9130800000000000000
+      internalID: 3575588605270911863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0480068d7e096f0800000000000000
+      internalID: -679788627222839130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_42
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8808ca8cf39795770800000000000000
+      internalID: 8600038278297321608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_43
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53d9c79d76ab92e0800000000000000
+      internalID: -2117916141399977122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e30d6dd53d13a5200800000000000000
+      internalID: 169502719862034494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_45
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fe37d402144a510800000000000000
+      internalID: 1559442977971236671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_46
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f62bd7277464d60800000000000000
+      internalID: 7874059555564580691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _W_Dungeon_A1_5_2_47
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27236c6f055b5fa0800000000000000
+      internalID: -5810957369460185300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      _W_Dungeon_A1_5_2_00: 7557962286115679882
+      _W_Dungeon_A1_5_2_01: -8456216093460329700
+      _W_Dungeon_A1_5_2_02: -911647768014760458
+      _W_Dungeon_A1_5_2_03: -5094166848253704481
+      _W_Dungeon_A1_5_2_04: 5109857737011037827
+      _W_Dungeon_A1_5_2_05: 2757060995099318852
+      _W_Dungeon_A1_5_2_06: 6441492173906789070
+      _W_Dungeon_A1_5_2_07: 443078396011900178
+      _W_Dungeon_A1_5_2_08: -5587844823403805640
+      _W_Dungeon_A1_5_2_09: 2169744712275777055
+      _W_Dungeon_A1_5_2_10: -3432331770661350332
+      _W_Dungeon_A1_5_2_11: 3283053087852857211
+      _W_Dungeon_A1_5_2_12: 5695891231074015146
+      _W_Dungeon_A1_5_2_13: 3842940435462258662
+      _W_Dungeon_A1_5_2_14: -4100589782664721483
+      _W_Dungeon_A1_5_2_15: 2862949114866634062
+      _W_Dungeon_A1_5_2_16: 1833669214630753128
+      _W_Dungeon_A1_5_2_17: -5807159848848292932
+      _W_Dungeon_A1_5_2_18: 1904553273904322141
+      _W_Dungeon_A1_5_2_19: -7753270733750386470
+      _W_Dungeon_A1_5_2_20: 6492179998138834881
+      _W_Dungeon_A1_5_2_21: 3397942104231634340
+      _W_Dungeon_A1_5_2_22: -4725069816001972208
+      _W_Dungeon_A1_5_2_23: 1261706591035300883
+      _W_Dungeon_A1_5_2_24: 5604659483583508888
+      _W_Dungeon_A1_5_2_25: 3251247875110971293
+      _W_Dungeon_A1_5_2_26: -4000684970967122587
+      _W_Dungeon_A1_5_2_27: -2588071413721664653
+      _W_Dungeon_A1_5_2_28: 7883110732531220030
+      _W_Dungeon_A1_5_2_29: -4905708050495312397
+      _W_Dungeon_A1_5_2_30: 6261563821270436761
+      _W_Dungeon_A1_5_2_31: 2050829026946771266
+      _W_Dungeon_A1_5_2_32: 1563624336253562034
+      _W_Dungeon_A1_5_2_33: -6955390637462581520
+      _W_Dungeon_A1_5_2_34: 9057686991345759299
+      _W_Dungeon_A1_5_2_35: 2317379678435608513
+      _W_Dungeon_A1_5_2_36: -864491852228874440
+      _W_Dungeon_A1_5_2_37: -4081614856094657373
+      _W_Dungeon_A1_5_2_38: -4494648953147507465
+      _W_Dungeon_A1_5_2_39: -3843076378497761325
+      _W_Dungeon_A1_5_2_40: 3575588605270911863
+      _W_Dungeon_A1_5_2_41: -679788627222839130
+      _W_Dungeon_A1_5_2_42: 8600038278297321608
+      _W_Dungeon_A1_5_2_43: -2117916141399977122
+      _W_Dungeon_A1_5_2_44: 169502719862034494
+      _W_Dungeon_A1_5_2_45: 1559442977971236671
+      _W_Dungeon_A1_5_2_46: 7874059555564580691
+      _W_Dungeon_A1_5_2_47: -5810957369460185300
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

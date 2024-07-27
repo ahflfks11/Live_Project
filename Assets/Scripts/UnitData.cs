@@ -1,0 +1,328 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UnitData : MonoBehaviour
+{
+    UnitManager _unitManager;
+    Animator _animator;
+
+    public enum Unit
+    {
+        None,
+        Warrior,
+        Archor,
+        Magition,
+        Ninja,
+        Hidden
+    }
+
+    public enum UnitType
+    {
+        None,
+        Melee_Attack,
+        Ranged_Attack
+    }
+
+    [System.Serializable]
+    public struct Data
+    {
+        public Unit _unit;
+        public UnitType _type;
+        public GameObject[] _multiUnit;
+        public int attackCount;
+        public float attackDelay;
+        public float attackSpeed;
+        public float dmg;
+        public int rarelityLevel;
+        public bool EvolutionAvailability;
+        public bool specialUnit;
+    };
+
+    //effect
+    public GameObject _Weapon;
+
+    public Data _data;
+    public int number;
+    Vector3 _tempPosition;
+    bool onselect;
+    bool _isAttack;
+    bool _possibleRev;
+
+    public Collider2D targetEnermy;
+    public Collider2D[] enermys;
+    public LayerMask EnemyLayer; //레이어 선택
+    public float FindRange = 4f; //범위
+    public Sprite _spr;
+
+    public Material _sprMat;
+    public SpriteRenderer _myRareColor;
+
+    CircleRangeVisualizer _visualizer;
+
+
+    public UnitManager UnitManager { get => _unitManager; set => _unitManager = value; }
+    public Vector3 TempPosition { get => _tempPosition; set => _tempPosition = value; }
+    public bool PossibleRev { get => _possibleRev; set => _possibleRev = value; }
+
+    private void Start()
+    {
+        //StartCoroutine(AutoBattle());
+        _visualizer = transform.GetComponent<CircleRangeVisualizer>();
+        if (transform.GetComponentInChildren<Animator>())
+        {
+            _animator = transform.GetComponentInChildren<Animator>();
+        }
+
+        _sprMat = transform.GetComponentInChildren<SpriteRenderer>().material;
+
+        if (!_data.specialUnit)
+            _myRareColor.color = GameManager.Instance._rareColor[_data.rarelityLevel];
+        else
+            _myRareColor.color = GameManager.Instance._hiddenColor;
+    }
+
+    public void NormalAttack()
+    {
+        if (_data.attackCount == 1)
+        {
+            if (targetEnermy != null && !onselect && _Weapon != null)
+            {
+                targetEnermy.GetComponent<EnermyControl>().MobHit(_data.dmg);
+                GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
+                Destroy(_effect, 1f);
+            }
+        }
+        else if (_data.attackCount > 1)
+        {
+            if (enermys != null && !onselect && _Weapon != null)
+            {
+                if (enermys.Length <= _data.attackCount)
+                {
+                    for (int i = 0; i < enermys.Length; i++)
+                    {
+                        enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
+                        GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
+                        Destroy(_effect, 1f);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < _data.attackCount; i++)
+                    {
+                        enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
+                        GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
+                        Destroy(_effect, 1f);
+                    }
+                }
+            }
+        }
+    }
+
+    public void SpecialAttack(float _takeDmg)
+    {
+        if (targetEnermy != null && !onselect)
+        {
+            targetEnermy.GetComponent<EnermyControl>().MobHit(_takeDmg);
+        }
+    }
+
+    public void IsSelect()
+    {
+        onselect = true;
+        _visualizer.DrawCircle();
+    }
+
+    public void Deselect()
+    {
+        _visualizer.ClearCircle();
+
+
+        if (Vector3.Distance(transform.position, TempPosition) < 0.1f)
+        {
+            Revolution();
+            //GameManager.Instance.UiManager.OpenPanel(this);
+        }
+
+        onselect = false;
+    }
+
+    public void Revolution()
+    {
+        if (!_data.EvolutionAvailability)
+            return;
+
+        int count = 0;
+        List<int> _numberList = new List<int>();
+
+        for (int i = 0; i < UnitManager._spawnList.Count; i++)
+        {
+            if (UnitManager._spawnList[i] != this.gameObject && _data._unit == UnitManager._spawnList[i].GetComponent<UnitData>()._data._unit && UnitManager._spawnList[i].GetComponent<UnitData>()._data.rarelityLevel == _data.rarelityLevel)
+            {
+                _numberList.Add(UnitManager._spawnList[i].GetComponent<UnitData>().number);
+                count++;
+
+                if (count == 2)
+                    break;
+            }
+        }
+
+        if (count >= 2)
+        {
+            for (int i = 0; i < _numberList.Count; i++)
+            {
+                for (int j = UnitManager._spawnList.Count - 1; j >= 0; j--)
+                {
+                    if (UnitManager._spawnList[j].GetComponent<UnitData>().number == _numberList[i])
+                    {
+                        GameObject _tempObject = UnitManager._spawnList[j];
+                        UnitManager._spawnList.RemoveAt(j);
+                        Destroy(_tempObject);
+                        break;
+                    }
+                }
+            }
+
+            for (int i = _unitManager._spawnList.Count - 1; i >= 0; i--)
+            {
+                if (_unitManager._spawnList[i].GetComponent<UnitData>().number == number)
+                {
+                    _unitManager._spawnList.RemoveAt(i);
+                    break;
+                }
+            }
+
+            for (int i = 0; i < UnitManager._soldiers.Length; i++)
+            {
+                if (UnitManager._soldiers[i].GetComponent<UnitData>()._data._unit == _data._unit && _data.rarelityLevel + 1 == UnitManager._soldiers[i].GetComponent<UnitData>()._data.rarelityLevel)
+                {
+                    UnitManager.RevolutionSpawn(i, transform.position, false);
+                }
+            }
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void Attack()
+    {
+        if (_data.attackCount == 1)
+        {
+            var enermyObj = Physics2D.OverlapCircle(transform.position, FindRange, EnemyLayer);
+            targetEnermy = enermyObj;
+        }
+        else if (_data.attackCount > 1)
+        {
+            enermys = Physics2D.OverlapCircleAll(transform.position, FindRange, EnemyLayer);
+        }
+    }
+
+    private void Update()
+    {
+        if (_animator != null)
+        {
+            if (!onselect)
+            {
+                if (_data.attackCount <= 1)
+                {
+                    if (targetEnermy != null && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                    {
+                        _isAttack = true;
+                    }
+                    else if (targetEnermy == null)
+                    {
+                        _isAttack = false;
+                    }
+                }
+                else
+                {
+                    if (enermys.Length != 0 && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                    {
+                        _isAttack = true;
+                    }
+                    else if (enermys.Length == 0)
+                    {
+                        _isAttack = false;
+                    }
+                }
+            }
+            else
+            {
+                _isAttack = false;
+            }
+
+            if (_isAttack)
+            {
+                _animator.SetBool("Attack", true);
+
+            }
+            else
+            {
+                _animator.SetBool("Attack", false);
+            }
+        }
+
+        if (!onselect)
+        {
+            TempPosition = transform.position;
+        }
+
+        Attack();
+
+        if (_possibleRev)
+        {
+            bool possible = false;
+            foreach (UnitData unitdata in GameManager.Instance.UnitManager.ck_List)
+            {
+                if (unitdata == this)
+                {
+                    possible = true;
+                }
+            }
+
+            if (!_data.specialUnit)
+            {
+                if (!possible)
+                {
+                    _sprMat.SetColor("_OuterOutlineColor", Color.yellow);
+                    _possibleRev = false;
+                }
+                else
+                {
+                    _sprMat.SetColor("_OuterOutlineColor", Color.green);
+                    _sprMat.SetFloat("_OuterOutlineFade", 1f);
+                    return;
+                }
+            }
+        }
+
+        FindRevolution(GameManager.Instance._unitObject);
+    }
+
+    void FindRevolution(UnitData[] _dataObject)
+    {
+        int count = 0;
+
+        foreach (UnitData unitdata in _dataObject)
+        {
+            if (unitdata != this && unitdata._data._unit == _data._unit && unitdata._data.rarelityLevel == _data.rarelityLevel)
+            {
+                count++;
+            }
+        }
+
+        if (count >= 2 && !_data.specialUnit)
+        {
+            _sprMat.SetFloat("_OuterOutlineFade", 1f);
+        }
+        else
+        {
+            _sprMat.SetFloat("_OuterOutlineFade", 0f);
+        }
+    }
+
+    void OnDrawGizmos() // 범위 그리기
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, FindRange);
+    }
+}
