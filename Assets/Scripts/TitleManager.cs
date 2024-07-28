@@ -7,6 +7,13 @@ public class TitleManager : MonoBehaviour
     GPGSManager _gpgsManager;
     public GameObject menuPanel;
     public GameObject loadingPanel;
+    public Sprite[] _backgrounds;
+    public UnityEngine.UI.Image _spr;
+
+    private void Start()
+    {
+        _spr.sprite = _backgrounds[Random.Range(0, _backgrounds.Length)];
+    }
 
     // Update is called once per frame
     void Update()
