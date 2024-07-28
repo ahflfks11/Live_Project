@@ -6,7 +6,7 @@ public class EnermyControl : MonoBehaviour
 {
 
     private Transform[] wayPoint;
-    public Image _hp_Img;
+    public Slider _hp_Img;
     public Text _hpText;
     int wayNumber = 1;
     public Transform[] WayPoint { get => wayPoint; set => wayPoint = value; }
@@ -36,8 +36,8 @@ public class EnermyControl : MonoBehaviour
 
     private void Update()
     {
-        _hp_Img.fillAmount = Mathf.Lerp(_hp_Img.fillAmount, _data.HP / maxHP, 3f * Time.deltaTime);
-        _hp_Img.fillAmount = Mathf.Clamp01(_hp_Img.fillAmount);
+        _hp_Img.value = Mathf.Lerp(_hp_Img.value, _data.HP / maxHP, 3f * Time.deltaTime);
+        _hp_Img.value = Mathf.Clamp01(_hp_Img.value);
         _hpText.text = _data.HP.ToString();
 
 
