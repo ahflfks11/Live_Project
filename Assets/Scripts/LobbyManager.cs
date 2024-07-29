@@ -56,10 +56,7 @@ public class LobbyManager : MonoBehaviour
 
     public void ChangeData()
     {
-        if (_gpgsManager.UpdateData())
-        {
-            _gpgsManager.SetValue(_lobbyUIManager._CoinText, _lobbyUIManager._CashText);
-        }
+        _gpgsManager.ChangeGoldCrystal(100, 100, _lobbyUIManager._CoinText, _lobbyUIManager._CashText);
     }
 
     public void EnterDungeon()

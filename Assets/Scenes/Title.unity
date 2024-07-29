@@ -891,9 +891,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 54
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: ae6ec34070cc18940b53c41863a27b6e, type: 3}
+    m_FontSize: 48
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 64
@@ -903,7 +903,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Guest Login
+  m_Text: "\uAC8C\uC2A4\uD2B8 \uB85C\uADF8\uC778"
 --- !u!222 &627741251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -922,6 +922,10 @@ PrefabInstance:
     - target: {fileID: 130642, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
       propertyPath: m_Name
       value: WiggleDiamondTransitioner
+      objectReference: {fileID: 0}
+    - target: {fileID: 130642, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 448202, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
       propertyPath: m_RootOrder
@@ -968,13 +972,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11405446, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405446, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
       propertyPath: _transitionTime
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 11405446, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
       propertyPath: _transitionCamera
       value: 
       objectReference: {fileID: 1455025493}
+    - target: {fileID: 11405446, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
+      propertyPath: _automaticallyTransitionIn
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
 --- !u!1 &938682261
@@ -1036,9 +1048,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 54
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: ae6ec34070cc18940b53c41863a27b6e, type: 3}
+    m_FontSize: 48
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 64
@@ -1048,7 +1060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Setting
+  m_Text: "\uAC8C\uC784 \uC124\uC815"
 --- !u!222 &938682264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1231,9 +1243,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 54
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: ae6ec34070cc18940b53c41863a27b6e, type: 3}
+    m_FontSize: 48
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 64
@@ -1243,7 +1255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Google Login
+  m_Text: "\uAD6C\uAE00 \uB85C\uADF8\uC778"
 --- !u!222 &1105654103
 CanvasRenderer:
   m_ObjectHideFlags: 0

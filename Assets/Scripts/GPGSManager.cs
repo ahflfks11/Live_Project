@@ -234,14 +234,6 @@ public class GPGSManager : MonoBehaviour
     public void UpdateData(string _tableName, string _inDate, Param _data)
     {
         var bro = Backend.GameData.UpdateV2(_tableName, _inDate, Backend.UserInDate, _data);
-        if (bro.IsSuccess())
-        {
-            _logText.text = "데이터 수정 성공";
-        }
-        else
-        {
-            _logText.text = "데이터 수정 실패";
-        }
     }
 
     public void CreateUserData()
@@ -250,7 +242,7 @@ public class GPGSManager : MonoBehaviour
         // 불러오기에 실패할 경우
         if (bro.IsSuccess() == false)
         {
-            _logText.text = "데이터 읽기 중에 문제가 발생했습니다 : " + bro.ToString();
+
         }
         // 불러오기에는 성공했으나 데이터가 존재하지 않는 경우
         if (bro.IsSuccess() && bro.FlattenRows().Count <= 0)
@@ -262,17 +254,40 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
-    public bool UpdateData()
+    //
+    public void ChangeGoldCrystal(int _gold, int _Crystal, TMPro.TMP_Text _goldText, TMPro.TMP_Text _crystalText)
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        bool _valueChange = false;
+
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
-            UpdateData("UserInfo", inDate, gameTable.UserInfo(Backend.UserNickName, 1, 100, 100));
-            return true;
+
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Gold", GameInfoOperator.addition, _gold);
+            _updateParam.AddCalculation("Cash", GameInfoOperator.addition, _Crystal);
+
+            //데이터 수정
+            var _result =  Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+
+            if (_result.IsSuccess())
+            {
+                _valueChange = true;
+            }
         }
 
-        return false;
+        if (_valueChange)
+        {
+            var _data = Backend.PlayerData.GetMyData("UserInfo");
+
+            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
+            {
+                _goldText.text = _data.FlattenRows()[0]["Gold"].ToString();
+                _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
+            }
+        }
     }
 
     public void LogOut()
