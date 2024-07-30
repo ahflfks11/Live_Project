@@ -24,7 +24,6 @@ public class LobbyUILoader : MonoBehaviour
         {
             Texture2D _texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
             _img.sprite = Sprite.Create(_texture, new Rect(0, 0, _texture.width, _texture.height), new Vector2(0f, 0f));
-            this.gameObject.SetActive(false);
         }
     }
 }

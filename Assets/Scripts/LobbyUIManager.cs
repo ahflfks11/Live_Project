@@ -14,7 +14,7 @@ public class LobbyUIManager : MonoBehaviour
     public TMP_Text _CoinText;
     public TMP_Text _CashText;
     public GameObject _shopUI;
-    public GameObject _gachaShopUI;
+    public DG.Tweening.DOTweenVisualManager _gachaShopUI;
 
     private void Start()
     {
@@ -41,13 +41,13 @@ public class LobbyUIManager : MonoBehaviour
 
     public void GachaShopPanel()
     {
-        if (_gachaShopUI.activeSelf)
+        if (_gachaShopUI.enabled)
         {
-            _gachaShopUI.SetActive(false);
+            _gachaShopUI.enabled =false;
         }
         else
         {
-            _gachaShopUI.SetActive(true);
+            _gachaShopUI.enabled =true;
         }
     }
 
