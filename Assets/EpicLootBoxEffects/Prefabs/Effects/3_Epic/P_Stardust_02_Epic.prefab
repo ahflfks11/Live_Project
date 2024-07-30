@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4559564371106378}
   - component: {fileID: 198294094098196570}
   - component: {fileID: 199570668784514884}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4701096767339560}
   - component: {fileID: 198493125295108786}
   - component: {fileID: 199296657663958234}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_StarDustExplode_0201_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9663,7 +9663,7 @@ GameObject:
   - component: {fileID: 4634473409122416}
   - component: {fileID: 198024968808138642}
   - component: {fileID: 199747548288110294}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14488,7 +14488,7 @@ GameObject:
   - component: {fileID: 4325709155908620}
   - component: {fileID: 198008948469516404}
   - component: {fileID: 199887661812101982}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Stardust_02_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14504,8 +14504,8 @@ Transform:
   m_GameObject: {fileID: 1607548465940920}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4559564371106378}
   - {fileID: 4634473409122416}
@@ -19274,7 +19274,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19316,7 +19316,7 @@ GameObject:
   - component: {fileID: 4645458033570718}
   - component: {fileID: 198835549985938604}
   - component: {fileID: 199010373037572102}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_StarDustExplode_0202_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24141,7 +24141,7 @@ GameObject:
   - component: {fileID: 4075067901775940}
   - component: {fileID: 198577170684129534}
   - component: {fileID: 199165009486484202}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4394014360654036}
   - component: {fileID: 198889009374597204}
   - component: {fileID: 199492221717647184}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Lens_03_Legendary
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1057775825864060}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4320353419313160}
   - {fileID: 4669687573657712}
@@ -4799,7 +4799,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 4762351212257378}
   - component: {fileID: 198568137177279962}
   - component: {fileID: 199075231866658936}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensLines_0102_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9666,7 +9666,7 @@ GameObject:
   - component: {fileID: 4283882563614286}
   - component: {fileID: 198597534531551828}
   - component: {fileID: 199464397099824548}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14491,7 +14491,7 @@ GameObject:
   - component: {fileID: 4320353419313160}
   - component: {fileID: 198897796660921004}
   - component: {fileID: 199627384351051258}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensLines_0102_Legendary
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19316,7 +19316,7 @@ GameObject:
   - component: {fileID: 4091731473024622}
   - component: {fileID: 198951141918989584}
   - component: {fileID: 199863063337253310}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensLines_0101_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24145,7 +24145,7 @@ GameObject:
   - component: {fileID: 4078121889012146}
   - component: {fileID: 198804366493143976}
   - component: {fileID: 199298142822718204}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29144,7 +29144,7 @@ GameObject:
   - component: {fileID: 4669687573657712}
   - component: {fileID: 198436805262346848}
   - component: {fileID: 199441150085968534}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensLines_0103_Legendary
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -33969,7 +33969,7 @@ GameObject:
   - component: {fileID: 4595497103053848}
   - component: {fileID: 198841048504212286}
   - component: {fileID: 199092639993201330}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensLines_0103_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38794,7 +38794,7 @@ GameObject:
   - component: {fileID: 4408379950705706}
   - component: {fileID: 198691903917349430}
   - component: {fileID: 199983017016650692}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43619,7 +43619,7 @@ GameObject:
   - component: {fileID: 4024380999811442}
   - component: {fileID: 198775125005121046}
   - component: {fileID: 199265764571063888}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

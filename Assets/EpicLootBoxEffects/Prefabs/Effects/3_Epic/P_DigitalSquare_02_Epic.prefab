@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4792773369674304}
   - component: {fileID: 198760745650983064}
   - component: {fileID: 199936191429405372}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4854,7 +4854,7 @@ GameObject:
   - component: {fileID: 4817226341023708}
   - component: {fileID: 198542130199673680}
   - component: {fileID: 199944081756167146}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_DigitalSquare_0202_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9697,7 +9697,7 @@ GameObject:
   - component: {fileID: 4497908325811600}
   - component: {fileID: 198484923821957410}
   - component: {fileID: 199838078711947588}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14522,7 +14522,7 @@ GameObject:
   - component: {fileID: 4949030491435594}
   - component: {fileID: 198111201866029572}
   - component: {fileID: 199909527203373024}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_DigitalSquare_02_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14538,8 +14538,8 @@ Transform:
   m_GameObject: {fileID: 1527952385524668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4792773369674304}
   - {fileID: 4497908325811600}
@@ -19308,7 +19308,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19350,7 +19350,7 @@ GameObject:
   - component: {fileID: 4441639005606144}
   - component: {fileID: 198473569522055912}
   - component: {fileID: 199586170829431470}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_DigitalSquare_0201_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24195,7 +24195,7 @@ GameObject:
   - component: {fileID: 4503318999389722}
   - component: {fileID: 198035734728842738}
   - component: {fileID: 199860361202794076}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

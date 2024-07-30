@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4245151118395112}
   - component: {fileID: 198925937979423778}
   - component: {fileID: 199851948806375320}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_03_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4728743416069608}
   - component: {fileID: 198198292888578372}
   - component: {fileID: 199097168152245230}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9733,7 +9733,7 @@ GameObject:
   - component: {fileID: 4086595303386750}
   - component: {fileID: 198626047648922346}
   - component: {fileID: 199901708183620654}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14558,7 +14558,7 @@ GameObject:
   - component: {fileID: 4301364925633432}
   - component: {fileID: 198429735035140368}
   - component: {fileID: 199221536527099954}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19455,7 +19455,7 @@ GameObject:
   - component: {fileID: 4962967703616428}
   - component: {fileID: 198244048556272758}
   - component: {fileID: 199616030642892464}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_OrbitalStrike_01_Common
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19471,8 +19471,8 @@ Transform:
   m_GameObject: {fileID: 1735981105901650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4301364925633432}
   - {fileID: 4728743416069608}
@@ -19556,7 +19556,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -24242,7 +24242,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -24284,7 +24284,7 @@ GameObject:
   - component: {fileID: 4413680354573518}
   - component: {fileID: 198762489121176538}
   - component: {fileID: 199222011822500298}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_OrbitalStrike_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

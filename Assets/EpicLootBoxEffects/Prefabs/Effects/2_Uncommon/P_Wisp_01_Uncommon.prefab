@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4348193043014968}
   - component: {fileID: 198436606411216664}
   - component: {fileID: 199923077698826950}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4392800181467006}
   - component: {fileID: 198725854888978480}
   - component: {fileID: 199144404334972342}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Wisp_01_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4852,8 +4852,8 @@ Transform:
   m_GameObject: {fileID: 1482816351580736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4180534691970776}
   - {fileID: 4348193043014968}
@@ -9623,7 +9623,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9665,7 +9665,7 @@ GameObject:
   - component: {fileID: 4897913224170008}
   - component: {fileID: 198079628548729056}
   - component: {fileID: 199719833869974968}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Wisp_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14644,7 +14644,7 @@ GameObject:
   - component: {fileID: 4180534691970776}
   - component: {fileID: 198663192967391494}
   - component: {fileID: 199048749152759792}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Wisp_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19505,7 +19505,7 @@ GameObject:
   - component: {fileID: 4081910581972670}
   - component: {fileID: 198318537378015210}
   - component: {fileID: 199717143723856384}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24402,7 +24402,7 @@ GameObject:
   - component: {fileID: 4787060588897660}
   - component: {fileID: 198823722398819984}
   - component: {fileID: 199228167792550086}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29227,7 +29227,7 @@ GameObject:
   - component: {fileID: 4808137743911062}
   - component: {fileID: 198298444452930416}
   - component: {fileID: 199268283305848870}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

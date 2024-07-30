@@ -69,6 +69,22 @@ public class LobbyManager : MonoBehaviour
         _gpgsManager.GaveCrystal(_crystal, _lobbyUIManager._CashText);
     }
 
+    public void MultiGacha()
+    {
+        if (_gpgsManager.LeastCrystal(1600, _lobbyUIManager._CashText))
+        {
+
+        }
+    }
+
+    public void SingleGacha()
+    {
+        if (_gpgsManager.LeastCrystal(160, _lobbyUIManager._CashText))
+        {
+
+        }
+    }
+
     public void EnterDungeon()
     {
         Transitioner.Instance.TransitionToScene(3);

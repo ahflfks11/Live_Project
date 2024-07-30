@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4332866242119246}
   - component: {fileID: 198219581015386920}
   - component: {fileID: 199132130304687322}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensExplode_0203_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4818579747133550}
   - component: {fileID: 198423427251048254}
   - component: {fileID: 199017925656033872}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 4072878701811378}
   - component: {fileID: 198015243739435410}
   - component: {fileID: 199112867869486566}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Lens_05_Legendary
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9677,8 +9677,8 @@ Transform:
   m_GameObject: {fileID: 1430961535231458}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4237651893121618}
   - {fileID: 4818579747133550}
@@ -14447,7 +14447,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14489,7 +14489,7 @@ GameObject:
   - component: {fileID: 4554160712130588}
   - component: {fileID: 198082156161319396}
   - component: {fileID: 199745085360804360}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensExplode_0201_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19317,7 +19317,7 @@ GameObject:
   - component: {fileID: 4970576320411396}
   - component: {fileID: 198782249165756248}
   - component: {fileID: 199894235778771528}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24142,7 +24142,7 @@ GameObject:
   - component: {fileID: 4616390268959058}
   - component: {fileID: 198993535524085890}
   - component: {fileID: 199176513042571076}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensExplode_0202_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28967,7 +28967,7 @@ GameObject:
   - component: {fileID: 4237651893121618}
   - component: {fileID: 198105359726110338}
   - component: {fileID: 199585581153711790}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

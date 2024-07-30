@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4032009881605902}
   - component: {fileID: 198093494477031930}
   - component: {fileID: 199661623414548358}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4157128905469668}
   - component: {fileID: 198105562925567512}
   - component: {fileID: 199827080489931128}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_0201_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9752,7 +9752,7 @@ GameObject:
   - component: {fileID: 4763879263650660}
   - component: {fileID: 198194800396054216}
   - component: {fileID: 199864081097308044}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_01_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9768,8 +9768,8 @@ Transform:
   m_GameObject: {fileID: 1328443690824110}
   m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4337561814542170}
   - {fileID: 4287622865840688}
@@ -14538,7 +14538,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14580,7 +14580,7 @@ GameObject:
   - component: {fileID: 4337561814542170}
   - component: {fileID: 198322913754127808}
   - component: {fileID: 199783752784950458}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19477,7 +19477,7 @@ GameObject:
   - component: {fileID: 4287622865840688}
   - component: {fileID: 198947444853612034}
   - component: {fileID: 199248759168163326}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

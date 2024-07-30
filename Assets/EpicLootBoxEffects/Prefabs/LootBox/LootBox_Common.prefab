@@ -107,5 +107,3 @@ MonoBehaviour:
   - {fileID: 1292799928609656, guid: 36443b50aae24b540927880560e93bd8, type: 3}
   DesFxObjs: []
   DesIconObjs: []
-  effectsText: {fileID: 0}
-  nameEffectText: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4828931775984750}
   - component: {fileID: 198139970724196556}
   - component: {fileID: 199211516490564892}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensCross_0101_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: 4397798068613980}
   - component: {fileID: 198469077998374208}
   - component: {fileID: 199692246252699078}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Lens_02_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4855,8 +4855,8 @@ Transform:
   m_GameObject: {fileID: 1209312301353214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4394286933868620}
   - {fileID: 4385643263521928}
@@ -9626,7 +9626,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9668,7 +9668,7 @@ GameObject:
   - component: {fileID: 4543899643489330}
   - component: {fileID: 198497126306398652}
   - component: {fileID: 199401304175605776}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14493,7 +14493,7 @@ GameObject:
   - component: {fileID: 4394286933868620}
   - component: {fileID: 198685031781434594}
   - component: {fileID: 199511461181218088}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensCross_0102_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19318,7 +19318,7 @@ GameObject:
   - component: {fileID: 4898891091035456}
   - component: {fileID: 198393022326043108}
   - component: {fileID: 199114819775562460}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24143,7 +24143,7 @@ GameObject:
   - component: {fileID: 4217949031400380}
   - component: {fileID: 198650916160262066}
   - component: {fileID: 199647269596800836}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28968,7 +28968,7 @@ GameObject:
   - component: {fileID: 4385643263521928}
   - component: {fileID: 198205533182288894}
   - component: {fileID: 199805354383643980}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33793,7 +33793,7 @@ GameObject:
   - component: {fileID: 4277529360288018}
   - component: {fileID: 198067001570668066}
   - component: {fileID: 199112227980149224}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensCross_0102_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

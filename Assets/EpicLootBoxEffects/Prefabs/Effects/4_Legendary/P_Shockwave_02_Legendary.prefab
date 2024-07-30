@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4976483199465634}
   - component: {fileID: 198171182869163846}
   - component: {fileID: 199752091985430972}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4333212698933220}
   - component: {fileID: 198873716702458020}
   - component: {fileID: 199893581859160882}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_02_Legendary
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4852,8 +4852,8 @@ Transform:
   m_GameObject: {fileID: 1575611704787968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4274941336598554}
   - {fileID: 4529391087595282}
@@ -9623,7 +9623,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9665,7 +9665,7 @@ GameObject:
   - component: {fileID: 4263552416406224}
   - component: {fileID: 198547557789499988}
   - component: {fileID: 199882272229956238}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14490,7 +14490,7 @@ GameObject:
   - component: {fileID: 4024716681504620}
   - component: {fileID: 198869401265030138}
   - component: {fileID: 199986771990844424}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_GlowDot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19325,7 +19325,7 @@ GameObject:
   - component: {fileID: 4529391087595282}
   - component: {fileID: 198272761729525648}
   - component: {fileID: 199275232667660784}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24168,7 +24168,7 @@ GameObject:
   - component: {fileID: 4274941336598554}
   - component: {fileID: 198225469927582874}
   - component: {fileID: 199431025730265952}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_GlowDot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

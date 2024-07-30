@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4984692058866972}
   - component: {fileID: 198262914247813460}
   - component: {fileID: 199028087787183484}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_StarDustExplode_0101_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,7 +4838,7 @@ GameObject:
   - component: {fileID: 4490675285356788}
   - component: {fileID: 198680693074122186}
   - component: {fileID: 199872103896751268}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9663,7 +9663,7 @@ GameObject:
   - component: {fileID: 4982377878661598}
   - component: {fileID: 198141881243635012}
   - component: {fileID: 199993852657917450}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Stardust_01_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9679,8 +9679,8 @@ Transform:
   m_GameObject: {fileID: 1536546637391716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4981351839014008}
   - {fileID: 4490675285356788}
@@ -14449,7 +14449,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14491,7 +14491,7 @@ GameObject:
   - component: {fileID: 4046913721915040}
   - component: {fileID: 198614561564979590}
   - component: {fileID: 199245209523351272}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19316,7 +19316,7 @@ GameObject:
   - component: {fileID: 4981351839014008}
   - component: {fileID: 198748748847960660}
   - component: {fileID: 199211864017836168}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24141,7 +24141,7 @@ GameObject:
   - component: {fileID: 4096098762202118}
   - component: {fileID: 198774608003423880}
   - component: {fileID: 199886552505818382}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_StarDustExplode_0102_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

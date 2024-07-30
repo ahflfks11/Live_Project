@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4796809200564914}
   - component: {fileID: 198761539954511908}
   - component: {fileID: 199716126413853524}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4846,7 +4846,7 @@ GameObject:
   - component: {fileID: 4873272875855066}
   - component: {fileID: 198910589694619416}
   - component: {fileID: 199452041334914524}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9680,7 +9680,7 @@ GameObject:
   - component: {fileID: 4417782535923644}
   - component: {fileID: 198540198079517430}
   - component: {fileID: 199125566425798536}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14523,7 +14523,7 @@ GameObject:
   - component: {fileID: 4581606919453782}
   - component: {fileID: 198822916188594086}
   - component: {fileID: 199896770034344230}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19348,7 +19348,7 @@ GameObject:
   - component: {fileID: 4784164539967642}
   - component: {fileID: 198753745846592400}
   - component: {fileID: 199792245153878292}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_01_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19364,8 +19364,8 @@ Transform:
   m_GameObject: {fileID: 1755073529583856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4873272875855066}
   - {fileID: 4417782535923644}
@@ -24135,7 +24135,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -24177,7 +24177,7 @@ GameObject:
   - component: {fileID: 4313323404522002}
   - component: {fileID: 198262715283409230}
   - component: {fileID: 199521564607176752}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

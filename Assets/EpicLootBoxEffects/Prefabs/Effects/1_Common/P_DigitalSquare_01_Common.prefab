@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4605583244859342}
   - component: {fileID: 198952698837336940}
   - component: {fileID: 199723782367983706}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_DigitalSquare_01_Common
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1089154624610952}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4229150880298488}
   - {fileID: 4750606658836964}
@@ -111,7 +111,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: 4750606658836964}
   - component: {fileID: 198770239781001922}
   - component: {fileID: 199192113558468324}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9664,7 +9664,7 @@ GameObject:
   - component: {fileID: 4896097366180652}
   - component: {fileID: 198734027593754430}
   - component: {fileID: 199465573719734968}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_DigitalSquare_0102_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14507,7 +14507,7 @@ GameObject:
   - component: {fileID: 4585175098900866}
   - component: {fileID: 198713715304463092}
   - component: {fileID: 199035998782018024}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19332,7 +19332,7 @@ GameObject:
   - component: {fileID: 4229150880298488}
   - component: {fileID: 198827963530698780}
   - component: {fileID: 199722456759348334}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24175,7 +24175,7 @@ GameObject:
   - component: {fileID: 4703626060968814}
   - component: {fileID: 198642688360559484}
   - component: {fileID: 199734394770929570}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_DigitalSquare_0101_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

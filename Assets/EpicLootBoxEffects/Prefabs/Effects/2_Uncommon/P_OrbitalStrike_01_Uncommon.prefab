@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4133379109275814}
   - component: {fileID: 198369752314800686}
   - component: {fileID: 199432182806336886}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4029606648107598}
   - component: {fileID: 198976917441182180}
   - component: {fileID: 199107588276686412}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_OrbitalStrike_01_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4852,8 +4852,8 @@ Transform:
   m_GameObject: {fileID: 1329980075006050}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4893619143122732}
   - {fileID: 4952535977308614}
@@ -9623,7 +9623,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9665,7 +9665,7 @@ GameObject:
   - component: {fileID: 4893619143122732}
   - component: {fileID: 198578773009951252}
   - component: {fileID: 199576468718443642}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14562,7 +14562,7 @@ GameObject:
   - component: {fileID: 4952535977308614}
   - component: {fileID: 198131138754609460}
   - component: {fileID: 199858290539663018}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19459,7 +19459,7 @@ GameObject:
   - component: {fileID: 4512769680102476}
   - component: {fileID: 198381789004627646}
   - component: {fileID: 199638132148821974}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_03_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24284,7 +24284,7 @@ GameObject:
   - component: {fileID: 4370934498059404}
   - component: {fileID: 198616166852585036}
   - component: {fileID: 199832061371186380}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_OrbitalStrike_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

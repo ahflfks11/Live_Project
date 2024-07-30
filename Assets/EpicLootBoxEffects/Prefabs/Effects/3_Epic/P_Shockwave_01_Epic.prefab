@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4899839506414130}
   - component: {fileID: 198938204763375228}
   - component: {fileID: 199621552792267264}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4854,7 +4854,7 @@ GameObject:
   - component: {fileID: 4917914361024116}
   - component: {fileID: 198312390371230490}
   - component: {fileID: 199395959814059152}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9679,7 +9679,7 @@ GameObject:
   - component: {fileID: 4364250570970252}
   - component: {fileID: 198948968718212854}
   - component: {fileID: 199602895678871400}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14514,7 +14514,7 @@ GameObject:
   - component: {fileID: 4743448921607824}
   - component: {fileID: 198671079222891208}
   - component: {fileID: 199354082112129780}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19339,7 +19339,7 @@ GameObject:
   - component: {fileID: 4571055258230282}
   - component: {fileID: 198385607557674922}
   - component: {fileID: 199410343583970516}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_01_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19355,8 +19355,8 @@ Transform:
   m_GameObject: {fileID: 1764908664082144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4958722662001856}
   - {fileID: 4899839506414130}
@@ -24126,7 +24126,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -24168,7 +24168,7 @@ GameObject:
   - component: {fileID: 4958722662001856}
   - component: {fileID: 198791137164827866}
   - component: {fileID: 199053073089727904}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Shockwave_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

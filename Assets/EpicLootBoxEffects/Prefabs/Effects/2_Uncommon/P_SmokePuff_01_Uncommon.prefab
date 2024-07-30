@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4544261494209256}
   - component: {fileID: 198780971923067704}
   - component: {fileID: 199605913123113846}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokePuff_01_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1113262978351686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4187656352707052}
   - {fileID: 4889045143970366}
@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: 4889045143970366}
   - component: {fileID: 198515079893588226}
   - component: {fileID: 199135510325161066}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9664,7 +9664,7 @@ GameObject:
   - component: {fileID: 4547215793460570}
   - component: {fileID: 198814112449492100}
   - component: {fileID: 199444973250070248}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14489,7 +14489,7 @@ GameObject:
   - component: {fileID: 4472761874095792}
   - component: {fileID: 198313754539299368}
   - component: {fileID: 199044819604186848}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19314,7 +19314,7 @@ GameObject:
   - component: {fileID: 4187656352707052}
   - component: {fileID: 198967869305938680}
   - component: {fileID: 199013647896330996}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24139,7 +24139,7 @@ GameObject:
   - component: {fileID: 4763149503909202}
   - component: {fileID: 198562970696250190}
   - component: {fileID: 199507810111817030}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokeExplode_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

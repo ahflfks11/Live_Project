@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4748964050563730}
   - component: {fileID: 198469537562929272}
   - component: {fileID: 199921528230937680}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4547069546380442}
   - component: {fileID: 198491272154510294}
   - component: {fileID: 199762288702567784}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 4310684228102538}
   - component: {fileID: 198180205443479422}
   - component: {fileID: 199721843033239656}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokeExplode_02_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14489,7 +14489,7 @@ GameObject:
   - component: {fileID: 4123228212170502}
   - component: {fileID: 198240423668345982}
   - component: {fileID: 199279993004770954}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19314,7 +19314,7 @@ GameObject:
   - component: {fileID: 4673493875452490}
   - component: {fileID: 198413311069958500}
   - component: {fileID: 199867616981406348}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -24139,7 +24139,7 @@ GameObject:
   - component: {fileID: 4791494422681958}
   - component: {fileID: 198301844339363248}
   - component: {fileID: 199465225487186636}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokeExplode_02Sub_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -28964,7 +28964,7 @@ GameObject:
   - component: {fileID: 4713940809061766}
   - component: {fileID: 198382525274005754}
   - component: {fileID: 199387095812842938}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokePuff_02_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -28980,8 +28980,8 @@ Transform:
   m_GameObject: {fileID: 1843233838989130}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4547069546380442}
   - {fileID: 4123228212170502}
@@ -33750,7 +33750,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4701301468288454}
   - component: {fileID: 198311299282010482}
   - component: {fileID: 199767641268492800}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4908,7 @@ GameObject:
   - component: {fileID: 4591834262359308}
   - component: {fileID: 198347134251946128}
   - component: {fileID: 199866138649135366}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9733,7 +9733,7 @@ GameObject:
   - component: {fileID: 4007456645980514}
   - component: {fileID: 198470169961019576}
   - component: {fileID: 199279549684026852}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_0201_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14631,7 +14631,7 @@ GameObject:
   - component: {fileID: 4334885560834290}
   - component: {fileID: 198371876729217302}
   - component: {fileID: 199631947692022172}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_02_Common
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14647,8 +14647,8 @@ Transform:
   m_GameObject: {fileID: 1579721459114674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4701301468288454}
   - {fileID: 4936977709976450}
@@ -14731,7 +14731,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -19417,7 +19417,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19459,7 +19459,7 @@ GameObject:
   - component: {fileID: 4936977709976450}
   - component: {fileID: 198370274892731982}
   - component: {fileID: 199211994817675046}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}

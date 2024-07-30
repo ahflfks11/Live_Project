@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4945358059278434}
   - component: {fileID: 198874565590530476}
   - component: {fileID: 199270963899657654}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_01Sub_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4925029011814446}
   - component: {fileID: 198635413173519358}
   - component: {fileID: 199175460490414846}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 4513158099417382}
   - component: {fileID: 198800508048328684}
   - component: {fileID: 199061852653385274}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_01_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14488,7 +14488,7 @@ GameObject:
   - component: {fileID: 4912537329720500}
   - component: {fileID: 198115917368832794}
   - component: {fileID: 199758095543285948}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_01_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19314,7 +19314,7 @@ GameObject:
   - component: {fileID: 4229148294711560}
   - component: {fileID: 198775833882956488}
   - component: {fileID: 199641374551563488}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_01Sub_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -24139,7 +24139,7 @@ GameObject:
   - component: {fileID: 4928181285204328}
   - component: {fileID: 198301837696513318}
   - component: {fileID: 199953053154735456}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_01_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -24155,8 +24155,8 @@ Transform:
   m_GameObject: {fileID: 1725037102619058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4912537329720500}
   - {fileID: 4925029011814446}
@@ -28925,7 +28925,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -28967,7 +28967,7 @@ GameObject:
   - component: {fileID: 4506599781998278}
   - component: {fileID: 198389114540325580}
   - component: {fileID: 199628524769192298}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}

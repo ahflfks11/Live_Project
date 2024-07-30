@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4385322490375032}
   - component: {fileID: 198991634657079122}
   - component: {fileID: 199008536821419884}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4940172664432790}
   - component: {fileID: 198883778128192100}
   - component: {fileID: 199700404762942048}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9671,7 +9671,7 @@ GameObject:
   - component: {fileID: 4579414949706016}
   - component: {fileID: 198978544793288316}
   - component: {fileID: 199091463039055414}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14496,7 +14496,7 @@ GameObject:
   - component: {fileID: 4562866144246808}
   - component: {fileID: 198231605757248582}
   - component: {fileID: 199192073452941636}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Energy_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19330,7 +19330,7 @@ GameObject:
   - component: {fileID: 4825967404913992}
   - component: {fileID: 198441339322448640}
   - component: {fileID: 199437902036547932}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24173,7 +24173,7 @@ GameObject:
   - component: {fileID: 4568573991106540}
   - component: {fileID: 198182666437278798}
   - component: {fileID: 199680912803735204}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_03_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -24189,8 +24189,8 @@ Transform:
   m_GameObject: {fileID: 1869820706591696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4562866144246808}
   - {fileID: 4825967404913992}
@@ -28960,7 +28960,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

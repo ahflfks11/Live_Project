@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4121838933806612}
   - component: {fileID: 198533217580723118}
   - component: {fileID: 199400479081659192}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_02Sub_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4894,7 +4894,7 @@ GameObject:
   - component: {fileID: 4136134930790272}
   - component: {fileID: 198052580938476620}
   - component: {fileID: 199282826871809936}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_02_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4910,8 +4910,8 @@ Transform:
   m_GameObject: {fileID: 1437070871544850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4129431579466748}
   - {fileID: 4704384910715326}
@@ -9680,7 +9680,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9722,7 +9722,7 @@ GameObject:
   - component: {fileID: 4129431579466748}
   - component: {fileID: 198410859448715002}
   - component: {fileID: 199303446043528656}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_02_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14553,7 +14553,7 @@ GameObject:
   - component: {fileID: 4883114874811208}
   - component: {fileID: 198719580557631600}
   - component: {fileID: 199665402990871212}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19378,7 +19378,7 @@ GameObject:
   - component: {fileID: 4077434048837900}
   - component: {fileID: 198310391680294106}
   - component: {fileID: 199043294708244844}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Firework_02_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -24262,7 +24262,7 @@ GameObject:
   - component: {fileID: 4704384910715326}
   - component: {fileID: 198695807657617232}
   - component: {fileID: 199923000079670872}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}

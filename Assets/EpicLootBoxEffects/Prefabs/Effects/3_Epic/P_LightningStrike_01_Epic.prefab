@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4426304630778266}
   - component: {fileID: 198361669172185362}
   - component: {fileID: 199024480600848876}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4908,7 @@ GameObject:
   - component: {fileID: 4379721904734530}
   - component: {fileID: 198271561745294072}
   - component: {fileID: 199469806984656818}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LightningStrike_01_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4924,8 +4924,8 @@ Transform:
   m_GameObject: {fileID: 1168922975715900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4973939161362302}
   - {fileID: 4908371381124006}
@@ -9696,7 +9696,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9738,7 +9738,7 @@ GameObject:
   - component: {fileID: 4810404848696392}
   - component: {fileID: 198104888812200088}
   - component: {fileID: 199387039516171140}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14563,7 +14563,7 @@ GameObject:
   - component: {fileID: 4908371381124006}
   - component: {fileID: 198691979421474024}
   - component: {fileID: 199549332583685038}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19460,7 +19460,7 @@ GameObject:
   - component: {fileID: 4587429397240380}
   - component: {fileID: 198430111911258490}
   - component: {fileID: 199984311329727602}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_04_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24357,7 +24357,7 @@ GameObject:
   - component: {fileID: 4936950168736688}
   - component: {fileID: 198737595372686454}
   - component: {fileID: 199034345469292414}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_03_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29254,7 +29254,7 @@ GameObject:
   - component: {fileID: 4739862725283624}
   - component: {fileID: 198703850638371912}
   - component: {fileID: 199945171328186010}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LightningStrike_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34154,7 +34154,7 @@ GameObject:
   - component: {fileID: 4973939161362302}
   - component: {fileID: 198960476656296556}
   - component: {fileID: 199728671970434458}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38979,7 +38979,7 @@ GameObject:
   - component: {fileID: 4379885772107376}
   - component: {fileID: 198902994698707750}
   - component: {fileID: 199899999160474646}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_03_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

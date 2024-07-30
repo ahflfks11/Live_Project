@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4664977513077272}
   - component: {fileID: 198107031616833458}
   - component: {fileID: 199234384602075820}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokePuff_02_Common
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1072430665180934}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4599320960484750}
   - {fileID: 4106683493624274}
@@ -111,7 +111,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4839,7 +4839,7 @@ GameObject:
   - component: {fileID: 4319603210304544}
   - component: {fileID: 198020139360054520}
   - component: {fileID: 199334996127378158}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9664,7 +9664,7 @@ GameObject:
   - component: {fileID: 4577589977698020}
   - component: {fileID: 198707562055556624}
   - component: {fileID: 199141660191852378}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokeExplode_02_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -14492,7 +14492,7 @@ GameObject:
   - component: {fileID: 4599320960484750}
   - component: {fileID: 198950428200744600}
   - component: {fileID: 199174412906610240}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19317,7 +19317,7 @@ GameObject:
   - component: {fileID: 4106683493624274}
   - component: {fileID: 198721484252466280}
   - component: {fileID: 199357505906573846}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -24142,7 +24142,7 @@ GameObject:
   - component: {fileID: 4549079351762538}
   - component: {fileID: 198648853069766836}
   - component: {fileID: 199834783604418838}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokeExplode_02Sub_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -28967,7 +28967,7 @@ GameObject:
   - component: {fileID: 4221183372750944}
   - component: {fileID: 198711905311900908}
   - component: {fileID: 199059176729228182}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Effects
   m_Icon: {fileID: 0}

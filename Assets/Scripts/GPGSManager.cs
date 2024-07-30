@@ -323,7 +323,7 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
-    public void LeastCrystal(int _crystal, TMPro.TMP_Text _crystalText)
+    public bool LeastCrystal(int _crystal, TMPro.TMP_Text _crystalText)
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
 
@@ -331,6 +331,9 @@ public class GPGSManager : MonoBehaviour
 
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
+            if (int.Parse(bro.FlattenRows()[0]["Cash"].ToString()) < _crystal)
+                return false;
+
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
 
             Param _updateParam = new Param();
@@ -354,6 +357,8 @@ public class GPGSManager : MonoBehaviour
                 _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
             }
         }
+
+        return _valueChange;
     }
 
     public void GaveGold(int _gold, TMPro.TMP_Text _goldText)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4856068725866988}
   - component: {fileID: 198417764206082906}
   - component: {fileID: 199066185612840698}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4086226775250788}
   - component: {fileID: 198418537320914272}
   - component: {fileID: 199183541338934514}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 4580911238948042}
   - component: {fileID: 198085005895947630}
   - component: {fileID: 199312438346824492}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokePuff_01_Common
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -9677,8 +9677,8 @@ Transform:
   m_GameObject: {fileID: 1327900810887282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4005766893627620}
   - {fileID: 4086226775250788}
@@ -9761,7 +9761,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -14447,7 +14447,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14489,7 +14489,7 @@ GameObject:
   - component: {fileID: 4005766893627620}
   - component: {fileID: 198873442506196514}
   - component: {fileID: 199404999638508266}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19314,7 +19314,7 @@ GameObject:
   - component: {fileID: 4282707875673744}
   - component: {fileID: 198506226023212970}
   - component: {fileID: 199327050284875778}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_SmokeExplode_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24141,7 +24141,7 @@ GameObject:
   - component: {fileID: 4910714815926850}
   - component: {fileID: 198335600969853222}
   - component: {fileID: 199292526348625676}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

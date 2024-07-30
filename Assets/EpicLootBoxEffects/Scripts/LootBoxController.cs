@@ -15,20 +15,18 @@ public class LootBoxController : MonoBehaviour {
 	public GameObject[] DesIconObjs;
 	private GameObject Lootbox;
 
-	public Text effectsText;
-	public Text nameEffectText;
-
 	void Start () {
 		idEffect += 1;
 		idIcon += 1;
-		effectsText.text = "Type       " + idEffect + " / 25";
-		nameEffectText.text = EffectPrefabs [idEffect].gameObject.name;
 		SetupVfx ();
 		isOpened = false;
+		OpenBox();
 	}
 
-	private void OnMouseDown (){
-		if (!isOpened) {
+	public void OpenBox()
+    {
+		if (!isOpened)
+		{
 			StartCoroutine(PlayFx());
 		}
 	}
@@ -36,7 +34,6 @@ public class LootBoxController : MonoBehaviour {
 	IEnumerator PlayFx() {
 		isOpened = true;
 		idEffect = Mathf.Clamp(idEffect, 1, 25);
-		effectsText.text = "Type       " + idEffect + " / 25";
 		yield return new WaitForSeconds(0.2f);
 		Destroy (Lootbox);
 		Lootbox = Instantiate (IconPrefabs [2], this.transform.position, this.transform.rotation);
@@ -59,8 +56,6 @@ public class LootBoxController : MonoBehaviour {
 		ResetVfx ();
 		idEffect = idEffect + i;
 		idEffect = Mathf.Clamp(idEffect, 1, 25);
-		effectsText.text = "Type       " + idEffect + " / 25";
-		nameEffectText.text = EffectPrefabs [idEffect].gameObject.name;
 		//StartCoroutine(PlayIcon());
 	}
 

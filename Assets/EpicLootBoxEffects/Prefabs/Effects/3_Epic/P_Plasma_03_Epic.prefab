@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4951187857153998}
   - component: {fileID: 198205786338692522}
   - component: {fileID: 199938331082964522}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4764389111822382}
   - component: {fileID: 198863855371924634}
   - component: {fileID: 199428573319480926}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_03_Epic
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -4852,8 +4852,8 @@ Transform:
   m_GameObject: {fileID: 1139278292308618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4430338361025384}
   - {fileID: 4209296825472006}
@@ -9623,7 +9623,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9665,7 +9665,7 @@ GameObject:
   - component: {fileID: 4100222742855486}
   - component: {fileID: 198639300201024702}
   - component: {fileID: 199413850199910106}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14490,7 +14490,7 @@ GameObject:
   - component: {fileID: 4430338361025384}
   - component: {fileID: 198596701826704908}
   - component: {fileID: 199750543726831090}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Energy_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19324,7 +19324,7 @@ GameObject:
   - component: {fileID: 4209296825472006}
   - component: {fileID: 198157896627323642}
   - component: {fileID: 199156029140553272}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24167,7 +24167,7 @@ GameObject:
   - component: {fileID: 4641654190362334}
   - component: {fileID: 198406814688949368}
   - component: {fileID: 199028452717563468}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Plasma_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}

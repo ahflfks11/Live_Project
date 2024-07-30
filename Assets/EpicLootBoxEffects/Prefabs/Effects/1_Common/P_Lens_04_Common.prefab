@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4853303062384368}
   - component: {fileID: 198029849603449412}
   - component: {fileID: 199428072173605200}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4820372789952946}
   - component: {fileID: 198827171384179218}
   - component: {fileID: 199375191148811602}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 4353283281759970}
   - component: {fileID: 198533915077841278}
   - component: {fileID: 199008295731652038}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_LensExplode_0101_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14487,7 +14487,7 @@ GameObject:
   - component: {fileID: 4925987094001476}
   - component: {fileID: 198892781451136812}
   - component: {fileID: 199740889736120010}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19312,7 +19312,7 @@ GameObject:
   - component: {fileID: 4635219231526730}
   - component: {fileID: 198905741664605664}
   - component: {fileID: 199283969452523326}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Lens_04_Common
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -19328,8 +19328,8 @@ Transform:
   m_GameObject: {fileID: 1976348847057990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4925987094001476}
   - {fileID: 4853303062384368}
@@ -19412,7 +19412,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -24098,7 +24098,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

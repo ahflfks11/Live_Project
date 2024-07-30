@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4868925729989046}
   - component: {fileID: 198626956385412898}
   - component: {fileID: 199907275094938734}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 4016765079100930}
   - component: {fileID: 198550730922480200}
   - component: {fileID: 199246010108956976}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9661,7 +9661,7 @@ GameObject:
   - component: {fileID: 4279929797246852}
   - component: {fileID: 198981762625684268}
   - component: {fileID: 199008726277326314}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Wisp_01_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14618,7 +14618,7 @@ GameObject:
   - component: {fileID: 4686735570639896}
   - component: {fileID: 198942955251403388}
   - component: {fileID: 199609347853237760}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19515,7 +19515,7 @@ GameObject:
   - component: {fileID: 4760511905715346}
   - component: {fileID: 198846646940980254}
   - component: {fileID: 199814013556179488}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Wisp_01_Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24412,7 +24412,7 @@ GameObject:
   - component: {fileID: 4587646397215930}
   - component: {fileID: 198579200904001644}
   - component: {fileID: 199664730480028444}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Dot_02_Open
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29309,7 +29309,7 @@ GameObject:
   - component: {fileID: 4476935797854768}
   - component: {fileID: 198504589524375546}
   - component: {fileID: 199179941263689914}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: P_Wisp_02_Uncommon
   m_TagString: Effects
   m_Icon: {fileID: 0}
@@ -29325,8 +29325,8 @@ Transform:
   m_GameObject: {fileID: 1840114932031048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4760511905715346}
   - {fileID: 4016765079100930}
@@ -34096,7 +34096,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
