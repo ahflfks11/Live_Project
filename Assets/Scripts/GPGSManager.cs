@@ -290,6 +290,138 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
+    public void LeastGold(int _gold, TMPro.TMP_Text _goldText)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        bool _valueChange = false;
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
+
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Gold", GameInfoOperator.subtraction, _gold);
+
+            //데이터 수정
+            var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+
+            if (_result.IsSuccess())
+            {
+                _valueChange = true;
+            }
+        }
+
+        if (_valueChange)
+        {
+            var _data = Backend.PlayerData.GetMyData("UserInfo");
+
+            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
+            {
+                _goldText.text = _data.FlattenRows()[0]["Gold"].ToString();
+            }
+        }
+    }
+
+    public void LeastCrystal(int _crystal, TMPro.TMP_Text _crystalText)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        bool _valueChange = false;
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
+
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Cash", GameInfoOperator.subtraction, _crystal);
+
+            //데이터 수정
+            var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+
+            if (_result.IsSuccess())
+            {
+                _valueChange = true;
+            }
+        }
+
+        if (_valueChange)
+        {
+            var _data = Backend.PlayerData.GetMyData("UserInfo");
+
+            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
+            {
+                _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
+            }
+        }
+    }
+
+    public void GaveGold(int _gold, TMPro.TMP_Text _goldText)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        bool _valueChange = false;
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
+
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Gold", GameInfoOperator.addition, _gold);
+
+            //데이터 수정
+            var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+
+            if (_result.IsSuccess())
+            {
+                _valueChange = true;
+            }
+        }
+
+        if (_valueChange)
+        {
+            var _data = Backend.PlayerData.GetMyData("UserInfo");
+
+            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
+            {
+                _goldText.text = _data.FlattenRows()[0]["Gold"].ToString();
+            }
+        }
+    }
+
+    public void GaveCrystal(int _Crystal, TMPro.TMP_Text _crystalText)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        bool _valueChange = false;
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
+
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Cash", GameInfoOperator.addition, _Crystal);
+
+            //데이터 수정
+            var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+
+            if (_result.IsSuccess())
+            {
+                _valueChange = true;
+            }
+        }
+
+        if (_valueChange)
+        {
+            var _data = Backend.PlayerData.GetMyData("UserInfo");
+
+            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
+            {
+                _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
+            }
+        }
+    }
+
     public void LogOut()
     {
         Backend.BMember.Logout((callback) => {

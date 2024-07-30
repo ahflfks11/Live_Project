@@ -59,6 +59,16 @@ public class LobbyManager : MonoBehaviour
         _gpgsManager.ChangeGoldCrystal(100, 100, _lobbyUIManager._CoinText, _lobbyUIManager._CashText);
     }
 
+    public void GaveGold(int _gold)
+    {
+        _gpgsManager.GaveGold(_gold, _lobbyUIManager._CoinText);
+    }
+
+    public void GaveCrystal(int _crystal)
+    {
+        _gpgsManager.GaveCrystal(_crystal, _lobbyUIManager._CashText);
+    }
+
     public void EnterDungeon()
     {
         Transitioner.Instance.TransitionToScene(3);
