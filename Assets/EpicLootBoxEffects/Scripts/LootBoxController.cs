@@ -14,16 +14,23 @@ public class LootBoxController : MonoBehaviour {
 	public GameObject[] DesFxObjs;
 	public GameObject[] DesIconObjs;
 	private GameObject Lootbox;
+	LobbyUIManager _lobbyUIManager;
 
 	void Start () {
+		_lobbyUIManager = GameObject.FindObjectOfType<LobbyUIManager>();
 		idEffect += 1;
 		idIcon += 1;
 		SetupVfx ();
 		isOpened = false;
+		//OpenBox();
+	}
+
+    private void OnMouseDown()
+    {
 		OpenBox();
 	}
 
-	public void OpenBox()
+    public void OpenBox()
     {
 		if (!isOpened)
 		{
@@ -33,12 +40,17 @@ public class LootBoxController : MonoBehaviour {
 
 	IEnumerator PlayFx() {
 		isOpened = true;
+		Destroy(GameObject.Find("LootBox_Effect"));
 		idEffect = Mathf.Clamp(idEffect, 1, 25);
 		yield return new WaitForSeconds(0.2f);
 		Destroy (Lootbox);
 		Lootbox = Instantiate (IconPrefabs [2], this.transform.position, this.transform.rotation);
+		Lootbox.transform.position = new Vector3(0.5f, 0, 0);
+		Lootbox.transform.SetParent(transform);
 		yield return new WaitForSeconds(0.1f);
-		Instantiate (EffectPrefabs [idEffect], this.transform.position, this.transform.rotation);
+		_lobbyUIManager.MultiGachaUI();
+		GameObject _lootbox_Effect = Instantiate (EffectPrefabs [idEffect], this.transform.position, this.transform.rotation);
+		_lootbox_Effect.transform.SetParent(transform);
 		CameraShake.myCameraShake.ShakeCamera (0.3f, 0.1f);
 	}
 
@@ -50,6 +62,7 @@ public class LootBoxController : MonoBehaviour {
 		
 		yield return new WaitForSeconds(0.1f);
 		Lootbox = Instantiate (IconPrefabs [1], this.transform.position, this.transform.rotation);
+		Lootbox.transform.position = new Vector3(0.5f, 0, 0);
 	}
 
 	public void ChangedFx (int i) {
@@ -61,6 +74,10 @@ public class LootBoxController : MonoBehaviour {
 
 	public void SetupVfx () {
 		Lootbox = Instantiate (IconPrefabs [1], this.transform.position, this.transform.rotation);
+		Lootbox.transform.position = new Vector3(0.5f, 0, 0);
+		Lootbox.transform.SetParent(transform);
+		GameObject _lootBox = Instantiate(EffectPrefabs[idEffect], this.transform.position, this.transform.rotation);
+		_lootBox.transform.SetParent(transform);
 	}
 
 	public void PlayAllVfx (){

@@ -14,6 +14,9 @@ public class LobbyUIManager : MonoBehaviour
     public TMP_Text _CoinText;
     public TMP_Text _CashText;
     public GameObject _shopUI;
+    public DG.Tweening.DOTweenVisualManager _multiGachaUIPanel;
+    public DG.Tweening.DOTweenVisualManager _singleGachaUIPanel;
+
     public DG.Tweening.DOTweenVisualManager _gachaShopUI;
 
     private void Start()
@@ -59,6 +62,37 @@ public class LobbyUIManager : MonoBehaviour
     public void SetCashText(string _cash)
     {
         _CashText.text = _cash;
+    }
+
+    public void CloseLootbox()
+    {
+        Destroy(GameObject.Find("LootBox"));
+    }
+
+    public void MultiGachaUI()
+    {
+        if (_multiGachaUIPanel.enabled)
+        {
+            CloseLootbox();
+            _multiGachaUIPanel.enabled = false;
+        }
+        else
+        {
+            _multiGachaUIPanel.enabled = true;
+        }
+    }
+
+    public void SingleGachaUI()
+    {
+        if (_singleGachaUIPanel.enabled)
+        {
+            CloseLootbox();
+            _singleGachaUIPanel.enabled = false;
+        }
+        else
+        {
+            _singleGachaUIPanel.enabled = true;
+        }
     }
 
     public void NickDecision()

@@ -9,8 +9,13 @@ public class LobbyManager : MonoBehaviour
     LobbyMonster _lobbyMonster;
     GPGSManager _gpgsManager;
     LobbyUIManager _lobbyUIManager;
+    DataManager _dataManager;
 
     public bool _tutorial;
+
+    public GameObject[] _LootBox;
+
+    public List<UnitData> _GachaList;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +37,51 @@ public class LobbyManager : MonoBehaviour
             _gpgsManager = FindObjectOfType<GPGSManager>();
             _gpgsManager.SetValue(_lobbyUIManager._CoinText, _lobbyUIManager._CashText);
         }
+
+        if (_dataManager == null && FindObjectOfType<DataManager>())
+        {
+            _dataManager = FindObjectOfType<DataManager>();
+        }
+    }
+
+    public int SetupGachaList(int _GachaCount)
+    {
+        int _boxlevel = 0;
+        _GachaList = new List<UnitData>();
+
+        while (_GachaList.Count < _GachaCount)
+        {
+            double sum = 0f;
+
+            for (int i = 0; i < _dataManager._data.Length; i++)
+            {
+                sum += _dataManager._data[i]._weight;
+            }
+
+            sum *= Random.value;
+
+            int result_idx = 0;
+
+            for (int i = 0; i < _dataManager._data.Length; i++)
+            {
+                sum -= _dataManager._data[i]._weight;
+                if (sum <= 0)
+                {
+                    result_idx = i;
+                    break;
+                }
+            }
+
+            _GachaList.Add(_dataManager._data[result_idx]._unit);
+
+            if (_boxlevel < _dataManager._data[result_idx]._rarelity)
+            {
+                _boxlevel = _dataManager._data[result_idx]._rarelity;
+            }
+        }
+
+        return _boxlevel;
+        
     }
 
     public void SetCoin(string _coin)
@@ -71,6 +121,14 @@ public class LobbyManager : MonoBehaviour
 
     public void MultiGacha()
     {
+        Destroy(GameObject.Find("LootBox"));
+        int _boxlevel = SetupGachaList(8);
+        GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
+        _GachaboxObject.gameObject.name = "LootBox";
+
+        if (_gpgsManager == null)
+            return;
+
         if (_gpgsManager.LeastCrystal(1600, _lobbyUIManager._CashText))
         {
 
@@ -79,6 +137,15 @@ public class LobbyManager : MonoBehaviour
 
     public void SingleGacha()
     {
+        Destroy(GameObject.Find("LootBox"));
+        int _boxlevel = SetupGachaList(1);
+        GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
+        _GachaboxObject.gameObject.name = "LootBox";
+
+        if (_gpgsManager == null)
+            return;
+
+
         if (_gpgsManager.LeastCrystal(160, _lobbyUIManager._CashText))
         {
 

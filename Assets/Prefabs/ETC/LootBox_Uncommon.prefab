@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.704, y: 1.704}
+  m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
 --- !u!114 &8152183303559097823
 MonoBehaviour:
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idIcon: 0
-  idEffect: 0
+  idEffect: 16
   isOpened: 0
   IconPrefabs:
   - {fileID: 1245167691184882, guid: 93b12d47a5032c24eb73bbf658094ea7, type: 3}

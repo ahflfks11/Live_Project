@@ -19,15 +19,15 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    [System.Serializable]
     public struct Data
     {
         public int _rarelity;
         public double _weight;
-        public int _number;
         public UnitData _unit;
     }
 
-    public Data _data;
+    public Data[] _data;
 
     public static DataManager Instance { get => instance; set => instance = value; }
 }
