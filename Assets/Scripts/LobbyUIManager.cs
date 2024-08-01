@@ -16,13 +16,20 @@ public class LobbyUIManager : MonoBehaviour
     public GameObject _shopUI;
     public DG.Tweening.DOTweenVisualManager _multiGachaUIPanel;
     public DG.Tweening.DOTweenVisualManager _singleGachaUIPanel;
-
     public DG.Tweening.DOTweenVisualManager _gachaShopUI;
+
+    public Gacha_Cotents _multiGachaContent;
+    public Gacha_Cotents _singleGachaContent;
+
+    public Gacha_Cotents MultiGachaContent { get => _multiGachaContent; set => _multiGachaContent = value; }
+    public Gacha_Cotents SingleGachaContent { get => _singleGachaContent; set => _singleGachaContent = value; }
 
     private void Start()
     {
         _lobbyManager = FindObjectOfType<LobbyManager>();
         _gpgsManager = FindObjectOfType<GPGSManager>();
+        MultiGachaContent = _multiGachaUIPanel.GetComponent<Gacha_Cotents>();
+        SingleGachaContent = _singleGachaUIPanel.GetComponent<Gacha_Cotents>();
 
         if (_gpgsManager != null)
         {

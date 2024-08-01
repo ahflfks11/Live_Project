@@ -68,9 +68,15 @@ public class LobbyManager : MonoBehaviour
                 if (sum <= 0)
                 {
                     result_idx = i;
+
                     break;
                 }
             }
+
+            if (_GachaCount > 1)
+                _lobbyUIManager.MultiGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count);
+            else
+                _lobbyUIManager.SingleGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count);
 
             _GachaList.Add(_dataManager._data[result_idx]._unit);
 

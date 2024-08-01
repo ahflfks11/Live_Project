@@ -25,9 +25,17 @@ public class LootBoxController : MonoBehaviour {
 		//OpenBox();
 	}
 
-    private void OnMouseDown()
-    {
-		OpenBox();
+	private void Update()
+	{
+		if (Input.touchCount > 0)
+		{
+			Touch touch = Input.GetTouch(0);
+
+			if (touch.phase == TouchPhase.Ended)
+			{
+				OpenBox();
+			}
+		}
 	}
 
     public void OpenBox()
