@@ -238,7 +238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   FindRange: 6
-  _spr: {fileID: 21300000, guid: a9c3508734c1f9f4bb0c269e6e964b2b, type: 3}
+  _spr: {fileID: 21300000, guid: 8def4ce34506bf843aedea9674378684, type: 3}
   _sprMat: {fileID: 0}
   _myRareColor: {fileID: 6697818386204832046}
 --- !u!114 &3190838574056055902

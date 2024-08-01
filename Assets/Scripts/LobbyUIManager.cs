@@ -76,8 +76,20 @@ public class LobbyUIManager : MonoBehaviour
         Destroy(GameObject.Find("LootBox"));
     }
 
+    public void MultiGachaCleanSpr()
+    {
+        _multiGachaContent.CleanGachaImage();
+    }
+
+    public void SingleGachaCleanSpr()
+    {
+        _singleGachaContent.CleanGachaImage();
+    }
+
     public void MultiGachaUI()
     {
+        SingleGachaCleanSpr();
+
         if (_multiGachaUIPanel.enabled)
         {
             CloseLootbox();
@@ -91,6 +103,8 @@ public class LobbyUIManager : MonoBehaviour
 
     public void SingleGachaUI()
     {
+        MultiGachaCleanSpr();
+
         if (_singleGachaUIPanel.enabled)
         {
             CloseLootbox();

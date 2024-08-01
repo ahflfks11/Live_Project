@@ -74,9 +74,9 @@ public class LobbyManager : MonoBehaviour
             }
 
             if (_GachaCount > 1)
-                _lobbyUIManager.MultiGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count);
+                _lobbyUIManager.MultiGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count, _dataManager._data[result_idx]._rarelity);
             else
-                _lobbyUIManager.SingleGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count);
+                _lobbyUIManager.SingleGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count, _dataManager._data[result_idx]._rarelity);
 
             _GachaList.Add(_dataManager._data[result_idx]._unit);
 
@@ -130,6 +130,7 @@ public class LobbyManager : MonoBehaviour
         Destroy(GameObject.Find("LootBox"));
         int _boxlevel = SetupGachaList(8);
         GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
+        _GachaboxObject.GetComponent<LootBoxController>()._isMuiti = true;
         _GachaboxObject.gameObject.name = "LootBox";
 
         if (_gpgsManager == null)
@@ -146,6 +147,7 @@ public class LobbyManager : MonoBehaviour
         Destroy(GameObject.Find("LootBox"));
         int _boxlevel = SetupGachaList(1);
         GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
+        _GachaboxObject.GetComponent<LootBoxController>()._isMuiti = false;
         _GachaboxObject.gameObject.name = "LootBox";
 
         if (_gpgsManager == null)

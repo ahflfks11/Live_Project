@@ -118,7 +118,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   FindRange: 4
-  _spr: {fileID: 21300000, guid: b279041c6a088864fb050bd8ddd34468, type: 3}
+  _spr: {fileID: 21300000, guid: 36de65bc103fd0b4c9a52db7b8481478, type: 3}
   _sprMat: {fileID: 0}
   _myRareColor: {fileID: 4674713901262141799}
 --- !u!114 &3005495954634449662
@@ -504,7 +504,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_FlipX: 0
   m_FlipY: 0

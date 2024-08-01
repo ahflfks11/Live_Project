@@ -8,7 +8,7 @@ public class LootBoxController : MonoBehaviour {
 	public int idIcon;
 	public int idEffect;
 	public bool isOpened;
-
+	public bool _isMuiti;
 	public GameObject[] IconPrefabs;
 	public GameObject[] EffectPrefabs;
 	public GameObject[] DesFxObjs;
@@ -56,7 +56,10 @@ public class LootBoxController : MonoBehaviour {
 		Lootbox.transform.position = new Vector3(0.5f, 0, 0);
 		Lootbox.transform.SetParent(transform);
 		yield return new WaitForSeconds(0.1f);
-		_lobbyUIManager.MultiGachaUI();
+		if (_isMuiti)
+			_lobbyUIManager.MultiGachaUI();
+		else
+			_lobbyUIManager.SingleGachaUI();
 		GameObject _lootbox_Effect = Instantiate (EffectPrefabs [idEffect], this.transform.position, this.transform.rotation);
 		_lootbox_Effect.transform.SetParent(transform);
 		CameraShake.myCameraShake.ShakeCamera (0.3f, 0.1f);

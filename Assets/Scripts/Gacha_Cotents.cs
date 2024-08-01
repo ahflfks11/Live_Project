@@ -7,13 +7,25 @@ public class Gacha_Cotents : MonoBehaviour
 {
     [SerializeField]
     Image[] _Gacha_Box_Image;
-    
-    public void SetupGachaImage(UnitData _unit, int _dataNumber)
+    [SerializeField]
+    Image[] _Gacha_Background_Image;
+
+    public Sprite[] _backgroundSprite;
+
+    public void SetupGachaImage(UnitData _unit, int _dataNumber, int _rarelity)
     {
         if (_unit._spr != null)
         {
             _Gacha_Box_Image[_dataNumber].sprite = _unit._spr;
-            _Gacha_Box_Image[_dataNumber].color = _unit._myRareColor.color;
+            _Gacha_Background_Image[_dataNumber].sprite = _backgroundSprite[_rarelity];
+        }
+    }
+
+    public void CleanGachaImage()
+    {
+        for (int i = 0; i < _Gacha_Box_Image.Length; i++)
+        {
+            _Gacha_Box_Image[i].sprite = null;
         }
     }
 
