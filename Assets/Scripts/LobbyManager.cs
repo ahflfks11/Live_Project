@@ -32,15 +32,17 @@ public class LobbyManager : MonoBehaviour
 
     private void Update()
     {
+        if (_dataManager == null && FindObjectOfType<DataManager>())
+        {
+            _dataManager = FindObjectOfType<DataManager>();
+        }
+
         if (_gpgsManager == null && FindObjectOfType<GPGSManager>())
         {
             _gpgsManager = FindObjectOfType<GPGSManager>();
             _gpgsManager.SetValue(_lobbyUIManager._CoinText, _lobbyUIManager._CashText);
-        }
-
-        if (_dataManager == null && FindObjectOfType<DataManager>())
-        {
-            _dataManager = FindObjectOfType<DataManager>();
+            if (!_tutorial)
+                _gpgsManager.ReadHeroInfo();
         }
     }
 
@@ -78,6 +80,26 @@ public class LobbyManager : MonoBehaviour
             else
                 _lobbyUIManager.SingleGachaContent.SetupGachaImage(_dataManager._data[result_idx]._unit, _GachaList.Count, _dataManager._data[result_idx]._rarelity);
 
+            bool _result_Hero_Duplication = false;
+
+            for (int i = 0; i < _dataManager.MyHeroList.Count; i++)
+            {
+                if (_dataManager.MyHeroList[i] == _dataManager._data[result_idx]._unit)
+                {
+                    _dataManager.MyHeroLevel[i] = _dataManager.MyHeroLevel[i] + 1;
+                    _result_Hero_Duplication = true;
+                    break;
+                }
+            }
+
+            if (!_result_Hero_Duplication)
+            {
+                _dataManager.MyHeroList.Add(_dataManager._data[result_idx]._unit);
+                _dataManager.MyHeroLevel.Add(0);
+
+                _lobbyUIManager.CreateIcon(_dataManager._data[result_idx]);
+            }
+
             _GachaList.Add(_dataManager._data[result_idx]._unit);
 
             if (_boxlevel < _dataManager._data[result_idx]._rarelity)
@@ -85,6 +107,32 @@ public class LobbyManager : MonoBehaviour
                 _boxlevel = _dataManager._data[result_idx]._rarelity;
             }
         }
+
+        string _tempHeroList = null;
+        string _tempHeroLevel = null;
+
+        for (int i = 0; i < _dataManager.MyHeroList.Count; i++)
+        {
+            for (int j = 0; j < _dataManager._data.Length; j++)
+            {
+                if (_dataManager.MyHeroList[i] == _dataManager._data[j]._unit)
+                {
+                    _tempHeroList += j;
+                    break;
+                }
+            }
+
+            _tempHeroLevel += _dataManager.MyHeroLevel[i];
+
+            if (i < _dataManager.MyHeroList.Count - 1)
+            {
+                _tempHeroList += ",";
+                _tempHeroLevel += ",";
+            }
+        }
+
+        if (_gpgsManager != null)
+            _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel);
 
         return _boxlevel;
         

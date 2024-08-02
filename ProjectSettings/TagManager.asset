@@ -9,6 +9,7 @@ TagManager:
   - Enermy
   - Effects
   - Icon
+  - Inven_Icon
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Unit
   - Enermy
   - Effect
-  - 
+  - CameraEffect
   - 
   - 
   - 

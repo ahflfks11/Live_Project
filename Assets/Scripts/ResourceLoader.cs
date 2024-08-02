@@ -11,7 +11,6 @@ public class ResourceLoader : MonoBehaviour
 
     private void Start()
     {
-        Transitioner.Instance._automaticallyTransitionIn = false;
     }
 
     private void OnEnable()
@@ -36,8 +35,8 @@ public class ResourceLoader : MonoBehaviour
         if (www.result == UnityWebRequest.Result.Success)
         {
             _img.texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
-            Transitioner.Instance.FinishTransition();
             Transitioner.Instance._automaticallyTransitionIn = true;
+            Transitioner.Instance.FinishTransition();
         }
     }
 }

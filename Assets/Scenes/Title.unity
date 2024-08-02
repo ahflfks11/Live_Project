@@ -924,6 +924,10 @@ PrefabInstance:
       value: WiggleDiamondTransitioner
       objectReference: {fileID: 0}
     - target: {fileID: 130642, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 130642, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -983,6 +987,10 @@ PrefabInstance:
       propertyPath: _transitionCamera
       value: 
       objectReference: {fileID: 1455025493}
+    - target: {fileID: 11405446, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
+      propertyPath: dontDestroyOnLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11405446, guid: 688699c4e4a5de04e8a3245d5c09529c, type: 3}
       propertyPath: _automaticallyTransitionIn
       value: 0

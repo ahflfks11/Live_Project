@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using System.Linq;
 
 public class LobbyUIManager : MonoBehaviour
 {
@@ -14,15 +16,19 @@ public class LobbyUIManager : MonoBehaviour
     public TMP_Text _CoinText;
     public TMP_Text _CashText;
     public GameObject _shopUI;
-    public DG.Tweening.DOTweenVisualManager _multiGachaUIPanel;
-    public DG.Tweening.DOTweenVisualManager _singleGachaUIPanel;
-    public DG.Tweening.DOTweenVisualManager _gachaShopUI;
+    public DOTweenVisualManager _multiGachaUIPanel;
+    public DOTweenVisualManager _singleGachaUIPanel;
+    public DOTweenVisualManager _gachaShopUI;
+    [SerializeField] private DOTweenVisualManager _character_InvenPanel;
+    [SerializeField] private Transform _Inven_Contents;
+    Gacha_Cotents _multiGachaContent;
+    Gacha_Cotents _singleGachaContent;
 
-    public Gacha_Cotents _multiGachaContent;
-    public Gacha_Cotents _singleGachaContent;
+    [SerializeField] private Character_Icon _icon;
 
     public Gacha_Cotents MultiGachaContent { get => _multiGachaContent; set => _multiGachaContent = value; }
     public Gacha_Cotents SingleGachaContent { get => _singleGachaContent; set => _singleGachaContent = value; }
+    public DOTweenVisualManager Character_InvenPanel { get => _character_InvenPanel; set => _character_InvenPanel = value; }
 
     private void Start()
     {
@@ -58,6 +64,18 @@ public class LobbyUIManager : MonoBehaviour
         else
         {
             _gachaShopUI.enabled =true;
+        }
+    }
+
+    public void ChacterInvenPanel()
+    {
+        if (_character_InvenPanel.enabled)
+        {
+            _character_InvenPanel.enabled = false;
+        }
+        else
+        {
+            _character_InvenPanel.enabled = true;
         }
     }
 
@@ -129,7 +147,39 @@ public class LobbyUIManager : MonoBehaviour
         }
     }
 
+    public void CreateIcon(DataManager.Data _data)
+    {
+        Character_Icon Inven_Icon = Instantiate(_icon, Vector3.zero, Quaternion.identity);
+        Inven_Icon.gameObject.name = _data._rarelity.ToString();
+        Inven_Icon.transform.SetParent(_Inven_Contents);
+        Inven_Icon.transform.localScale = _icon.transform.localScale;
+        Inven_Icon.MyData = _data;
+        Inven_Icon.SetImage(_data);
+
+        IconPosChange();
+    }
+
+    public void IconPosChange()
+    {
+        GameObject[] _icons = GameObject.FindGameObjectsWithTag("Inven_Icon");
+        //OrderBy <==> OrderByDescending
+        _icons = _icons.OrderByDescending(go => go.name).ToArray();
+        for (int i = 0; i < _icons.Length; i++)
+        {
+            _icons[i].transform.SetSiblingIndex(i);
+        }
+    }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            CreateIcon(DataManager.Instance._data[Random.Range(0, DataManager.Instance._data.Length)]);
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            IconPosChange();
+        }
+
     }
 }

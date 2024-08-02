@@ -14,6 +14,14 @@ public class GameData
         result.Add("Gold", _gold);
         return result;
     }
+
+    public Param UserHeroInfo(string _heroList, string _herolevel)
+    {
+        Param result = new Param();
+        result.Add("HeroList", _heroList);
+        result.Add("HeroLevel", _herolevel);
+        return result;
+    }
 }
 
 public class GPGSManager : MonoBehaviour
@@ -60,6 +68,11 @@ public class GPGSManager : MonoBehaviour
     void Update()
     {
         Backend.AsyncPoll();
+
+        if(_logText == null && GameObject.Find("LogText"))
+        {
+            _logText = GameObject.Find("LogText").GetComponent<Text>();
+        }
     }
 
     void ProcessAuthentication(SignInStatus status)
@@ -125,8 +138,6 @@ public class GPGSManager : MonoBehaviour
         else
         {
             string id = Backend.BMember.GetGuestID();
-            Debug.Log("로컬 기기에 저장된 아이디 :" + id);
-            Debug.Log(bro);
         }
     }
 
@@ -250,6 +261,30 @@ public class GPGSManager : MonoBehaviour
             Backend.BMember.GetUserInfo((callback) =>
             {
                 var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 0, 0));
+                CreateHeroInfo();
+            });
+        }
+    }
+
+    public void CreateHeroInfo()
+    {
+        var bro = Backend.PlayerData.GetMyData("UserHeroInfo");
+        // 불러오기에 실패할 경우
+        if (bro.IsSuccess() == false)
+        {
+
+        }
+        // 불러오기에는 성공했으나 데이터가 존재하지 않는 경우
+        if (bro.IsSuccess() && bro.FlattenRows().Count <= 0)
+        {
+            Backend.BMember.GetUserInfo((callback) =>
+            {
+                var bro = Backend.GameData.Insert("UserHeroInfo", gameTable.UserHeroInfo("0,1,2,3", "0,0,0,0"));
+
+                if (bro.IsSuccess())
+                {
+                    ReadHeroInfo();
+                }
             });
         }
     }
@@ -287,6 +322,41 @@ public class GPGSManager : MonoBehaviour
                 _goldText.text = _data.FlattenRows()[0]["Gold"].ToString();
                 _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
             }
+        }
+    }
+
+    public void WriteHeroInfo(string _heroList, string _heroLevel)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserHeroInfo");
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            Backend.PlayerData.UpdateMyLatestData("UserHeroInfo", gameTable.UserHeroInfo(_heroList, _heroLevel));
+        }
+    }
+
+    public void ReadHeroInfo()
+    {
+        var bro = Backend.PlayerData.GetMyData("UserHeroInfo");
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
+            string _heroInfo = bro.FlattenRows()[0]["HeroList"].ToString();
+            string _heroInfo_Level = bro.FlattenRows()[0]["HeroLevel"].ToString();
+            string[] _myHeroList = _heroInfo.Split(',');
+            string[] _myHeroLevel = _heroInfo_Level.Split(',');
+
+            for (int i = 0; i < _myHeroList.Length; i++)
+            {
+                DataManager.Instance.MyHeroList.Add(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())]._unit);
+                DataManager.Instance.MyHeroLevel.Add(int.Parse(_myHeroLevel[i]));
+                GameObject.Find("LobbyUIManager").GetComponent<LobbyUIManager>().CreateIcon(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())]);
+            }
+
+
+
+            GameObject[] _icons = GameObject.FindGameObjectsWithTag("Inven_Icon");
         }
     }
 

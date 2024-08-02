@@ -5,19 +5,15 @@ using UnityEngine.UI;
 
 public class Gacha_Cotents : MonoBehaviour
 {
-    [SerializeField]
-    Image[] _Gacha_Box_Image;
-    [SerializeField]
-    Image[] _Gacha_Background_Image;
-
-    public Sprite[] _backgroundSprite;
+    [SerializeField] Image[] _Gacha_Box_Image;
+    [SerializeField] Image[] _Gacha_Background_Image;
 
     public void SetupGachaImage(UnitData _unit, int _dataNumber, int _rarelity)
     {
         if (_unit._spr != null)
         {
             _Gacha_Box_Image[_dataNumber].sprite = _unit._spr;
-            _Gacha_Background_Image[_dataNumber].sprite = _backgroundSprite[_rarelity];
+            _Gacha_Background_Image[_dataNumber].sprite = DataManager.Instance.BackgroundSprite[_rarelity];
         }
     }
 
