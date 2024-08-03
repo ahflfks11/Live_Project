@@ -189,6 +189,10 @@ MonoBehaviour:
     _unit: 5
     _type: 0
     _multiUnit: []
+    _unit_name: "[\uD788\uB4E0] \uD53C\uC758 \uC5EC\uC81C"
+    _comment: "\uCC44\uCC0D\uC744 \uC774\uC6A9\uD558\uC5EC \uAC15\uB825\uD55C \uACF5\uACA9\uC744
+      \uAC00\uD558\uB294 \uC720\uB2DB\uC785\uB2C8\uB2E4. \uAE34 \uC0AC\uAC70\uB9AC\uC640
+      \uB192\uC740 \uACF5\uACA9\uB825\uC744 \uBCF4\uC720\uD569\uB2C8\uB2E4."
     attackCount: 3
     attackDelay: 1.5
     attackSpeed: 5

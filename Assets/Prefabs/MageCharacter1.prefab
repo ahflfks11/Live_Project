@@ -189,10 +189,14 @@ MonoBehaviour:
     _unit: 3
     _type: 2
     _multiUnit: []
+    _unit_name: "\uACAC\uC2B5 \uB9C8\uBC95\uC0AC"
+    _comment: "\uC801\uB2F9\uD55C \uC0AC\uAC70\uB9AC\uC640 \uC900\uC218\uD55C \uACF5\uACA9\uB825\uC744
+      \uAC00\uC9C4 \uC720\uB2DB\uC785\uB2C8\uB2E4.\uC911\uAC70\uB9AC\uC9C0\uB9CC
+      \uAC15\uB825\uD55C \uB9C8\uBC95\uC744 \uAD6C\uC0AC\uD569\uB2C8\uB2E4."
     attackCount: 1
     attackDelay: 1.5
     attackSpeed: 5
-    dmg: 1
+    dmg: 2
     rarelityLevel: 0
     EvolutionAvailability: 1
     specialUnit: 0
@@ -202,7 +206,7 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  FindRange: 6
+  FindRange: 4
   _spr: {fileID: 21300000, guid: cdc713caf84cc1d4f95237d7464fadc4, type: 3}
   _sprMat: {fileID: 0}
   _myRareColor: {fileID: 1653568939936602800}

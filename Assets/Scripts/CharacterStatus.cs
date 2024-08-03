@@ -16,12 +16,24 @@ public class CharacterStatus : MonoBehaviour
     [SerializeField] private TMP_Text _up_distance_Text;
     GPGSManager _gpgsManager;
 
-    private UnitData _unit;
+    private DataManager.Data _data;
     private int _number;
 
     private void Start()
     {
         _gpgsManager = FindObjectOfType<GPGSManager>();
+    }
+
+    private void Update()
+    {
+        if (DataManager.Instance.NowLevel.Count > 0)
+        {
+            if (DataManager.Instance.NowLevel[_number] > 0)
+            {
+                _up_dmg_Text.text = DataManager.Instance.NowLevel[_number].ToString();
+                _up_distance_Text.text = DataManager.Instance.NowLevel[_number].ToString();
+            }
+        }
     }
 
     public void Save()
@@ -41,6 +53,12 @@ public class CharacterStatus : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
-    public UnitData Unit { get => _unit; set => _unit = value; }
     public int Number { get => _number; set => _number = value; }
+    public DataManager.Data Data { get => _data; set => _data = value; }
+    public Image Rarelity_background { get => _rarelity_background; set => _rarelity_background = value; }
+    public Image Profile { get => _profile; set => _profile = value; }
+    public TMP_Text NameText { get => _nameText; set => _nameText = value; }
+    public TMP_Text Comment_Text { get => _comment_Text; set => _comment_Text = value; }
+    public TMP_Text Dmg_Text { get => _dmg_Text; set => _dmg_Text = value; }
+    public TMP_Text Distance_Text { get => _distance_Text; set => _distance_Text = value; }
 }

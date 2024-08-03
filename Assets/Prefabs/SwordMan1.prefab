@@ -308,10 +308,15 @@ MonoBehaviour:
     _unit: 1
     _type: 0
     _multiUnit: []
+    _unit_name: "\uACAC\uC2B5 \uC804\uC0AC"
+    _comment: "\uC9E7\uC740 \uC0AC\uAC70\uB9AC\uB97C \uAC00\uC9C0\uACE0 \uC788\uC9C0\uB9CC
+      \uB9E4\uC6B0 \uAC15\uB825\uD55C \uACF5\uACA9\uB825\uC744 \uAC00\uC9C4 \uC720\uB2DB\uC785\uB2C8\uB2E4.
+      \uC811\uADFC\uD574 \uC624\uB294 \uC801\uB4E4\uC744 \uADFC\uAC70\uB9AC\uC5D0\uC11C
+      \uB9C9\uC544\uB0C5\uB2C8\uB2E4."
     attackCount: 1
     attackDelay: 1.5
     attackSpeed: 3
-    dmg: 2
+    dmg: 3
     rarelityLevel: 0
     EvolutionAvailability: 1
     specialUnit: 0

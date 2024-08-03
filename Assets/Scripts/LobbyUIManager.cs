@@ -24,11 +24,14 @@ public class LobbyUIManager : MonoBehaviour
     Gacha_Cotents _multiGachaContent;
     Gacha_Cotents _singleGachaContent;
 
+    [SerializeField] CharacterStatus _status;
+
     [SerializeField] private Character_Icon _icon;
 
     public Gacha_Cotents MultiGachaContent { get => _multiGachaContent; set => _multiGachaContent = value; }
     public Gacha_Cotents SingleGachaContent { get => _singleGachaContent; set => _singleGachaContent = value; }
     public DOTweenVisualManager Character_InvenPanel { get => _character_InvenPanel; set => _character_InvenPanel = value; }
+    public CharacterStatus Status { get => _status; set => _status = value; }
 
     private void Start()
     {

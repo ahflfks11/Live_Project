@@ -21,6 +21,21 @@ public class Character_Icon : MonoBehaviour
         _back_Image.sprite = DataManager.Instance.BackgroundSprite[_data._rarelity];
     }
 
+    public void OpenCharacterStatus()
+    {
+        LobbyUIManager _lobbyUIManager = FindObjectOfType<LobbyUIManager>();
+        _lobbyUIManager.Status.gameObject.SetActive(true);
+        _lobbyUIManager.Status.Data = _myData;
+        _lobbyUIManager.Status.Number = Number;
+        _lobbyUIManager.Status.Profile.sprite = _spr.sprite;
+        _lobbyUIManager.Status.Rarelity_background.sprite = _back_Image.sprite;
+        _lobbyUIManager.Status.NameText.text = _myData._unit._data._unit_name;
+        _lobbyUIManager.Status.Comment_Text.text = _myData._unit._data._comment;
+        _lobbyUIManager.Status.Dmg_Text.text = _myData._unit._data.dmg.ToString();
+        _lobbyUIManager.Status.Distance_Text.text = _myData._unit.FindRange.ToString();
+        //Status.gameObject.SetActive(true);
+    }
+
     private void Update()
     {
         if (DataManager.Instance.NowLevel.Count > 0)

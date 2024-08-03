@@ -1151,7 +1151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7334535, y: 9273550}
+  m_AnchoredPosition: {x: -7434585, y: 9400050}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &113287827
@@ -2121,7 +2121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -46278540, y: 82272960}
+  m_AnchoredPosition: {x: -46402740, y: 82493760}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &267660037
@@ -5389,7 +5389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39240720, y: 69761280}
+  m_AnchoredPosition: {x: -39364920, y: 69982080}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &683055605
@@ -8199,6 +8199,7 @@ MonoBehaviour:
   _gachaShopUI: {fileID: 1640719124}
   _character_InvenPanel: {fileID: 1168691020}
   _Inven_Contents: {fileID: 933983448}
+  _status: {fileID: 56142655162960508}
   _icon: {fileID: 1535907535644394419, guid: 2b3f695ccb7860c43b422680117e2a0b, type: 3}
 --- !u!4 &889503105
 Transform:
@@ -8544,7 +8545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000009603333}
+  m_AnchoredPosition: {x: 0, y: 26565.932}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &933983449
@@ -10407,7 +10408,7 @@ RectTransform:
   m_GameObject: {fileID: 1168691014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1369136998}
@@ -16950,7 +16951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &56142655162960504
 CanvasRenderer:
   m_ObjectHideFlags: 0
