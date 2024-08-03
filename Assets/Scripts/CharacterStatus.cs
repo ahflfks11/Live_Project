@@ -30,8 +30,13 @@ public class CharacterStatus : MonoBehaviour
         {
             if (DataManager.Instance.NowLevel[_number] > 0)
             {
-                _up_dmg_Text.text = DataManager.Instance.NowLevel[_number].ToString();
-                _up_distance_Text.text = DataManager.Instance.NowLevel[_number].ToString();
+                _up_dmg_Text.text = "+" + DataManager.Instance.NowLevel[_number].ToString();
+                _up_distance_Text.text = "+" + DataManager.Instance.NowLevel[_number].ToString();
+            }
+            else
+            {
+                _up_dmg_Text.text = "";
+                _up_distance_Text.text = "";
             }
         }
     }
