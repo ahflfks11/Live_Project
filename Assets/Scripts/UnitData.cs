@@ -30,6 +30,8 @@ public class UnitData : MonoBehaviour
         public Unit _unit;
         public UnitType _type;
         public GameObject[] _multiUnit;
+        public string _unit_name;
+        public string _comment;
         public int attackCount;
         public float attackDelay;
         public float attackSpeed;

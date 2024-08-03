@@ -1,6 +1,7 @@
 using BackEnd;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameData
@@ -15,11 +16,12 @@ public class GameData
         return result;
     }
 
-    public Param UserHeroInfo(string _heroList, string _herolevel)
+    public Param UserHeroInfo(string _heroList, string _herolevel,string _nowLevel)
     {
         Param result = new Param();
         result.Add("HeroList", _heroList);
         result.Add("HeroLevel", _herolevel);
+        result.Add("NowLevel", _nowLevel);
         return result;
     }
 }
@@ -279,7 +281,7 @@ public class GPGSManager : MonoBehaviour
         {
             Backend.BMember.GetUserInfo((callback) =>
             {
-                var bro = Backend.GameData.Insert("UserHeroInfo", gameTable.UserHeroInfo("0,1,2,3", "0,0,0,0"));
+                var bro = Backend.GameData.Insert("UserHeroInfo", gameTable.UserHeroInfo("0,1,2,3", "0,0,0,0", "0,0,0,0"));
 
                 if (bro.IsSuccess())
                 {
@@ -325,14 +327,45 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
-    public void WriteHeroInfo(string _heroList, string _heroLevel)
+    public void WriteHeroInfo(string _heroList, string _heroLevel, string _nowLevel)
     {
         var bro = Backend.PlayerData.GetMyData("UserHeroInfo");
 
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
-            Backend.PlayerData.UpdateMyLatestData("UserHeroInfo", gameTable.UserHeroInfo(_heroList, _heroLevel));
+            Backend.PlayerData.UpdateMyLatestData("UserHeroInfo", gameTable.UserHeroInfo(_heroList, _heroLevel, _nowLevel));
         }
+    }
+
+    public void SaveLevel(List<int> _nowlevelList)
+    {
+        string _nowLevel = null;
+        string _HeroList = null;
+        string _HeroLevel = null;
+
+        for (int i = 0; i < _nowlevelList.Count; i++)
+        {
+            for (int j = 0; j < DataManager.Instance._data.Length; j++)
+            {
+                if (DataManager.Instance._data[j]._unit == DataManager.Instance.MyHeroList[i])
+                {
+                    _HeroList += j;
+                    break;
+                }
+            }
+
+            _nowLevel += _nowlevelList[i].ToString();
+            _HeroLevel += DataManager.Instance.MyHeroLevel[i].ToString();
+
+            if (i < _nowlevelList.Count - 1)
+            {
+                _nowLevel += ",";
+                _HeroLevel += ",";
+                _HeroList += ",";
+            }
+        }
+
+        WriteHeroInfo(_HeroList, _HeroLevel, _nowLevel);
     }
 
     public void ReadHeroInfo()
@@ -341,22 +374,21 @@ public class GPGSManager : MonoBehaviour
 
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
+            LobbyUIManager _lobbyManager = GameObject.Find("LobbyUIManager").GetComponent<LobbyUIManager>();
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
             string _heroInfo = bro.FlattenRows()[0]["HeroList"].ToString();
             string _heroInfo_Level = bro.FlattenRows()[0]["HeroLevel"].ToString();
+            string _heroInfo_NowLevel = bro.FlattenRows()[0]["NowLevel"].ToString();
             string[] _myHeroList = _heroInfo.Split(',');
             string[] _myHeroLevel = _heroInfo_Level.Split(',');
-
+            string[] _myNowLevel = _heroInfo_NowLevel.Split(',');
             for (int i = 0; i < _myHeroList.Length; i++)
             {
                 DataManager.Instance.MyHeroList.Add(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())]._unit);
                 DataManager.Instance.MyHeroLevel.Add(int.Parse(_myHeroLevel[i]));
-                GameObject.Find("LobbyUIManager").GetComponent<LobbyUIManager>().CreateIcon(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())]);
+                DataManager.Instance.NowLevel.Add(int.Parse(_myNowLevel[i]));
+                _lobbyManager.CreateIcon(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())], int.Parse(_myHeroList[i].ToString()));
             }
-
-
-
-            GameObject[] _icons = GameObject.FindGameObjectsWithTag("Inven_Icon");
         }
     }
 

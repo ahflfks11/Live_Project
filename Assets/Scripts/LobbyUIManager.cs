@@ -147,13 +147,14 @@ public class LobbyUIManager : MonoBehaviour
         }
     }
 
-    public void CreateIcon(DataManager.Data _data)
+    public void CreateIcon(DataManager.Data _data, int _number)
     {
         Character_Icon Inven_Icon = Instantiate(_icon, Vector3.zero, Quaternion.identity);
         Inven_Icon.gameObject.name = _data._rarelity.ToString();
         Inven_Icon.transform.SetParent(_Inven_Contents);
         Inven_Icon.transform.localScale = _icon.transform.localScale;
         Inven_Icon.MyData = _data;
+        Inven_Icon.Number = _number;
         Inven_Icon.SetImage(_data);
 
         IconPosChange();
@@ -174,7 +175,8 @@ public class LobbyUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            CreateIcon(DataManager.Instance._data[Random.Range(0, DataManager.Instance._data.Length)]);
+            int _number = Random.Range(0, DataManager.Instance._data.Length);
+            CreateIcon(DataManager.Instance._data[_number], _number);
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {

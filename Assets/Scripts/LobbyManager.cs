@@ -96,8 +96,8 @@ public class LobbyManager : MonoBehaviour
             {
                 _dataManager.MyHeroList.Add(_dataManager._data[result_idx]._unit);
                 _dataManager.MyHeroLevel.Add(0);
-
-                _lobbyUIManager.CreateIcon(_dataManager._data[result_idx]);
+                _dataManager.NowLevel.Add(0);
+                _lobbyUIManager.CreateIcon(_dataManager._data[result_idx], result_idx);
             }
 
             _GachaList.Add(_dataManager._data[result_idx]._unit);
@@ -110,6 +110,7 @@ public class LobbyManager : MonoBehaviour
 
         string _tempHeroList = null;
         string _tempHeroLevel = null;
+        string _tempNowLevel = null;
 
         for (int i = 0; i < _dataManager.MyHeroList.Count; i++)
         {
@@ -123,16 +124,18 @@ public class LobbyManager : MonoBehaviour
             }
 
             _tempHeroLevel += _dataManager.MyHeroLevel[i];
+            _tempNowLevel += _dataManager.NowLevel[i];
 
             if (i < _dataManager.MyHeroList.Count - 1)
             {
                 _tempHeroList += ",";
                 _tempHeroLevel += ",";
+                _tempNowLevel += ",";
             }
         }
 
         if (_gpgsManager != null)
-            _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel);
+            _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel, _tempNowLevel);
 
         return _boxlevel;
         
