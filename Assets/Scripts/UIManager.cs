@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         {
             bool _isOpen = false;
 
-            for (int i = 0; i < GameManager.Instance.UnitManager._soldiers.Length; i++)
+            for (int i = 0; i < GameManager.Instance.UnitManager._soldiers.Count; i++)
             {
                 if (GameManager.Instance.UnitManager._soldiers[i].GetComponent<UnitData>()._data._unit == _data._data._unit && _data._data.rarelityLevel + 1 == GameManager.Instance.UnitManager._soldiers[i].GetComponent<UnitData>()._data.rarelityLevel)
                 {

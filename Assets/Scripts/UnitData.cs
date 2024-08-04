@@ -194,7 +194,7 @@ public class UnitData : MonoBehaviour
                 }
             }
 
-            for (int i = 0; i < UnitManager._soldiers.Length; i++)
+            for (int i = 0; i < UnitManager._soldiers.Count; i++)
             {
                 if (UnitManager._soldiers[i].GetComponent<UnitData>()._data._unit == _data._unit && _data.rarelityLevel + 1 == UnitManager._soldiers[i].GetComponent<UnitData>()._data.rarelityLevel)
                 {

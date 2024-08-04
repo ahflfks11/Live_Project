@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class UnitManager : MonoBehaviour
 {
 
-    public GameObject[] _soldiers;
+    public List<GameObject> _soldiers;
     public List<GameObject> _spawnList;
+
     int number = 0;
     float rndRangeX = 3f;
     float rndRangeY = 3f;
     public int maxCount = 10;
 
     public int maxSpawnlevel = 0;
-
+    
     public List<UnitData> ck_List = new List<UnitData>();
     List<UnitData> temp_ck_List = new List<UnitData>();
 
@@ -24,6 +26,34 @@ public class UnitManager : MonoBehaviour
             return false;
 
         return true;
+    }
+
+    private void Start()
+    {
+        if (GameObject.Find("DataManager"))
+        {
+            _soldiers = new List<GameObject>();
+
+            for (int i = 0; i < DataManager.Instance.MyHeroList.Count; i++)
+            {
+                if (DataManager.Instance.MyHeroList[i]._data.specialUnit)
+                {
+                    _soldiers.Add(DataManager.Instance.MyHeroList[i].gameObject);
+                }
+                else
+                {
+                    for (int j = 0; j < DataManager.Instance._data.Length; j++)
+                    {
+                        if (DataManager.Instance.MyHeroList[i]._data._unit == DataManager.Instance._data[j]._unit._data._unit)
+                        {
+                            _soldiers.Add(DataManager.Instance._data[j]._unit.gameObject);
+                        }
+                    }
+                }
+            }
+
+            _soldiers = _soldiers.Distinct().ToList();
+        }
     }
 
     public void RemoveUnit(UnitData.Unit[] _data)
@@ -133,7 +163,7 @@ public class UnitManager : MonoBehaviour
     public void SpawnUnit(Vector3 pos)
     {
         
-        int rnd_UnitNumber = Random.Range(0, _soldiers.Length);
+        int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
 
         if (!CheckSpawn(_soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data._multiUnit) || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.rarelityLevel > maxSpawnlevel || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.specialUnit)
         {
@@ -147,7 +177,7 @@ public class UnitManager : MonoBehaviour
     public void SpecialSpawnUnit(Vector3 pos)
     {
 
-        int rnd_UnitNumber = Random.Range(0, _soldiers.Length);
+        int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
 
         if (!CheckSpawn(_soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data._multiUnit) || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.rarelityLevel > maxSpawnlevel + 1)
         {
