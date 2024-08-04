@@ -14,6 +14,8 @@ public class CharacterStatus : MonoBehaviour
     [SerializeField] private TMP_Text _distance_Text;
     [SerializeField] private TMP_Text _up_dmg_Text;
     [SerializeField] private TMP_Text _up_distance_Text;
+    [SerializeField] private Image _levelUpImage;
+    [SerializeField] private TMP_Text _herolevelText;
     GPGSManager _gpgsManager;
 
     private DataManager.Data _data;
@@ -38,6 +40,17 @@ public class CharacterStatus : MonoBehaviour
                 _up_dmg_Text.text = "";
                 _up_distance_Text.text = "";
             }
+
+            if (DataManager.Instance.MyHeroLevel[Number] > DataManager.Instance.NowLevel[Number])
+            {
+                _levelUpImage.enabled = true;
+            }
+            else
+            {
+                _levelUpImage.enabled = false;
+            }
+
+            _herolevelText.text = DataManager.Instance.NowLevel[Number] + "/" + DataManager.Instance.MyHeroLevel[Number];
         }
     }
 
@@ -55,6 +68,8 @@ public class CharacterStatus : MonoBehaviour
 
     public void Close()
     {
+        _up_dmg_Text.text = "";
+        _up_distance_Text.text = "";
         this.gameObject.SetActive(false);
     }
 
