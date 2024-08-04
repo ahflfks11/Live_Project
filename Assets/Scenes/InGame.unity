@@ -43769,6 +43769,8 @@ MonoBehaviour:
   maxCount: 12
   maxSpawnlevel: 0
   ck_List: []
+  _dmgFont: {fileID: 6072668251158451623, guid: e2ba23cbc89cf424385e99cfba206030,
+    type: 3}
 --- !u!1 &1265148431
 GameObject:
   m_ObjectHideFlags: 0

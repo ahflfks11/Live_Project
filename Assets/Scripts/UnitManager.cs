@@ -19,6 +19,10 @@ public class UnitManager : MonoBehaviour
     public List<UnitData> ck_List = new List<UnitData>();
     List<UnitData> temp_ck_List = new List<UnitData>();
 
+    [SerializeField] private DamageFonts _dmgFont;
+
+    public DamageFonts DmgFont { get => _dmgFont; set => _dmgFont = value; }
+
     public bool CheckSpawn(GameObject[] _data)
     {
 

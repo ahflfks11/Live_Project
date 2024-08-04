@@ -92,6 +92,8 @@ public class UnitData : MonoBehaviour
             {
                 targetEnermy.GetComponent<EnermyControl>().MobHit(_data.dmg);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
+                DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
+                _dmgFont.SetText(_data.dmg, targetEnermy.transform);
                 Destroy(_effect, 1f);
             }
         }
@@ -105,6 +107,8 @@ public class UnitData : MonoBehaviour
                     {
                         enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
                         GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
+                        DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                        _dmgFont.SetText(_data.dmg, enermys[i].transform);
                         Destroy(_effect, 1f);
                     }
                 }
@@ -114,6 +118,8 @@ public class UnitData : MonoBehaviour
                     {
                         enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
                         GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
+                        DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                        _dmgFont.SetText(_data.dmg, enermys[i].transform);
                         Destroy(_effect, 1f);
                     }
                 }
