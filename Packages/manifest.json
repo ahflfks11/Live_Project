@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.litefeel.bitmapfontimporter": "file:C:/Users/ahflf/Downloads/Unity-BitmapFontImporter-3.3.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.adaptiveperformance.google.android": "1.3.1",

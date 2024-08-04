@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.litefeel.bitmapfontimporter": {
+      "version": "file:C:/Users/ahflf/Downloads/Unity-BitmapFontImporter-3.3.0",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "7.0.11",
       "depth": 1,
