@@ -578,6 +578,18 @@ MonoBehaviour:
   - {r: 0.93840027, g: 0, b: 1, a: 0.49019608}
   - {r: 1, g: 0.1373159, b: 0, a: 0.49019608}
   _hiddenColor: {r: 0, g: 0.8089638, b: 1, a: 0.49019608}
+--- !u!114 &268349913 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 8377167039117666430}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &269860881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,6 +747,11 @@ PrefabInstance:
       propertyPath: m_text
       value: "\uD2B9\uC218/\uD788\uB4E0 \uAC15\uD654"
       objectReference: {fileID: 0}
+    - target: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+        type: 3}
+      propertyPath: m_text
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84b2cd96e656de4abf30dd630c29bac, type: 3}
 --- !u!1 &270323622
@@ -777,7 +794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2119104}
+  m_AnchoredPosition: {x: 0, y: 194220}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &270323624
@@ -1977,6 +1994,7 @@ MonoBehaviour:
   _RevolutionImageObject: {fileID: 563751997395071839, guid: 10eda6c5411d4d24db022714426621cf,
     type: 3}
   _EnforceShopPanel: {fileID: 773286156}
+  _enforceUI: {fileID: 773286157}
 --- !u!1 &749234825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2047,7 @@ GameObject:
   - component: {fileID: 773286154}
   - component: {fileID: 773286156}
   - component: {fileID: 773286155}
+  - component: {fileID: 773286157}
   m_Layer: 5
   m_Name: AbilityPanel
   m_TagString: Untagged
@@ -2188,6 +2207,55 @@ MonoBehaviour:
   preset: 0
   onEnableBehaviour: 3
   onDisableBehaviour: 2
+--- !u!114 &773286157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773286152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac77ba130b412e4a96e5b46d7f853d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelUpLabel: {fileID: 8377167038964396745}
+  _dmgUpNormalCoinText: {fileID: 268349913}
+  _dmgUpRareCoinText: {fileID: 2057205430}
+  _dmgUpLegendCoinText: {fileID: 996134429}
+  _dmgUpHiddenCoinText: {fileID: 1723737258}
+  _levelUpCoinText: {fileID: 8377167038964396745}
+  _color:
+  - {r: 0.41176474, g: 0.7843138, b: 1, a: 1}
+  - {r: 0.86666673, g: 0.41176474, b: 1, a: 1}
+  - {r: 0.9921569, g: 0.41176474, b: 0.44705886, a: 1}
+  - {r: 0.41176474, g: 1, b: 0.9490197, a: 1}
+  _normalEnforce_Coin:
+  - 10
+  - 15
+  - 20
+  - 25
+  - 30
+  _rareEnforce_Coin:
+  - 30
+  - 45
+  - 60
+  - 80
+  - 100
+  _legendEnforce_Coin:
+  - 50
+  - 80
+  - 100
+  - 120
+  - 140
+  - 160
+  _hiddenEnforce_Coin:
+  - 30
+  - 40
+  - 50
+  - 60
+  - 70
+  - 80
 --- !u!1 &891752402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2369,18 @@ Transform:
   m_Father: {fileID: 749234827}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &996134429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2130838726}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023550677
 GameObject:
   m_ObjectHideFlags: 0
@@ -43418,11 +43498,6 @@ MonoBehaviour:
   - {fileID: 3190838574056055898, guid: 104255b417e4a634abf09b3caad9dd26, type: 3}
   - {fileID: 8281123222685549507, guid: 5a8f2400dadc71a498e19a5345d25b88, type: 3}
   _spawnList: []
-  normalEnforceDmg: 0
-  _normalEnforce_Coin: []
-  _rareEnforce_Coin: []
-  _legendEnforce_Coin: []
-  _hiddenEnforce_Coin: []
   maxCount: 12
   maxSpawnlevel: 0
   ck_List: []
@@ -43564,7 +43639,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &1340335396
 RectTransform:
@@ -44024,6 +44099,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2115944056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1723737258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 269860881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1787158407
 GameObject:
   m_ObjectHideFlags: 0
@@ -44518,6 +44605,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0
+--- !u!114 &2057205430 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+    type: 3}
+  m_PrefabInstance: {fileID: 2115944056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2115944056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44679,6 +44778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "\uD76C\uADC0\uD568 \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+        type: 3}
+      propertyPath: m_text
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84b2cd96e656de4abf30dd630c29bac, type: 3}
@@ -44848,6 +44952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: "\uC804\uC124 \uAC15\uD654"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+        type: 3}
+      propertyPath: m_text
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84b2cd96e656de4abf30dd630c29bac, type: 3}
@@ -45882,8 +45991,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 222723985}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1213478522}
+        m_TargetAssemblyTypeName: UnitManager, Assembly-CSharp
         m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
@@ -46371,6 +46480,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
+        type: 3}
+      propertyPath: m_text
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84b2cd96e656de4abf30dd630c29bac, type: 3}
 --- !u!222 &8377167039240372362
@@ -46537,7 +46651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}

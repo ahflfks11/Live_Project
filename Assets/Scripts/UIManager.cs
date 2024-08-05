@@ -13,6 +13,9 @@ public class UIManager : MonoBehaviour
     public Transform _content;
     public GameObject _RevolutionImageObject;
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
+    [SerializeField] private EnforceUI _enforceUI;
+
+    public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
 
     public void OpenPanel(UnitData _data)
     {

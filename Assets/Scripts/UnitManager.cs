@@ -12,20 +12,10 @@ public class UnitManager : MonoBehaviour
     int number = 0;
     float rndRangeX = 3f;
     float rndRangeY = 3f;
-    [SerializeField] private float normalEnforceDmg = 0;
+    private float normalEnforceDmg = 0;
     private float rareEnforceDmg = 0;
     private float legendEnforceDmg = 0;
     private float hiddenEnforceDmg = 0;
-
-    [SerializeField] private List<float> _normalEnforce_Coin;
-    [SerializeField] private List<float> _rareEnforce_Coin;
-    [SerializeField] private List<float> _legendEnforce_Coin;
-    [SerializeField] private List<float> _hiddenEnforce_Coin;
-
-    int _normalLevel = 0;
-    int _rareLevel = 0;
-    int _legendLevel = 0;
-    int _hiddenLevel = 0;
 
     public int maxCount = 10;
 
@@ -81,22 +71,42 @@ public class UnitManager : MonoBehaviour
 
     public void Enforce_Normal()
     {
-        NormalEnforceDmg += 1;
+        if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpNormalCoin())
+        {
+            NormalEnforceDmg += 1;
+        }
     }
 
     public void Enforce_Rare()
     {
-        rareEnforceDmg += 1;
+        if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpRareCoin())
+        {
+            rareEnforceDmg += 1;
+        }
     }
 
     public void Enforce_Legend()
     {
-        legendEnforceDmg += 1;
+        if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpLegendCoin())
+        {
+            legendEnforceDmg += 1;
+        }
     }
 
     public void Enforce_Hidden()
     {
-        hiddenEnforceDmg += 1;
+        if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpHiddenCoin())
+        {
+            hiddenEnforceDmg += 1;
+        }
+    }
+
+    public void LevelUp()
+    {
+        if (GameManager.Instance.UiManager.EnforceUI.SetLevelText())
+        {
+            maxSpawnlevel++;
+        }
     }
 
     public void RemoveUnit(UnitData.Unit[] _data)
