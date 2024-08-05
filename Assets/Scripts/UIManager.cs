@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UIManager : MonoBehaviour
     public GameObject _RevolutionPanel;
     public Transform _content;
     public GameObject _RevolutionImageObject;
+    [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
 
     public void OpenPanel(UnitData _data)
     {
@@ -66,6 +68,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void EnforceShopPanel()
+    {
+        if (_EnforceShopPanel.enabled)
+        {
+            _EnforceShopPanel.enabled = false;
+        }
+        else
+        {
+            _EnforceShopPanel.enabled = true;
+        }
+    }
+
     public void Wave(float _level)
     {
         GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
@@ -73,7 +87,7 @@ public class UIManager : MonoBehaviour
         waveText.text = "WAVE" + _level;
     }
 
-    
+
 
     // Start is called before the first frame update
     void Start()

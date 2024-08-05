@@ -57,7 +57,7 @@ public class LobbyManager : MonoBehaviour
 
             for (int i = 0; i < _dataManager._data.Length; i++)
             {
-                sum += _dataManager._data[i]._weight;
+                sum += _dataManager._data[i]._unit._data.weight;
             }
 
             sum *= Random.value;
@@ -66,7 +66,7 @@ public class LobbyManager : MonoBehaviour
 
             for (int i = 0; i < _dataManager._data.Length; i++)
             {
-                sum -= _dataManager._data[i]._weight;
+                sum -= _dataManager._data[i]._unit._data.weight;
                 if (sum <= 0)
                 {
                     result_idx = i;

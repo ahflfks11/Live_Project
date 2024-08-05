@@ -12,7 +12,6 @@ public class DataManager : MonoBehaviour
     public struct Data
     {
         public int _rarelity;
-        public double _weight;
         public UnitData _unit;
     }
 

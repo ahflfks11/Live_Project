@@ -306,7 +306,7 @@ MonoBehaviour:
   _Weapon: {fileID: 6949032675933054048, guid: f0c565221136f7d4a98e514b10a645a4, type: 3}
   _data:
     _unit: 1
-    _type: 0
+    _type: 1
     _multiUnit: []
     _unit_name: "\uACAC\uC2B5 \uC804\uC0AC"
     _comment: "\uC9E7\uC740 \uC0AC\uAC70\uB9AC\uB97C \uAC00\uC9C0\uACE0 \uC788\uC9C0\uB9CC
@@ -314,6 +314,7 @@ MonoBehaviour:
       \uC811\uADFC\uD574 \uC624\uB294 \uC801\uB4E4\uC744 \uADFC\uAC70\uB9AC\uC5D0\uC11C
       \uB9C9\uC544\uB0C5\uB2C8\uB2E4."
     attackCount: 1
+    weight: 0.8
     attackDelay: 1.5
     attackSpeed: 3
     dmg: 3

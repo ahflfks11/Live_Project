@@ -194,6 +194,7 @@ MonoBehaviour:
       \uAC00\uC9C4 \uC720\uB2DB\uC785\uB2C8\uB2E4.\uC911\uAC70\uB9AC\uC9C0\uB9CC
       \uAC15\uB825\uD55C \uB9C8\uBC95\uC744 \uAD6C\uC0AC\uD569\uB2C8\uB2E4."
     attackCount: 1
+    weight: 0.8
     attackDelay: 1.5
     attackSpeed: 5
     dmg: 2

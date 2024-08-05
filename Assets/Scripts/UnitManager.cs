@@ -60,6 +60,75 @@ public class UnitManager : MonoBehaviour
         }
     }
 
+    public void Enforce_Normal()
+    {
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            UnitData myUnit = _soldiers[i].GetComponent<UnitData>();
+
+            if ((myUnit._data.rarelityLevel == 0 || myUnit._data.rarelityLevel == 1) && !myUnit._data.specialUnit)
+            {
+                myUnit._data.dmg += 1;
+            }
+        }
+
+        UnitData[] _unit = FindObjectsOfType<UnitData>();
+
+        for (int i = 0; i < _unit.Length; i++)
+        {
+            if ((_unit[i]._data.rarelityLevel == 0 || _unit[i]._data.rarelityLevel == 1) && !_unit[i]._data.specialUnit)
+            {
+                _unit[i]._data.dmg += 1;
+            }
+        }
+    }
+
+    public void Enforce(int _rarelity)
+    {
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            UnitData myUnit = _soldiers[i].GetComponent<UnitData>();
+
+            if (myUnit._data.rarelityLevel == _rarelity && !myUnit._data.specialUnit)
+            {
+                myUnit._data.dmg += 1;
+            }
+        }
+
+        UnitData[] _unit = FindObjectsOfType<UnitData>();
+
+        for (int i = 0; i < _unit.Length; i++)
+        {
+            if (_unit[i]._data.rarelityLevel == _rarelity && !_unit[i]._data.specialUnit)
+            {
+                _unit[i]._data.dmg += 1;
+            }
+        }
+    }
+
+    public void Enforce_Hidden()
+    {
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            UnitData myUnit = _soldiers[i].GetComponent<UnitData>();
+
+            if (myUnit._data.specialUnit)
+            {
+                myUnit._data.dmg += 1;
+            }
+        }
+
+        UnitData[] _unit = FindObjectsOfType<UnitData>();
+
+        for (int i = 0; i < _unit.Length; i++)
+        {
+            if (_unit[i]._data.specialUnit)
+            {
+                _unit[i]._data.dmg += 1;
+            }
+        }
+    }
+
     public void RemoveUnit(UnitData.Unit[] _data)
     {
         for (int i = _spawnList.Count; i > 0; i--)

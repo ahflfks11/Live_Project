@@ -306,9 +306,12 @@ MonoBehaviour:
   _Weapon: {fileID: 4416289379610663905, guid: 729c557d67a39ae47a222cee5a62bb53, type: 3}
   _data:
     _unit: 2
-    _type: 0
+    _type: 1
     _multiUnit: []
+    _unit_name: 
+    _comment: 
     attackCount: 4
+    weight: 0.1
     attackDelay: 1.5
     attackSpeed: 5
     dmg: 10

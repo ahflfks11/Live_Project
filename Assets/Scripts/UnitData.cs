@@ -33,6 +33,7 @@ public class UnitData : MonoBehaviour
         public string _unit_name;
         public string _comment;
         public int attackCount;
+        public double weight;
         public float attackDelay;
         public float attackSpeed;
         public float dmg;
@@ -93,7 +94,8 @@ public class UnitData : MonoBehaviour
                 targetEnermy.GetComponent<EnermyControl>().MobHit(_data.dmg);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
                 DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
-                _dmgFont.SetText(_data.dmg, targetEnermy.transform);
+
+                _dmgFont.SetText(_data.dmg, targetEnermy.transform, _data._type);
                 Destroy(_effect, 1f);
             }
         }
@@ -108,7 +110,7 @@ public class UnitData : MonoBehaviour
                         enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
                         GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                         DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                        _dmgFont.SetText(_data.dmg, enermys[i].transform);
+                        _dmgFont.SetText(_data.dmg, enermys[i].transform, _data._type);
                         Destroy(_effect, 1f);
                     }
                 }
@@ -119,7 +121,7 @@ public class UnitData : MonoBehaviour
                         enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
                         GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                         DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                        _dmgFont.SetText(_data.dmg, enermys[i].transform);
+                        _dmgFont.SetText(_data.dmg, enermys[i].transform, _data._type);
                         Destroy(_effect, 1f);
                     }
                 }
@@ -138,6 +140,7 @@ public class UnitData : MonoBehaviour
     public void IsSelect()
     {
         onselect = true;
+        transform.SetAsLastSibling();
         _visualizer.DrawCircle();
     }
 

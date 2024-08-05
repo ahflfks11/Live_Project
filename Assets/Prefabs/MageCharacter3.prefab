@@ -223,7 +223,10 @@ MonoBehaviour:
     _unit: 3
     _type: 2
     _multiUnit: []
+    _unit_name: 
+    _comment: 
     attackCount: 3
+    weight: 0.1
     attackDelay: 1.5
     attackSpeed: 5
     dmg: 14

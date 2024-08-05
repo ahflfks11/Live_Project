@@ -166,7 +166,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.005
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -188,9 +188,12 @@ MonoBehaviour:
   _Weapon: {fileID: 2430205674200673227, guid: 14c3246651e21594e88439341d6f0a51, type: 3}
   _data:
     _unit: 2
-    _type: 0
+    _type: 1
     _multiUnit: []
+    _unit_name: 
+    _comment: 
     attackCount: 8
+    weight: 0.08
     attackDelay: 1.5
     attackSpeed: 5
     dmg: 20
