@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     public Text _requireText;
     public CartoonFX.CFXR_ParticleText _waveText;
     public Text _timerText;
-    public GameObject _RevolutionPanel;
     public Transform _content;
     public GameObject _RevolutionImageObject;
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
@@ -23,8 +22,6 @@ public class UIManager : MonoBehaviour
         {
             Destroy(_image[i]);
         }
-
-        _RevolutionPanel.SetActive(false);
 
         if (_data._data.EvolutionAvailability)
         {
@@ -63,7 +60,7 @@ public class UIManager : MonoBehaviour
 
             if (_isOpen)
             {
-                _RevolutionPanel.SetActive(true);
+                //_RevolutionPanel.SetActive(true);
             }
         }
     }
@@ -93,7 +90,6 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Wave(GameManager.Instance.Wave);
-        _RevolutionPanel.SetActive(false);
     }
 
     // Update is called once per frame

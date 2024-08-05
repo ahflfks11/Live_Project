@@ -16,6 +16,17 @@ public class UnitManager : MonoBehaviour
     private float rareEnforceDmg = 0;
     private float legendEnforceDmg = 0;
     private float hiddenEnforceDmg = 0;
+
+    [SerializeField] private List<float> _normalEnforce_Coin;
+    [SerializeField] private List<float> _rareEnforce_Coin;
+    [SerializeField] private List<float> _legendEnforce_Coin;
+    [SerializeField] private List<float> _hiddenEnforce_Coin;
+
+    int _normalLevel = 0;
+    int _rareLevel = 0;
+    int _legendLevel = 0;
+    int _hiddenLevel = 0;
+
     public int maxCount = 10;
 
     public int maxSpawnlevel = 0;
@@ -192,28 +203,30 @@ public class UnitManager : MonoBehaviour
         _spawnList.Add(_unit);
     }
 
-    public void SpawnUnit(Vector3 pos)
+    public void SpawnUnit()
     {
-        
+        Vector3 pos = GameManager.Instance.myArea.position;
+
         int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
 
         if (!CheckSpawn(_soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data._multiUnit) || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.rarelityLevel > maxSpawnlevel || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.specialUnit)
         {
-            SpawnUnit(pos);
+            SpawnUnit();
             return;
         }
 
         Spawn(rnd_UnitNumber, pos, true);
     }
 
-    public void SpecialSpawnUnit(Vector3 pos)
+    public void SpecialSpawnUnit()
     {
+        Vector3 pos = GameManager.Instance.myArea.position;
 
         int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
 
         if (!CheckSpawn(_soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data._multiUnit) || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.rarelityLevel > maxSpawnlevel + 1)
         {
-            SpecialSpawnUnit(pos);
+            SpecialSpawnUnit();
             return;
         }
 

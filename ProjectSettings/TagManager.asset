@@ -10,6 +10,7 @@ TagManager:
   - Effects
   - Icon
   - Inven_Icon
+  - MySpawnPoint
   layers:
   - Default
   - TransparentFX

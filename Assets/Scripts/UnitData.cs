@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitData : MonoBehaviour
 {
-    UnitManager _unitManager;
+    [SerializeField] UnitManager _unitManager;
     Animator _animator;
 
     public enum Unit
@@ -84,7 +84,7 @@ public class UnitData : MonoBehaviour
         else
             _myRareColor.color = GameManager.Instance._hiddenColor;
 
-        
+        _unitManager = FindObjectOfType<UnitManager>();
     }
 
     public void NormalAttack()

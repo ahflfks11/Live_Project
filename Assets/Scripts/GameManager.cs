@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,22 +63,7 @@ public class GameManager : MonoBehaviour
     public UIManager UiManager { get => uiManager; set => uiManager = value; }
     public int ClickCount { get => clickCount; set => clickCount = value; }
 
-    public void SpwnUnit()
-    {
-        UnitManager.SpawnUnit(myArea.position);
-    }
-
-    public void SpecialSpawnUnit()
-    {
-        UnitManager.SpecialSpawnUnit(myArea.position);
-    }
-
-    public void LevelUp()
-    {
-        UnitManager.maxCount++;
-    }
-
-    private void Start()
+    public void GameInit()
     {
         UnitManager = GameObject.FindObjectOfType<UnitManager>();
         UiManager = GameObject.FindObjectOfType<UIManager>();
@@ -87,31 +71,49 @@ public class GameManager : MonoBehaviour
         RequireGold = 3;
         SetTime = _limitTimer;
         ClickCount = 0;
+        myArea = GameObject.Find("SpawnPoint").transform;
+    }
+
+    private void Start()
+    {
+        GameInit();
     }
 
     private void Update()
     {
-        SetTime -= Time.deltaTime;
-
-        if (SetTime >= 60f)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Mintime = (int)SetTime / 60;
-            Sectime = SetTime % 60;
+            SceneManager.LoadScene(2);
         }
 
-        if(SetTime < 60f)
+        if (unitManager == null && GameObject.FindObjectOfType<UnitManager>())
         {
-            Mintime = 0;
-            Sectime = (int)SetTime;
+            GameInit();
         }
-
-        if (SetTime <= 0f)
+        else if (unitManager != null)
         {
-            SetTime = LimitTimer;
-            _wave++;
-            UiManager.Wave(Wave);
-        }
+            SetTime -= Time.deltaTime;
 
-        _unitObject = FindObjectsOfType<UnitData>();
+            if (SetTime >= 60f)
+            {
+                Mintime = (int)SetTime / 60;
+                Sectime = SetTime % 60;
+            }
+
+            if (SetTime < 60f)
+            {
+                Mintime = 0;
+                Sectime = (int)SetTime;
+            }
+
+            if (SetTime <= 0f)
+            {
+                SetTime = LimitTimer;
+                _wave++;
+                UiManager.Wave(Wave);
+            }
+
+            _unitObject = FindObjectsOfType<UnitData>();
+        }
     }
 }

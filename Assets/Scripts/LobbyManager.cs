@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -213,6 +212,9 @@ public class LobbyManager : MonoBehaviour
 
     public void EnterDungeon()
     {
-        Transitioner.Instance.TransitionToScene(3);
+        if (GameObject.Find("WiggleDiamondTransitioner"))
+            Transitioner.Instance.TransitionToScene(3);
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 }
