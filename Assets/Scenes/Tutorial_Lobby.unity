@@ -1151,7 +1151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9094980, y: 11499400}
+  m_AnchoredPosition: {x: -9158055, y: 11579150}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &113287827
@@ -2121,7 +2121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -48463920, y: 86158080}
+  m_AnchoredPosition: {x: -48542220, y: 86297280}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &267660037
@@ -5525,7 +5525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -41426100, y: 73646400}
+  m_AnchoredPosition: {x: -41504400, y: 73785600}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &683055605
@@ -5921,7 +5921,7 @@ MonoBehaviour:
   tweenTargetIsTargetGO: 1
   delay: 0
   duration: 0.1
-  easeType: 1
+  easeType: 27
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -8682,7 +8682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 92385.91}
+  m_AnchoredPosition: {x: 0, y: 145469.25}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &933983449
@@ -10743,7 +10743,7 @@ MonoBehaviour:
   tweenTargetIsTargetGO: 1
   delay: 0
   duration: 0.3
-  easeType: 6
+  easeType: 27
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -13464,7 +13464,7 @@ MonoBehaviour:
   tweenTargetIsTargetGO: 1
   delay: 0
   duration: 0.1
-  easeType: 1
+  easeType: 27
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -13850,7 +13850,7 @@ MonoBehaviour:
   tweenTargetIsTargetGO: 1
   delay: 0
   duration: 0.3
-  easeType: 1
+  easeType: 27
   easeCurve:
     serializedVersion: 2
     m_Curve:
