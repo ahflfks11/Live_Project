@@ -12,6 +12,10 @@ public class UnitManager : MonoBehaviour
     int number = 0;
     float rndRangeX = 3f;
     float rndRangeY = 3f;
+    [SerializeField] private float normalEnforceDmg = 0;
+    private float rareEnforceDmg = 0;
+    private float legendEnforceDmg = 0;
+    private float hiddenEnforceDmg = 0;
     public int maxCount = 10;
 
     public int maxSpawnlevel = 0;
@@ -22,6 +26,10 @@ public class UnitManager : MonoBehaviour
     [SerializeField] private DamageFonts _dmgFont;
 
     public DamageFonts DmgFont { get => _dmgFont; set => _dmgFont = value; }
+    public float NormalEnforceDmg { get => normalEnforceDmg; set => normalEnforceDmg = value; }
+    public float RareEnforceDmg { get => rareEnforceDmg; set => rareEnforceDmg = value; }
+    public float LegendEnforceDmg { get => legendEnforceDmg; set => legendEnforceDmg = value; }
+    public float HiddenEnforceDmg { get => hiddenEnforceDmg; set => hiddenEnforceDmg = value; }
 
     public bool CheckSpawn(GameObject[] _data)
     {
@@ -62,71 +70,22 @@ public class UnitManager : MonoBehaviour
 
     public void Enforce_Normal()
     {
-        for (int i = 0; i < _soldiers.Count; i++)
-        {
-            UnitData myUnit = _soldiers[i].GetComponent<UnitData>();
-
-            if ((myUnit._data.rarelityLevel == 0 || myUnit._data.rarelityLevel == 1) && !myUnit._data.specialUnit)
-            {
-                myUnit._data.dmg += 1;
-            }
-        }
-
-        UnitData[] _unit = FindObjectsOfType<UnitData>();
-
-        for (int i = 0; i < _unit.Length; i++)
-        {
-            if ((_unit[i]._data.rarelityLevel == 0 || _unit[i]._data.rarelityLevel == 1) && !_unit[i]._data.specialUnit)
-            {
-                _unit[i]._data.dmg += 1;
-            }
-        }
+        NormalEnforceDmg += 1;
     }
 
-    public void Enforce(int _rarelity)
+    public void Enforce_Rare()
     {
-        for (int i = 0; i < _soldiers.Count; i++)
-        {
-            UnitData myUnit = _soldiers[i].GetComponent<UnitData>();
+        rareEnforceDmg += 1;
+    }
 
-            if (myUnit._data.rarelityLevel == _rarelity && !myUnit._data.specialUnit)
-            {
-                myUnit._data.dmg += 1;
-            }
-        }
-
-        UnitData[] _unit = FindObjectsOfType<UnitData>();
-
-        for (int i = 0; i < _unit.Length; i++)
-        {
-            if (_unit[i]._data.rarelityLevel == _rarelity && !_unit[i]._data.specialUnit)
-            {
-                _unit[i]._data.dmg += 1;
-            }
-        }
+    public void Enforce_Legend()
+    {
+        legendEnforceDmg += 1;
     }
 
     public void Enforce_Hidden()
     {
-        for (int i = 0; i < _soldiers.Count; i++)
-        {
-            UnitData myUnit = _soldiers[i].GetComponent<UnitData>();
-
-            if (myUnit._data.specialUnit)
-            {
-                myUnit._data.dmg += 1;
-            }
-        }
-
-        UnitData[] _unit = FindObjectsOfType<UnitData>();
-
-        for (int i = 0; i < _unit.Length; i++)
-        {
-            if (_unit[i]._data.specialUnit)
-            {
-                _unit[i]._data.dmg += 1;
-            }
-        }
+        hiddenEnforceDmg += 1;
     }
 
     public void RemoveUnit(UnitData.Unit[] _data)

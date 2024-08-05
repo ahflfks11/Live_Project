@@ -83,19 +83,44 @@ public class UnitData : MonoBehaviour
             _myRareColor.color = GameManager.Instance._rareColor[_data.rarelityLevel];
         else
             _myRareColor.color = GameManager.Instance._hiddenColor;
+
+        
     }
 
     public void NormalAttack()
     {
+
+        float _dmg = _data.dmg;
+
+        if (_data.specialUnit)
+        {
+            _dmg = _data.dmg + _unitManager.HiddenEnforceDmg;
+        }
+        else
+        {
+            if (_data.rarelityLevel <= 1)
+            {
+                _dmg = _data.dmg + _unitManager.NormalEnforceDmg;
+            }
+            else if (_data.rarelityLevel == 2)
+            {
+                _dmg = _data.dmg + _unitManager.RareEnforceDmg;
+            }
+            else
+            {
+                _dmg = _data.dmg + _unitManager.LegendEnforceDmg;
+            }
+        }
+
         if (_data.attackCount == 1)
         {
             if (targetEnermy != null && !onselect && _Weapon != null)
             {
-                targetEnermy.GetComponent<EnermyControl>().MobHit(_data.dmg);
+                targetEnermy.GetComponent<EnermyControl>().MobHit(_dmg);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
                 DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
 
-                _dmgFont.SetText(_data.dmg, targetEnermy.transform, _data._type);
+                _dmgFont.SetText(_dmg, targetEnermy.transform, _data._type);
                 Destroy(_effect, 1f);
             }
         }
@@ -107,10 +132,10 @@ public class UnitData : MonoBehaviour
                 {
                     for (int i = 0; i < enermys.Length; i++)
                     {
-                        enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
+                        enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
                         GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                         DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                        _dmgFont.SetText(_data.dmg, enermys[i].transform, _data._type);
+                        _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
                         Destroy(_effect, 1f);
                     }
                 }
@@ -118,10 +143,10 @@ public class UnitData : MonoBehaviour
                 {
                     for (int i = 0; i < _data.attackCount; i++)
                     {
-                        enermys[i].GetComponent<EnermyControl>().MobHit(_data.dmg);
+                        enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
                         GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                         DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                        _dmgFont.SetText(_data.dmg, enermys[i].transform, _data._type);
+                        _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
                         Destroy(_effect, 1f);
                     }
                 }

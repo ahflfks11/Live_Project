@@ -195,7 +195,7 @@ MonoBehaviour:
     weight: 0.6
     attackDelay: 1.5
     attackSpeed: 5
-    dmg: 3
+    dmg: 6
     rarelityLevel: 1
     EvolutionAvailability: 1
     specialUnit: 0
