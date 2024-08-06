@@ -17,11 +17,19 @@ public class EnforceUI : MonoBehaviour
     [SerializeField] private List<float> _rareEnforce_Coin;
     [SerializeField] private List<float> _legendEnforce_Coin;
     [SerializeField] private List<float> _hiddenEnforce_Coin;
+    [SerializeField] private GameObject _vfx;
+    [SerializeField] private Transform _vfxPos;
 
     int _normalLevel = 0;
     int _rareLevel = 0;
     int _legendLevel = 0;
     int _hiddenLevel = 0;
+
+    public void OpenVFX()
+    {
+        GameObject openfx = Instantiate(_vfx, _vfxPos.position, Quaternion.identity);
+        Destroy(openfx, 5f);
+    }
 
     public bool SetDmgUpNormalCoin()
     {
