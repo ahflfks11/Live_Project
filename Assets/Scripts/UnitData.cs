@@ -132,22 +132,36 @@ public class UnitData : MonoBehaviour
                 {
                     for (int i = 0; i < enermys.Length; i++)
                     {
-                        enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
-                        GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
-                        DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                        _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
-                        Destroy(_effect, 1f);
+                        try
+                        {
+                            enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
+                            GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
+                            DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                            _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
+                            Destroy(_effect, 1f);
+                        }
+                        catch
+                        {
+                            Debug.LogWarning("Àû »ç¶óÁü");
+                        }
                     }
                 }
                 else
                 {
                     for (int i = 0; i < _data.attackCount; i++)
                     {
-                        enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
-                        GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
-                        DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                        _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
-                        Destroy(_effect, 1f);
+                        try
+                        {
+                            enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
+                            GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
+                            DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                            _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
+                            Destroy(_effect, 1f);
+                        }
+                        catch
+                        {
+                            Debug.LogWarning("Àû »ç¶óÁü2");
+                        }
                     }
                 }
             }

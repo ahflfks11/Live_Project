@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     public Color[] _rareColor;
     public Color _hiddenColor;
 
+    [SerializeField] private float gameSpeed = 0;
+
     private void Awake()
     {
         if (instance != null)
@@ -62,12 +64,13 @@ public class GameManager : MonoBehaviour
     public int RequireGold { get => _requireGold; set => _requireGold = value; }
     public UIManager UiManager { get => uiManager; set => uiManager = value; }
     public int ClickCount { get => clickCount; set => clickCount = value; }
+    public float GameSpeed { get => gameSpeed; set => gameSpeed = value; }
 
     public void GameInit()
     {
         UnitManager = GameObject.FindObjectOfType<UnitManager>();
         UiManager = GameObject.FindObjectOfType<UIManager>();
-        _gold = 25;
+        _gold = 100;
         RequireGold = 3;
         SetTime = _limitTimer;
         ClickCount = 0;
@@ -83,7 +86,10 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(2);
+            if (Time.timeScale == 1f)
+                Time.timeScale = 2f;
+            else
+                Time.timeScale = 1f;
         }
 
         if (unitManager == null && GameObject.FindObjectOfType<UnitManager>())

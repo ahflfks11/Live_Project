@@ -191,6 +191,9 @@ public class UnitManager : MonoBehaviour
     //특수 소환
     public void SpecialSpawn(int _spawnNum, Vector3 _pos, bool _randomPosition)
     {
+        if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 10)
+            return;
+
         GameObject _unit;
 
         if (_randomPosition)
@@ -211,6 +214,7 @@ public class UnitManager : MonoBehaviour
             _unit.name = _unit.name.Substring(0, index);
         number++;
         _spawnList.Add(_unit);
+        GameManager.Instance.Gold -= (maxSpawnlevel + 1) * 10;
     }
 
     public void SpawnUnit()
@@ -257,6 +261,14 @@ public class UnitManager : MonoBehaviour
         }
 
         return _chk;
+    }
+
+    public void GameSpeed()
+    {
+        if (Time.timeScale == 1f)
+            Time.timeScale = 2f;
+        else
+            Time.timeScale = 1f;
     }
 
     private void Update()

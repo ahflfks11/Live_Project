@@ -13,6 +13,7 @@ Material:
   - _ENABLESHINE_ON
   - _SHADERFADING_NONE
   - _SHADERSPACE_UV
+  - _TOGGLEUNSCALEDTIME_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -440,12 +441,12 @@ Material:
     - _TimeFrequency: 2
     - _TimeRange: 0.5
     - _TimeSpeed: 1
-    - _TimeValue: 0
+    - _TimeValue: 1
     - _ToggleCustomTime: 0
     - _ToggleTimeFPS: 0
     - _ToggleTimeFrequency: 0
     - _ToggleTimeSpeed: 0
-    - _ToggleUnscaledTime: 0
+    - _ToggleUnscaledTime: 1
     - _UVDistortFade: 1
     - _UVDistortMaskToggle: 0
     - _UVRotateSpeed: 1

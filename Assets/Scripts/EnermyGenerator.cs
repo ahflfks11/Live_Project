@@ -26,7 +26,7 @@ public class EnermyGenerator : MonoBehaviour
                 _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
                 tempStageLimitNumber++;
                 GameManager.Instance.EnermyCount++;
-                yield return new WaitForSeconds(createTime);
+                yield return new WaitForSeconds(createTime - GameManager.Instance.GameSpeed);
             }
         }
     }
