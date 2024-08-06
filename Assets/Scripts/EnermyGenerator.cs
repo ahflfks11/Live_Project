@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnermyGenerator : MonoBehaviour
 {
     public EnermyControl[] _enermyList;
+    public EnermyControl[] _bossList;
     public Transform[] wayPoint;
     int stageLimitNumber = 30;
     int tempStageLimitNumber = 0;
@@ -12,21 +13,39 @@ public class EnermyGenerator : MonoBehaviour
     int wave = 0;
     Coroutine _launcher;
 
+    bool _bossSpawn;
+
     public IEnumerator GeneratorLauncher()
     {
         while (true)
         {
-            if (stageLimitNumber == tempStageLimitNumber)
+            if (!GameManager.Instance.IsBoss)
             {
-                yield return null;
+                if (stageLimitNumber == tempStageLimitNumber)
+                {
+                    yield return null;
+                }
+                else
+                {
+                    GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
+                    _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+                    tempStageLimitNumber++;
+                    GameManager.Instance.EnermyCount++;
+                    yield return new WaitForSeconds(createTime - GameManager.Instance.GameSpeed);
+                }
             }
             else
             {
-                GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
-                _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
-                tempStageLimitNumber++;
-                GameManager.Instance.EnermyCount++;
-                yield return new WaitForSeconds(createTime - GameManager.Instance.GameSpeed);
+                if (!_bossSpawn)
+                {
+                    GameObject _enermy = Instantiate(_bossList[GameManager.Instance.BossCount].gameObject, wayPoint[0].position, Quaternion.identity);
+                    _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+                    GameManager.Instance.EnermyCount++;
+                    _enermy.gameObject.name = "Boss";
+                    _bossSpawn = true;
+                }
+
+                yield return null;
             }
         }
     }
@@ -46,6 +65,7 @@ public class EnermyGenerator : MonoBehaviour
     {
         if (wave != GameManager.Instance.Wave)
         {
+            _bossSpawn = false;
             if (_enermyList.Length >= GameManager.Instance.Wave)
             {
                 wave = GameManager.Instance.Wave;

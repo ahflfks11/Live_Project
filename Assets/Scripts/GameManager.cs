@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     private int _requireGold;
     int clickCount;
     private float _limitTimer = 40f;
+    private float _bossTimer = 90f;
     float _setTime;
     float _sectime;
     int _mintime;
 
     private int _wave = 1;
     private int _enermyCount = 0;
+    private int _bossCount = 0;
 
     public UnitData[] _unitObject;
     public GameObject Exclamation;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public Color[] _rareColor;
     public Color _hiddenColor;
+
+    [SerializeField] bool _isBoss = false;
 
     [SerializeField] private float gameSpeed = 0;
 
@@ -65,6 +69,8 @@ public class GameManager : MonoBehaviour
     public UIManager UiManager { get => uiManager; set => uiManager = value; }
     public int ClickCount { get => clickCount; set => clickCount = value; }
     public float GameSpeed { get => gameSpeed; set => gameSpeed = value; }
+    public bool IsBoss { get => _isBoss; set => _isBoss = value; }
+    public int BossCount { get => _bossCount; set => _bossCount = value; }
 
     public void GameInit()
     {
@@ -103,7 +109,7 @@ public class GameManager : MonoBehaviour
             if (SetTime >= 60f)
             {
                 Mintime = (int)SetTime / 60;
-                Sectime = SetTime % 60;
+                Sectime = (int)SetTime % 60;
             }
 
             if (SetTime < 60f)
@@ -114,8 +120,27 @@ public class GameManager : MonoBehaviour
 
             if (SetTime <= 0f)
             {
-                SetTime = LimitTimer;
-                _wave++;
+                if ((_wave + 1) % 10 == 0 && !IsBoss)
+                {
+                    IsBoss = true;
+                    SetTime = _bossTimer;
+                }
+                else
+                {
+                    if (IsBoss)
+                    {
+                        if (GameObject.Find("Boss"))
+                        {
+                            
+                        }
+                        IsBoss = false;
+                        BossCount++;
+                    }
+
+                    SetTime = LimitTimer;
+                    _wave++;
+                }
+
                 UiManager.Wave(Wave);
             }
 
