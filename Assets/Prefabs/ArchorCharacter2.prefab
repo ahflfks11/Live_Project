@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6471c5443755e4287452b2b8db1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitManager: {fileID: 0}
   _Weapon: {fileID: 5895089097826903566, guid: 9f06d861710f1214f9371bc00e90ab2b, type: 3}
   _data:
     _unit: 2
@@ -110,6 +111,7 @@ MonoBehaviour:
     weight: 0.6
     attackDelay: 1.5
     attackSpeed: 5
+    speed: 3
     dmg: 3
     rarelityLevel: 1
     EvolutionAvailability: 1
@@ -390,7 +392,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 48fd5f766f61f6a46bd9423a8b426cc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77db9a7bcaf0dd945a0a721b60b9cb8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0

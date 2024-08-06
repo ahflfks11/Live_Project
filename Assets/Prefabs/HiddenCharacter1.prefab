@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6471c5443755e4287452b2b8db1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitManager: {fileID: 0}
   _Weapon: {fileID: 1755964656112663951, guid: 5c1018d9598c5d9419ef110b52392286, type: 3}
   _data:
     _unit: 5
@@ -194,8 +195,10 @@ MonoBehaviour:
       \uAC00\uD558\uB294 \uC720\uB2DB\uC785\uB2C8\uB2E4. \uAE34 \uC0AC\uAC70\uB9AC\uC640
       \uB192\uC740 \uACF5\uACA9\uB825\uC744 \uBCF4\uC720\uD569\uB2C8\uB2E4."
     attackCount: 3
+    weight: 0
     attackDelay: 1.5
     attackSpeed: 5
+    speed: 3
     dmg: 5
     rarelityLevel: 0
     EvolutionAvailability: 0

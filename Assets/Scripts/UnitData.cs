@@ -36,6 +36,7 @@ public class UnitData : MonoBehaviour
         public double weight;
         public float attackDelay;
         public float attackSpeed;
+        public float speed;
         public float dmg;
         public int rarelityLevel;
         public bool EvolutionAvailability;
@@ -62,7 +63,7 @@ public class UnitData : MonoBehaviour
     public SpriteRenderer _myRareColor;
 
     CircleRangeVisualizer _visualizer;
-
+    private Vector3 targetEnemy;   // ÇöÀç Å¸°Ù Àû
 
     public UnitManager UnitManager { get => _unitManager; set => _unitManager = value; }
     public Vector3 TempPosition { get => _tempPosition; set => _tempPosition = value; }
@@ -85,6 +86,45 @@ public class UnitData : MonoBehaviour
             _myRareColor.color = GameManager.Instance._hiddenColor;
 
         _unitManager = FindObjectOfType<UnitManager>();
+
+        FindClosestEnemy();
+    }
+
+    void FindClosestEnemy()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enermy");
+        float closestDistance = Mathf.Infinity;
+        targetEnemy = Vector3.zero;
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+
+            if (distanceToEnemy < closestDistance)
+            {
+                closestDistance = distanceToEnemy;
+                targetEnemy = enemy.transform.position;
+            }
+        }
+    }
+
+    void MoveTowardsTarget()
+    {
+        if (!onselect)
+        {
+            if (Vector2.Distance(targetEnemy, transform.position) > FindRange && !_isAttack)
+            {
+                if (!_animator.GetBool("Walk"))
+                    _animator.SetBool("Walk", true);
+                Vector2 direction = (targetEnemy - transform.position).normalized;
+                transform.position = Vector2.MoveTowards(transform.position, targetEnemy, _data.speed * Time.deltaTime);
+            }
+            else
+            {
+                _animator.SetBool("Walk", false);
+                targetEnemy = Vector3.zero;
+            }
+        }
     }
 
     public void NormalAttack()
@@ -179,6 +219,7 @@ public class UnitData : MonoBehaviour
     public void IsSelect()
     {
         onselect = true;
+        _animator.SetBool("Walk", false);
         transform.SetAsLastSibling();
         _visualizer.DrawCircle();
     }
@@ -268,13 +309,16 @@ public class UnitData : MonoBehaviour
 
     private void Update()
     {
+        if (targetEnemy != Vector3.zero)
+            MoveTowardsTarget();
+
         if (_animator != null)
         {
             if (!onselect)
             {
                 if (_data.attackCount <= 1)
                 {
-                    if (targetEnermy != null && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                    if (targetEnermy != null && (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Walk")))
                     {
                         _isAttack = true;
                     }
@@ -285,7 +329,7 @@ public class UnitData : MonoBehaviour
                 }
                 else
                 {
-                    if (enermys.Length != 0 && _animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+                    if (enermys.Length != 0 && (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Walk")))
                     {
                         _isAttack = true;
                     }

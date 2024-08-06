@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6471c5443755e4287452b2b8db1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _unitManager: {fileID: 0}
   _Weapon: {fileID: 3626259152316059793, guid: 8cb364e09697dcd43b410fe6ed742c66, type: 3}
   _data:
     _unit: 3
@@ -195,6 +196,7 @@ MonoBehaviour:
     weight: 0.6
     attackDelay: 1.5
     attackSpeed: 5
+    speed: 3
     dmg: 6
     rarelityLevel: 1
     EvolutionAvailability: 1
