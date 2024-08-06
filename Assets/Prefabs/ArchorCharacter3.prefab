@@ -303,7 +303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6471c5443755e4287452b2b8db1758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Weapon: {fileID: 4416289379610663905, guid: 729c557d67a39ae47a222cee5a62bb53, type: 3}
+  _unitManager: {fileID: 0}
+  _Weapon: {fileID: 8366580459569643225, guid: 945dd49996c212249a1bdd86a8201bf1, type: 3}
   _data:
     _unit: 2
     _type: 1
