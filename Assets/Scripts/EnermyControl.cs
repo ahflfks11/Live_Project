@@ -9,6 +9,8 @@ public class EnermyControl : MonoBehaviour
     public Slider _hp_Img;
     public Text _hpText;
     int wayNumber = 1;
+
+    public bool _isBoss;
     public Transform[] WayPoint { get => wayPoint; set => wayPoint = value; }
 
     [System.Serializable]
@@ -45,6 +47,10 @@ public class EnermyControl : MonoBehaviour
         {
             GameManager.Instance.Gold += _data.gainGold;
             GameManager.Instance.EnermyCount--;
+            if (_isBoss)
+            {
+                GameManager.Instance.UiManager.SkipUI();
+            }
             Destroy(this.gameObject);
             return;
         }

@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         UnitManager = GameObject.FindObjectOfType<UnitManager>();
         UiManager = GameObject.FindObjectOfType<UIManager>();
-        _gold = 100;
+        _gold = 25;
         RequireGold = 3;
         SetTime = _limitTimer;
         ClickCount = 0;
@@ -129,10 +129,14 @@ public class GameManager : MonoBehaviour
                 {
                     if (IsBoss)
                     {
+                        if (uiManager.SkipUIPanel.enabled)
+                            uiManager.SkipUI();
+
                         if (GameObject.Find("Boss"))
                         {
                             
                         }
+
                         IsBoss = false;
                         BossCount++;
                     }

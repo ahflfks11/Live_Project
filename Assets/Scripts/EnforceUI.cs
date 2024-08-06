@@ -87,16 +87,16 @@ public class EnforceUI : MonoBehaviour
 
     public bool SetLevelText()
     {
-        if (GameManager.Instance.Gold < 500)
+        if (GameManager.Instance.Gold < 200)
             return false;
 
-        GameManager.Instance.Gold -= 500;
+        GameManager.Instance.Gold -= 200;
 
         if(GameManager.Instance.UnitManager.maxSpawnlevel >= 1)
         {
             _levelUpLabel.text = "전설적인";
             _levelUpLabel.color = _color[2];
-            _levelUpCoinText.text = "500";
+            _levelUpCoinText.text = "200";
         }
 
         return true;

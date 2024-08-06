@@ -14,8 +14,10 @@ public class UIManager : MonoBehaviour
     public GameObject _RevolutionImageObject;
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
     [SerializeField] private EnforceUI _enforceUI;
+    [SerializeField] private DOTweenVisualManager _skipUIPanel;
 
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
+    public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
 
     public void OpenPanel(UnitData _data)
     {
@@ -65,6 +67,23 @@ public class UIManager : MonoBehaviour
             {
                 //_RevolutionPanel.SetActive(true);
             }
+        }
+    }
+
+    public void SkipUI()
+    {
+        if (SkipUIPanel.enabled)
+            SkipUIPanel.enabled = false;
+        else
+            SkipUIPanel.enabled = true;
+    }
+
+    public void Skip()
+    {
+        if(GameManager.Instance.SetTime > 1)
+        {
+            GameManager.Instance.SetTime = 0f;
+            SkipUI();
         }
     }
 
