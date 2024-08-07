@@ -34,7 +34,7 @@ public class UnitManager : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(Screen.width, Screen.width / 9 * 16, true);
+        //Screen.SetResolution(Screen.width, Screen.width / 9 * 16, true);
     }
 
     public bool CheckSpawn(GameObject[] _data)
