@@ -122,7 +122,7 @@ MonoBehaviour:
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  FindRange: 4
+  FindRange: 3
   _spr: {fileID: 21300000, guid: a9bba8a8f32bcf0478748c3266a7c111, type: 3}
   _sprMat: {fileID: 0}
   _myRareColor: {fileID: 5175324293972344550}

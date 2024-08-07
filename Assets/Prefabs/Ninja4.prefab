@@ -232,7 +232,7 @@ MonoBehaviour:
     attackDelay: 1.5
     attackSpeed: 3
     speed: 3
-    dmg: 45
+    dmg: 65
     rarelityLevel: 3
     EvolutionAvailability: 0
     specialUnit: 0

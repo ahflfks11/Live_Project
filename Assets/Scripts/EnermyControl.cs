@@ -46,6 +46,8 @@ public class EnermyControl : MonoBehaviour
         if (_data.HP <= 0)
         {
             GameManager.Instance.Gold += _data.gainGold;
+            EnermyCoinText _coin = Instantiate(GameManager.Instance.CoinText, transform.position, Quaternion.identity);
+            _coin.SetCoin(_data.gainGold);
             GameManager.Instance.EnermyCount--;
             if (_isBoss)
             {

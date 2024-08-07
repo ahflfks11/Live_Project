@@ -373,7 +373,7 @@ public class UnitData : MonoBehaviour
                 }
             }
 
-            if (!_data.specialUnit)
+            if (!_data.specialUnit && _data.EvolutionAvailability)
             {
                 if (!possible)
                 {

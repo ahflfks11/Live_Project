@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float gameSpeed = 0;
 
+    [SerializeField] private EnermyCoinText _coinText;
+
     private void Awake()
     {
         if (instance != null)
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
     public float GameSpeed { get => gameSpeed; set => gameSpeed = value; }
     public bool IsBoss { get => _isBoss; set => _isBoss = value; }
     public int BossCount { get => _bossCount; set => _bossCount = value; }
+    public EnermyCoinText CoinText { get => _coinText; set => _coinText = value; }
 
     public void GameInit()
     {
