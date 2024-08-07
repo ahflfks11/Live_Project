@@ -106,6 +106,13 @@ public class UIManager : MonoBehaviour
         waveText.text = "WAVE" + _level;
     }
 
+    public void BossWave()
+    {
+        GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
+        text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("Boss Wave");
+        waveText.text = "Boss Wave";
+    }
+
 
 
     // Start is called before the first frame update

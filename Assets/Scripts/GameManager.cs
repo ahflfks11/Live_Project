@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
                 {
                     IsBoss = true;
                     SetTime = _bossTimer;
+                    UiManager.BossWave();
                 }
                 else
                 {
@@ -146,9 +147,9 @@ public class GameManager : MonoBehaviour
 
                     SetTime = LimitTimer;
                     _wave++;
-                }
 
-                UiManager.Wave(Wave);
+                    UiManager.Wave(Wave);
+                }
             }
 
             _unitObject = FindObjectsOfType<UnitData>();
