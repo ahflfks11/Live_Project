@@ -1265,7 +1265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12173692}
+  m_AnchoredPosition: {x: 0, y: -12801984}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624
@@ -1896,7 +1896,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420039}
   - component: {fileID: 519420040}
-  - component: {fileID: 519420043}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2001,31 +2000,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.04, y: -0.93}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!169 &519420043
-AudioLowPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_LowpassResonanceQ: 1
-  lowpassLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.22727273
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &537497230
 GameObject:
   m_ObjectHideFlags: 0
@@ -45352,11 +45326,11 @@ MonoBehaviour:
   bgmClip: {fileID: 0}
   bgmVolume: 0.2
   sfxClips:
-  - {fileID: 8300000, guid: bf606e91aca1fb14bbb2f3336b569a4f, type: 3}
   - {fileID: 8300000, guid: fea4aae9e04dd974592fd543daa3f53a, type: 3}
+  - {fileID: 8300000, guid: fdce9502de6868f43b67c35452853a10, type: 3}
   - {fileID: 8300000, guid: 0dfabc338efcae14eaabaceef18ede7a, type: 3}
-  sfxVolume: 0.3
-  channels: 16
+  sfxVolume: 0.5
+  channels: 4
 --- !u!4 &1981210281
 Transform:
   m_ObjectHideFlags: 0
