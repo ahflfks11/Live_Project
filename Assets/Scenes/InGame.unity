@@ -1265,7 +1265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12801984}
+  m_AnchoredPosition: {x: 0, y: -16377024}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624
@@ -1896,6 +1896,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420039}
   - component: {fileID: 519420040}
+  - component: {fileID: 519420042}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2000,6 +2001,16 @@ RectTransform:
   m_AnchoredPosition: {x: 1.04, y: -0.93}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!165 &519420042
+AudioHighPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_CutoffFrequency: 5000
+  m_HighpassResonanceQ: 1
 --- !u!1 &537497230
 GameObject:
   m_ObjectHideFlags: 0
@@ -45323,14 +45334,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42942416a15283744a95265ffeab0800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmClip: {fileID: 0}
-  bgmVolume: 0.2
+  bgmClip: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
+  bgmVolume: 0.5
   sfxClips:
-  - {fileID: 8300000, guid: fea4aae9e04dd974592fd543daa3f53a, type: 3}
-  - {fileID: 8300000, guid: fdce9502de6868f43b67c35452853a10, type: 3}
-  - {fileID: 8300000, guid: 0dfabc338efcae14eaabaceef18ede7a, type: 3}
+  - {fileID: 8300000, guid: 94b7aac152974b94b9f8547e72ee5c4e, type: 3}
+  - {fileID: 8300000, guid: 6ecb61f59b63ce74c94f2e4a21d4ae7f, type: 3}
+  - {fileID: 8300000, guid: 44fd9f14016a24341a1776ca77eab220, type: 3}
   sfxVolume: 0.5
-  channels: 4
+  channels: 10
+  _highAudioFilter: {fileID: 519420042}
 --- !u!4 &1981210281
 Transform:
   m_ObjectHideFlags: 0

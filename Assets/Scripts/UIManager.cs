@@ -92,10 +92,12 @@ public class UIManager : MonoBehaviour
         if (_EnforceShopPanel.enabled)
         {
             _EnforceShopPanel.enabled = false;
+            AudioManager.instance.ONSFX();
         }
         else
         {
             _EnforceShopPanel.enabled = true;
+            AudioManager.instance.OFFSFX();
         }
     }
 

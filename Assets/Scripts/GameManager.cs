@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameInit();
+        AudioManager.instance.PlayBgm(true);
     }
 
     private void Update()

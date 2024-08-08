@@ -18,12 +18,36 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelIndex;
 
+    public AudioHighPassFilter _highAudioFilter;
+
     public enum skillSfx { Slash = 0, Arrow, Magic }
 
     private void Awake()
     {
         instance = this;
         Init();
+    }
+
+    public void PlayBgm(bool isPlay)
+    {
+        if (isPlay)
+        {
+            bgmPlayer.Play();
+        }
+        else
+        {
+            bgmPlayer.Stop();
+        }
+    }
+
+    public void OFFSFX()
+    {
+        _highAudioFilter.enabled = true;
+    }
+
+    public void ONSFX()
+    {
+        _highAudioFilter.enabled = false;
     }
 
     void Init()

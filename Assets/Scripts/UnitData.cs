@@ -410,6 +410,8 @@ public class UnitData : MonoBehaviour
         if (count >= 2 && !_data.specialUnit && _data.EvolutionAvailability)
         {
             _sprMat.SetFloat("_OuterOutlineFade", 1f);
+            transform.SetAsLastSibling();
+            _animator.transform.SetAsLastSibling();
         }
         else
         {
