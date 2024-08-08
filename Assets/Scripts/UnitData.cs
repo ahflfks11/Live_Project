@@ -373,7 +373,7 @@ public class UnitData : MonoBehaviour
                 }
             }
 
-            if (!_data.specialUnit && _data.EvolutionAvailability)
+            if (!_data.specialUnit)
             {
                 if (!possible)
                 {
@@ -404,7 +404,7 @@ public class UnitData : MonoBehaviour
             }
         }
 
-        if (count >= 2 && !_data.specialUnit)
+        if (count >= 2 && !_data.specialUnit && _data.EvolutionAvailability)
         {
             _sprMat.SetFloat("_OuterOutlineFade", 1f);
         }
