@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelIndex;
 
-    public enum skillSfx { Slash = 0, Arrow }
+    public enum skillSfx { Slash = 0, Arrow, Magic }
 
     private void Awake()
     {
