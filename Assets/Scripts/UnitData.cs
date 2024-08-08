@@ -58,6 +58,8 @@ public class UnitData : MonoBehaviour
     public Collider2D[] enermys;
     public LayerMask EnemyLayer; //레이어 선택
     public float FindRange = 4f; //범위
+    float _increaseDmg = 0f;
+    float _increaseRange = 0f;
     public Sprite _spr;
 
     public Material _sprMat;
@@ -87,6 +89,21 @@ public class UnitData : MonoBehaviour
             _myRareColor.color = GameManager.Instance._hiddenColor;
 
         _unitManager = FindObjectOfType<UnitManager>();
+        string _text = null;
+
+        if (GameObject.Find("DataManager"))
+        {
+            for (int index = 0; index < DataManager.Instance.MyHeroList.Count; index++)
+            {
+                if (DataManager.Instance.MyHeroList[index]._data._unit == _data._unit && DataManager.Instance.MyHeroList[index]._data.rarelityLevel == _data.rarelityLevel)
+                {
+                    _increaseDmg = 1 * DataManager.Instance.NowLevel[index];
+                    _increaseRange = 1 * DataManager.Instance.NowLevel[index];
+                    FindRange += _increaseRange;
+                    break;
+                }
+            }
+        }
 
         FindClosestEnemy();
     }
@@ -152,6 +169,8 @@ public class UnitData : MonoBehaviour
                 _dmg = _data.dmg + _unitManager.LegendEnforceDmg;
             }
         }
+
+        _dmg = _dmg + _increaseDmg;
 
         if (_data.attackCount == 1)
         {

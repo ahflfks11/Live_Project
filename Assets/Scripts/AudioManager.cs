@@ -50,6 +50,35 @@ public class AudioManager : MonoBehaviour
         _highAudioFilter.enabled = false;
     }
 
+    public void SetSFXVolume(float _volume)
+    {
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            sfxPlayers[index].volume = _volume;
+        }
+
+        sfxVolume = _volume;
+    }
+
+    public void SetBackGroundVolume(float _volume)
+    {
+        bgmPlayer.volume = _volume;
+        bgmVolume = _volume;
+    }
+
+    public void MuteBGM(bool isPlay)
+    {
+        bgmPlayer.mute = isPlay;
+    }
+
+    public void MuteSFX(bool isPlay)
+    {
+        for (int index = 0; index < sfxPlayers.Length; index++)
+        {
+            sfxPlayers[index].mute = isPlay;
+        }
+    }
+
     void Init()
     {
         GameObject bgmObject = new GameObject("BgmPlayer");

@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
     [SerializeField] private EnforceUI _enforceUI;
     [SerializeField] private DOTweenVisualManager _skipUIPanel;
+    [SerializeField] private DOTweenVisualManager _settingUIPanel;
 
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
     public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
@@ -84,6 +85,18 @@ public class UIManager : MonoBehaviour
         {
             GameManager.Instance.SetTime = 0f;
             SkipUI();
+        }
+    }
+
+    public void SettingUI()
+    {
+        if (_settingUIPanel.enabled)
+        {
+            _settingUIPanel.enabled = false;
+        }
+        else
+        {
+            _settingUIPanel.enabled = true;
         }
     }
 

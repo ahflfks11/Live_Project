@@ -10,7 +10,7 @@ public class UnitManager : MonoBehaviour
     public List<GameObject> _spawnList;
 
     int number = 0;
-    float rndRangeX = 3f;
+    float rndRangeX = 3f; // Default 3f
     float rndRangeY = 3f;
     private float normalEnforceDmg = 0;
     private float rareEnforceDmg = 0;

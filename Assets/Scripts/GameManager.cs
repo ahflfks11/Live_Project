@@ -10,13 +10,13 @@ public class GameManager : MonoBehaviour
     private int _gold;
     private int _requireGold;
     int clickCount;
-    private float _limitTimer = 40f;
+    [SerializeField] private float _limitTimer = 40f;
     private float _bossTimer = 90f;
     float _setTime;
     float _sectime;
     int _mintime;
 
-    private int _wave = 1;
+    [SerializeField] private int _wave = 1;
     private int _enermyCount = 0;
     private int _bossCount = 0;
 
@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float gameSpeed = 0;
 
     [SerializeField] private EnermyCoinText _coinText;
+
+    [SerializeField] private TMPro.TMP_Text _logText;
+
+    [SerializeField] private GameObject _warningBoss;
 
     private void Awake()
     {
@@ -91,6 +95,16 @@ public class GameManager : MonoBehaviour
         myArea = GameObject.Find("SpawnPoint").transform;
     }
 
+    public void Log(string _text)
+    {
+        _logText.text = _text;
+    }
+
+    public void Warning()
+    {
+        GameObject _bossWarningObject = Instantiate(_warningBoss, _warningBoss.transform.position, Quaternion.identity);
+    }
+
     private void Start()
     {
         GameInit();
@@ -134,6 +148,7 @@ public class GameManager : MonoBehaviour
                     IsBoss = true;
                     SetTime = _bossTimer;
                     UiManager.BossWave();
+                    Warning();
                 }
                 else
                 {
