@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        /*
         if (instance != null)
         {
             Destroy(this.gameObject);
@@ -45,10 +46,14 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        */
+
+        instance = this;
     }
 
     public static GameManager Instance
     {
+
         get
         {
             if (null == instance)

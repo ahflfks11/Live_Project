@@ -36,6 +36,7 @@ public class UnitData : MonoBehaviour
         public double weight;
         public float attackDelay;
         public float attackSpeed;
+        public AudioManager.skillSfx soundNumber;
         public float speed;
         public float dmg;
         public int rarelityLevel;
@@ -182,7 +183,7 @@ public class UnitData : MonoBehaviour
                         }
                         catch
                         {
-                            Debug.LogWarning("Àû »ç¶óÁü");
+
                         }
                     }
                 }
@@ -200,12 +201,14 @@ public class UnitData : MonoBehaviour
                         }
                         catch
                         {
-                            Debug.LogWarning("Àû »ç¶óÁü2");
+
                         }
                     }
                 }
             }
         }
+
+        AudioManager.instance.PlaySkillSfx(_data.soundNumber);
     }
 
     public void SpecialAttack(float _takeDmg)
