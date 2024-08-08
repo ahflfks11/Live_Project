@@ -95,6 +95,14 @@ public class GameManager : MonoBehaviour
         myArea = GameObject.Find("SpawnPoint").transform;
     }
 
+    public void Lobby()
+    {
+        if (GameObject.Find("DataManager"))
+            Transitioner.Instance.TransitionToScene(1);
+        else
+            SceneManager.LoadScene(1);
+    }
+
     public void Log(string _text)
     {
         _logText.text = _text;
