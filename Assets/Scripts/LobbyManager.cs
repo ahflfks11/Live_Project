@@ -1,8 +1,10 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LobbyManager : MonoBehaviour
 {
+    private static LobbyManager instance;
 
     LobbyCharacter _lobbyCharacter;
     LobbyMonster _lobbyMonster;
@@ -10,22 +12,39 @@ public class LobbyManager : MonoBehaviour
     LobbyUIManager _lobbyUIManager;
     DataManager _dataManager;
 
+    [SerializeField] private GameObject spawnEffect;
+    [SerializeField] private DG.Tweening.DOTweenVisualManager _dungeonArrowObject;
+    [SerializeField] private GameObject _arrow;
     public bool _tutorial;
 
     public GameObject[] _LootBox;
 
     public List<UnitData> _GachaList;
 
+    public static LobbyManager Instance { get => instance; set => instance = value; }
+    public LobbyMonster LobbyMonster { get => _lobbyMonster; set => _lobbyMonster = value; }
+    public GameObject SpawnEffect { get => spawnEffect; set => spawnEffect = value; }
+    public DOTweenVisualManager DungeonArrowObject { get => _dungeonArrowObject; set => _dungeonArrowObject = value; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _lobbyCharacter = FindObjectOfType<LobbyCharacter>();
-        _lobbyMonster = FindObjectOfType<LobbyMonster>();
+        LobbyMonster = FindObjectOfType<LobbyMonster>();
         _lobbyUIManager = FindObjectOfType<LobbyUIManager>();
 
         if (!_tutorial)
         {
             _lobbyCharacter.Attack();
+        }
+        else
+        {
+            LobbyMonster.gameObject.SetActive(false);
         }
     }
 
@@ -43,6 +62,12 @@ public class LobbyManager : MonoBehaviour
             if (!_tutorial)
                 _gpgsManager.ReadHeroInfo();
         }
+    }
+
+    //Æ©Åä¸®¾ó arrow on / off
+    public void SetArrow()
+    {
+        _arrow.SetActive(true);
     }
 
     public int SetupGachaList(int _GachaCount)
@@ -157,7 +182,7 @@ public class LobbyManager : MonoBehaviour
 
     public void MonsterHit()
     {
-        _lobbyMonster.Hit();
+        LobbyMonster.Hit();
     }
 
     public void ChangeData()
@@ -177,6 +202,9 @@ public class LobbyManager : MonoBehaviour
 
     public void MultiGacha()
     {
+        if (LobbyManager.instance._tutorial && JsonParseManager.Instance._txtNumber < 6)
+            return;
+
         Destroy(GameObject.Find("LootBox"));
         int _boxlevel = SetupGachaList(8);
         GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
@@ -194,6 +222,9 @@ public class LobbyManager : MonoBehaviour
 
     public void SingleGacha()
     {
+        if (LobbyManager.instance._tutorial && JsonParseManager.Instance._txtNumber < 6)
+            return;
+
         Destroy(GameObject.Find("LootBox"));
         int _boxlevel = SetupGachaList(1);
         GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
@@ -212,6 +243,9 @@ public class LobbyManager : MonoBehaviour
 
     public void EnterDungeon()
     {
+        if(LobbyManager.instance._tutorial && JsonParseManager.Instance._txtNumber < 6)
+            return;
+
         if (GameObject.Find("WiggleDiamondTransitioner"))
             Transitioner.Instance.TransitionToScene(3);
         else

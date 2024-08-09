@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void Lobby()
     {
-        if (GameObject.Find("DataManager"))
+        if (GameObject.Find("GoogleManager"))
             Transitioner.Instance.TransitionToScene(1);
         else
             SceneManager.LoadScene(1);

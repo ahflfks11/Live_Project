@@ -8,12 +8,15 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager instance;
     [SerializeField]
     private DOTweenVisualManager _signPanel;
+    public DOTweenVisualManager _dialogueBox;
     public Text dialogueText;  // UI Text 컴포넌트
     public float typingSpeed = 0.05f;  // 타이핑 속도
     private string[] sentences;  // 대화 문장 배열
     private int index = 0;  // 현재 문장 인덱스
     private Coroutine typingCoroutine;  // 현재 실행 중인 Coroutine을 관리하기 위한 변수
     private bool isTyping = false;  // 현재 타이핑 중인지 확인하기 위한 변수
+
+    
 
     [SerializeField]
     private DOTweenVisualManager _selectUIPanel;
@@ -43,34 +46,41 @@ public class DialogueManager : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                if (isTyping)
-                {
-                    // 타이핑 중일 경우, 현재 문장 전체를 즉시 표시
-                    CompleteCurrentSentence();
-                }
-                else
-                {
-                    if (JsonParseManager.Instance._actionTypeList.Count != 0)
-                    {
-                        for (int i = 0; i < JsonParseManager.Instance._actionTypeList.Count; i++)
-                        {
-                            if (JsonParseManager.Instance._actionTypeList[i] == index - 1)
-                            {
-                                JsonParseManager.Instance.ActionType(JsonParseManager.Instance._actionType[i]);
-                                break;
-                            }
-                        }
-                    }
 
-                    // 타이핑이 끝났으면 다음 문장으로 이동
-                    DisplayNextSentence();
+            }
+        }
+    }
+
+    public void Talk()
+    {
+        if (isTyping)
+        {
+            // 타이핑 중일 경우, 현재 문장 전체를 즉시 표시
+            CompleteCurrentSentence();
+        }
+        else
+        {
+            if (JsonParseManager.Instance._actionTypeList.Count != 0)
+            {
+                for (int i = 0; i < JsonParseManager.Instance._actionTypeList.Count; i++)
+                {
+                    if (JsonParseManager.Instance._actionTypeList[i] == index - 1)
+                    {
+                        JsonParseManager.Instance.ActionType(JsonParseManager.Instance._actionType[i]);
+                        break;
+                    }
                 }
             }
+
+            // 타이핑이 끝났으면 다음 문장으로 이동
+            DisplayNextSentence();
         }
     }
 
     public void TalkLauncher(int _talkNumber)
     {
+        if (!_dialogueBox.enabled)
+            _dialogueBox.enabled = true;
         //문장 설정
         sentences = JsonParseManager.Instance.AddTalk(_talkNumber, JsonParseManager.Instance.PrintDataForTypes(_talkNumber));
         //문장 출력 시작
@@ -81,11 +91,18 @@ public class DialogueManager : MonoBehaviour
     {
         if (_signPanel.enabled)
         {
+            //gameObject.SetActive(true);
+            _dialogueBox.enabled = true;
             TalkLauncher(4);
             _signPanel.enabled = false;
         }
         else
+        {
+            _dialogueBox.enabled = false;
             _signPanel.enabled = true;
+            Debug.Log("test");
+            //gameObject.SetActive(false);
+        }
     }
 
     public void StartDialogue()
@@ -126,6 +143,8 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogueText.text = ""; // 대화 종료 후 텍스트 초기화
             }
+
+            _dialogueBox.enabled = false;
         }
     }
 

@@ -10,6 +10,8 @@ public class JsonParseManager : MonoBehaviour
 
     string jsonFileName = "data.json";
 
+    public int _txtNumber = 0;
+
     private int _yesNumber = -1;
     private int _noNumber = -1;
 
@@ -100,7 +102,7 @@ public class JsonParseManager : MonoBehaviour
 
         string _yes = null;
         string _no = null;
-
+        _txtNumber = no;
         DataEntry entry = dataList.Find(e => e.no == no);
 
         if (entry != null)
@@ -239,6 +241,15 @@ public class JsonParseManager : MonoBehaviour
                 break;
             case 2:
                 DialogueManager.Instance.SignPanelUI();
+                break;
+            case 3:
+                GameObject spawnEffect = Instantiate(LobbyManager.Instance.SpawnEffect, new Vector3(LobbyManager.Instance.LobbyMonster.transform.position.x, LobbyManager.Instance.LobbyMonster.transform.position.y - 2.5f, LobbyManager.Instance.LobbyMonster.transform.position.z), Quaternion.identity);
+                LobbyManager.Instance.LobbyMonster.gameObject.SetActive(true);
+                Camera.main.GetComponent<CameraShake>().ShakeCamera(0.08f, 0.8f);
+                break;
+            case 4:
+                LobbyManager.Instance.DungeonArrowObject.enabled = true;
+                LobbyManager.Instance.SetArrow();
                 break;
         }
     }

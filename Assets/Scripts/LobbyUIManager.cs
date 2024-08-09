@@ -29,10 +29,11 @@ public class LobbyUIManager : MonoBehaviour
     public Gacha_Cotents SingleGachaContent { get => _singleGachaContent; set => _singleGachaContent = value; }
     public DOTweenVisualManager Character_InvenPanel { get => _character_InvenPanel; set => _character_InvenPanel = value; }
     public CharacterStatus Status { get => _status; set => _status = value; }
+    public LobbyManager LobbyManager { get => _lobbyManager; set => _lobbyManager = value; }
 
     private void Start()
     {
-        _lobbyManager = FindObjectOfType<LobbyManager>();
+        LobbyManager = FindObjectOfType<LobbyManager>();
         _gpgsManager = FindObjectOfType<GPGSManager>();
         MultiGachaContent = _multiGachaUIPanel.GetComponent<Gacha_Cotents>();
         SingleGachaContent = _singleGachaUIPanel.GetComponent<Gacha_Cotents>();
@@ -140,11 +141,12 @@ public class LobbyUIManager : MonoBehaviour
         {
             if (_gpgsManager.CreateNick(_NickLabel.text))
             {
-                _lobbyManager.CharacterAttack();
+                //_lobbyManager.CharacterAttack();
                 _name.text = _gpgsManager.TakeNick();
-                _popup.SetActive(false);
             }
         }
+
+        DialogueManager.Instance.SignPanelUI();
     }
 
     public void CreateIcon(DataManager.Data _data, int _number)
