@@ -7,49 +7,35 @@ public class JsonParseManager : MonoBehaviour
 {
     private static JsonParseManager instance;
 
-    // JSON 파일 경로
-    public string jsonFileName = "data.json";
+    private int _textNumber = 1;
 
-    // JSON 데이터를 담을 클래스
+    string jsonFileName = "data.json";
+
     [System.Serializable]
     public class DataEntry
     {
+        public int no;
         public string Name;
         public int value;
         public string setence;
+        public int? Yes;
+        public int? No;
     }
 
-    // JSON 데이터를 저장할 Dictionary
-    private Dictionary<string, DataEntry> dataDict = new Dictionary<string, DataEntry>();
+    private List<DataEntry> dataList = new List<DataEntry>();
 
     public static JsonParseManager Instance { get => instance; set => instance = value; }
 
-    // JSON 파일을 읽고 데이터를 처리하는 함수
     public void LoadJson()
     {
-        // JSON 파일 경로 설정
         string filePath = Path.Combine(Application.streamingAssetsPath, jsonFileName);
 
-        // 파일이 존재하는지 확인
         if (File.Exists(filePath))
         {
-            // JSON 파일 내용을 문자열로 읽기
             string jsonStr = File.ReadAllText(filePath);
 
-            // JSON 문자열을 Dictionary로 변환
-            JsonData jsonData = JsonMapper.ToObject(jsonStr);
-
-            foreach (string key in jsonData.Keys)
-            {
-                JsonData entryData = jsonData[key];
-                DataEntry entry = new DataEntry
-                {
-                    Name = entryData["Name"].ToString(),
-                    value = int.Parse(entryData["value"].ToString()),
-                    setence = entryData["setence"].ToString()
-                };
-                dataDict.Add(key, entry);
-            }
+            // JSON 문자열을 List<DataEntry>로 자동 변환
+            dataList = JsonMapper.ToObject<List<DataEntry>>(jsonStr);
         }
         else
         {
@@ -57,20 +43,77 @@ public class JsonParseManager : MonoBehaviour
         }
     }
 
-    // 특정 키에 해당하는 데이터를 출력하는 함수
-    public void PrintDataForKey(string key)
+    public string PrintDataForName(int no)
     {
-        if (dataDict.ContainsKey(key))
+        string _name = null;
+
+        DataEntry entry = dataList.Find(e => e.no == no);
+        if (entry != null)
         {
-            DataEntry entry = dataDict[key];
-            Debug.Log("Key: " + key);
-            Debug.Log("Name: " + entry.Name);
-            Debug.Log("Setence: " + entry.setence);
+            //Debug.Log("No: " + entry.no);
+            //Debug.Log("Name: " + entry.Name);
+            //Debug.Log("Setence: " + entry.setence);
+            //Debug.Log("Yes: " + (entry.Yes.HasValue ? entry.Yes.Value.ToString() : "null"));
+            //Debug.Log("No: " + (entry.No.HasValue ? entry.No.Value.ToString() : "null"));
+            _name = entry.Name;
         }
         else
         {
-            Debug.LogWarning("Key not found: " + key);
+            Debug.LogWarning("No entry found for no: " + no);
         }
+
+        return _name;
+    }
+
+    public string PrintDataForSentence(int no)
+    {
+        string _setence = null;
+
+        DataEntry entry = dataList.Find(e => e.no == no);
+        if (entry != null)
+        {
+            _setence = entry.setence;
+        }
+        else
+        {
+            Debug.LogWarning("No entry found for no: " + no);
+        }
+
+        return _setence;
+    }
+
+    public int PrintDataForYes(int no)
+    {
+        int _yes = -1;
+
+        DataEntry entry = dataList.Find(e => e.no == no);
+        if (entry != null)
+        {
+            _yes = entry.Yes.HasValue ? entry.Yes.Value : -1;
+        }
+        else
+        {
+            Debug.LogWarning("No entry found for no: " + no);
+        }
+
+        return _yes;
+    }
+
+    public int PrintDataForNo(int no)
+    {
+        int _no = -1;
+
+        DataEntry entry = dataList.Find(e => e.no == no);
+        if (entry != null)
+        {
+            _no = entry.No.HasValue ? entry.No.Value : -1;
+        }
+        else
+        {
+            Debug.LogWarning("No entry found for no: " + no);
+        }
+
+        return _no;
     }
 
     private void Awake()
@@ -86,12 +129,8 @@ public class JsonParseManager : MonoBehaviour
         }
     }
 
-    // Start 함수에서 JSON 파일 읽기 및 특정 키 값 출력
     void Start()
     {
         LoadJson();
-
-        // 예시로 특정 키 "1"에 해당하는 데이터를 출력
-        PrintDataForKey("1");
     }
 }
