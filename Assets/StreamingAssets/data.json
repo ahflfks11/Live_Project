@@ -2,25 +2,45 @@
    {
       "no":1,
       "Name":"요정",
-      "value":0,
+      "Types":0,
       "setence":"어서오세요, 모험가님! 이 세계에 오신 것은 처음이신가요?",
       "Yes":2,
-      "No":null
+      "No":4,
+      "EndTalk":"",
+      "Yes_setence":"처음이야. (튜토리얼 시작)",
+      "No_setence":"처음 아닌데요?"
    },
    {
       "no":2,
       "Name":"요정",
-      "value":0,
+      "Types":0,
       "setence":"그렇다면 저와 함께 이 세계에 대해서 알아볼까요? 저를 따라오세요!",
       "Yes":null,
-      "No":null
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":"",
+      "No_setence":""
    },
    {
       "no":3,
       "Name":"요정",
-      "value":1,
-      "setence":"모험가님의 이름은 어떻게 되시나요?",
+      "Types":2,
+      "setence":"우선 여기에 모험가님의 이름을 작성해 주시겠어요?",
       "Yes":null,
-      "No":null
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":"",
+      "No_setence":""
+   },
+   {
+      "no":4,
+      "Name":"요정",
+      "Types":1,
+      "setence":"자, 그럼 이제 모험을 떠나보죠. 여기를 누르면 모험을 시작하실 수 있어요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":"",
+      "No_setence":""
    }
 ]
