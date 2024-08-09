@@ -103,6 +103,7 @@ public class GPGSManager : MonoBehaviour
         if (bro.IsSuccess() == false)
         {
             Debug.Log("데이터 읽기 중에 문제가 발생했습니다 : " + bro.ToString());
+            return;
         }
         // 불러오기에는 성공했으나 데이터가 존재하지 않는 경우
         if (bro.IsSuccess() && bro.FlattenRows().Count <= 0)

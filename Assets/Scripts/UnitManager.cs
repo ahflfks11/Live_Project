@@ -48,7 +48,7 @@ public class UnitManager : MonoBehaviour
 
     private void Start()
     {
-        if (GameObject.Find("GoogleManager"))
+        if (GameObject.Find("GoogleManager") && DataManager.Instance.MyHeroList.Count > 0)
         {
             _soldiers = new List<GameObject>();
 

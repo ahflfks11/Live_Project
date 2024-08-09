@@ -3,6 +3,8 @@ using UnityEngine;
 using System.IO;
 using LitJson;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using System.Collections;
 
 public class JsonParseManager : MonoBehaviour
 {
@@ -45,19 +47,44 @@ public class JsonParseManager : MonoBehaviour
 
     public void LoadJson()
     {
+        StartCoroutine(LoadJsonCoroutine());
+    }
+
+    private IEnumerator LoadJsonCoroutine()
+    {
         string filePath = Path.Combine(Application.streamingAssetsPath, jsonFileName);
+        string jsonStr = "";
 
-        if (File.Exists(filePath))
+        if (filePath.Contains("://") || filePath.Contains(":///"))
         {
-            string jsonStr = File.ReadAllText(filePath);
+            // Android, iOS에서 StreamingAssets에 있는 파일을 읽기 위한 처리
+            UnityWebRequest request = UnityWebRequest.Get(filePath);
+            yield return request.SendWebRequest();
 
-            // JSON 문자열을 List<DataEntry>로 자동 변환
-            dataList = JsonMapper.ToObject<List<DataEntry>>(jsonStr);
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error loading JSON file: " + request.error);
+                yield break;
+            }
+
+            jsonStr = request.downloadHandler.text;
         }
         else
         {
-            Debug.LogError("JSON file not found at path: " + filePath);
+            // Editor 및 Standalone에서의 처리
+            if (File.Exists(filePath))
+            {
+                jsonStr = File.ReadAllText(filePath);
+            }
+            else
+            {
+                Debug.LogError("JSON file not found at path: " + filePath);
+                yield break;
+            }
         }
+
+        // JSON 문자열을 List<DataEntry>로 자동 변환
+        dataList = JsonMapper.ToObject<List<DataEntry>>(jsonStr);
     }
 
     public string PrintDataForName(int no)
@@ -245,9 +272,10 @@ public class JsonParseManager : MonoBehaviour
             case 3:
                 GameObject spawnEffect = Instantiate(LobbyManager.Instance.SpawnEffect, new Vector3(LobbyManager.Instance.LobbyMonster.transform.position.x, LobbyManager.Instance.LobbyMonster.transform.position.y - 2.5f, LobbyManager.Instance.LobbyMonster.transform.position.z), Quaternion.identity);
                 LobbyManager.Instance.LobbyMonster.gameObject.SetActive(true);
-                Camera.main.GetComponent<CameraShake>().ShakeCamera(0.08f, 0.8f);
+                Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
                 break;
             case 4:
+                LobbyManager.Instance.DungeonArrowObject.GetComponent<UnityEngine.UI.Image>().rectTransform.sizeDelta = new Vector2(9000, 9000);
                 LobbyManager.Instance.DungeonArrowObject.enabled = true;
                 LobbyManager.Instance.SetArrow();
                 break;
