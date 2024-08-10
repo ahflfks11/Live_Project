@@ -137,6 +137,9 @@ public class LobbyUIManager : MonoBehaviour
 
     public void NickDecision()
     {
+        if (_NickLabel.text == "")
+            return;
+
         if (_gpgsManager != null)
         {
             if (_gpgsManager.CreateNick(_NickLabel.text))

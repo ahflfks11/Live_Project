@@ -46,6 +46,7 @@ public class JsonParseManager : MonoBehaviour
     public int NoNumber { get => _noNumber; set => _noNumber = value; }
     public string Yes_Setence { get => _yes_Setence; set => _yes_Setence = value; }
     public string No_Setence { get => _no_Setence; set => _no_Setence = value; }
+    public bool Tutorial { get => _tutorial; set => _tutorial = value; }
 
     public void LoadJson()
     {

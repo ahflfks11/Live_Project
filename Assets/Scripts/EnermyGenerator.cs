@@ -53,7 +53,6 @@ public class EnermyGenerator : MonoBehaviour
     private void Start()
     {
         wave = GameManager.Instance.Wave;
-        StartWave();
     }
 
     public void StartWave()
@@ -63,6 +62,9 @@ public class EnermyGenerator : MonoBehaviour
 
     private void Update()
     {
+        if (_launcher == null && GameManager.Instance.GameStart)
+            StartWave();
+
         if (wave != GameManager.Instance.Wave)
         {
             _bossSpawn = false;

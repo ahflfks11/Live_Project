@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Wave(GameManager.Instance.Wave);
+        //Wave(GameManager.Instance.Wave);
     }
 
     // Update is called once per frame

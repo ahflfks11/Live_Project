@@ -32,11 +32,6 @@ public class UnitManager : MonoBehaviour
     public float LegendEnforceDmg { get => legendEnforceDmg; set => legendEnforceDmg = value; }
     public float HiddenEnforceDmg { get => hiddenEnforceDmg; set => hiddenEnforceDmg = value; }
 
-    private void Awake()
-    {
-        //Screen.SetResolution(Screen.width, Screen.width / 9 * 16, true);
-    }
-
     public bool CheckSpawn(GameObject[] _data)
     {
 
@@ -48,7 +43,7 @@ public class UnitManager : MonoBehaviour
 
     private void Start()
     {
-        if (GameObject.Find("GoogleManager") && DataManager.Instance.MyHeroList.Count > 0)
+        if (DataManager.Instance.MyHeroList.Count > 0)
         {
             _soldiers = new List<GameObject>();
 

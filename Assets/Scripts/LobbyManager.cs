@@ -44,6 +44,7 @@ public class LobbyManager : MonoBehaviour
         }
         else
         {
+            JsonParseManager.Instance.Tutorial = true;
             LobbyMonster.gameObject.SetActive(false);
         }
     }

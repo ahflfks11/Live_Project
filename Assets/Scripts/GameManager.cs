@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     public Color[] _rareColor;
     public Color _hiddenColor;
+    bool _gameStart;
 
     [SerializeField] bool _isBoss = false;
 
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
     public bool IsBoss { get => _isBoss; set => _isBoss = value; }
     public int BossCount { get => _bossCount; set => _bossCount = value; }
     public EnermyCoinText CoinText { get => _coinText; set => _coinText = value; }
+    public bool GameStart { get => _gameStart; set => _gameStart = value; }
 
     public void GameInit()
     {
@@ -93,6 +95,16 @@ public class GameManager : MonoBehaviour
         SetTime = _limitTimer;
         ClickCount = 0;
         myArea = GameObject.Find("SpawnPoint").transform;
+
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            GameStart = false;
+        }
+        else
+        {
+            GameStart = true;
+            UiManager.Wave(GameManager.Instance.Wave);
+        }
     }
 
     public void Lobby()
@@ -121,67 +133,55 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!GameStart)
+            return;
+
+        SetTime -= Time.deltaTime;
+
+        if (SetTime >= 60f)
         {
-            if (Time.timeScale == 1f)
-                Time.timeScale = 2f;
+            Mintime = (int)SetTime / 60;
+            Sectime = (int)SetTime % 60;
+        }
+
+        if (SetTime < 60f)
+        {
+            Mintime = 0;
+            Sectime = (int)SetTime;
+        }
+
+        if (SetTime <= 0f)
+        {
+            if ((_wave + 1) % 10 == 0 && !IsBoss)
+            {
+                IsBoss = true;
+                SetTime = _bossTimer;
+                UiManager.BossWave();
+                Warning();
+            }
             else
-                Time.timeScale = 1f;
-        }
-
-        if (unitManager == null && GameObject.FindObjectOfType<UnitManager>())
-        {
-            GameInit();
-        }
-        else if (unitManager != null)
-        {
-            SetTime -= Time.deltaTime;
-
-            if (SetTime >= 60f)
             {
-                Mintime = (int)SetTime / 60;
-                Sectime = (int)SetTime % 60;
-            }
-
-            if (SetTime < 60f)
-            {
-                Mintime = 0;
-                Sectime = (int)SetTime;
-            }
-
-            if (SetTime <= 0f)
-            {
-                if ((_wave + 1) % 10 == 0 && !IsBoss)
+                if (IsBoss)
                 {
-                    IsBoss = true;
-                    SetTime = _bossTimer;
-                    UiManager.BossWave();
-                    Warning();
-                }
-                else
-                {
-                    if (IsBoss)
+                    if (uiManager.SkipUIPanel.enabled)
+                        uiManager.SkipUI();
+
+                    if (GameObject.Find("Boss"))
                     {
-                        if (uiManager.SkipUIPanel.enabled)
-                            uiManager.SkipUI();
 
-                        if (GameObject.Find("Boss"))
-                        {
-                            
-                        }
-
-                        IsBoss = false;
-                        BossCount++;
                     }
 
-                    SetTime = LimitTimer;
-                    _wave++;
-
-                    UiManager.Wave(Wave);
+                    IsBoss = false;
+                    BossCount++;
                 }
-            }
 
-            _unitObject = FindObjectsOfType<UnitData>();
+                SetTime = LimitTimer;
+                _wave++;
+
+                UiManager.Wave(Wave);
+            }
         }
+
+        _unitObject = FindObjectsOfType<UnitData>();
     }
 }
