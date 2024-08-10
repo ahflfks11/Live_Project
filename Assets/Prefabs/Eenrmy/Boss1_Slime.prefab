@@ -206,7 +206,7 @@ MonoBehaviour:
   _hpText: {fileID: 3538755985601852307}
   _isBoss: 1
   _data:
-    HP: 550
+    HP: 1500
     defence: 0
     gainGold: 50
     speed: 0.5
@@ -223,7 +223,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.007670641, y: 0.015341759}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -234,7 +234,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.6, y: 9.6}
+  m_Size: {x: 5.442242, y: 3.0028172}
   m_EdgeRadius: 0
 --- !u!1 &3149751394045285734
 GameObject:

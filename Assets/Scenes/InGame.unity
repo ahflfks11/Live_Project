@@ -1182,7 +1182,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -98.2}
-  m_SizeDelta: {x: 800, y: 100}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155289594
 MonoBehaviour:
@@ -1772,6 +1772,8 @@ MonoBehaviour:
   _logText: {fileID: 11729909}
   _warningBoss: {fileID: 2534603937066274668, guid: abb8b0b3b9250234db522434dda364c5,
     type: 3}
+  _coinDropObject: {fileID: 3924611119086128028, guid: c159effc1deb2874492128c3638e1e9f,
+    type: 3}
 --- !u!114 &268349913 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8377167040315290907, guid: f84b2cd96e656de4abf30dd630c29bac,
@@ -1988,7 +1990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -61648}
+  m_AnchoredPosition: {x: 0, y: -5334832}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624
@@ -3605,6 +3607,7 @@ MonoBehaviour:
     type: 3}
   _timerText: {fileID: 16115030}
   _content: {fileID: 0}
+  _coin_Text: {fileID: 1704336999868509749}
   _RevolutionImageObject: {fileID: 563751997395071839, guid: 10eda6c5411d4d24db022714426621cf,
     type: 3}
   _EnforceShopPanel: {fileID: 773286156}
@@ -45811,6 +45814,10 @@ MonoBehaviour:
   - {fileID: 5537879033552831392, guid: 3e4b3a9c8ecea10438e72548e59b56e6, type: 3}
   - {fileID: 7600178554703885872, guid: b162fcd2fe6a36842b1b51e1ddbc83c5, type: 3}
   - {fileID: 7963579835624828680, guid: 84740f9217717ab49aa5192dc20f3dc8, type: 3}
+  - {fileID: 5537879033552831392, guid: 3e4b3a9c8ecea10438e72548e59b56e6, type: 3}
+  - {fileID: 7600178554703885872, guid: b162fcd2fe6a36842b1b51e1ddbc83c5, type: 3}
+  - {fileID: 7963579835624828680, guid: 84740f9217717ab49aa5192dc20f3dc8, type: 3}
+  - {fileID: 8666515045111719913, guid: 402cb07795a4cc84ba3831e2671268b3, type: 3}
   tutorialSoldierNumber: 0
   maxCount: 12
   maxSpawnlevel: 0

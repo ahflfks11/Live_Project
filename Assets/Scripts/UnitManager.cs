@@ -150,7 +150,6 @@ public class UnitManager : MonoBehaviour
         if (GameManager.Instance.ClickCount % 10 == 0)
         {
             GameManager.Instance.RequireGold++;
-
         }
     }
 

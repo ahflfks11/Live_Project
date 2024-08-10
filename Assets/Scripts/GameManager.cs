@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text _logText;
 
     [SerializeField] private GameObject _warningBoss;
+
+    [SerializeField] private GameObject _coinDropObject;
 
     private void Awake()
     {
@@ -132,6 +135,15 @@ public class GameManager : MonoBehaviour
     public void Warning()
     {
         GameObject _bossWarningObject = Instantiate(_warningBoss, _warningBoss.transform.position, Quaternion.identity);
+    }
+
+    public void CoinDrop(Vector3 _pos, int _coin)
+    {
+        Vector3 _tempPos = new Vector3(_pos.x + 0.5f, _pos.y, _pos.z);
+        GameObject coin = Instantiate(_coinDropObject, _tempPos, Quaternion.identity);
+        coin.GetComponentInChildren<TMPro.TMP_Text>().text = "+" + _coin + "G";
+        coin.transform.DOMove(new Vector3(_tempPos.x, _tempPos.y + 0.5f, _tempPos.z), 1f);
+        _gold += _coin;
     }
 
     private void Start()

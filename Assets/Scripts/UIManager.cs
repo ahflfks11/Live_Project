@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public CartoonFX.CFXR_ParticleText _waveText;
     public Text _timerText;
     public Transform _content;
+    public Transform _coin_Text;
+
     public GameObject _RevolutionImageObject;
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
     [SerializeField] private EnforceUI _enforceUI;

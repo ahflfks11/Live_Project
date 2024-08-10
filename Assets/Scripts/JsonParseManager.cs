@@ -301,6 +301,7 @@ public class JsonParseManager : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Enermy"));
                 GameManager.Instance.GameStop = false;
                 GameManager.Instance.EnemyGenerator.SpawnEnemy(10);
+                GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 12);
                 break;
         }
     }
