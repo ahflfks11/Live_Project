@@ -318,18 +318,20 @@ MonoBehaviour:
     weight: 0.8
     attackDelay: 1.5
     attackSpeed: 3
-    speed: 3
+    soundNumber: 0
+    speed: 6
     dmg: 1
     rarelityLevel: 0
     EvolutionAvailability: 1
     specialUnit: 0
   number: 0
+  onselect: 0
   targetEnermy: {fileID: 0}
   enermys: []
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  FindRange: 2.2
+  FindRange: 2.5
   _spr: {fileID: 21300000, guid: 354345ba223e93444b4903cd17293f24, type: 3}
   _sprMat: {fileID: 0}
   _myRareColor: {fileID: 2179492879532669564}

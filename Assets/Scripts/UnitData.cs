@@ -50,7 +50,7 @@ public class UnitData : MonoBehaviour
     public Data _data;
     public int number;
     Vector3 _tempPosition;
-    bool onselect;
+    public bool onselect;
     bool _isAttack;
     bool _possibleRev;
 
@@ -247,7 +247,6 @@ public class UnitData : MonoBehaviour
         }
         onselect = true;
         _animator.SetBool("Walk", false);
-        transform.SetAsLastSibling();
         _visualizer.DrawCircle();
     }
 
@@ -262,15 +261,13 @@ public class UnitData : MonoBehaviour
         }
 
         _visualizer.ClearCircle();
-
+        onselect = false;
 
         if (Vector3.Distance(transform.position, TempPosition) < 0.1f)
         {
             Revolution();
             //GameManager.Instance.UiManager.OpenPanel(this);
         }
-
-        onselect = false;
     }
 
     public void Revolution()

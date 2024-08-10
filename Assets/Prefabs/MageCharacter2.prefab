@@ -197,7 +197,7 @@ MonoBehaviour:
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 2
-    speed: 3
+    speed: 6
     dmg: 6
     rarelityLevel: 1
     EvolutionAvailability: 1
