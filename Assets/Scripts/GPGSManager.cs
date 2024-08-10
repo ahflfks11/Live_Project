@@ -65,6 +65,12 @@ public class GPGSManager : MonoBehaviour
         }
 
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+
+        BackendReturnObject _loginAcess = Backend.BMember.LoginWithTheBackendToken();
+        if (_loginAcess.IsSuccess())
+        {
+            Debug.Log("자동 로그인에 성공했습니다");
+        }
     }
 
     void Update()
@@ -99,12 +105,13 @@ public class GPGSManager : MonoBehaviour
 
         // tableName에서 최대 10개의 자기 자신이 등록한 row 불러오기
         bro = Backend.PlayerData.GetMyData("UserInfo");
+
         // 불러오기에 실패할 경우
         if (bro.IsSuccess() == false)
         {
             Debug.Log("데이터 읽기 중에 문제가 발생했습니다 : " + bro.ToString());
-            return;
         }
+
         // 불러오기에는 성공했으나 데이터가 존재하지 않는 경우
         if (bro.IsSuccess() && bro.FlattenRows().Count <= 0)
         {
@@ -124,9 +131,24 @@ public class GPGSManager : MonoBehaviour
         bro = Backend.PlayerData.GetMyData("UserInfo", 1);
     }
 
+    public bool loginAcess()
+    {
+        BackendReturnObject bro = Backend.BMember.GetUserInfo();
+
+        if (bro.IsSuccess())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void GuestLogin()
     {
-        BackendReturnObject bro = Backend.BMember.GuestLogin("게스트 로그인으로 로그인함");
+        BackendReturnObject bro = Backend.BMember.GuestLogin(Backend.BMember.GetGuestID());
+
         if (bro.IsSuccess())
         {
             if (CheckUser())
@@ -140,7 +162,8 @@ public class GPGSManager : MonoBehaviour
         }
         else
         {
-            string id = Backend.BMember.GetGuestID();
+            Backend.BMember.DeleteGuestInfo();
+            GuestLogin();
         }
     }
 
@@ -186,7 +209,6 @@ public class GPGSManager : MonoBehaviour
     public bool CheckUser()
     {
         string nick = Backend.UserNickName;
-        Debug.Log(nick);
 
         //닉이 존재하지 않으면 false
         if(nick == string.Empty)

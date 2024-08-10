@@ -54,9 +54,6 @@ public class TitleManager : MonoBehaviour
 
     public void GuestLogin()
     {
-        if (_gpgsManager == null)
-            return;
-
         _gpgsManager.GuestLogin();
     }
 }

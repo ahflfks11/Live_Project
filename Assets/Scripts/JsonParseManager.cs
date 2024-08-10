@@ -17,6 +17,8 @@ public class JsonParseManager : MonoBehaviour
     private int _yesNumber = -1;
     private int _noNumber = -1;
 
+    private bool _tutorial = false;
+
     private string _yes_Setence;
     private string _no_Setence;
 
