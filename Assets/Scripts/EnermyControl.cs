@@ -57,6 +57,9 @@ public class EnermyControl : MonoBehaviour
             return;
         }
 
+        if (GameManager.Instance.GameStop)
+            return;
+
         if (Vector3.Distance(transform.position, wayPoint[wayNumber].position) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, wayPoint[wayNumber].position, _data.speed * Time.deltaTime);

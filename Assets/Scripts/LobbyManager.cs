@@ -40,6 +40,7 @@ public class LobbyManager : MonoBehaviour
 
         if (!_tutorial)
         {
+            JsonParseManager.Instance.Tutorial = false;
             _lobbyCharacter.Attack();
         }
         else

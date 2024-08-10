@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private EnforceUI _enforceUI;
     [SerializeField] private DOTweenVisualManager _skipUIPanel;
     [SerializeField] private DOTweenVisualManager _settingUIPanel;
+    [SerializeField] private DOTweenVisualManager _arrow;
 
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
     public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
@@ -69,6 +70,14 @@ public class UIManager : MonoBehaviour
                 //_RevolutionPanel.SetActive(true);
             }
         }
+    }
+
+    public void ShowArrow()
+    {
+        if (_arrow.enabled)
+            _arrow.enabled = false;
+        else
+            _arrow.enabled = true;
     }
 
     public void SkipUI()

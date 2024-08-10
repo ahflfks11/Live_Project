@@ -426,6 +426,7 @@ public class GPGSManager : MonoBehaviour
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
 
             Param _updateParam = new Param();
+
             _updateParam.AddCalculation("Gold", GameInfoOperator.subtraction, _gold);
 
             //데이터 수정

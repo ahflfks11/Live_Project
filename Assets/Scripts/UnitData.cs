@@ -64,7 +64,7 @@ public class UnitData : MonoBehaviour
 
     public Material _sprMat;
     public SpriteRenderer _myRareColor;
-
+    bool tutorialAttack = false;
     CircleRangeVisualizer _visualizer;
     private Vector3 targetEnemy;   // ÇöÀç Å¸°Ù Àû
 
@@ -343,10 +343,18 @@ public class UnitData : MonoBehaviour
                     if (targetEnermy != null && (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Walk")))
                     {
                         _isAttack = true;
+                        if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber < 12)
+                        {
+                            tutorialAttack = true;
+                        }
                     }
                     else if (targetEnermy == null)
                     {
                         _isAttack = false;
+                        if(JsonParseManager.Instance._txtNumber < 12 && JsonParseManager.Instance.Tutorial && tutorialAttack)
+                        {
+                            DialogueManager.Instance.TalkLauncher(12);
+                        }
                     }
                 }
                 else

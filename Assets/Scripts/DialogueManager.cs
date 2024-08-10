@@ -30,25 +30,20 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        if (instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void Start()
     {
         TalkLauncher(1);
-    }
-
-    void Update()
-    {
-        // 터치 입력 처리
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-
-            }
-        }
     }
 
     public void Talk()
@@ -80,7 +75,14 @@ public class DialogueManager : MonoBehaviour
     public void TalkLauncher(int _talkNumber)
     {
         if (!_dialogueBox.enabled)
+        {
             _dialogueBox.enabled = true;
+            if (FindObjectOfType<GameManager>() && JsonParseManager.Instance.Tutorial)
+            {
+                GameManager.Instance.GameStop = true;
+            }
+        }
+
         //문장 설정
         sentences = JsonParseManager.Instance.AddTalk(_talkNumber, JsonParseManager.Instance.PrintDataForTypes(_talkNumber));
         //문장 출력 시작

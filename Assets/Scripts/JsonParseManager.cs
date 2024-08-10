@@ -282,6 +282,18 @@ public class JsonParseManager : MonoBehaviour
                 LobbyManager.Instance.DungeonArrowObject.enabled = true;
                 LobbyManager.Instance.SetArrow();
                 break;
+            case 5:
+                GameManager.Instance.UiManager.ShowArrow();
+                break;
+            case 6:
+                GameManager.Instance.EnemyGenerator.SpawnEnemy();
+                break;
+            case 7:
+                GameManager.Instance.UiManager.ShowArrow();
+                break;
+            case 8:
+                GameManager.Instance.GameStop = false;
+                break;
         }
     }
 

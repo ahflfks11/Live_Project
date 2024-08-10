@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     private static GameManager instance = null;
     private UnitManager unitManager;
     private UIManager uiManager;
+    private EnermyGenerator _enemyGenerator;
     public Transform myArea;
     private int _gold;
     private int _requireGold;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     public Color[] _rareColor;
     public Color _hiddenColor;
     bool _gameStart;
+    bool _gameStop;
 
     [SerializeField] bool _isBoss = false;
 
@@ -85,23 +87,30 @@ public class GameManager : MonoBehaviour
     public int BossCount { get => _bossCount; set => _bossCount = value; }
     public EnermyCoinText CoinText { get => _coinText; set => _coinText = value; }
     public bool GameStart { get => _gameStart; set => _gameStart = value; }
+    public bool GameStop { get => _gameStop; set => _gameStop = value; }
+    public EnermyGenerator EnemyGenerator { get => _enemyGenerator; set => _enemyGenerator = value; }
 
     public void GameInit()
     {
         UnitManager = GameObject.FindObjectOfType<UnitManager>();
         UiManager = GameObject.FindObjectOfType<UIManager>();
-        _gold = 25;
-        RequireGold = 3;
-        SetTime = _limitTimer;
+        _enemyGenerator = FindObjectOfType<EnermyGenerator>();
         ClickCount = 0;
         myArea = GameObject.Find("SpawnPoint").transform;
 
         if (JsonParseManager.Instance.Tutorial)
         {
+            _gold = 3;
+            RequireGold = 3;
             GameStart = false;
+            GameStop = true;
+            DialogueManager.Instance.TalkLauncher(8);
         }
         else
         {
+            _gold = 25;
+            RequireGold = 3;
+            SetTime = _limitTimer;
             GameStart = true;
             UiManager.Wave(GameManager.Instance.Wave);
         }

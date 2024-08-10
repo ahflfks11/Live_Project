@@ -9,7 +9,10 @@ public class UnitManager : MonoBehaviour
     public List<GameObject> _soldiers;
     public List<GameObject> _spawnList;
 
+    public List<GameObject> _tutorialSoldierList;
+
     int number = 0;
+    public int tutorialSoldierNumber = 0;
     float rndRangeX = 3f; // Default 3f
     float rndRangeY = 3f;
     private float normalEnforceDmg = 0;
@@ -34,7 +37,6 @@ public class UnitManager : MonoBehaviour
 
     public bool CheckSpawn(GameObject[] _data)
     {
-
         if (_data.Length > 0)
             return false;
 
@@ -121,6 +123,34 @@ public class UnitManager : MonoBehaviour
                     break;
                 }
             }
+        }
+    }
+
+    public void SelectSpawn(GameObject _Solider, Vector3 _pos)
+    {
+        if (GameManager.Instance.Gold < GameManager.Instance.RequireGold)
+            return;
+
+        GameObject _unit;
+
+        _unit = Instantiate(_Solider, _pos, Quaternion.identity);
+
+        _unit.GetComponent<UnitData>().number = number;
+        _unit.GetComponent<UnitData>().UnitManager = this;
+        number++;
+        _spawnList.Add(_unit);
+        int index = _unit.name.IndexOf("(Clone)");
+        if (index > 0)
+            _unit.name = _unit.name.Substring(0, index);
+
+        GameManager.Instance.ClickCount++;
+
+        GameManager.Instance.Gold -= GameManager.Instance.RequireGold;
+
+        if (GameManager.Instance.ClickCount % 10 == 0)
+        {
+            GameManager.Instance.RequireGold++;
+
         }
     }
 
@@ -220,6 +250,21 @@ public class UnitManager : MonoBehaviour
     public void SpawnUnit()
     {
         Vector3 pos = GameManager.Instance.myArea.position;
+
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            if(tutorialSoldierNumber < _tutorialSoldierList.Count)
+            {
+                if (tutorialSoldierNumber == 0)
+                {
+                    GameManager.Instance.GameStop = false;
+                }
+
+                SelectSpawn(_tutorialSoldierList[tutorialSoldierNumber], pos);
+                tutorialSoldierNumber++;
+                return;
+            }
+        }
 
         int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
 
