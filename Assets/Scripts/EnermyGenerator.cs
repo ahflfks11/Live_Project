@@ -80,6 +80,12 @@ public class EnermyGenerator : MonoBehaviour
         StartCoroutine(tutorialGenerator(_enremyCount));
     }
 
+    public void enermy()
+    {
+        GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
+        _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+    }
+
     private void Start()
     {
         wave = GameManager.Instance.Wave;

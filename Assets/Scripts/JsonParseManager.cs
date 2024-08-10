@@ -295,6 +295,11 @@ public class JsonParseManager : MonoBehaviour
                 GameManager.Instance.GameStop = false;
                 break;
             case 9:
+                GameManager.Instance.EnemyGenerator.enermy();
+                break;
+            case 10:
+                Destroy(GameObject.FindGameObjectWithTag("Enermy"));
+                GameManager.Instance.GameStop = false;
                 GameManager.Instance.EnemyGenerator.SpawnEnemy(10);
                 break;
         }
