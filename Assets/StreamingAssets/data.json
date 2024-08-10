@@ -145,7 +145,7 @@
    {
       "no":14,
       "Name":"요정",
-      "Types":8,
+      "Types":9,
       "setence":"굉장해요, 모험가님! 적을 섬멸 했어요! 이제 마을에 평화가..",
       "Yes":null,
       "No":null,
@@ -167,7 +167,7 @@
    {
       "no":16,
       "Name":"요정",
-      "Types":9,
+      "Types":0,
       "setence":"혼자서는 힘드니까 전투를 도와줄 사람들을 더 모아봐요!",
       "Yes":null,
       "No":null,
@@ -178,7 +178,7 @@
    {
       "no":17,
       "Name":"요정",
-      "Types":0,
+      "Types":8,
       "setence":"표시된 버튼을 누르면 모집할  수 있어요.",
       "Yes":null,
       "No":null,

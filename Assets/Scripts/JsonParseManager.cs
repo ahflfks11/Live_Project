@@ -286,13 +286,16 @@ public class JsonParseManager : MonoBehaviour
                 GameManager.Instance.UiManager.ShowArrow();
                 break;
             case 6:
-                GameManager.Instance.EnemyGenerator.SpawnEnemy();
+                GameManager.Instance.EnemyGenerator.SpawnEnemy(1);
                 break;
             case 7:
                 GameManager.Instance.UiManager.ShowArrow();
                 break;
             case 8:
                 GameManager.Instance.GameStop = false;
+                break;
+            case 9:
+                GameManager.Instance.EnemyGenerator.SpawnEnemy(10);
                 break;
         }
     }

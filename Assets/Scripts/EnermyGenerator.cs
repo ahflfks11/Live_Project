@@ -50,10 +50,34 @@ public class EnermyGenerator : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy()
+    IEnumerator tutorialGenerator(int _number)
     {
-        GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
-        _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+        int i = 0;
+        while (i < _number)
+        {
+            if (i > 0 && _number > 1 && GameManager.Instance.GameStop)
+                yield return null;
+            else
+            {
+                GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
+                _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+                i++;
+
+                if (GameManager.Instance.GameStop)
+                {
+                    yield return null;
+                }
+                else
+                {
+                    yield return new WaitForSeconds(createTime - GameManager.Instance.GameSpeed);
+                }
+            }
+        }
+    }
+
+    public void SpawnEnemy(int _enremyCount)
+    {
+        StartCoroutine(tutorialGenerator(_enremyCount));
     }
 
     private void Start()

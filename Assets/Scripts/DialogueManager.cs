@@ -165,7 +165,7 @@ public class DialogueManager : MonoBehaviour
         typingCoroutine = null;
     }
 
-    private void CompleteCurrentSentence()
+    public void CompleteCurrentSentence()
     {
         // 현재 타이핑 중인 문장을 즉시 완성
         if (index > 0 && index <= sentences.Length)

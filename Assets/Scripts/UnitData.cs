@@ -64,7 +64,7 @@ public class UnitData : MonoBehaviour
 
     public Material _sprMat;
     public SpriteRenderer _myRareColor;
-    bool tutorialAttack = false;
+    int tutorialNumber = 0;
     CircleRangeVisualizer _visualizer;
     private Vector3 targetEnemy;   // ÇöÀç Å¸°Ù Àû
 
@@ -240,6 +240,11 @@ public class UnitData : MonoBehaviour
 
     public void IsSelect()
     {
+        if (JsonParseManager.Instance.Tutorial && tutorialNumber == 1)
+        {
+            DialogueManager.Instance.TalkLauncher(13);
+            tutorialNumber = 2;
+        }
         onselect = true;
         _animator.SetBool("Walk", false);
         transform.SetAsLastSibling();
@@ -248,6 +253,14 @@ public class UnitData : MonoBehaviour
 
     public void Deselect()
     {
+        if (JsonParseManager.Instance.Tutorial && tutorialNumber == 2)
+        {
+            DialogueManager.Instance.CompleteCurrentSentence();
+            DialogueManager.Instance._dialogueBox.enabled = false;
+            GameManager.Instance.GameStop = false;
+            tutorialNumber = 3;
+        }
+
         _visualizer.ClearCircle();
 
 
@@ -345,13 +358,14 @@ public class UnitData : MonoBehaviour
                         _isAttack = true;
                         if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber < 12)
                         {
-                            tutorialAttack = true;
+                            if (tutorialNumber == 0)
+                                tutorialNumber = 1;
                         }
                     }
                     else if (targetEnermy == null)
                     {
                         _isAttack = false;
-                        if(JsonParseManager.Instance._txtNumber < 12 && JsonParseManager.Instance.Tutorial && tutorialAttack)
+                        if (JsonParseManager.Instance.Tutorial && tutorialNumber == 1 && JsonParseManager.Instance._txtNumber < 12)
                         {
                             DialogueManager.Instance.TalkLauncher(12);
                         }
