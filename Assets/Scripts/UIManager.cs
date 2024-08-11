@@ -150,7 +150,7 @@ public class UIManager : MonoBehaviour
         {
             if (JsonParseManager.Instance.Tutorial)
             {
-                if (JsonParseManager.Instance._txtNumber != 29)
+                if (JsonParseManager.Instance._txtNumber < 28)
                     return;
             }
 

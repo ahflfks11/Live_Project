@@ -317,6 +317,12 @@ public class JsonParseManager : MonoBehaviour
             case 15:
                 GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 30);
                 break;
+            case 16:
+                GameManager.Instance.EnemyGenerator.Tutorial_BossSpawn();
+                break;
+            case 17:
+                GameManager.Instance.GameStop = false;
+                break;
         }
     }
 

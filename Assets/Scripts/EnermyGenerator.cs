@@ -80,6 +80,13 @@ public class EnermyGenerator : MonoBehaviour
             GameManager.Instance._SpawnComplete = true;
     }
 
+    public void Tutorial_BossSpawn()
+    {
+        GameObject _enermy = Instantiate(_bossList[GameManager.Instance.BossCount].gameObject, wayPoint[0].position, Quaternion.identity);
+        _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+        _enermy.gameObject.name = "Boss";
+    }
+
     public void SpawnEnemy(int _enremyCount)
     {
         StartCoroutine(tutorialGenerator(_enremyCount));
