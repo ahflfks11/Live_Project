@@ -222,12 +222,6 @@ public class UnitManager : MonoBehaviour
     //버튼 클릭시 소환 함수
     public void Spawn(int _spawnNum, Vector3 _pos, bool _randomPosition)
     {
-        if (JsonParseManager.Instance.Tutorial)
-        {
-            if (JsonParseManager.Instance._txtNumber != 11 && JsonParseManager.Instance._txtNumber != 18)
-                return;
-        }
-
         if (GameManager.Instance.Gold < GameManager.Instance.RequireGold)
             return;
 
@@ -347,6 +341,12 @@ public class UnitManager : MonoBehaviour
 
     public void SpawnUnit()
     {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            if (JsonParseManager.Instance._txtNumber != 11 && JsonParseManager.Instance._txtNumber != 18)
+                return;
+        }
+
         Vector3 pos = GameManager.Instance.myArea.position;
 
         if (JsonParseManager.Instance.Tutorial)

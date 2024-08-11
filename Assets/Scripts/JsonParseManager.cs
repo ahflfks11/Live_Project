@@ -310,6 +310,9 @@ public class JsonParseManager : MonoBehaviour
             case 12:
                 GameManager.Instance.UnitManager.TutorialGaveSoldier(UnitData.Unit.Warrior, 0, 2);
                 break;
+            case 14:
+                GameManager.Instance.UiManager.EnforceShopPanel();
+                break;
         }
     }
 
