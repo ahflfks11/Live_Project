@@ -14,6 +14,7 @@ public class UnitManager : MonoBehaviour
 
     int number = 0;
     public int tutorialSoldierNumber = 0;
+    public int tutorialRevolutionSoldierNumber = 0;
     float rndRangeX = 3f; // Default 3f
     float rndRangeY = 3f;
     private float normalEnforceDmg = 0;
@@ -221,6 +222,12 @@ public class UnitManager : MonoBehaviour
     //버튼 클릭시 소환 함수
     public void Spawn(int _spawnNum, Vector3 _pos, bool _randomPosition)
     {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            if (JsonParseManager.Instance._txtNumber != 11 && JsonParseManager.Instance._txtNumber != 18)
+                return;
+        }
+
         if (GameManager.Instance.Gold < GameManager.Instance.RequireGold)
             return;
 
@@ -280,6 +287,15 @@ public class UnitManager : MonoBehaviour
             _unit.name = _unit.name.Substring(0, index);
         number++;
         _spawnList.Add(_unit);
+
+        if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber == 25)
+        {
+            tutorialRevolutionSoldierNumber++;
+            if (tutorialRevolutionSoldierNumber > 1)
+            {
+                DialogueManager.Instance.TalkLauncher(26);
+            }
+        }
     }
 
     //특수 소환

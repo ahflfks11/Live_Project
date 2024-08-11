@@ -292,7 +292,7 @@ public class JsonParseManager : MonoBehaviour
                 GameManager.Instance.UiManager.ShowArrow();
                 break;
             case 8:
-                GameManager.Instance.GameStop = false;
+                //GameManager.Instance.GameStop = false;
                 break;
             case 9:
                 GameManager.Instance.EnemyGenerator.enermy();
