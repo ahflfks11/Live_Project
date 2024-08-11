@@ -283,7 +283,7 @@ MonoBehaviour:
   _hpText: {fileID: 4264984352943042837}
   _isBoss: 0
   _data:
-    HP: 3800
+    HP: 6500
     defence: 0
     gainGold: 4
     speed: 5
