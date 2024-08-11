@@ -344,6 +344,8 @@ public class UnitData : MonoBehaviour
         if (targetEnemy != Vector3.zero)
             MoveTowardsTarget();
 
+        FindRevolution(GameManager.Instance._unitObject);
+
         if (_animator != null)
         {
             if (!onselect)
@@ -429,8 +431,6 @@ public class UnitData : MonoBehaviour
                 }
             }
         }
-
-        FindRevolution(GameManager.Instance._unitObject);
     }
 
     void FindRevolution(UnitData[] _dataObject)
@@ -448,8 +448,6 @@ public class UnitData : MonoBehaviour
         if (count >= 2 && !_data.specialUnit && _data.EvolutionAvailability)
         {
             _sprMat.SetFloat("_OuterOutlineFade", 1f);
-            transform.SetAsLastSibling();
-            _animator.transform.SetAsLastSibling();
         }
         else
         {

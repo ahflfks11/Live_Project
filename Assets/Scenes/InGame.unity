@@ -1765,6 +1765,7 @@ MonoBehaviour:
   - {r: 0.93840027, g: 0, b: 1, a: 0.49019608}
   - {r: 1, g: 0.1373159, b: 0, a: 0.49019608}
   _hiddenColor: {r: 0, g: 0.8089638, b: 1, a: 0.49019608}
+  _SpawnComplete: 0
   _isBoss: 0
   gameSpeed: 0
   _coinText: {fileID: 6093628251651374379, guid: 9b277bb99c9e8a1419616bca71e04c99,
@@ -1990,7 +1991,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -11335260}
+  m_AnchoredPosition: {x: 0, y: -11372500}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624
@@ -45952,7 +45953,9 @@ MonoBehaviour:
   - {fileID: 5537879033552831392, guid: 3e4b3a9c8ecea10438e72548e59b56e6, type: 3}
   - {fileID: 7600178554703885872, guid: b162fcd2fe6a36842b1b51e1ddbc83c5, type: 3}
   - {fileID: 7963579835624828680, guid: 84740f9217717ab49aa5192dc20f3dc8, type: 3}
-  - {fileID: 8666515045111719913, guid: 402cb07795a4cc84ba3831e2671268b3, type: 3}
+  _tutorialSpecialSoldierList:
+  - {fileID: 1212304658844681492, guid: 604ecdbcf7ecc5146ba29898ccb455bc, type: 3}
+  - {fileID: 1212304658844681492, guid: 604ecdbcf7ecc5146ba29898ccb455bc, type: 3}
   tutorialSoldierNumber: 0
   maxCount: 12
   maxSpawnlevel: 0

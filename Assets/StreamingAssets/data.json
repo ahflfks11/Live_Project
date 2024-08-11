@@ -229,5 +229,93 @@
       "EndTalk":"yes",
       "Yes_setence":null,
       "No_setence":null
+   },
+   {
+      "no":22,
+      "Name":"요정",
+      "Types":0,
+      "setence":"와아! 강력한 분들이 지원해주셨어요! 벌써부터 든든함이 느껴져요!  ",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":23,
+      "Name":"요정",
+      "Types":12,
+      "setence":"저희도 질 수 없죠! 모험가님도 든든한 지원군이라는 것을 어필해 볼까요?",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":24,
+      "Name":"요정",
+      "Types":0,
+      "setence":"같은 용병들이 모이면 단결된 힘을 끌어낼 수 있어요. 3명이 모이면 새로운 힘을 해방할 수 있답니다.",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":25,
+      "Name":"요정",
+      "Types":13,
+      "setence":"새로운 힘을 개방해 보세요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":26,
+      "Name":"요정",
+      "Types":14,
+      "setence":"모험가님에게서 강력한 힘이 느껴져요. 이 기세를 몰아 더욱 강해져봐요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":27,
+      "Name":"요정",
+      "Types":15,
+      "setence":"모험가님의 신체를 강하게 만들어주는 기능이에요. 이 기능을 사용하여 더욱 강해져봐요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":28,
+      "Name":"요정",
+      "Types":0,
+      "setence":"이제 어떤 마물이 와도 이길 것 같은데요?",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":29,
+      "Name":"요정",
+      "Types":16,
+      "setence":"마침 마물이 오고 있어요. 강해진 힘을 시험해봐요! 이 기능을 사용하면 빠르게 이동하실 수 있어요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":null,
+      "No_setence":null
    }
 ]

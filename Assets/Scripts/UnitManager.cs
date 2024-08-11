@@ -10,6 +10,7 @@ public class UnitManager : MonoBehaviour
     public List<GameObject> _spawnList;
 
     public List<GameObject> _tutorialSoldierList;
+    public List<GameObject> _tutorialSpecialSoldierList;
 
     int number = 0;
     public int tutorialSoldierNumber = 0;
@@ -19,6 +20,8 @@ public class UnitManager : MonoBehaviour
     private float rareEnforceDmg = 0;
     private float legendEnforceDmg = 0;
     private float hiddenEnforceDmg = 0;
+
+    private int _tutorialspecialSpawnCount = 0;
 
     public int maxCount = 10;
 
@@ -126,6 +129,24 @@ public class UnitManager : MonoBehaviour
         }
     }
 
+    //강제 소환
+    public void SelectSpawn_Free(GameObject _Solider, Vector3 _pos)
+    {
+        GameObject _unit;
+
+        _unit = Instantiate(_Solider, _pos, Quaternion.identity);
+
+        _unit.GetComponent<UnitData>().number = number;
+        _unit.GetComponent<UnitData>().UnitManager = this;
+        number++;
+        _spawnList.Add(_unit);
+        int index = _unit.name.IndexOf("(Clone)");
+        if (index > 0)
+            _unit.name = _unit.name.Substring(0, index);
+
+        GameManager.Instance.ClickCount++;
+    }
+
     public void SelectSpawn(GameObject _Solider, Vector3 _pos)
     {
         if (GameManager.Instance.Gold < GameManager.Instance.RequireGold)
@@ -150,6 +171,50 @@ public class UnitManager : MonoBehaviour
         if (GameManager.Instance.ClickCount % 10 == 0)
         {
             GameManager.Instance.RequireGold++;
+        }
+    }
+
+    public void SelectSpecialSpawn(GameObject _Solider, Vector3 _pos)
+    {
+        if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 20)
+            return;
+
+        GameObject _unit;
+
+        _unit = Instantiate(_Solider, _pos, Quaternion.identity);
+
+        _unit.GetComponent<UnitData>().number = number;
+        _unit.GetComponent<UnitData>().UnitManager = this;
+        number++;
+        _spawnList.Add(_unit);
+        int index = _unit.name.IndexOf("(Clone)");
+        if (index > 0)
+            _unit.name = _unit.name.Substring(0, index);
+
+        GameManager.Instance.ClickCount++;
+
+        GameManager.Instance.Gold -= (maxSpawnlevel + 1) * 20;
+
+        if (GameManager.Instance.ClickCount % 10 == 0)
+        {
+            GameManager.Instance.RequireGold++;
+        }
+    }
+
+    public void TutorialGaveSoldier(UnitData.Unit _unit, int unitLevel, int _limitCount)
+    {
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            UnitData data = _soldiers[i].GetComponent<UnitData>().GetComponent<UnitData>();
+            if (data._data._unit == _unit && data._data.rarelityLevel == unitLevel)
+            {
+                for (int j = 0; j < _limitCount; j++)
+                {
+                    Vector3 rndPos = new Vector3(GameManager.Instance.myArea.position.x + Random.Range(-rndRangeX, rndRangeX), GameManager.Instance.myArea.position.y + Random.Range(-rndRangeX, rndRangeY), GameManager.Instance.myArea.position.z);
+                    SelectSpawn_Free(_soldiers[i].gameObject, rndPos);
+                }
+                break;
+            }
         }
     }
 
@@ -220,6 +285,24 @@ public class UnitManager : MonoBehaviour
     //특수 소환
     public void SpecialSpawn(int _spawnNum, Vector3 _pos, bool _randomPosition)
     {
+        if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber == 21 && GameManager.Instance.EnermyCount == 0 && GameManager.Instance._SpawnComplete)
+        {
+            if (_tutorialspecialSpawnCount < _tutorialSpecialSoldierList.Count)
+            {
+                Vector3 rndPos = new Vector3(_pos.x + Random.Range(-rndRangeX, rndRangeX), _pos.y + Random.Range(-rndRangeX, rndRangeY), _pos.z);
+
+                SelectSpecialSpawn(_tutorialSpecialSoldierList[_tutorialspecialSpawnCount], rndPos);
+                _tutorialspecialSpawnCount++;
+
+                if (_tutorialspecialSpawnCount > 1)
+                {
+                    DialogueManager.Instance.TalkLauncher(22);
+                }
+
+                return;
+            }
+        }
+
         if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 20)
             return;
 

@@ -205,12 +205,13 @@ MonoBehaviour:
     EvolutionAvailability: 1
     specialUnit: 0
   number: 0
+  onselect: 0
   targetEnermy: {fileID: 0}
   enermys: []
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  FindRange: 4
+  FindRange: 3
   _spr: {fileID: 21300000, guid: cdc713caf84cc1d4f95237d7464fadc4, type: 3}
   _sprMat: {fileID: 0}
   _myRareColor: {fileID: 1653568939936602800}

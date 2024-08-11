@@ -155,6 +155,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        _unitObject = FindObjectsOfType<UnitData>();
+
         if (!GameStart)
             return;
 
@@ -203,7 +205,5 @@ public class GameManager : MonoBehaviour
                 UiManager.Wave(Wave);
             }
         }
-
-        _unitObject = FindObjectsOfType<UnitData>();
     }
 }

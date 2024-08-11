@@ -260,8 +260,6 @@ public class JsonParseManager : MonoBehaviour
 
     public void ActionType(int _number)
     {
-        Debug.Log("test");
-
         switch (_number)
         {
             case 0:
@@ -302,12 +300,15 @@ public class JsonParseManager : MonoBehaviour
             case 10:
                 Destroy(GameObject.FindGameObjectWithTag("Enermy"));
                 GameManager.Instance.GameStop = false;
-                GameManager.Instance.EnemyGenerator.SpawnEnemy(10);
+                GameManager.Instance.EnemyGenerator.SpawnEnemy(5);
                 GameManager.Instance.EnermyCount--;
-                GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 12);
+                GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 9);
                 break;
             case 11:
                 GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 40);
+                break;
+            case 12:
+                GameManager.Instance.UnitManager.TutorialGaveSoldier(UnitData.Unit.Warrior, 0, 2);
                 break;
         }
     }
