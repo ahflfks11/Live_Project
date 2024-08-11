@@ -284,8 +284,10 @@ public class JsonParseManager : MonoBehaviour
                 break;
             case 5:
                 GameManager.Instance.UiManager.ShowArrow();
+                GameManager.Instance.UiManager.LimitUI(true);
                 break;
             case 6:
+                GameManager.Instance.UiManager.LimitUI(false);
                 GameManager.Instance.EnemyGenerator.SpawnEnemy(1);
                 break;
             case 7:
@@ -301,7 +303,11 @@ public class JsonParseManager : MonoBehaviour
                 Destroy(GameObject.FindGameObjectWithTag("Enermy"));
                 GameManager.Instance.GameStop = false;
                 GameManager.Instance.EnemyGenerator.SpawnEnemy(10);
+                GameManager.Instance.EnermyCount--;
                 GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 12);
+                break;
+            case 11:
+                GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 40);
                 break;
         }
     }

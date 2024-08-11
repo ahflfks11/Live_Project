@@ -15,6 +15,7 @@ public class EnermyGenerator : MonoBehaviour
 
     bool _bossSpawn;
 
+
     public IEnumerator GeneratorLauncher()
     {
         while (true)
@@ -61,6 +62,7 @@ public class EnermyGenerator : MonoBehaviour
             {
                 GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
                 _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+                GameManager.Instance.EnermyCount++;
                 i++;
 
                 if (GameManager.Instance.GameStop)
@@ -73,6 +75,9 @@ public class EnermyGenerator : MonoBehaviour
                 }
             }
         }
+
+        if (_number > 1)
+            GameManager.Instance._SpawnComplete = true;
     }
 
     public void SpawnEnemy(int _enremyCount)
@@ -84,6 +89,8 @@ public class EnermyGenerator : MonoBehaviour
     {
         GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
         _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+        GameManager.Instance.EnermyCount++;
+        GameManager.Instance._SpawnComplete = false;
     }
 
     private void Start()
@@ -110,6 +117,11 @@ public class EnermyGenerator : MonoBehaviour
             }
 
             tempStageLimitNumber = 0;
+        }
+
+        if(JsonParseManager.Instance.Tutorial && GameManager.Instance.EnermyCount <= 0 && JsonParseManager.Instance._txtNumber == 18 && GameManager.Instance._SpawnComplete)
+        {
+            DialogueManager.Instance.TalkLauncher(19);
         }
     }
 }

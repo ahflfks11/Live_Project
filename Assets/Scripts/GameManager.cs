@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public Color[] _rareColor;
     public Color _hiddenColor;
+    public bool _SpawnComplete;
     bool _gameStart;
     bool _gameStop;
 
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            _gold = 25;
+            _gold = 20;
             RequireGold = 3;
             SetTime = _limitTimer;
             GameStart = true;

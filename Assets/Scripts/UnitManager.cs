@@ -220,7 +220,7 @@ public class UnitManager : MonoBehaviour
     //특수 소환
     public void SpecialSpawn(int _spawnNum, Vector3 _pos, bool _randomPosition)
     {
-        if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 10)
+        if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 20)
             return;
 
         GameObject _unit;
@@ -243,7 +243,7 @@ public class UnitManager : MonoBehaviour
             _unit.name = _unit.name.Substring(0, index);
         number++;
         _spawnList.Add(_unit);
-        GameManager.Instance.Gold -= (maxSpawnlevel + 1) * 10;
+        GameManager.Instance.Gold -= (maxSpawnlevel + 1) * 20;
     }
 
     public void SpawnUnit()

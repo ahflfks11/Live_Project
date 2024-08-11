@@ -196,5 +196,38 @@
       "EndTalk":"yes",
       "Yes_setence":null,
       "No_setence":null
+   },
+   {
+      "no":19,
+      "Name":"요정",
+      "Types":0,
+      "setence":"대단해요, 모험가님! 모험가님 덕분에 마을이 좀 더 안전해졌어요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":20,
+      "Name":"요정",
+      "Types":0,
+      "setence":"모험가님이 마물을 퇴치했다는 소식에 강력한 용병들이 도와주러 오고 있다고 해요. 한번 불러볼까요?",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":21,
+      "Name":"요정",
+      "Types":11,
+      "setence":"특수 소환 버튼을 눌러 강력한 용병들을 불러봐요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":null,
+      "No_setence":null
    }
 ]
