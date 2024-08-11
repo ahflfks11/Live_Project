@@ -240,11 +240,20 @@ public class UnitData : MonoBehaviour
 
     public void IsSelect()
     {
-        if (JsonParseManager.Instance.Tutorial && tutorialNumber == 1)
+        if (JsonParseManager.Instance.Tutorial)
         {
-            DialogueManager.Instance.TalkLauncher(13);
-            tutorialNumber = 2;
+            if (GameObject.Find("Arrow" + number) && JsonParseManager.Instance._txtNumber <= 13)
+            {
+                Destroy(GameObject.Find("Arrow" + number));
+            }
+
+            if (tutorialNumber == 1)
+            {
+                DialogueManager.Instance.TalkLauncher(13);
+                tutorialNumber = 2;
+            }
         }
+
         onselect = true;
         _animator.SetBool("Walk", false);
         _visualizer.DrawCircle();
@@ -447,6 +456,14 @@ public class UnitData : MonoBehaviour
 
         if (count >= 2 && !_data.specialUnit && _data.EvolutionAvailability)
         {
+            if (JsonParseManager.Instance.Tutorial)
+            {
+                if (!GameObject.Find("Arrow" + number))
+                {
+                    GameManager.Instance.UiManager.SetArrow(transform, Vector3.zero, "Arrow" + number);
+                }
+            }
+
             _sprMat.SetFloat("_OuterOutlineFade", 1f);
         }
         else

@@ -281,7 +281,7 @@ public class JsonParseManager : MonoBehaviour
                 LobbyManager.Instance.SetArrow();
                 break;
             case 5:
-                GameManager.Instance.UiManager.ShowArrow();
+                GameManager.Instance.UiManager.ShowArrow(null, 1.5f);
                 GameManager.Instance.UiManager.LimitUI(true);
                 break;
             case 6:
@@ -289,10 +289,11 @@ public class JsonParseManager : MonoBehaviour
                 GameManager.Instance.EnemyGenerator.SpawnEnemy(1);
                 break;
             case 7:
-                GameManager.Instance.UiManager.ShowArrow();
+                GameManager.Instance.UiManager.ShowArrow(null, 1.5f);
                 break;
             case 8:
                 //GameManager.Instance.GameStop = false;
+                GameManager.Instance.UiManager.SetArrow(GameManager.Instance._unitObject[0].transform, Vector3.zero, "Arrow" + GameManager.Instance._unitObject[0].number);
                 break;
             case 9:
                 GameManager.Instance.EnemyGenerator.enermy();
@@ -312,6 +313,9 @@ public class JsonParseManager : MonoBehaviour
                 break;
             case 14:
                 GameManager.Instance.UiManager.EnforceShopPanel();
+                break;
+            case 15:
+                GameManager.Instance.CoinDrop(GameManager.Instance.UiManager._coin_Text.position, 30);
                 break;
         }
     }

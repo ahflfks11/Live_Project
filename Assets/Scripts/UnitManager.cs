@@ -77,6 +77,11 @@ public class UnitManager : MonoBehaviour
 
     public void Enforce_Normal()
     {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            return;
+        }
+
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpNormalCoin())
         {
             NormalEnforceDmg += 1;
@@ -89,10 +94,20 @@ public class UnitManager : MonoBehaviour
         {
             rareEnforceDmg += 1;
         }
+
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            DialogueManager.Instance.TalkLauncher(28);
+        }
     }
 
     public void Enforce_Legend()
     {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            return;
+        }
+
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpLegendCoin())
         {
             legendEnforceDmg += 1;
@@ -101,6 +116,11 @@ public class UnitManager : MonoBehaviour
 
     public void Enforce_Hidden()
     {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            return;
+        }
+
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpHiddenCoin())
         {
             hiddenEnforceDmg += 1;
@@ -109,6 +129,11 @@ public class UnitManager : MonoBehaviour
 
     public void LevelUp()
     {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            return;
+        }
+
         if (GameManager.Instance.UiManager.EnforceUI.SetLevelText())
         {
             maxSpawnlevel++;

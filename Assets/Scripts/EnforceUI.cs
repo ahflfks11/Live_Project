@@ -20,6 +20,8 @@ public class EnforceUI : MonoBehaviour
     [SerializeField] private GameObject _vfx;
     [SerializeField] private Transform _vfxPos;
 
+    [SerializeField] private GameObject _arrow;
+
     int _normalLevel = 0;
     int _rareLevel = 0;
     int _legendLevel = 0;
@@ -29,6 +31,18 @@ public class EnforceUI : MonoBehaviour
     {
         GameObject openfx = Instantiate(_vfx, _vfxPos.position, Quaternion.identity);
         Destroy(openfx, 5f);
+    }
+
+    public void Start()
+    {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            _arrow.SetActive(true);
+        }
+        else
+        {
+            _arrow.SetActive(false);
+        }
     }
 
     public bool SetDmgUpNormalCoin()

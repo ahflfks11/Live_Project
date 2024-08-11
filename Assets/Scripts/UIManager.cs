@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _settingUIPanel;
     [SerializeField] private DOTweenVisualManager _arrow;
     [SerializeField] private DOTweenVisualManager _limitUIObject;
+    [SerializeField] private DOTweenVisualManager _tutorialArrow;
 
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
     public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
@@ -88,8 +89,26 @@ public class UIManager : MonoBehaviour
         _limitUIObject.enabled = _status;
     }
 
-    public void ShowArrow()
+    public void SetArrow(Transform _parents, Vector3 vec, string _objectName)
     {
+        GameObject _tutorialArrowPrefabs = Instantiate(_tutorialArrow.gameObject, Vector3.zero , Quaternion.identity);
+        _tutorialArrowPrefabs.transform.SetParent(_parents);
+        _tutorialArrowPrefabs.transform.localPosition = new Vector3(-0.05f, 0.8f, 0f);
+        _tutorialArrowPrefabs.transform.localScale = Vector3.zero;
+        _tutorialArrowPrefabs.GetComponentInChildren<Image>().transform.localScale = new Vector3(1f, 1f, 1f);
+        _tutorialArrowPrefabs.GetComponent<DOTweenVisualManager>().enabled = true;
+        _tutorialArrowPrefabs.gameObject.name = _objectName;
+    }
+
+    public void ShowArrow(Transform _parents, float _posY)
+    {
+        if (_parents != null)
+        {
+            _arrow.transform.SetParent(_parents);
+            _arrow.transform.position = new Vector3(0f, _posY, 0f);
+        }
+
+
         if (_arrow.enabled)
             _arrow.enabled = false;
         else
@@ -129,11 +148,23 @@ public class UIManager : MonoBehaviour
     {
         if (_EnforceShopPanel.enabled)
         {
+            if (JsonParseManager.Instance.Tutorial)
+            {
+                if (JsonParseManager.Instance._txtNumber != 29)
+                    return;
+            }
+
             _EnforceShopPanel.enabled = false;
             AudioManager.instance.ONSFX();
         }
         else
         {
+            if (JsonParseManager.Instance.Tutorial)
+            {
+                if (JsonParseManager.Instance._txtNumber != 27)
+                    return;
+            }
+
             _EnforceShopPanel.enabled = true;
             AudioManager.instance.OFFSFX();
         }
