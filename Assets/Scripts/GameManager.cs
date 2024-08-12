@@ -124,10 +124,20 @@ public class GameManager : MonoBehaviour
 
     public void Lobby()
     {
+        Time.timeScale = 1f;
+
         if (GameObject.Find("GoogleManager"))
             Transitioner.Instance.TransitionToScene(1);
         else
             SceneManager.LoadScene(1);
+    }
+
+    public void CreateSpawnEffect(int _effectNumber, Transform parents)
+    {
+        GameObject _spawnEffectPrefab = Instantiate(_spawnEffect[_effectNumber], parents.position, Quaternion.identity);
+        _spawnEffectPrefab.transform.SetParent(parents);
+        _spawnEffectPrefab.transform.localScale = new Vector3(1f, 1f, 1f);
+        _spawnEffectPrefab.transform.position = Vector3.zero;
     }
 
     public void Log(string _text)
@@ -157,10 +167,19 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+            Time.timeScale = 0f;
         _unitObject = FindObjectsOfType<UnitData>();
 
         if (!GameStart)
             return;
+
+        if (_enermyCount > 50)
+        {
+            Time.timeScale = 0;
+            uiManager.EndGameUI();
+            return;
+        }
 
         SetTime -= Time.deltaTime;
 
@@ -194,7 +213,9 @@ public class GameManager : MonoBehaviour
 
                     if (GameObject.Find("Boss"))
                     {
-
+                        Time.timeScale = 0f;
+                        uiManager.EndGameUI();
+                        return;
                     }
 
                     IsBoss = false;

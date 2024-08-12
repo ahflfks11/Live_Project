@@ -255,7 +255,7 @@ public class UnitManager : MonoBehaviour
         if (_randomPosition)
         {
             Vector3 rndPos = new Vector3(_pos.x + Random.Range(-rndRangeX, rndRangeX), _pos.y + Random.Range(-rndRangeX, rndRangeY), _pos.z);
-
+            
             _unit = Instantiate(_soldiers[_spawnNum], rndPos, Quaternion.identity);
         }
         else
