@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject _coinDropObject;
 
-    [SerializeField] private GameObject _spawnEffect;
+    [SerializeField] private GameObject[] _spawnEffect;
 
     private void Awake()
     {
