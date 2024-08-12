@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitManager: {fileID: 0}
-  _Weapon: {fileID: 1755964656112663951, guid: 5c1018d9598c5d9419ef110b52392286, type: 3}
+  _Weapon: {fileID: 100006, guid: 43ecf34cab647497ca279d28b6b75fd6, type: 3}
   _data:
     _unit: 5
     _type: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
     EvolutionAvailability: 0
     specialUnit: 1
   number: 0
+  onselect: 0
   targetEnermy: {fileID: 0}
   enermys: []
   EnemyLayer:
