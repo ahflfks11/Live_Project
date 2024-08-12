@@ -37,9 +37,11 @@ public class LobbyManager : MonoBehaviour
         _lobbyCharacter = FindObjectOfType<LobbyCharacter>();
         LobbyMonster = FindObjectOfType<LobbyMonster>();
         _lobbyUIManager = FindObjectOfType<LobbyUIManager>();
-
+        Time.timeScale = 1f;
         if (!_tutorial)
         {
+            if (FindObjectOfType<DialogueManager>())
+                Destroy(FindObjectOfType<DialogueManager>().gameObject);
             JsonParseManager.Instance.Tutorial = false;
             _lobbyCharacter.Attack();
         }

@@ -323,6 +323,9 @@ public class JsonParseManager : MonoBehaviour
             case 17:
                 GameManager.Instance.GameStop = false;
                 break;
+            case 18:
+                Transitioner.Instance.TransitionToScene(1);
+                break;
         }
     }
 

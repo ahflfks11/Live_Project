@@ -13,6 +13,8 @@ public class EnermyGenerator : MonoBehaviour
     int wave = 0;
     Coroutine _launcher;
 
+    [SerializeField] private EnermyControl _tutorialBossPrefab;
+
     bool _bossSpawn;
 
 
@@ -82,9 +84,10 @@ public class EnermyGenerator : MonoBehaviour
 
     public void Tutorial_BossSpawn()
     {
-        GameObject _enermy = Instantiate(_bossList[GameManager.Instance.BossCount].gameObject, wayPoint[0].position, Quaternion.identity);
+        GameObject _enermy = Instantiate(_tutorialBossPrefab.gameObject, wayPoint[0].position, Quaternion.identity);
         _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
         _enermy.gameObject.name = "Boss";
+        GameManager.Instance.EnermyCount++;
     }
 
     public void SpawnEnemy(int _enremyCount)

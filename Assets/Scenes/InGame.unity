@@ -353,6 +353,8 @@ MonoBehaviour:
   - {fileID: 927396796}
   - {fileID: 1045931990}
   - {fileID: 1845390481}
+  _tutorialBossPrefab: {fileID: 8454599954121857172, guid: f7c6c1f758a3bd8468e8eab243e79d0e,
+    type: 3}
 --- !u!1 &16115028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -12172}
+  m_AnchoredPosition: {x: 0, y: -72288}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624

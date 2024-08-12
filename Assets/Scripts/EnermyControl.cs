@@ -57,7 +57,14 @@ public class EnermyControl : MonoBehaviour
             GameManager.Instance.EnermyCount--;
             if (_isBoss)
             {
-                GameManager.Instance.UiManager.SkipUI();
+                if (JsonParseManager.Instance.Tutorial)
+                {
+                    DialogueManager.Instance.TalkLauncher(31);
+                }
+                else
+                {
+                    GameManager.Instance.UiManager.SkipUI();
+                }
             }
             Destroy(this.gameObject);
             return;

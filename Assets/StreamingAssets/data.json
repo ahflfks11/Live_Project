@@ -328,5 +328,27 @@
       "EndTalk":"yes",
       "Yes_setence":null,
       "No_setence":null
+   },
+   {
+      "no":31,
+      "Name":"요정",
+      "Types":0,
+      "setence":"와아! 저희가 승리했어요! 모험가님 덕분에 마을에 평화가 찾아왔어요! ",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"",
+      "Yes_setence":null,
+      "No_setence":null
+   },
+   {
+      "no":32,
+      "Name":"요정",
+      "Types":18,
+      "setence":"앞으로도 저와 함께 수 많은 사람들을 지키자구요!",
+      "Yes":null,
+      "No":null,
+      "EndTalk":"yes",
+      "Yes_setence":null,
+      "No_setence":null
    }
 ]
