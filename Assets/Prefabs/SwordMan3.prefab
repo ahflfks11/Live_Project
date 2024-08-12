@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitManager: {fileID: 0}
-  _Weapon: {fileID: 394438480956542749, guid: abd5767f3b7ca424b882f6c31da4b706, type: 3}
+  _Weapon: {fileID: 6949032675933054048, guid: f0c565221136f7d4a98e514b10a645a4, type: 3}
   _data:
     _unit: 1
     _type: 1

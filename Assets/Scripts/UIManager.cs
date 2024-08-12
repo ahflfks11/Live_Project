@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _arrow;
     [SerializeField] private DOTweenVisualManager _limitUIObject;
     [SerializeField] private DOTweenVisualManager _tutorialArrow;
+    [SerializeField] private EndGameUI _endGamePanel;
 
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
     public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
@@ -74,6 +75,28 @@ public class UIManager : MonoBehaviour
                 //_RevolutionPanel.SetActive(true);
             }
         }
+    }
+
+    public void EndGameUI()
+    {
+        if (_endGamePanel.gameObject.activeSelf)
+            return;
+
+        _endGamePanel.gameObject.SetActive(true);
+        int _rareCount = 0;
+        int _legendCount = 0;
+        for (int i = 0; i < GameManager.Instance._unitObject.Length; i++)
+        {
+            if (GameManager.Instance._unitObject[i]._data.rarelityLevel == 2)
+            {
+                _rareCount++;
+            } else if (GameManager.Instance._unitObject[i]._data.rarelityLevel == 3)
+            {
+                _legendCount++;
+            }
+        }
+
+        _endGamePanel.SetUI(GameManager.Instance.Wave, _legendCount, _rareCount);
     }
 
     public void LimitUI()
