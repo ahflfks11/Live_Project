@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     int _mintime;
 
     [SerializeField] private int _wave = 1;
-    private int _enermyCount = 0;
+    [SerializeField] private int _enermyCount = 0;
     private int _bossCount = 0;
 
     public UnitData[] _unitObject;
@@ -124,12 +124,7 @@ public class GameManager : MonoBehaviour
 
     public void Lobby()
     {
-        Time.timeScale = 1f;
-
-        if (GameObject.Find("GoogleManager"))
-            Transitioner.Instance.TransitionToScene(1);
-        else
-            SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 
     public void CreateSpawnEffect(int _effectNumber, Transform parents)
@@ -167,8 +162,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-            Time.timeScale = 0f;
         _unitObject = FindObjectsOfType<UnitData>();
 
         if (!GameStart)
