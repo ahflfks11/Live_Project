@@ -16,7 +16,10 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typingCoroutine;  // 현재 실행 중인 Coroutine을 관리하기 위한 변수
     private bool isTyping = false;  // 현재 타이핑 중인지 확인하기 위한 변수
 
-    
+    [SerializeField] BoxCollider2D _collider;
+
+    [SerializeField] Sprite[] _changeEmotions;
+    Image _emotion;
 
     [SerializeField]
     private DOTweenVisualManager _selectUIPanel;
@@ -43,6 +46,8 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        _collider.size = new Vector2(Screen.width, Screen.height);
+        _emotion = _collider.GetComponent<Image>();
         TalkLauncher(1);
     }
 
@@ -87,6 +92,12 @@ public class DialogueManager : MonoBehaviour
         sentences = JsonParseManager.Instance.AddTalk(_talkNumber, JsonParseManager.Instance.PrintDataForTypes(_talkNumber));
         //문장 출력 시작
         StartDialogue();
+    }
+
+    public void Change_Emotion(int _number)
+    {
+        if (_number > 0)
+            _emotion.sprite = _changeEmotions[_number - 1];
     }
 
     public void SignPanelUI()
@@ -154,7 +165,8 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;  // 타이핑 중으로 상태 설정
         dialogueText.text = "";  // 기존 텍스트 초기화
-
+        Change_Emotion(JsonParseManager.Instance._emotionList[JsonParseManager.Instance.emotionNumber]);
+        JsonParseManager.Instance.emotionNumber++;
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;

@@ -24,6 +24,8 @@ public class JsonParseManager : MonoBehaviour
 
     public List<int> _actionTypeList = new List<int>();
     public List<int> _actionType = new List<int>();
+    public List<int> _emotionList = new List<int>();
+    public int emotionNumber = 0;
 
     [System.Serializable]
     public class DataEntry
@@ -37,6 +39,7 @@ public class JsonParseManager : MonoBehaviour
         public string EndTalk;
         public string Yes_setence;
         public string No_setence;
+        public int Emotion;
     }
 
     private List<DataEntry> dataList = new List<DataEntry>();
@@ -118,7 +121,8 @@ public class JsonParseManager : MonoBehaviour
         List<string> _tempList = new List<string>();
         _actionTypeList = new List<int>();
         _actionType = new List<int>();
-
+        _emotionList = new List<int>();
+        emotionNumber = 0;
         GeneratorTalk(no, type, _tempList);
 
         _result = _tempList.ToArray();
@@ -134,10 +138,10 @@ public class JsonParseManager : MonoBehaviour
         string _no = null;
         _txtNumber = no;
         DataEntry entry = dataList.Find(e => e.no == no);
-
         if (entry != null)
         {
             _setence = entry.setence;
+            _emotionList.Add(entry.Emotion);
             if (entry.Types != 0)
             {
                 _actionTypeList.Add(_talks.Count);

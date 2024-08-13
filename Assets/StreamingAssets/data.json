@@ -8,7 +8,8 @@
       "No":7,
       "EndTalk":"",
       "Yes_setence":"처음이야. (튜토리얼 시작)",
-      "No_setence":"처음 아닌데요?"
+      "No_setence":"처음 아닌데요?",
+      "Emotion":0
    },
    {
       "no":2,
@@ -19,7 +20,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":3,
@@ -30,7 +32,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":4,
@@ -41,7 +44,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":5,
@@ -52,7 +56,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":1
    },
    {
       "no":6,
@@ -63,7 +68,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":7,
@@ -74,7 +80,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":8,
@@ -85,7 +92,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":9,
@@ -96,7 +104,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":2
    },
    {
       "no":10,
@@ -107,7 +116,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":11,
@@ -118,7 +128,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":12,
@@ -129,7 +140,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":1
    },
    {
       "no":13,
@@ -140,7 +152,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":2
    },
    {
       "no":14,
@@ -151,7 +164,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":15,
@@ -162,7 +176,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":1
    },
    {
       "no":16,
@@ -173,7 +188,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":17,
@@ -184,7 +200,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":18,
@@ -195,7 +212,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":2
    },
    {
       "no":19,
@@ -206,7 +224,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":20,
@@ -217,7 +236,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":21,
@@ -228,7 +248,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":22,
@@ -239,7 +260,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":23,
@@ -250,7 +272,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":24,
@@ -261,7 +284,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":25,
@@ -272,7 +296,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":26,
@@ -283,7 +308,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":27,
@@ -294,7 +320,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":28,
@@ -305,7 +332,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":29,
@@ -316,7 +344,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":1
    },
    {
       "no":30,
@@ -327,7 +356,8 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":2
    },
    {
       "no":31,
@@ -338,7 +368,8 @@
       "No":null,
       "EndTalk":"",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    },
    {
       "no":32,
@@ -349,6 +380,7 @@
       "No":null,
       "EndTalk":"yes",
       "Yes_setence":null,
-      "No_setence":null
+      "No_setence":null,
+      "Emotion":0
    }
 ]
