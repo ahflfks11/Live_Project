@@ -533,6 +533,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5537879033552831393}
     m_Modifications:
+    - target: {fileID: 472466576967169597, guid: c28c61450a5109542994571d4c07b101,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 776227396324500627, guid: c28c61450a5109542994571d4c07b101,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5100231053323727678, guid: c28c61450a5109542994571d4c07b101,
         type: 3}
       propertyPath: m_Name
@@ -646,6 +656,16 @@ PrefabInstance:
     - target: {fileID: 6553372505962504804, guid: c28c61450a5109542994571d4c07b101,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980940893216034541, guid: c28c61450a5109542994571d4c07b101,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8071447357684550776, guid: c28c61450a5109542994571d4c07b101,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

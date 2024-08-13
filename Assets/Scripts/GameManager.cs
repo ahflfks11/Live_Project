@@ -142,8 +142,9 @@ public class GameManager : MonoBehaviour
     {
         GameObject _spawnEffectPrefab = Instantiate(_spawnEffect[_effectNumber], parents.position, Quaternion.identity);
         _spawnEffectPrefab.transform.SetParent(parents);
-        _spawnEffectPrefab.transform.localScale = new Vector3(1f, 1f, 1f);
-        _spawnEffectPrefab.transform.position = Vector3.zero;
+        _spawnEffectPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+        _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0.4f, 0f);
+        _spawnEffectPrefab.transform.parent = null;
     }
 
     public void Log(string _text)

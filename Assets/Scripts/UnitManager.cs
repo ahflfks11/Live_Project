@@ -167,6 +167,7 @@ public class UnitManager : MonoBehaviour
         _unit.GetComponent<UnitData>().UnitManager = this;
         number++;
         _spawnList.Add(_unit);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
@@ -182,11 +183,12 @@ public class UnitManager : MonoBehaviour
         GameObject _unit;
 
         _unit = Instantiate(_Solider, _pos, Quaternion.identity);
-
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
         number++;
         _spawnList.Add(_unit);
+
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
@@ -212,6 +214,7 @@ public class UnitManager : MonoBehaviour
 
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
         number++;
         _spawnList.Add(_unit);
         int index = _unit.name.IndexOf("(Clone)");
@@ -256,7 +259,6 @@ public class UnitManager : MonoBehaviour
         if (_randomPosition)
         {
             Vector3 rndPos = new Vector3(_pos.x + Random.Range(-rndRangeX, rndRangeX), _pos.y + Random.Range(-rndRangeX, rndRangeY), _pos.z);
-            
             _unit = Instantiate(_soldiers[_spawnNum], rndPos, Quaternion.identity);
         }
         else
@@ -268,6 +270,7 @@ public class UnitManager : MonoBehaviour
         _unit.GetComponent<UnitData>().UnitManager = this;
         number++;
         _spawnList.Add(_unit);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
@@ -307,7 +310,7 @@ public class UnitManager : MonoBehaviour
             _unit.name = _unit.name.Substring(0, index);
         number++;
         _spawnList.Add(_unit);
-
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
         if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber == 25)
         {
             tutorialRevolutionSoldierNumber++;
@@ -329,7 +332,6 @@ public class UnitManager : MonoBehaviour
 
                 SelectSpecialSpawn(_tutorialSpecialSoldierList[_tutorialspecialSpawnCount], rndPos);
                 _tutorialspecialSpawnCount++;
-
                 if (_tutorialspecialSpawnCount > 1)
                 {
                     DialogueManager.Instance.TalkLauncher(22);
@@ -357,6 +359,7 @@ public class UnitManager : MonoBehaviour
 
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);

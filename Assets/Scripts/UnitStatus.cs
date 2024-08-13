@@ -12,8 +12,8 @@ public class UnitStatus : MonoBehaviour
     {
         _DmgText.text = _dmg.ToString();
         if (_attackCount != 1)
-            _AttackCountText.text = _attackCount.ToString();
+            _AttackCountText.text = "(" + _attackCount.ToString() + ")";
         else
-            _AttackCountText.text = "단일";
+            _AttackCountText.text = "(단일)";
     }
 }
