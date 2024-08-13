@@ -96,6 +96,8 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        GPGSManager.Instance.ClearStage(GameManager.Instance.Wave, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave), 100 * GameManager.Instance.Wave);
+
         _endGamePanel.SetUI(GameManager.Instance.Wave, _legendCount, _rareCount);
     }
 

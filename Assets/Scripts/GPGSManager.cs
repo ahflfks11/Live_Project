@@ -6,13 +6,17 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameData
 {
-    public Param UserInfo(string _nickName, int _level, int _cash, int _gold)
+    public Param UserInfo(string _nickName, int _level, int _cash, int _gold, int _stamina, int _stageClear, int _maxStage, string _values)
     {
         Param result = new Param();
         result.Add("NickName", _nickName);
         result.Add("Level", _level);
         result.Add("Cash", _cash);
         result.Add("Gold", _gold);
+        result.Add("Stamina", _stamina);
+        result.Add("StageClear", _stageClear);
+        result.Add("High_Stage", _maxStage);
+        result.Add("Values", _values);
         return result;
     }
 
@@ -275,17 +279,13 @@ public class GPGSManager : MonoBehaviour
     public void CreateUserData()
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
-        // 불러오기에 실패할 경우
-        if (bro.IsSuccess() == false)
-        {
 
-        }
         // 불러오기에는 성공했으나 데이터가 존재하지 않는 경우
         if (bro.IsSuccess() && bro.FlattenRows().Count <= 0)
         {
             Backend.BMember.GetUserInfo((callback) =>
             {
-                var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 0, 0));
+                var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 0, 0, 100, 0, 0, ""));
                 CreateHeroInfo();
             });
         }
@@ -294,11 +294,7 @@ public class GPGSManager : MonoBehaviour
     public void CreateHeroInfo()
     {
         var bro = Backend.PlayerData.GetMyData("UserHeroInfo");
-        // 불러오기에 실패할 경우
-        if (bro.IsSuccess() == false)
-        {
 
-        }
         // 불러오기에는 성공했으나 데이터가 존재하지 않는 경우
         if (bro.IsSuccess() && bro.FlattenRows().Count <= 0)
         {
@@ -389,6 +385,33 @@ public class GPGSManager : MonoBehaviour
         }
 
         WriteHeroInfo(_HeroList, _HeroLevel, _nowLevel);
+    }
+
+    public void ClearStage(int _stage, int _dropCash, int _dropMoney)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        //데이터가 존재할 경우
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
+        {
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
+
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Gold", GameInfoOperator.addition, _dropMoney);
+            _updateParam.AddCalculation("Cash", GameInfoOperator.addition, _dropCash);
+            _updateParam.AddCalculation("StageClear", GameInfoOperator.addition, 1);
+
+            //데이터 수정
+            var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+
+            Param _updateStage = new Param();
+            _updateStage.Add("High_Stage", _stage);
+
+            if (_stage > int.Parse(bro.FlattenRows()[0]["High_Stage"].ToString()))
+            {
+                Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _updateStage);
+            }
+        }
     }
 
     public void ReadHeroInfo()

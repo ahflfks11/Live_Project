@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager;
     private EnermyGenerator _enemyGenerator;
     public Transform myArea;
-    private int _gold;
+    [SerializeField] private int _gold;
     private int _requireGold;
     int clickCount;
     [SerializeField] private float _limitTimer = 40f;
@@ -120,6 +120,17 @@ public class GameManager : MonoBehaviour
             GameStart = true;
             UiManager.Wave(GameManager.Instance.Wave);
         }
+    }
+
+    public int CalculateCrystals(int stage)
+    {
+        int baseCrystals = 0;
+        int incrementPer10Stages = 60;
+
+        int numberOfIncrements = (stage - 1) / 10;
+        int totalCrystals = baseCrystals + (incrementPer10Stages * numberOfIncrements);
+
+        return totalCrystals;
     }
 
     public void Lobby()

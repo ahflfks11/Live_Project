@@ -26,6 +26,7 @@ public class EnforceUI : MonoBehaviour
     int _rareLevel = 0;
     int _legendLevel = 0;
     int _hiddenLevel = 0;
+    int _levelGold = 200;
 
     public void OpenVFX()
     {
@@ -109,17 +110,15 @@ public class EnforceUI : MonoBehaviour
 
     public bool SetLevelText()
     {
-        if (GameManager.Instance.Gold < 200)
+        if (GameManager.Instance.Gold < _levelGold)
             return false;
 
-        GameManager.Instance.Gold -= 200;
+        GameManager.Instance.Gold -= _levelGold;
 
-        if(GameManager.Instance.UnitManager.maxSpawnlevel >= 1)
-        {
-            _levelUpLabel.text = "전설적인";
-            _levelUpLabel.color = _color[2];
-            _levelUpCoinText.text = "200";
-        }
+        _levelUpLabel.text = "전설적인";
+        _levelUpLabel.color = _color[2];
+        _levelUpCoinText.text = "350";
+        _levelGold = 350;
 
         return true;
     }

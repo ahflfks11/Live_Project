@@ -68,6 +68,8 @@ public class UnitData : MonoBehaviour
     CircleRangeVisualizer _visualizer;
     private Vector3 targetEnemy;   // ÇöÀç Å¸°Ù Àû
 
+    UnitStatus _status;
+
     public UnitManager UnitManager { get => _unitManager; set => _unitManager = value; }
     public Vector3 TempPosition { get => _tempPosition; set => _tempPosition = value; }
     public bool PossibleRev { get => _possibleRev; set => _possibleRev = value; }
@@ -104,7 +106,8 @@ public class UnitData : MonoBehaviour
                 }
             }
         }
-
+        _status = gameObject.GetComponentInChildren<UnitStatus>();
+        _status.gameObject.SetActive(false);
         FindClosestEnemy();
     }
 
@@ -257,6 +260,8 @@ public class UnitData : MonoBehaviour
         onselect = true;
         _animator.SetBool("Walk", false);
         _visualizer.DrawCircle();
+        _status.gameObject.SetActive(true);
+        _status.SetUI(_data.dmg, _data.attackCount);
     }
 
     public void Deselect()
@@ -271,7 +276,7 @@ public class UnitData : MonoBehaviour
 
         _visualizer.ClearCircle();
         onselect = false;
-
+        _status.gameObject.SetActive(false);
         if (Vector3.Distance(transform.position, TempPosition) < 0.1f)
         {
             Revolution();

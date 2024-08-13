@@ -136,7 +136,8 @@ public class UnitManager : MonoBehaviour
 
         if (GameManager.Instance.UiManager.EnforceUI.SetLevelText())
         {
-            maxSpawnlevel++;
+            if (maxSpawnlevel + 1 < 4)
+                maxSpawnlevel++;
         }
     }
 
@@ -202,7 +203,7 @@ public class UnitManager : MonoBehaviour
 
     public void SelectSpecialSpawn(GameObject _Solider, Vector3 _pos)
     {
-        if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 20)
+        if (GameManager.Instance.Gold < 20)
             return;
 
         GameObject _unit;
@@ -219,7 +220,7 @@ public class UnitManager : MonoBehaviour
 
         GameManager.Instance.ClickCount++;
 
-        GameManager.Instance.Gold -= (maxSpawnlevel + 1) * 20;
+        GameManager.Instance.Gold -= 20;
 
         if (GameManager.Instance.ClickCount % 10 == 0)
         {
@@ -338,7 +339,7 @@ public class UnitManager : MonoBehaviour
             }
         }
 
-        if (GameManager.Instance.Gold < (maxSpawnlevel + 1) * 20)
+        if (GameManager.Instance.Gold < 20)
             return;
 
         GameObject _unit;
@@ -361,7 +362,7 @@ public class UnitManager : MonoBehaviour
             _unit.name = _unit.name.Substring(0, index);
         number++;
         _spawnList.Add(_unit);
-        GameManager.Instance.Gold -= (maxSpawnlevel + 1) * 20;
+        GameManager.Instance.Gold -= 20;
     }
 
     public void SpawnUnit()
