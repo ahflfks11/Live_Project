@@ -10,7 +10,7 @@ public class EnermyControl : MonoBehaviour
     public Text _hpText;
     int wayNumber = 1;
     int enermyTutorialNumber = 0;
-
+    [SerializeField] bool _isLastBoss;
     public bool _isBoss;
     public Transform[] WayPoint { get => wayPoint; set => wayPoint = value; }
 
@@ -63,8 +63,16 @@ public class EnermyControl : MonoBehaviour
                 }
                 else
                 {
-                    GameManager.Instance.UiManager.SkipUI();
+                    if (_isLastBoss)
+                    {
+                        GameManager.Instance.UiManager.EndGameUI(true);
+                    }
+                    else
+                    {
+                        GameManager.Instance.UiManager.SkipUI();
+                    }
                 }
+
             }
             Destroy(this.gameObject);
             return;

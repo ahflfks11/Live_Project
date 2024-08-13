@@ -1535,6 +1535,7 @@ MonoBehaviour:
   _limitTimer: 40
   _wave: 1
   _enermyCount: 0
+  _bossCount: 0
   _unitObject: []
   Exclamation: {fileID: 5980835425842424940, guid: 8c2f92f010f4c3a4488822cff42e4239,
     type: 3}
@@ -1853,7 +1854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1748088}
+  m_AnchoredPosition: {x: 0, y: -1827888}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624

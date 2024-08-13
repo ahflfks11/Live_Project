@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp_Img: {fileID: 6947993698589383860}
   _hpText: {fileID: 9155379043028954341}
+  _isLastBoss: 1
   _isBoss: 1
   _data:
     HP: 24000

@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _wave = 1;
     [SerializeField] private int _enermyCount = 0;
-    private int _bossCount = 0;
+    [SerializeField] private int _bossCount = 0;
 
     public UnitData[] _unitObject;
     public GameObject Exclamation;
@@ -181,8 +181,7 @@ public class GameManager : MonoBehaviour
 
         if (_enermyCount > 50)
         {
-            Time.timeScale = 0;
-            uiManager.EndGameUI();
+            uiManager.EndGameUI(false);
             return;
         }
 
@@ -218,8 +217,7 @@ public class GameManager : MonoBehaviour
 
                     if (GameObject.Find("Boss"))
                     {
-                        Time.timeScale = 0f;
-                        uiManager.EndGameUI();
+                        uiManager.EndGameUI(false);
                         return;
                     }
 

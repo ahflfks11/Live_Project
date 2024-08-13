@@ -77,11 +77,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void EndGameUI()
+    public void EndGameUI(bool _clear)
     {
         if (_endGamePanel.gameObject.activeSelf)
             return;
 
+        Time.timeScale = 0;
         _endGamePanel.gameObject.SetActive(true);
         int _rareCount = 0;
         int _legendCount = 0;
@@ -95,10 +96,16 @@ public class UIManager : MonoBehaviour
                 _legendCount++;
             }
         }
-
-        GPGSManager.Instance.ClearStage(GameManager.Instance.Wave, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave), 100 * GameManager.Instance.Wave);
-
-        _endGamePanel.SetUI(GameManager.Instance.Wave, _legendCount, _rareCount);
+        if (!_clear)
+        {
+            GPGSManager.Instance.ClearStage(GameManager.Instance.Wave, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave), 100 * GameManager.Instance.Wave);
+            _endGamePanel.SetUI(GameManager.Instance.Wave, _legendCount, _rareCount);
+        }
+        else
+        {
+            GPGSManager.Instance.ClearStage(GameManager.Instance.Wave + 1, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave + 1), 100 * GameManager.Instance.Wave + 1);
+            _endGamePanel.SetUI(GameManager.Instance.Wave + 1, _legendCount, _rareCount);
+        }
     }
 
     public void LimitUI()
