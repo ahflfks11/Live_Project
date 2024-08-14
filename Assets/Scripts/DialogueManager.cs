@@ -97,7 +97,15 @@ public class DialogueManager : MonoBehaviour
     public void Change_Emotion(int _number)
     {
         if (_number > 0)
+        {
+            _emotion.color = new Color(255, 255, 255, 255);
             _emotion.sprite = _changeEmotions[_number - 1];
+        }
+        else if (_number == -1)
+        {
+            _emotion.color = new Color(255, 255, 255, 0);
+            _emotion.sprite = null;
+        }
     }
 
     public void SignPanelUI()

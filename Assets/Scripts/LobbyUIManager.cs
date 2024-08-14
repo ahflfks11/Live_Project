@@ -148,8 +148,10 @@ public class LobbyUIManager : MonoBehaviour
                 _name.text = _gpgsManager.TakeNick();
             }
         }
-
-        DialogueManager.Instance.SignPanelUI();
+        if (JsonParseManager.Instance._txtNumber != 7)
+            DialogueManager.Instance.SignPanelUI();
+        else
+            Transitioner.Instance.TransitionToScene(1);
     }
 
     public void CreateIcon(DataManager.Data _data, int _number)

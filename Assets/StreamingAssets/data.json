@@ -57,7 +57,7 @@
       "EndTalk":"",
       "Yes_setence":null,
       "No_setence":null,
-      "Emotion":1
+      "Emotion":-1
    },
    {
       "no":6,
@@ -69,12 +69,12 @@
       "EndTalk":"yes",
       "Yes_setence":null,
       "No_setence":null,
-      "Emotion":0
+      "Emotion":1
    },
    {
       "no":7,
       "Name":"요정",
-      "Types":1,
+      "Types":2,
       "setence":"베테랑 모험가분이셨군요! 마을로 바로 안내해 드릴게요!",
       "Yes":null,
       "No":null,
