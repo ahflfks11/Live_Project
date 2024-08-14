@@ -172,5 +172,11 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[loopIndex].Play();
             break;
         }
-    }    
+    }
+
+    private void Update()
+    {
+        if (_highAudioFilter == null)
+            _highAudioFilter = FindObjectOfType<AudioHighPassFilter>();
+    }
 }
