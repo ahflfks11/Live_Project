@@ -44,4 +44,12 @@ public class DataManager : MonoBehaviour
     public Sprite[] BackgroundSprite { get => _backgroundSprite; set => _backgroundSprite = value; }
     public List<int> NowLevel { get => nowLevel; set => nowLevel = value; }
     public Sprite[] StarImgs { get => _starImgs; set => _starImgs = value; }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            GPGSManager.Instance.GetProbability();
+        }
+    }
 }

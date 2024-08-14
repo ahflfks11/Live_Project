@@ -30,11 +30,32 @@ public class GameData
     }
 }
 
+// 뒤끝의 기본 제공 차트를 이용하면 만든 아이템입니다.  
+// 업로드하신 차트의 컬럼명에 맞게 변수를 변경해주시기 바랍니다
+public class ProbabilityItem
+{
+    public string itemid;
+    public string itemname;
+    public int num;
+    public string itemtype;
+    public string percent;
+
+    public override string ToString()
+    {
+        return $"itemID : {itemid}\n" +
+        $"itemName : {itemname}\n" +
+        $"num : {num}\n" +
+        $"itemtype : {itemtype}\n";
+    }
+}
+
 public class GPGSManager : MonoBehaviour
 {
     public GameData gameTable = new GameData();
     public Text _logText;
     bool _login;
+
+    [SerializeField] string _fieldid = "12285";
 
     private static GPGSManager instance = null;
 
@@ -573,6 +594,76 @@ public class GPGSManager : MonoBehaviour
             {
                 _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
             }
+        }
+    }
+
+    public void DrawList()
+    {
+        string probabilityFileId = _fieldid;
+
+        var bro = Backend.Probability.GetProbabilityContents(probabilityFileId);
+
+        if (!bro.IsSuccess())
+        {
+            Debug.LogError(bro.ToString());
+            return;
+        }
+
+        LitJson.JsonData json = bro.FlattenRows();
+
+        List<ProbabilityItem> itemList = new List<ProbabilityItem>();
+
+        for (int i = 0; i < json.Count; i++)
+        {
+            ProbabilityItem item = new ProbabilityItem();
+
+            item.itemid = json[i]["itemid"].ToString();
+            item.itemname = json[i]["itemname"].ToString();
+            item.num = int.Parse(json[i]["num"].ToString());
+            item.itemtype = json[i]["itemtype"].ToString();
+
+            itemList.Add(item);
+        }
+
+        foreach (var item in itemList)
+        {
+            Debug.Log(item.ToString());
+        }
+
+        Debug.Log("확률 아이템의 총 갯수 : " + itemList.Count);
+    }
+
+    public void GetProbability()
+    {
+        string selectedProbabilityFileId = _fieldid;
+
+        var bro = Backend.Probability.GetProbabilitys(selectedProbabilityFileId, 8); // 8연차;
+
+        if (!bro.IsSuccess())
+        {
+            Debug.LogError(bro.ToString());
+            return;
+        }
+
+        LitJson.JsonData json = bro.GetFlattenJSON()["elements"];
+
+        List<ProbabilityItem> itemList = new List<ProbabilityItem>();
+
+        for (int i = 0; i < json.Count; i++)
+        {
+            ProbabilityItem item = new ProbabilityItem();
+
+            item.itemid = json[i]["itemid"].ToString();
+            item.itemname = json[i]["itemname"].ToString();
+            item.num = int.Parse(json[i]["num"].ToString());
+            item.itemtype = json[i]["itemtype"].ToString();
+
+            itemList.Add(item);
+        }
+
+        foreach (var item in itemList)
+        {
+            Debug.Log(item.ToString());
         }
     }
 
