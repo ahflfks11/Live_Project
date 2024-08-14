@@ -13,6 +13,8 @@ public class SettingUI : MonoBehaviour
     {
         _bgmVolume.value = AudioManager.instance.bgmVolume;
         _sfxVolume.value = AudioManager.instance.sfxVolume;
+        _bgmToggle.isOn = AudioManager.instance._bgmPlayState;
+        _sfxToggle.isOn = AudioManager.instance._sfxPlayState;
     }
 
     public void Chk_Mute_BGM(bool mute)

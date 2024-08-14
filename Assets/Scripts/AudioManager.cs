@@ -6,8 +6,14 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+    [Header("#TitleBGM")]
+    public AudioClip _titleBGM;
+
+    [Header("#LobbyBGM")]
+    public AudioClip _lobbyBGM;
+
     [Header("#BGM")]
-    public AudioClip bgmClip;
+    public AudioClip InGameBgmClip;
     public float bgmVolume;
     AudioSource bgmPlayer;
 
@@ -18,18 +24,68 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelIndex;
 
+    public bool _bgmPlayState;
+    public bool _sfxPlayState;
+
     public AudioHighPassFilter _highAudioFilter;
 
     public enum skillSfx { Slash = 0, Arrow, Magic }
 
     private void Awake()
     {
-        instance = this;
-        Init();
+        if (instance == null)
+        {
+            instance = this;
+            Init();
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    public void PlayBgm(bool isPlay)
+    public void TitleBgm(bool isPlay)
     {
+        if (bgmPlayer.isPlaying)
+            bgmPlayer.Stop();
+
+        bgmPlayer.clip = _titleBGM;
+
+        if (isPlay)
+        {
+            bgmPlayer.Play();
+        }
+        else
+        {
+            bgmPlayer.Stop();
+        }
+    }
+
+    public void LobbyBgm(bool isPlay)
+    {
+        if (bgmPlayer.isPlaying)
+            bgmPlayer.Stop();
+
+        bgmPlayer.clip = _lobbyBGM;
+
+        if (isPlay)
+        {
+            bgmPlayer.Play();
+        }
+        else
+        {
+            bgmPlayer.Stop();
+        }
+    }
+
+    public void PlayInGameBgm(bool isPlay)
+    {
+        if (bgmPlayer.isPlaying)
+            bgmPlayer.Stop();
+
+        bgmPlayer.clip = InGameBgmClip;
+
         if (isPlay)
         {
             bgmPlayer.Play();
@@ -69,6 +125,7 @@ public class AudioManager : MonoBehaviour
     public void MuteBGM(bool isPlay)
     {
         bgmPlayer.mute = isPlay;
+        _bgmPlayState = isPlay;
     }
 
     public void MuteSFX(bool isPlay)
@@ -77,6 +134,8 @@ public class AudioManager : MonoBehaviour
         {
             sfxPlayers[index].mute = isPlay;
         }
+
+        _sfxPlayState = isPlay;
     }
 
     void Init()
@@ -87,7 +146,6 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.playOnAwake = false;
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
-        bgmPlayer.clip = bgmClip;
 
         GameObject sfxObject = new GameObject("SfxPlayer");
         sfxObject.transform.parent = transform;

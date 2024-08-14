@@ -10,6 +10,7 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.instance.TitleBgm(true);
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public class LobbyUIManager : MonoBehaviour
     public DOTweenVisualManager _singleGachaUIPanel;
     public DOTweenVisualManager _gachaShopUI;
     [SerializeField] private DOTweenVisualManager _character_InvenPanel;
+    [SerializeField] private DOTweenVisualManager _settingUI;
     [SerializeField] private Transform _Inven_Contents;
     Gacha_Cotents _multiGachaContent;
     Gacha_Cotents _singleGachaContent;
@@ -42,6 +43,14 @@ public class LobbyUIManager : MonoBehaviour
         {
             _name.text = _gpgsManager.TakeNick();
         }
+    }
+
+    public void SettingUI()
+    {
+        if (_settingUI.enabled)
+            _settingUI.enabled = false;
+        else
+            _settingUI.enabled = true;
     }
 
     public void ShopPanel()

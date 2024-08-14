@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameInit();
-        AudioManager.instance.PlayBgm(true);
+        AudioManager.instance.PlayInGameBgm(true);
     }
 
     private void Update()

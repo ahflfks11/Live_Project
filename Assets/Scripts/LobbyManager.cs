@@ -38,6 +38,7 @@ public class LobbyManager : MonoBehaviour
         LobbyMonster = FindObjectOfType<LobbyMonster>();
         _lobbyUIManager = FindObjectOfType<LobbyUIManager>();
         Time.timeScale = 1f;
+
         if (!_tutorial)
         {
             if (FindObjectOfType<DialogueManager>())
@@ -50,6 +51,8 @@ public class LobbyManager : MonoBehaviour
             JsonParseManager.Instance.Tutorial = true;
             LobbyMonster.gameObject.SetActive(false);
         }
+
+        AudioManager.instance.LobbyBgm(true);
     }
 
     private void Update()
