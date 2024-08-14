@@ -1998,6 +1998,11 @@ PrefabInstance:
       propertyPath: _titleBGM
       value: 
       objectReference: {fileID: 8300000, guid: 04c29459722ae2748be48c887a3d3d2d, type: 3}
+    - target: {fileID: 5957085231439781786, guid: f599eac8418706f40a15732a872ac27d,
+        type: 3}
+      propertyPath: InGameBgmClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
     - target: {fileID: 5957085231439781787, guid: f599eac8418706f40a15732a872ac27d,
         type: 3}
       propertyPath: m_RootOrder

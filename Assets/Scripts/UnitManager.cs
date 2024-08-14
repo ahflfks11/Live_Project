@@ -27,7 +27,15 @@ public class UnitManager : MonoBehaviour
     public int maxCount = 10;
 
     public int maxSpawnlevel = 0;
-    
+
+    double _rndRandomValue = 0;
+    double _rndSum = 0;
+
+    public UnitSelector unitSelector;
+
+    public UnityEngine.UI.Text[] _rateText;
+
+
     public List<UnitData> ck_List = new List<UnitData>();
     List<UnitData> temp_ck_List = new List<UnitData>();
 
@@ -408,13 +416,42 @@ public class UnitManager : MonoBehaviour
     {
         Vector3 pos = GameManager.Instance.myArea.position;
 
+
+        int rnd_Number = unitSelector.GetUnitGrade(maxSpawnlevel + 1);
+        List<GameObject> _unit = new List<GameObject>();
+
+        int rnd_UnitNumber = 0;
+
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            if (_soldiers[i].GetComponent<UnitData>()._data.rarelityLevel == rnd_Number - 1)
+            {
+                _unit.Add(_soldiers[i]);
+            }
+        }
+
+        int rnd_key = Random.Range(0, _unit.Count);
+
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            if (_soldiers[i] == _unit[rnd_key])
+            {
+                rnd_UnitNumber = i;
+                break;
+            }
+        }
+
+        /*
         int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
+
 
         if (!CheckSpawn(_soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data._multiUnit) || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.rarelityLevel > maxSpawnlevel + 1)
         {
             SpecialSpawnUnit();
             return;
         }
+        */
+
 
         SpecialSpawn(rnd_UnitNumber, pos, true);
     }
@@ -445,6 +482,22 @@ public class UnitManager : MonoBehaviour
 
     private void Update()
     {
+        string[] probabilityArray = unitSelector.GetGradeProbabilitiesAsArray(maxSpawnlevel + 1);
+
+        for (int i = 0; i < probabilityArray.Length; i++) {
+
+            if (int.Parse(probabilityArray[i]) > 0)
+            {
+                _rateText[i].color = Color.yellow;
+                _rateText[i].text = probabilityArray[i] + "%";
+            }
+            else
+            {
+                _rateText[i].color = Color.white;
+            }
+
+        }
+
         foreach (GameObject searchSoldier in _soldiers)
         {
             if (searchSoldier.GetComponent<UnitData>()._data._multiUnit.Length != 0)

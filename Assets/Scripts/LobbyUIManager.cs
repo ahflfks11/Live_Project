@@ -186,18 +186,4 @@ public class LobbyUIManager : MonoBehaviour
             _icons[i].transform.SetSiblingIndex(i);
         }
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            int _number = Random.Range(0, DataManager.Instance._data.Length);
-            CreateIcon(DataManager.Instance._data[_number], _number);
-        }
-        else if (Input.GetKeyDown(KeyCode.X))
-        {
-            IconPosChange();
-        }
-
-    }
 }
