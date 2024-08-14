@@ -82,6 +82,8 @@ public class LobbyManager : MonoBehaviour
         int _boxlevel = 0;
         _GachaList = new List<UnitData>();
 
+        int _duplicationCount = 0;
+
         while (_GachaList.Count < _GachaCount)
         {
             double sum = 0f;
@@ -94,7 +96,7 @@ public class LobbyManager : MonoBehaviour
             sum *= Random.value;
 
             int result_idx = 0;
-
+            bool duplicationState = false;
             for (int i = 0; i < _dataManager._data.Length; i++)
             {
                 sum -= _dataManager._data[i]._unit._data.weight;
@@ -117,10 +119,27 @@ public class LobbyManager : MonoBehaviour
             {
                 if (_dataManager.MyHeroList[i] == _dataManager._data[result_idx]._unit)
                 {
-                    _dataManager.MyHeroLevel[i] = _dataManager.MyHeroLevel[i] + 1;
+                    if (_dataManager.MyHeroLevel[i] + 1 < 3)
+                    {
+                        _dataManager.MyHeroLevel[i] = _dataManager.MyHeroLevel[i] + 1;
+                    }
+                    else
+                    {
+                        _duplicationCount++;
+                        duplicationState = true;
+                    }
                     _result_Hero_Duplication = true;
                     break;
                 }
+            }
+
+            if (_GachaCount > 1)
+            {
+                _lobbyUIManager.MultiGachaContent.Duplication(duplicationState, _GachaList.Count);
+            }
+            else
+            {
+                _lobbyUIManager.SingleGachaContent.Duplication(duplicationState, _GachaList.Count);
             }
 
             if (!_result_Hero_Duplication)
@@ -168,6 +187,9 @@ public class LobbyManager : MonoBehaviour
         if (_gpgsManager != null)
             _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel, _tempNowLevel);
 
+        if (_duplicationCount > 0)
+            GaveGold(_duplicationCount * 300);
+
         return _boxlevel;
         
     }
@@ -212,18 +234,16 @@ public class LobbyManager : MonoBehaviour
         if (LobbyManager.instance._tutorial && JsonParseManager.Instance._txtNumber < 6)
             return;
 
-        Destroy(GameObject.Find("LootBox"));
-        int _boxlevel = SetupGachaList(8);
-        GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
-        _GachaboxObject.GetComponent<LootBoxController>()._isMuiti = true;
-        _GachaboxObject.gameObject.name = "LootBox";
-
-        if (_gpgsManager == null)
+        if (GameObject.Find("LootBox"))
             return;
 
         if (_gpgsManager.LeastCrystal(1600, _lobbyUIManager._CashText))
         {
-
+            Destroy(GameObject.Find("LootBox"));
+            int _boxlevel = SetupGachaList(8);
+            GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
+            _GachaboxObject.GetComponent<LootBoxController>()._isMuiti = true;
+            _GachaboxObject.gameObject.name = "LootBox";
         }
     }
 
@@ -232,19 +252,17 @@ public class LobbyManager : MonoBehaviour
         if (LobbyManager.instance._tutorial && JsonParseManager.Instance._txtNumber < 6)
             return;
 
-        Destroy(GameObject.Find("LootBox"));
-        int _boxlevel = SetupGachaList(1);
-        GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
-        _GachaboxObject.GetComponent<LootBoxController>()._isMuiti = false;
-        _GachaboxObject.gameObject.name = "LootBox";
-
-        if (_gpgsManager == null)
+        if (GameObject.Find("LootBox"))
             return;
 
 
         if (_gpgsManager.LeastCrystal(160, _lobbyUIManager._CashText))
         {
-
+            Destroy(GameObject.Find("LootBox"));
+            int _boxlevel = SetupGachaList(1);
+            GameObject _GachaboxObject = Instantiate(_LootBox[_boxlevel].gameObject, _LootBox[_boxlevel].transform.position, Quaternion.identity);
+            _GachaboxObject.GetComponent<LootBoxController>()._isMuiti = false;
+            _GachaboxObject.gameObject.name = "LootBox";
         }
     }
 

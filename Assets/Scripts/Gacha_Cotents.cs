@@ -7,6 +7,7 @@ public class Gacha_Cotents : MonoBehaviour
 {
     [SerializeField] Image[] _Gacha_Box_Image;
     [SerializeField] Image[] _Gacha_Background_Image;
+    [SerializeField] Image[] _Gacha_DuplicationImage;
 
     public void SetupGachaImage(UnitData _unit, int _dataNumber, int _rarelity)
     {
@@ -14,6 +15,18 @@ public class Gacha_Cotents : MonoBehaviour
         {
             _Gacha_Box_Image[_dataNumber].sprite = _unit._spr;
             _Gacha_Background_Image[_dataNumber].sprite = DataManager.Instance.BackgroundSprite[_rarelity];
+        }
+    }
+
+    public void Duplication(bool _duplication, int _dataNumber)
+    {
+        if (_duplication)
+        {
+            _Gacha_DuplicationImage[_dataNumber].enabled = true;
+        }
+        else
+        {
+            _Gacha_DuplicationImage[_dataNumber].enabled = false;
         }
     }
 

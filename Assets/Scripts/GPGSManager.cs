@@ -285,7 +285,7 @@ public class GPGSManager : MonoBehaviour
         {
             Backend.BMember.GetUserInfo((callback) =>
             {
-                var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 0, 0, 100, 0, 0, ""));
+                var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 30000, 0, 100, 0, 0, ""));
                 CreateHeroInfo();
             });
         }
