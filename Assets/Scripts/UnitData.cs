@@ -100,7 +100,7 @@ public class UnitData : MonoBehaviour
                 if (DataManager.Instance.MyHeroList[index]._data._unit == _data._unit && DataManager.Instance.MyHeroList[index]._data.rarelityLevel == _data.rarelityLevel)
                 {
                     _increaseDmg = 1 * DataManager.Instance.NowLevel[index];
-                    _increaseRange = 1 * DataManager.Instance.NowLevel[index];
+                    _increaseRange = 0.1f * DataManager.Instance.NowLevel[index];
                     FindRange += _increaseRange;
                     break;
                 }
@@ -261,7 +261,32 @@ public class UnitData : MonoBehaviour
         _animator.SetBool("Walk", false);
         _visualizer.DrawCircle();
         _status.gameObject.SetActive(true);
-        _status.SetUI(_data.dmg, _data.attackCount);
+
+        float _dmg = _data.dmg;
+
+        if (_data.specialUnit)
+        {
+            _dmg = _data.dmg + _unitManager.HiddenEnforceDmg;
+        }
+        else
+        {
+            if (_data.rarelityLevel <= 1)
+            {
+                _dmg = _data.dmg + _unitManager.NormalEnforceDmg;
+            }
+            else if (_data.rarelityLevel == 2)
+            {
+                _dmg = _data.dmg + _unitManager.RareEnforceDmg;
+            }
+            else
+            {
+                _dmg = _data.dmg + _unitManager.LegendEnforceDmg;
+            }
+        }
+
+        _dmg = _dmg + _increaseDmg;
+
+        _status.SetUI(_dmg, _data.attackCount);
     }
 
     public void Deselect()

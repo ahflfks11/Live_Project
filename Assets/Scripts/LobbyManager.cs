@@ -9,7 +9,7 @@ public class LobbyManager : MonoBehaviour
     LobbyCharacter _lobbyCharacter;
     LobbyMonster _lobbyMonster;
     GPGSManager _gpgsManager;
-    LobbyUIManager _lobbyUIManager;
+    public LobbyUIManager _lobbyUIManager;
     DataManager _dataManager;
 
     [SerializeField] private GameObject spawnEffect;

@@ -16,6 +16,8 @@ public class CharacterStatus : MonoBehaviour
     [SerializeField] private TMP_Text _up_distance_Text;
     [SerializeField] private Image _levelUpImage;
     [SerializeField] private TMP_Text _herolevelText;
+    [SerializeField] private TMP_Text _levelupText;
+
     GPGSManager _gpgsManager;
 
     private DataManager.Data _data;
@@ -33,7 +35,7 @@ public class CharacterStatus : MonoBehaviour
             if (DataManager.Instance.NowLevel[_number] > 0)
             {
                 _up_dmg_Text.text = "+" + DataManager.Instance.NowLevel[_number].ToString();
-                _up_distance_Text.text = "+" + DataManager.Instance.NowLevel[_number].ToString();
+                _up_distance_Text.text = "+" + (0.1f * DataManager.Instance.NowLevel[_number]).ToString();
             }
             else
             {
@@ -51,6 +53,15 @@ public class CharacterStatus : MonoBehaviour
             }
 
             _herolevelText.text = DataManager.Instance.NowLevel[Number] + "/" + DataManager.Instance.MyHeroLevel[Number];
+
+            if (DataManager.Instance.NowLevel[_number]!=2)
+            {
+                _levelupText.text = string.Format("{0:n0}", 5000 * (DataManager.Instance.NowLevel[_number] + 1)) + "G";
+            }
+            else
+            {
+                _levelupText.text = "MAX";
+            }
         }
     }
 
@@ -59,10 +70,15 @@ public class CharacterStatus : MonoBehaviour
         if (DataManager.Instance.NowLevel.Count < 1)
             return;
 
+        if (int.Parse(LobbyManager.Instance._lobbyUIManager._CoinText.text.ToString()) < 5000 * (DataManager.Instance.NowLevel[_number] + 1))
+            return;
+
         if (DataManager.Instance.MyHeroLevel[Number] > DataManager.Instance.NowLevel[Number])
         {
             DataManager.Instance.NowLevel[Number] += 1;
             _gpgsManager.SaveLevel(DataManager.Instance.NowLevel);
+
+            _gpgsManager.LeastGold(5000 * (DataManager.Instance.NowLevel[_number] + 1), LobbyManager.Instance._lobbyUIManager._CoinText);
         }
     }
 
