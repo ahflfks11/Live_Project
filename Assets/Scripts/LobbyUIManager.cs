@@ -19,6 +19,7 @@ public class LobbyUIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _character_InvenPanel;
     [SerializeField] private DOTweenVisualManager _settingUI;
     [SerializeField] private Transform _Inven_Contents;
+    [SerializeField] private ErrorGame _errorPanel;
     Gacha_Cotents _multiGachaContent;
     Gacha_Cotents _singleGachaContent;
 
@@ -51,6 +52,14 @@ public class LobbyUIManager : MonoBehaviour
             _settingUI.enabled = false;
         else
             _settingUI.enabled = true;
+    }
+
+    public void ErrorPanel()
+    {
+        if (_errorPanel.gameObject.activeSelf)
+            _errorPanel.gameObject.SetActive(false);
+        else
+            _errorPanel.gameObject.SetActive(true);
     }
 
     public void ShopPanel()

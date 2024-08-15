@@ -8,6 +8,19 @@ public class TitleManager : MonoBehaviour
     public GameObject menuPanel;
     public GameObject loadingPanel;
 
+    private void Awake()
+    {
+        if (GameObject.Find("DataManager"))
+        {
+            Destroy(GameObject.Find("DataManager"));
+        }
+
+        if (GameObject.Find("TalkCanvas"))
+        {
+            Destroy(GameObject.Find("TalkCanvas"));
+        }
+    }
+
     private void Start()
     {
         AudioManager.instance.TitleBgm(true);
