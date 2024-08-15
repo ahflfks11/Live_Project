@@ -832,6 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _logText: {fileID: 0}
+  _fieldid: 12285
 --- !u!1 &627741248
 GameObject:
   m_ObjectHideFlags: 0
