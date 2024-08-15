@@ -43,7 +43,11 @@ public class LobbyManager : MonoBehaviour
         {
             if (FindObjectOfType<DialogueManager>())
                 Destroy(FindObjectOfType<DialogueManager>().gameObject);
-            JsonParseManager.Instance.Tutorial = false;
+
+            if (JsonParseManager.Instance.Tutorial)
+            {
+                JsonParseManager.Instance.Tutorial = false;
+            }
             _lobbyCharacter.Attack();
         }
         else
@@ -67,7 +71,10 @@ public class LobbyManager : MonoBehaviour
             _gpgsManager = FindObjectOfType<GPGSManager>();
             _gpgsManager.SetValue(_lobbyUIManager._CoinText, _lobbyUIManager._CashText);
             if (!_tutorial)
+            {
+                DataManager.Instance.Clear();
                 _gpgsManager.ReadHeroInfo();
+            }
         }
     }
 
@@ -147,7 +154,7 @@ public class LobbyManager : MonoBehaviour
                 _dataManager.MyHeroList.Add(_dataManager._data[result_idx]._unit);
                 _dataManager.MyHeroLevel.Add(0);
                 _dataManager.NowLevel.Add(0);
-                _lobbyUIManager.CreateIcon(_dataManager._data[result_idx], result_idx);
+                _lobbyUIManager.CreateIcon(_dataManager._data[result_idx], _dataManager.MyHeroList.Count - 1);
             }
 
             _GachaList.Add(_dataManager._data[result_idx]._unit);

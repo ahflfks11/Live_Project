@@ -45,7 +45,7 @@ public class UnitSelector : MonoBehaviour
             case 1:
                 return new List<float> { 80f, 20f, 0f, 0f };
             case 2:
-                return new List<float> { 50f, 42f, 8f, 0f };
+                return new List<float> { 53f, 42f, 5f, 0f };
             case 3:
                 return new List<float> { 30f, 44f, 25f, 1f };
             case 4:

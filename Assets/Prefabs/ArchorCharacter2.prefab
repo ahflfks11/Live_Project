@@ -106,8 +106,9 @@ MonoBehaviour:
     _unit: 2
     _type: 1
     _multiUnit: []
-    _unit_name: 
-    _comment: 
+    _unit_name: "\uC801\uC751\uB41C \uAD81\uC218"
+    _comment: "\uACAC\uC2B5\uB54C\uBCF4\uB2E4 \uB178\uB828\uD574\uC9C4 \uAD81\uC218\uC785\uB2C8\uB2E4.
+      \uC0AC\uAC70\uB9AC\uAC00 \uB298\uC5B4\uB098\uBA70 \uD654\uC0B4\uC774 \uC608\uB9AC\uD574\uC84C\uC2B5\uB2C8\uB2E4."
     attackCount: 1
     weight: 0.6
     attackDelay: 1.5

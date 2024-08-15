@@ -78,7 +78,7 @@ public class CharacterStatus : MonoBehaviour
             DataManager.Instance.NowLevel[Number] += 1;
             _gpgsManager.SaveLevel(DataManager.Instance.NowLevel);
 
-            _gpgsManager.LeastGold(5000 * (DataManager.Instance.NowLevel[_number] + 1), LobbyManager.Instance._lobbyUIManager._CoinText);
+            _gpgsManager.LeastGold(5000 * (DataManager.Instance.NowLevel[_number]), LobbyManager.Instance._lobbyUIManager._CoinText);
         }
     }
 

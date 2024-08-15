@@ -45,6 +45,13 @@ public class DataManager : MonoBehaviour
     public List<int> NowLevel { get => nowLevel; set => nowLevel = value; }
     public Sprite[] StarImgs { get => _starImgs; set => _starImgs = value; }
 
+    public void Clear()
+    {
+        MyHeroList = new List<UnitData>();
+        MyHeroLevel = new List<int>();
+        NowLevel = new List<int>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))

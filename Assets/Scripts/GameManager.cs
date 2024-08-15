@@ -49,18 +49,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        /*
-        if (instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        */
-
         instance = this;
     }
 

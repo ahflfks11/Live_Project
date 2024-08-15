@@ -7,7 +7,7 @@ public class EnermyGenerator : MonoBehaviour
     public EnermyControl[] _enermyList;
     public EnermyControl[] _bossList;
     public Transform[] wayPoint;
-    int stageLimitNumber = 30;
+    int stageLimitNumber = 50;
     int tempStageLimitNumber = 0;
     float createTime = 2f;
     int wave = 0;
@@ -24,7 +24,7 @@ public class EnermyGenerator : MonoBehaviour
         {
             if (!GameManager.Instance.IsBoss)
             {
-                if (stageLimitNumber == tempStageLimitNumber)
+                if (stageLimitNumber <= tempStageLimitNumber)
                 {
                     yield return null;
                 }
@@ -118,15 +118,17 @@ public class EnermyGenerator : MonoBehaviour
         if (_launcher == null && GameManager.Instance.GameStart)
             StartWave();
 
+        if (GameManager.Instance.IsBoss)
+            tempStageLimitNumber = stageLimitNumber;
+
         if (wave != GameManager.Instance.Wave)
         {
             _bossSpawn = false;
             if (_enermyList.Length >= GameManager.Instance.Wave)
             {
                 wave = GameManager.Instance.Wave;
+                tempStageLimitNumber = 0;
             }
-
-            tempStageLimitNumber = 0;
         }
 
         if(JsonParseManager.Instance.Tutorial && GameManager.Instance.EnermyCount <= 0 && JsonParseManager.Instance._txtNumber == 18 && GameManager.Instance._SpawnComplete)

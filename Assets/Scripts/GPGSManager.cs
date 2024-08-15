@@ -454,7 +454,7 @@ public class GPGSManager : MonoBehaviour
                 DataManager.Instance.MyHeroList.Add(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())]._unit);
                 DataManager.Instance.MyHeroLevel.Add(int.Parse(_myHeroLevel[i]));
                 DataManager.Instance.NowLevel.Add(int.Parse(_myNowLevel[i]));
-                _lobbyManager.CreateIcon(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())], int.Parse(_myHeroList[i].ToString()));
+                _lobbyManager.CreateIcon(DataManager.Instance._data[int.Parse(_myHeroList[i].ToString())], i);
             }
         }
     }

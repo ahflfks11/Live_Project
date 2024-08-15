@@ -10,6 +10,7 @@ public class EnforceUI : MonoBehaviour
     [SerializeField] private TMP_Text _dmgUpLegendCoinText;
     [SerializeField] private TMP_Text _dmgUpHiddenCoinText;
     [SerializeField] private TMP_Text _levelUpCoinText;
+    [SerializeField] private TMP_Text _levelUpRateText;
 
     [SerializeField] Color[] _color;
 
@@ -26,7 +27,10 @@ public class EnforceUI : MonoBehaviour
     int _rareLevel = 0;
     int _legendLevel = 0;
     int _hiddenLevel = 0;
-    int _levelGold = 200;
+    int[] _levelGold = { 100, 150, 200, -1 };
+    string[] _levelText = { "희귀함", "전설적인", "전설적인" };
+    string[] _rateText = { "확률이 대량 증가한다.", "확률이 소량 증가한다.", "확률이 소량 증가한다." };
+    int _levelNumber = 0;
 
     public void OpenVFX()
     {
@@ -110,15 +114,33 @@ public class EnforceUI : MonoBehaviour
 
     public bool SetLevelText()
     {
-        if (GameManager.Instance.Gold < _levelGold)
+        if (GameManager.Instance.Gold < _levelGold[_levelNumber] || _levelGold[_levelNumber] == -1)
             return false;
 
-        GameManager.Instance.Gold -= _levelGold;
+        GameManager.Instance.Gold -= _levelGold[_levelNumber];
 
-        _levelUpLabel.text = "전설적인";
-        _levelUpLabel.color = _color[2];
-        _levelUpCoinText.text = "350";
-        _levelGold = 350;
+        _levelNumber++;
+
+        if (_levelGold[_levelNumber] == -1)
+        {
+            _levelUpCoinText.text = "MAX";
+        }
+        else
+        {
+            _levelUpCoinText.text = _levelGold[_levelNumber].ToString();
+        }
+
+        if (_levelText[_levelNumber - 1].Contains("희귀함"))
+        {
+            _levelUpLabel.color = _color[1];
+        }
+        else
+        {
+            _levelUpLabel.color = _color[2];
+        }
+
+        _levelUpLabel.text = _levelText[_levelNumber - 1];
+        _levelUpRateText.text = _rateText[_levelNumber - 1];
 
         return true;
     }
