@@ -56,7 +56,7 @@ public class DataManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            GPGSManager.Instance.GetProbability();
+            GPGSManager.Instance.RankList();
         }
     }
 }

@@ -51,6 +51,28 @@ public class ProbabilityItem
     }
 }
 
+public class RankItem
+{
+    public string gamerInDate;
+    public string nickname;
+    public string score;
+    public string index;
+    public string rank;
+    public string extraData = string.Empty;
+    public string extraName = "LegendCount";
+    public string totalCount;
+
+    public override string ToString()
+    {
+        string str = $"유저인데이트:{gamerInDate}\n닉네임:{nickname}\n점수:{score}\n정렬:{index}\n순위:{rank}\n총합:{totalCount}\n";
+        if (extraName != string.Empty)
+        {
+            str += $"{extraName}:{extraData}\n";
+        }
+        return str;
+    }
+}
+
 public class GPGSManager : MonoBehaviour
 {
     public GameData gameTable = new GameData();
@@ -412,6 +434,8 @@ public class GPGSManager : MonoBehaviour
         WriteHeroInfo(_HeroList, _HeroLevel, _nowLevel);
     }
 
+
+    //클리어시 서버 전송 패킷
     public void ClearStage(int _stage, int _dropCash, int _dropMoney, int _legendCount, int _rareCount)
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
@@ -428,13 +452,19 @@ public class GPGSManager : MonoBehaviour
 
             //데이터 수정
             var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+           
+            //랭킹 업데이트
+            Param updateRankParam = new Param();
+            bool _updateRank = false;
 
             Param _updateStage = new Param();
             _updateStage.Add("High_Stage", _stage);
 
             if (_stage > int.Parse(bro.FlattenRows()[0]["High_Stage"].ToString()))
             {
+                updateRankParam.Add("High_Stage", _stage);
                 Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _updateStage);
+                _updateRank = true;
             }
 
             Param _legendParam = new Param();
@@ -442,7 +472,9 @@ public class GPGSManager : MonoBehaviour
 
             if (_legendCount > int.Parse(bro.FlattenRows()[0]["LegendCount"].ToString()))
             {
+                updateRankParam.Add("LegendCount", _legendCount);
                 Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _legendParam);
+                _updateRank = true;
             }
 
             Param _rareParam = new Param();
@@ -452,6 +484,9 @@ public class GPGSManager : MonoBehaviour
             {
                 Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _rareParam);
             }
+
+            if (_updateRank)
+                GPGSManager.instance.UpdateRanking(updateRankParam);
         }
     }
 
@@ -684,6 +719,96 @@ public class GPGSManager : MonoBehaviour
         foreach (var item in itemList)
         {
             Debug.Log(item.ToString());
+        }
+    }
+
+    public void RankList()
+    {
+        string userUuid = "e4642170-5b0b-11ef-8e5b-91941c7f9d2e";
+        int limit = 100;
+
+        List<RankItem> rankItemList = new List<RankItem>();
+
+        BackendReturnObject bro = Backend.URank.User.GetRankList(userUuid, limit);
+
+        if (bro.IsSuccess())
+        {
+            LitJson.JsonData rankListJson = bro.GetFlattenJSON();
+
+            string extraName = string.Empty;
+
+            for (int i = 0; i < rankListJson["rows"].Count; i++)
+            {
+                RankItem rankItem = new RankItem();
+
+                rankItem.gamerInDate = rankListJson["rows"][i]["gamerInDate"].ToString();
+                rankItem.nickname = rankListJson["rows"][i]["nickname"].ToString();
+                rankItem.score = rankListJson["rows"][i]["score"].ToString();
+                rankItem.index = rankListJson["rows"][i]["index"].ToString();
+                rankItem.rank = rankListJson["rows"][i]["rank"].ToString();
+                rankItem.totalCount = rankListJson["totalCount"].ToString();
+                if (rankListJson["rows"][i].ContainsKey(rankItem.extraName))
+                {
+                    rankItem.extraData = rankListJson["rows"][i][rankItem.extraName].ToString();
+                }
+
+                rankItemList.Add(rankItem);
+                Debug.Log(rankItem.ToString());
+            }
+        }
+    }
+
+    public void UpdateRanking(Param _data)
+    {
+        string tableName = "UserInfo";
+        string rowIndate = string.Empty;
+        string rankingUUID = "e4642170-5b0b-11ef-8e5b-91941c7f9d2e";
+
+        //Param param = new Param();
+        //param.Add("High_Stage", _highStage);
+        //param.Add("LegendCount", _legendCount);
+
+        var bro = Backend.GameData.Get("UserInfo", new Where());
+
+        if (bro.IsSuccess())
+        {
+            if (bro.FlattenRows().Count > 0)
+            {
+                rowIndate = bro.FlattenRows()[0]["inDate"].ToString();
+            }
+            else
+            {
+                var bro2 = Backend.GameData.Insert(tableName, _data);
+
+                if (bro2.IsSuccess())
+                {
+                    rowIndate = bro2.GetInDate();
+                }
+                else
+                {
+                    return;
+                }
+
+            }
+        }
+        else
+        {
+            return;
+        }
+
+        if (rowIndate == string.Empty)
+        {
+            return;
+        }
+
+        var rankBro = Backend.URank.User.UpdateUserScore(rankingUUID, tableName, rowIndate, _data);
+        if (rankBro.IsSuccess())
+        {
+            Debug.Log("랭킹 등록 성공");
+        }
+        else
+        {
+            Debug.Log("랭킹 등록 실패 : " + rankBro);
         }
     }
 
