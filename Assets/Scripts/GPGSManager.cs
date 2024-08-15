@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GameData
 {
-    public Param UserInfo(string _nickName, int _level, int _cash, int _gold, int _stamina, int _stageClear, int _maxStage, string _values)
+    public Param UserInfo(string _nickName, int _level, int _cash, int _gold, int _stamina, int _stageClear, int _maxStage, string _values, int legendCount, int RareCount)
     {
         Param result = new Param();
         result.Add("NickName", _nickName);
@@ -17,6 +17,8 @@ public class GameData
         result.Add("StageClear", _stageClear);
         result.Add("High_Stage", _maxStage);
         result.Add("Values", _values);
+        result.Add("LegendCount", legendCount);
+        result.Add("RareCount", RareCount);
         return result;
     }
 
@@ -308,7 +310,7 @@ public class GPGSManager : MonoBehaviour
         {
             Backend.BMember.GetUserInfo((callback) =>
             {
-                var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 30000, 0, 100, 0, 0, ""));
+                var bro = Backend.GameData.Insert("UserInfo", gameTable.UserInfo(Backend.UserNickName, 0, 0, 0, 100, 0, 0, "", 0, 0));
                 CreateHeroInfo();
             });
         }
@@ -410,7 +412,7 @@ public class GPGSManager : MonoBehaviour
         WriteHeroInfo(_HeroList, _HeroLevel, _nowLevel);
     }
 
-    public void ClearStage(int _stage, int _dropCash, int _dropMoney)
+    public void ClearStage(int _stage, int _dropCash, int _dropMoney, int _legendCount, int _rareCount)
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
 
@@ -433,6 +435,22 @@ public class GPGSManager : MonoBehaviour
             if (_stage > int.Parse(bro.FlattenRows()[0]["High_Stage"].ToString()))
             {
                 Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _updateStage);
+            }
+
+            Param _legendParam = new Param();
+            _legendParam.Add("LegendCount", _legendCount);
+
+            if (_legendCount > int.Parse(bro.FlattenRows()[0]["LegendCount"].ToString()))
+            {
+                Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _legendParam);
+            }
+
+            Param _rareParam = new Param();
+            _rareParam.Add("RareCount", _rareCount);
+
+            if (_legendCount > int.Parse(bro.FlattenRows()[0]["RareCount"].ToString()))
+            {
+                Backend.GameData.UpdateV2("UserInfo", inDate, Backend.UserInDate, _rareParam);
             }
         }
     }
