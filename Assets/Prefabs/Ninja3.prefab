@@ -310,8 +310,10 @@ MonoBehaviour:
     _unit: 4
     _type: 1
     _multiUnit: []
-    _unit_name: 
-    _comment: 
+    _unit_name: "\uC720\uBA85\uD55C \uCFE0\uB178\uC774\uCE58"
+    _comment: "\uB178\uB9B0 \uD45C\uC801\uC740 \uB354 \uC774\uC0C1 \uADF8\uB140\uB97C
+      \uC778\uC2DD\uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4. \uADF8\uB140\uB294 \uC774\uC81C
+      \uC720\uBA85\uD55C \uCFE0\uB178\uC774\uCE58\uC785\uB2C8\uB2E4."
     attackCount: 1
     weight: 0.1
     attackDelay: 1.5

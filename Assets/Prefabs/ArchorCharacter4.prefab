@@ -193,15 +193,17 @@ MonoBehaviour:
     _unit: 2
     _type: 1
     _multiUnit: []
-    _unit_name: 
-    _comment: 
-    attackCount: 8
+    _unit_name: "\uD504\uB85C \uAD81\uC218"
+    _comment: "\uBAA8\uB4E0 \uAD81\uC220\uC744 \uD1B5\uB2EC\uD558\uC600\uC2B5\uB2C8\uB2E4.
+      \uADF8\uB140\uC758 \uD654\uC0B4\uC740 \uBC31\uBC1C\uBC31\uC911\uC774 \uB429\uB2C8\uB2E4.
+      \uD45C\uC801\uC774 \uC9C0\uAD6C \uBC18\uB300\uD3B8\uC5D0 \uC788\uC744\uC9C0\uB77C\uB3C4."
+    attackCount: 10
     weight: 0.08
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 1
     speed: 6
-    dmg: 50
+    dmg: 40
     rarelityLevel: 3
     EvolutionAvailability: 0
     specialUnit: 0

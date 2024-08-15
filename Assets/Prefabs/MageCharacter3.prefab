@@ -225,8 +225,10 @@ MonoBehaviour:
     _unit: 3
     _type: 2
     _multiUnit: []
-    _unit_name: 
-    _comment: 
+    _unit_name: "\uB300 \uB9C8\uBC95\uC0AC"
+    _comment: "\uACE0\uAE09 \uB9C8\uBC95\uC744 \uC0AC\uC6A9\uD560 \uC218 \uC788\uAC8C
+      \uB418\uC5C8\uC2B5\uB2C8\uB2E4. \uC5B4\uCA4C\uBA74 \uC6B4\uC11D\uB3C4 \uB5A8\uC5B4\uD2B8\uB9B4
+      \uC218 \uC788\uC744\uC9C0 \uBAA8\uB985\uB2C8\uB2E4."
     attackCount: 3
     weight: 0.1
     attackDelay: 1.5
