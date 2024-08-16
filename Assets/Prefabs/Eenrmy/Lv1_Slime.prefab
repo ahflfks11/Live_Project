@@ -459,6 +459,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp_Img: {fileID: 5445205701686366780}
   _hpText: {fileID: 6121247811056689773}
+  _isLastBoss: 0
+  _itemData:
+    _name: 
+    _type: 0
+    itemID: 0
+    _itemCount: 0
+    _itemColor: {r: 1, g: 1, b: 1, a: 1}
   _isBoss: 0
   _data:
     HP: 25

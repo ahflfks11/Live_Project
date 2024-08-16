@@ -11,6 +11,7 @@ public class EnermyControl : MonoBehaviour
     int wayNumber = 1;
     int enermyTutorialNumber = 0;
     [SerializeField] bool _isLastBoss;
+    [SerializeField] ItemManager.SetItem _itemData;
     public bool _isBoss;
     public Transform[] WayPoint { get => wayPoint; set => wayPoint = value; }
 
@@ -74,6 +75,12 @@ public class EnermyControl : MonoBehaviour
                 }
 
             }
+
+            if (_itemData._type != ItemManager.ItemType.None)
+            {
+                ItemManager.Instance.SpawnItem(_itemData.itemID, _itemData._type, _itemData._itemCount, _itemData._name, _itemData._itemColor);
+            }
+
             Destroy(this.gameObject);
             return;
         }

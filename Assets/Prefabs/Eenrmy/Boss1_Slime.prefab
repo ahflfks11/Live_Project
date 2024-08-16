@@ -205,6 +205,12 @@ MonoBehaviour:
   _hp_Img: {fileID: 3350225254253102018}
   _hpText: {fileID: 3538755985601852307}
   _isLastBoss: 0
+  _itemData:
+    _name: "\uACE0\uAE09\uC18C\uD658\uAD8C"
+    _type: 1
+    itemID: 2
+    _itemCount: 1
+    _itemColor: {r: 1, g: 0.15566039, b: 0.9016941, a: 1}
   _isBoss: 1
   _data:
     HP: 4000

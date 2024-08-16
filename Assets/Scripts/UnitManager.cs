@@ -28,9 +28,6 @@ public class UnitManager : MonoBehaviour
 
     public int maxSpawnlevel = 0;
 
-    double _rndRandomValue = 0;
-    double _rndSum = 0;
-
     public UnitSelector unitSelector;
 
     public UnityEngine.UI.Text[] _rateText;
@@ -232,11 +229,6 @@ public class UnitManager : MonoBehaviour
         GameManager.Instance.ClickCount++;
 
         GameManager.Instance.Gold -= 20;
-
-        if (GameManager.Instance.ClickCount % 10 == 0)
-        {
-            GameManager.Instance.RequireGold++;
-        }
     }
 
     public void TutorialGaveSoldier(UnitData.Unit _unit, int unitLevel, int _limitCount)
@@ -292,6 +284,36 @@ public class UnitManager : MonoBehaviour
             GameManager.Instance.RequireGold++;
 
         }
+    }
+
+    public void SpecialRalitySpawn(int _spawnlevel, Vector3 _pos)
+    {
+        GameObject _unit;
+
+        List<GameObject> _units = new List<GameObject>();
+
+        for (int i = 0; i < GameManager.Instance.UnitManager._soldiers.Count; i++)
+        {
+            if (GameManager.Instance.UnitManager._soldiers[i].GetComponent<UnitData>()._data.rarelityLevel == _spawnlevel)
+            {
+                _units.Add(GameManager.Instance.UnitManager._soldiers[i]);
+            }
+        }
+
+        int rndNumber = Random.Range(0, _units.Count);
+
+        _unit = Instantiate(_units[rndNumber], _pos, Quaternion.identity);
+
+        _unit.GetComponent<UnitData>().number = number;
+        _unit.GetComponent<UnitData>().UnitManager = this;
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        number++;
+        _spawnList.Add(_unit);
+        int index = _unit.name.IndexOf("(Clone)");
+        if (index > 0)
+            _unit.name = _unit.name.Substring(0, index);
+
+        GameManager.Instance.ClickCount++;
     }
 
 

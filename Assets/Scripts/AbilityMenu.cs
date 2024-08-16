@@ -6,6 +6,8 @@ public class AbilityMenu : MonoBehaviour
 {
     EnforceUI _mainUI;
     Image _mySpr;
+    [SerializeField] TMPro.TMP_Text _rarelityText;
+    [SerializeField] int _number;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,11 @@ public class AbilityMenu : MonoBehaviour
         else
         {
             _mySpr.raycastTarget = false;
+        }
+
+        if (_rarelityText != null)
+        {
+            _rarelityText.text = GameManager.Instance.RarilitySpawnCount[_number].ToString();
         }
     }
 }

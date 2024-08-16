@@ -202,6 +202,12 @@ MonoBehaviour:
   _hp_Img: {fileID: 300370680740595676}
   _hpText: {fileID: 1966219558648100749}
   _isLastBoss: 0
+  _itemData:
+    _name: "\uACE0\uAE09 \uC18C\uD658\uAD8C"
+    _type: 1
+    itemID: 2
+    _itemCount: 2
+    _itemColor: {r: 1, g: 0.15686275, b: 0.9019608, a: 1}
   _isBoss: 1
   _data:
     HP: 8800

@@ -91,7 +91,6 @@ public class UnitData : MonoBehaviour
             _myRareColor.color = GameManager.Instance._hiddenColor;
 
         _unitManager = FindObjectOfType<UnitManager>();
-        string _text = null;
 
         if (GameObject.Find("DataManager"))
         {

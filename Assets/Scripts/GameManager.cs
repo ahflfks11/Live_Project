@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private int _requireGold;
     int clickCount;
     [SerializeField] private float _limitTimer = 40f;
+    //소환 스크롤
+    [SerializeField] private int[] _RarilitySpawnCount = { 0, 0, 0, 0 };
     private float _bossTimer = 90f;
     float _setTime;
     float _sectime;
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour
     public bool GameStart { get => _gameStart; set => _gameStart = value; }
     public bool GameStop { get => _gameStop; set => _gameStop = value; }
     public EnermyGenerator EnemyGenerator { get => _enemyGenerator; set => _enemyGenerator = value; }
+    public int[] RarilitySpawnCount { get => _RarilitySpawnCount; set => _RarilitySpawnCount = value; }
 
     public void GameInit()
     {

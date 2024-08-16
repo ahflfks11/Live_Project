@@ -112,6 +112,16 @@ public class EnforceUI : MonoBehaviour
         return true;
     }
 
+    public void SpawnScroll(int _scrollNumber)
+    {
+        if (GameManager.Instance.RarilitySpawnCount[_scrollNumber] < 1 || GameManager.Instance.RarilitySpawnCount.Length <= _scrollNumber)
+            return;
+
+        GameManager.Instance.UiManager.EnforceShopPanel();
+        GameManager.Instance.UnitManager.SpecialRalitySpawn(_scrollNumber, GameManager.Instance.myArea.position);
+        GameManager.Instance.RarilitySpawnCount[_scrollNumber]--;
+    }
+
     public bool SetLevelText()
     {
         if (GameManager.Instance.Gold < _levelGold[_levelNumber] || _levelGold[_levelNumber] == -1)
