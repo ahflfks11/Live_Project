@@ -122,8 +122,8 @@ MonoBehaviour:
   targetIsSelf: 1
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
-  delay: 1
-  duration: 0.5
+  delay: 2
+  duration: 1
   easeType: 6
   easeCurve:
     serializedVersion: 2
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c89067105e5b04c969d04cf0499be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfdestruct_in: 2
+  selfdestruct_in: 3
 --- !u!114 &284975196028887612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,8 +458,8 @@ MonoBehaviour:
   targetIsSelf: 1
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
-  delay: 1
-  duration: 0.5
+  delay: 2
+  duration: 1
   easeType: 6
   easeCurve:
     serializedVersion: 2
