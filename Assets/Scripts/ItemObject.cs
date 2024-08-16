@@ -15,7 +15,7 @@ public class ItemObject : MonoBehaviour
     public void Spawn(string _itemName, int _itemCount, ItemManager.ItemType _type, int _itemID, Color _itemColor)
     {
         _ItemNameText.text = _itemName + "x" + _itemCount.ToString();
-        _itemSprite.sprite = ItemManager.Instance.ItemGenerator(_type, _itemID);
+        _itemSprite.sprite = ItemManager.Instance.ItemGenerator(_type, _itemID, _itemCount);
         _ItemNameText.color = _itemColor;
     }
 }

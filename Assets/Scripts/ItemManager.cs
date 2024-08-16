@@ -34,13 +34,13 @@ public class ItemManager : MonoBehaviour
         _instance = this;
     }
 
-    public Sprite ItemGenerator(ItemType _type, int _itemId)
+    public Sprite ItemGenerator(ItemType _type, int _itemId, int _itemCount)
     {
         Sprite item_Img = null;
         switch (_type)
         {
             case ItemType.Scroll:
-                GameManager.Instance.RarilitySpawnCount[_itemId]++;
+                GameManager.Instance.RarilitySpawnCount[_itemId] += _itemCount;
                 item_Img = _itemImage[0];
                 break;
         }

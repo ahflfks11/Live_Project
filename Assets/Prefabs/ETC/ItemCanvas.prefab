@@ -122,8 +122,8 @@ MonoBehaviour:
   targetIsSelf: 1
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
-  delay: 2
-  duration: 1
+  delay: 3
+  duration: 0.5
   easeType: 6
   easeCurve:
     serializedVersion: 2
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6801885509179052298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c89067105e5b04c969d04cf0499be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfdestruct_in: 3
+  selfdestruct_in: 4
 --- !u!114 &284975196028887612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,8 +458,8 @@ MonoBehaviour:
   targetIsSelf: 1
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
-  delay: 2
-  duration: 1
+  delay: 3
+  duration: 0.5
   easeType: 6
   easeCurve:
     serializedVersion: 2
