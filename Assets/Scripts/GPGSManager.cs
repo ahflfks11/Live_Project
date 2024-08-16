@@ -757,7 +757,7 @@ public class GPGSManager : MonoBehaviour
                 rankItemList.Add(rankItem);
 
                 RankingUI _rank = Instantiate(LobbyManager.Instance._lobbyUIManager.RankingUI, Vector3.zero, Quaternion.identity);
-                _rank.SetRankUI(int.Parse(rankItem.rank), rankItem.nickname, int.Parse(rankItem.score), int.Parse(rankItem.extraData));
+                _rank.SetRankUI(int.Parse(rankItem.rank), rankItem.nickname, int.Parse(rankItem.extraData), int.Parse(rankItem.score));
                 _rank.transform.SetParent(LobbyManager.Instance._lobbyUIManager._rankTransform);
                 _rank.transform.localScale = new Vector3(1f, 1f, 1f);
             }
