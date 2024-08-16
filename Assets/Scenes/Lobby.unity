@@ -721,7 +721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &37396719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2694,7 +2694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20065392, y: 25360500}
+  m_AnchoredPosition: {x: -20130792, y: 25443000}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &239422312
@@ -2756,7 +2756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13160340, y: 23396160}
+  m_AnchoredPosition: {x: -13241340, y: 23540160}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &248474451
@@ -2820,9 +2820,9 @@ MonoBehaviour:
   _shopUI: {fileID: 718898692}
   _rankTransform: {fileID: 2014359408}
   _rankImg:
-  - {fileID: 21300000, guid: b0bf3b89d8f46a04c83d2823627fddc9, type: 3}
-  - {fileID: 21300000, guid: 727028d49a1dda0409b8dc882cfd3e38, type: 3}
-  - {fileID: 21300000, guid: ed292b3653aa099418adee20f84d5716, type: 3}
+  - {fileID: 21300000, guid: d2c2fa4b48be9f449b5fd2168313bdb4, type: 3}
+  - {fileID: 21300000, guid: bc3ee96b8bb22d0478aae4cb8eccda4e, type: 3}
+  - {fileID: 21300000, guid: 7ef1c44f53900ac42bfd97e52828e2ea, type: 3}
   _multiGachaUIPanel: {fileID: 1850744879}
   _singleGachaUIPanel: {fileID: 1390956059}
   _gachaShopUI: {fileID: 1685934537}
@@ -3854,6 +3854,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 251066445}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShopPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LobbyUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964888117829037, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7898964888209823268, guid: 3bbd86835c1d648ffbf179067e2d43d1,
         type: 3}
       propertyPath: m_Name
@@ -3993,6 +4028,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 251066445}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShopPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LobbyUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898964889265234812, guid: 3bbd86835c1d648ffbf179067e2d43d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7898964889352917444, guid: 3bbd86835c1d648ffbf179067e2d43d1,
         type: 3}
@@ -11045,7 +11115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2080574.5}
+  m_AnchoredPosition: {x: 0, y: 2135698}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1132163028
@@ -15731,7 +15801,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -13226220, y: 23513280}
+  m_AnchoredPosition: {x: -13307220, y: 23657280}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1651099030
@@ -19274,7 +19344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -53520.32, y: 73590.445}
+  m_AnchoredPosition: {x: -113520.32, y: 156090.44}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2014359409
