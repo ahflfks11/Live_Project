@@ -74,6 +74,7 @@ public class LobbyManager : MonoBehaviour
             {
                 DataManager.Instance.Clear();
                 _gpgsManager.ReadHeroInfo();
+                GPGSManager.Instance.RankList();
             }
         }
     }

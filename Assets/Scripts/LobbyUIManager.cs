@@ -13,13 +13,17 @@ public class LobbyUIManager : MonoBehaviour
     public TMP_Text _CoinText;
     public TMP_Text _CashText;
     public GameObject _shopUI;
+    public Transform _rankTransform;
+    public Sprite[] _rankImg;
     public DOTweenVisualManager _multiGachaUIPanel;
     public DOTweenVisualManager _singleGachaUIPanel;
     public DOTweenVisualManager _gachaShopUI;
     [SerializeField] private DOTweenVisualManager _character_InvenPanel;
     [SerializeField] private DOTweenVisualManager _settingUI;
+    [SerializeField] private DOTweenVisualManager _rankingPanel;
     [SerializeField] private Transform _Inven_Contents;
     [SerializeField] private ErrorGame _errorPanel;
+    [SerializeField] private RankingUI _rankingUI;
     Gacha_Cotents _multiGachaContent;
     Gacha_Cotents _singleGachaContent;
 
@@ -32,6 +36,7 @@ public class LobbyUIManager : MonoBehaviour
     public DOTweenVisualManager Character_InvenPanel { get => _character_InvenPanel; set => _character_InvenPanel = value; }
     public CharacterStatus Status { get => _status; set => _status = value; }
     public LobbyManager LobbyManager { get => _lobbyManager; set => _lobbyManager = value; }
+    public RankingUI RankingUI { get => _rankingUI; set => _rankingUI = value; }
 
     private void Start()
     {
@@ -44,6 +49,14 @@ public class LobbyUIManager : MonoBehaviour
         {
             _name.text = _gpgsManager.TakeNick();
         }
+    }
+
+    public void RankUIPanel()
+    {
+        if (!_rankingPanel.enabled)
+            _rankingPanel.enabled = true;
+        else
+            _rankingPanel.enabled = false;
     }
 
     public void SettingUI()

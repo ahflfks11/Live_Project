@@ -81,6 +81,8 @@ public class GPGSManager : MonoBehaviour
 
     [SerializeField] string _fieldid = "12285";
 
+    List<RankItem> rankItemList = new List<RankItem>();
+
     private static GPGSManager instance = null;
 
     public static GPGSManager Instance { get => instance; set => instance = value; }
@@ -727,7 +729,7 @@ public class GPGSManager : MonoBehaviour
         string userUuid = "e4642170-5b0b-11ef-8e5b-91941c7f9d2e";
         int limit = 100;
 
-        List<RankItem> rankItemList = new List<RankItem>();
+        rankItemList = new List<RankItem>();
 
         BackendReturnObject bro = Backend.URank.User.GetRankList(userUuid, limit);
 
@@ -754,6 +756,11 @@ public class GPGSManager : MonoBehaviour
 
                 rankItemList.Add(rankItem);
                 Debug.Log(rankItem.ToString());
+
+                RankingUI _rank = Instantiate(LobbyManager.Instance._lobbyUIManager.RankingUI, Vector3.zero, Quaternion.identity);
+                _rank.SetRankUI(int.Parse(rankItem.rank), rankItem.nickname, int.Parse(rankItem.score), int.Parse(rankItem.extraData));
+                _rank.transform.SetParent(LobbyManager.Instance._lobbyUIManager._rankTransform);
+                _rank.transform.localScale = new Vector3(1f, 1f, 1f);
             }
         }
     }

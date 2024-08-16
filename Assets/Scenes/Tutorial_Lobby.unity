@@ -1589,7 +1589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -39418560, y: 49832880}
+  m_AnchoredPosition: {x: -39422484, y: 49837850}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &113287827
@@ -3103,7 +3103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -86209420, y: 153011520}
+  m_AnchoredPosition: {x: -86214320, y: 153020160}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &267660037
@@ -7167,7 +7167,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -79119470, y: 140499840}
+  m_AnchoredPosition: {x: -79124370, y: 140508480}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &683055605
@@ -10387,13 +10387,17 @@ MonoBehaviour:
   _CoinText: {fileID: 93699925}
   _CashText: {fileID: 93699924}
   _shopUI: {fileID: 1233915098}
+  _rankTransform: {fileID: 0}
+  _rankImg: []
   _multiGachaUIPanel: {fileID: 719708071}
   _singleGachaUIPanel: {fileID: 1627314222}
   _gachaShopUI: {fileID: 1640719124}
   _character_InvenPanel: {fileID: 1168691020}
   _settingUI: {fileID: 1911686808}
+  _rankingPanel: {fileID: 0}
   _Inven_Contents: {fileID: 933983448}
   _errorPanel: {fileID: 612116372}
+  _rankingUI: {fileID: 0}
   _status: {fileID: 707265340}
   _icon: {fileID: 1535907535644394419, guid: 2b3f695ccb7860c43b422680117e2a0b, type: 3}
 --- !u!4 &889503105
@@ -10740,7 +10744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5068670.5}
+  m_AnchoredPosition: {x: 0, y: 5072094.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &933983449
@@ -12276,6 +12280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ContentType
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9163448153188930713, guid: 0fba3bac32b64d144a9303e739fe0838,
+        type: 3}
+      propertyPath: m_CharacterLimit
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9163448153188930713, guid: 0fba3bac32b64d144a9303e739fe0838,
         type: 3}
