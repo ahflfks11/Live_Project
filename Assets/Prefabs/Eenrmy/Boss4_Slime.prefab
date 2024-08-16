@@ -303,12 +303,18 @@ MonoBehaviour:
   _hp_Img: {fileID: 6947993698589383860}
   _hpText: {fileID: 9155379043028954341}
   _isLastBoss: 1
+  _itemData:
+    _name: 
+    _type: 0
+    itemID: 0
+    _itemCount: 0
+    _itemColor: {r: 0, g: 0, b: 0, a: 0}
   _isBoss: 1
   _data:
     HP: 24000
     defence: 0
     gainGold: 0
-    speed: 4
+    speed: 12
 --- !u!61 &781148496889433486
 BoxCollider2D:
   m_ObjectHideFlags: 0

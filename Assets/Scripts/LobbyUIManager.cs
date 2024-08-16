@@ -59,6 +59,11 @@ public class LobbyUIManager : MonoBehaviour
             _rankingPanel.enabled = false;
     }
 
+    public void FeedBackURL()
+    {
+        Application.OpenURL("https://cafe.naver.com/legenddefence");
+    }
+
     public void SettingUI()
     {
         if (_settingUI.enabled)

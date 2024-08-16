@@ -302,11 +302,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp_Img: {fileID: 4928385616265069069}
   _hpText: {fileID: 6559333792015102556}
+  _isLastBoss: 0
+  _itemData:
+    _name: 
+    _type: 0
+    itemID: 0
+    _itemCount: 0
+    _itemColor: {r: 0, g: 0, b: 0, a: 0}
   _isBoss: 0
   _data:
     HP: 450
     defence: 0
-    gainGold: 2
+    gainGold: 1
     speed: 5
 --- !u!61 &1010631761299081803
 BoxCollider2D:

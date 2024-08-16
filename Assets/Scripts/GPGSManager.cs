@@ -59,7 +59,7 @@ public class RankItem
     public string index;
     public string rank;
     public string extraData = string.Empty;
-    public string extraName = "LegendCount";
+    public string extraName = "High_Stage";
     public string totalCount;
 
     public override string ToString()
@@ -726,7 +726,7 @@ public class GPGSManager : MonoBehaviour
 
     public void RankList()
     {
-        string userUuid = "e4642170-5b0b-11ef-8e5b-91941c7f9d2e";
+        string userUuid = "b6b7d9f0-5b9d-11ef-a529-8f74572da8f7";
         int limit = 100;
 
         rankItemList = new List<RankItem>();
@@ -768,7 +768,7 @@ public class GPGSManager : MonoBehaviour
     {
         string tableName = "UserInfo";
         string rowIndate = string.Empty;
-        string rankingUUID = "e4642170-5b0b-11ef-8e5b-91941c7f9d2e";
+        string rankingUUID = "b6b7d9f0-5b9d-11ef-a529-8f74572da8f7";
 
         //Param param = new Param();
         //param.Add("High_Stage", _highStage);
