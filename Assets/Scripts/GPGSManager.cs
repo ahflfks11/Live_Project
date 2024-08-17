@@ -77,7 +77,7 @@ public class GPGSManager : MonoBehaviour
 {
     public GameData gameTable = new GameData();
     public Text _logText;
-    bool _login;
+    //bool _login;
 
     [SerializeField] string _fieldid = "12285";
 
@@ -86,7 +86,7 @@ public class GPGSManager : MonoBehaviour
     private static GPGSManager instance = null;
 
     public static GPGSManager Instance { get => instance; set => instance = value; }
-    public bool Login { get => _login; set => _login = value; }
+    //public bool Login { get => _login; set => _login = value; }
 
     private void Awake()
     {
@@ -115,13 +115,15 @@ public class GPGSManager : MonoBehaviour
             Debug.LogError("초기화 실패 : " + bro); // 실패일 경우 statusCode 400대 에러 발생
         }
 
-        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+        
+        //PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
 
         BackendReturnObject _loginAcess = Backend.BMember.LoginWithTheBackendToken();
         if (_loginAcess.IsSuccess())
         {
             Debug.Log("자동 로그인에 성공했습니다");
         }
+        
     }
 
     void Update()
@@ -143,7 +145,7 @@ public class GPGSManager : MonoBehaviour
         }
         else
         {
-            Login = true;
+            //Login = true;
             // Disable your integration with Play Games Services or show a login button
             // to ask users to sign-in. Clicking it should call
             // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
@@ -236,7 +238,7 @@ public class GPGSManager : MonoBehaviour
 
                   Backend.BMember.AuthorizeFederation(accessToken, FederationType.GPGS2, callback =>
                   {
-                      Login = true;
+                      //Login = true;
                   });
               });
           });
