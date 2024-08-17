@@ -42,6 +42,8 @@ public class UnitSelector : MonoBehaviour
     {
         switch (playerLevel)
         {
+            case -1:
+                return new List<float> { 95f, 4f, 0.9f, 0.01f };
             case 1:
                 return new List<float> { 80f, 20f, 0f, 0f };
             case 2:

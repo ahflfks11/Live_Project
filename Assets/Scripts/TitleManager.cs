@@ -5,8 +5,12 @@ using UnityEngine;
 public class TitleManager : MonoBehaviour
 {
     GPGSManager _gpgsManager;
+    static TitleManager instance;
     public GameObject menuPanel;
     public GameObject loadingPanel;
+    public GameObject _versionUI;
+
+    public static TitleManager Instance { get => instance; set => instance = value; }
 
     private void Awake()
     {
@@ -19,6 +23,8 @@ public class TitleManager : MonoBehaviour
         {
             Destroy(GameObject.Find("TalkCanvas"));
         }
+
+        instance = this;
     }
 
     private void Start()
@@ -52,6 +58,11 @@ public class TitleManager : MonoBehaviour
             menuPanel.SetActive(true);
             loadingPanel.SetActive(false);
         }
+    }
+
+    public void VersionUpdate()
+    {
+        GPGSManager.Instance.OpenStoreLink();
     }
 
     public void CheckLobbyScene()

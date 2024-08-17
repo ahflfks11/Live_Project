@@ -1,6 +1,7 @@
 using BackEnd;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,34 @@ public class GameData
         result.Add("HeroLevel", _herolevel);
         result.Add("NowLevel", _nowLevel);
         return result;
+    }
+}
+
+public class Notice
+{
+    public string title;
+    public string contents;
+    public DateTime postingDate;
+    public string imageKey;
+    public string inDate;
+    public string uuid;
+    public string linkUrl;
+    public bool isPublic;
+    public string linkButtonName;
+    public string author;
+
+    public override string ToString()
+    {
+        return $"title : {title}\n" +
+        $"contents : {contents}\n" +
+        $"postingDate : {postingDate}\n" +
+        $"imageKey : {imageKey}\n" +
+        $"inDate : {inDate}\n" +
+        $"uuid : {uuid}\n" +
+        $"linkUrl : {linkUrl}\n" +
+        $"isPublic : {isPublic}\n" +
+        $"linkButtonName : {linkButtonName}\n" +
+        $"author : {author}\n";
     }
 }
 
@@ -109,6 +138,7 @@ public class GPGSManager : MonoBehaviour
         if (bro.IsSuccess())
         {
             Debug.Log("초기화 성공 : " + bro); // 성공일 경우 statusCode 204 Success
+            UpdateCheck();
         }
         else
         {
@@ -134,7 +164,79 @@ public class GPGSManager : MonoBehaviour
         {
             _logText = GameObject.Find("LogText").GetComponent<Text>();
         }
+
+        Backend.Notification.OnNewNoticeCreated = (string title, string content) => {
+            Debug.Log(
+                $"[OnNewNoticeCreated(새로운 공지사항 생성)]\n" +
+                $"| title : {title}\n" +
+                $"| content : {content}\n"
+            );
+        };
     }
+
+    public void GetNoticeList()
+    {
+        List<Notice> noticeList = new List<Notice>();
+
+        BackendReturnObject bro = Backend.Notice.NoticeList(10);
+        if (bro.IsSuccess())
+        {
+            Debug.Log("리턴값 : " + bro);
+
+            LitJson.JsonData jsonList = bro.FlattenRows();
+            for (int i = 0; i < jsonList.Count; i++)
+            {
+                Notice notice = new Notice();
+
+                notice.title = jsonList[i]["title"].ToString();
+                notice.contents = jsonList[i]["content"].ToString();
+                notice.postingDate = DateTime.Parse(jsonList[i]["postingDate"].ToString());
+                notice.inDate = jsonList[i]["inDate"].ToString();
+                notice.uuid = jsonList[i]["uuid"].ToString();
+                notice.isPublic = jsonList[i]["isPublic"].ToString() == "y" ? true : false;
+                notice.author = jsonList[i]["author"].ToString();
+
+                if (jsonList[i].ContainsKey("imageKey"))
+                {
+                    notice.imageKey = "http://upload-console.thebackend.io" + jsonList[i]["imageKey"].ToString();
+                }
+                if (jsonList[i].ContainsKey("linkUrl"))
+                {
+                    notice.linkUrl = jsonList[i]["linkUrl"].ToString();
+                }
+                if (jsonList[i].ContainsKey("linkButtonName"))
+                {
+                    notice.linkButtonName = jsonList[i]["linkButtonName"].ToString();
+                }
+
+                noticeList.Add(notice);
+                Debug.Log(notice.ToString());
+            }
+        }
+    }
+
+    public void RealtimeServer()
+    {
+        // 접속 시 반응하는 핸들러 설정
+        Backend.Notification.OnAuthorize = (bool result, string reason) => {
+            Debug.Log("실시간 알림 서버 접속 시도!");
+
+            //접속 이후 처리
+            if (result)
+            {
+                Debug.Log("실시간 알림 서버 접속 성공!");
+            }
+            else
+            {
+                Debug.Log("실시간 알림 서버 접속 실패 : 이유 : " + reason);
+            }
+        };
+
+        // 실시간 알림 서버로 연결
+        Backend.Notification.Connect();
+    }
+
+
 
     void ProcessAuthentication(SignInStatus status)
     {
@@ -492,6 +594,88 @@ public class GPGSManager : MonoBehaviour
             if (_updateRank)
                 GPGSManager.instance.UpdateRanking(updateRankParam);
         }
+    }
+
+    private void UpdateCheck()
+    {
+        // 유니티 플레이어 세팅에 설정한 버전 정보
+        Version client = new Version(Application.version);
+        Debug.Log("clientVersion: " + client);
+
+#if UNITY_EDITOR
+        // 뒤끝 버전 정보 조회는 iOS / Android 환경에서만 호출 할 수 있습니다.
+        Debug.Log("에디터 모드에서는 버전 정보를 조회할 수 없습니다.");
+        return;
+#endif
+
+        // 뒤끝 콘솔에서 설정한 버전 정보를 조회
+        Backend.Utils.GetLatestVersion(callback => {
+            if (callback.IsSuccess() == false)
+            {
+                Debug.LogError("버전 정보를 조회하는데 실패하였습니다.\n" + callback);
+                return;
+            }
+
+            var version = callback.GetReturnValuetoJSON()["version"].ToString();
+            Version server = new Version(version);
+
+            var result = server.CompareTo(client);
+            if (result == 0)
+            {
+                // 0 이면 두 버전이 일치하는 것 입니다.
+                // 아무 작업 안하고 리턴
+                return;
+            }
+            else if (result < 0)
+            {
+                // 0 미만인 경우 server 버전이 client 보다 작은 경우 입니다.
+                // 애플/구글 스토어에 검수를 넣었을 경우 여기에 해당 할 수 있습니다.
+                // ex)
+                // 검수를 신청한 클라이언트 버전은 3.0.0, 
+                // 라이브에 운용중인 클라이언트 버전은 2.0.0,
+                // 뒤끝 콘솔에 등록한 버전은 2.0.0 
+
+                // 아무 작업을 안하고 리턴
+                return;
+            }
+            // 0보다 크면 server 버전이 클라이언트 이후 버전일 수 있습니다.
+            else if (client == null)
+            {
+                // 단 클라이언트 버전 정보가 null인 경우에도 0보다 큰 값이 리턴될 수 있습니다.
+                // 이 때는 아무 작업을 안하고 리턴하도록 하겠습니다.
+                Debug.LogError("클라이언트 버전 정보가 null 입니다.");
+                return;
+            }
+
+            // 여기까지 리턴 없이 왔으면 server 버전(뒤끝 콘솔에 등록한 버전)이 
+            // 클라이언트보다 높은 경우 입니다.
+
+            // 유저가 스토어에서 업데이트를 하도록 업데이트 UI를 띄워줍니다.
+           OpenUpdateUI();
+        });
+    }
+
+    const string PlayStoreLink = "market://details?id=com.nyangdev.rndgame";
+    const string AppStoreLink = "itms-apps://itunes.apple.com/app/앱ID";
+
+    public void OpenUpdateUI()
+    {
+        TitleManager.Instance._versionUI.SetActive(true);
+    }
+
+    // 아래는 OpenUpdateUI 함수를 이용하여 업데이트 UI가 활성화 되었고,
+    // 업데이트 UI 객체 내에 확인 버튼이 있으며
+    // 해당 버튼 클릭 시 아래 함수를 호출 할 경우
+    // 각 OS 환경에 따라 각각의 스토어 URL로 이동하도록 하는 함수입니다.
+    public void OpenStoreLink()
+    {
+#if UNITY_ANDROID
+        Application.OpenURL(PlayStoreLink);
+#elif UNITY_IOS
+      Application.OpenURL(AppStoreLink);
+#else
+      Debug.LogError("지원하지 않는 플랫폼 입니다.");
+#endif
     }
 
     public void ReadHeroInfo()

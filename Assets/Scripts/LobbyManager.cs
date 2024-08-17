@@ -29,6 +29,7 @@ public class LobbyManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        GPGSManager.Instance.GetNoticeList();
     }
 
     // Start is called before the first frame update

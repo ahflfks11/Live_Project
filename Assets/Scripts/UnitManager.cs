@@ -422,7 +422,21 @@ public class UnitManager : MonoBehaviour
                 return;
             }
         }
+        int rnd_level = unitSelector.GetUnitGrade(-1) - 1;
+        //int rnd_UnitNumber = 
+        List<int> _numberList = new List<int>();
 
+        for(int i=0; i<_soldiers.Count; i++)
+        {
+            if (_soldiers[i].GetComponent<UnitData>()._data.rarelityLevel == rnd_level && !_soldiers[i].GetComponent<UnitData>()._data.specialUnit)
+            {
+                _numberList.Add(i);
+            }
+        }
+
+        int rnd_UnitNumber = Random.Range(0, _numberList.Count);
+
+        /*
         int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
 
         if (!CheckSpawn(_soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data._multiUnit) || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.rarelityLevel > maxSpawnlevel || _soldiers[rnd_UnitNumber].GetComponent<UnitData>()._data.specialUnit)
@@ -430,8 +444,9 @@ public class UnitManager : MonoBehaviour
             SpawnUnit();
             return;
         }
+        */
 
-        Spawn(rnd_UnitNumber, pos, true);
+        Spawn(_numberList[rnd_UnitNumber], pos, true);
     }
 
     public void SpecialSpawnUnit()
