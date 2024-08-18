@@ -1,6 +1,4 @@
 using BackEnd;
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -145,8 +143,6 @@ public class GPGSManager : MonoBehaviour
             Debug.LogError("초기화 실패 : " + bro); // 실패일 경우 statusCode 400대 에러 발생
         }
 
-        PlayGamesPlatform.Activate();
-
         //PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
 
         BackendReturnObject _loginAcess = Backend.BMember.LoginWithTheBackendToken();
@@ -243,23 +239,6 @@ public class GPGSManager : MonoBehaviour
     }
 
 
-
-    void ProcessAuthentication(SignInStatus status)
-    {
-        if (status == SignInStatus.Success)
-        {
-            GetAccessCode();
-            // Continue with Play Games Services
-        }
-        else
-        {
-            //Login = true;
-            // Disable your integration with Play Games Services or show a login button
-            // to ask users to sign-in. Clicking it should call
-            // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
-        }
-    }
-
     public void SetValue(TMPro.TMP_Text _coinText, TMPro.TMP_Text _cashText)
     {
         BackendReturnObject bro = null;
@@ -328,28 +307,6 @@ public class GPGSManager : MonoBehaviour
             Backend.BMember.DeleteGuestInfo();
             GuestLogin();
         }
-    }
-
-    public void GetAccessCode()
-    {
-        PlayGamesPlatform.Instance.RequestServerSideAccess(
-          /* forceRefreshToken= */ false,
-          code => {
-              Backend.BMember.GetGPGS2AccessToken(code, googleCallback =>
-              {
-                  string accessToken = "";
-
-                  if (googleCallback.IsSuccess())
-                  {
-                      accessToken = googleCallback.GetReturnValuetoJSON()["access_token"].ToString();
-                  }
-
-                  Backend.BMember.AuthorizeFederation(accessToken, FederationType.GPGS2, callback =>
-                  {
-                      //Login = true;
-                  });
-              });
-          });
     }
 
     public void ChangeUserInfo()
