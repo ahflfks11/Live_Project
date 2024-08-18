@@ -893,7 +893,14 @@ public class GPGSManager : MonoBehaviour
                 RankItem rankItem = new RankItem();
 
                 rankItem.gamerInDate = rankListJson["rows"][i]["gamerInDate"].ToString();
-                rankItem.nickname = rankListJson["rows"][i]["nickname"].ToString();
+                try
+                {
+                    rankItem.nickname = rankListJson["rows"][i]["nickname"].ToString();                    
+                }
+                catch
+                {
+                    rankItem.nickname = "À¯Àú" + i;
+                }
                 rankItem.score = rankListJson["rows"][i]["score"].ToString();
                 rankItem.index = rankListJson["rows"][i]["index"].ToString();
                 rankItem.rank = rankListJson["rows"][i]["rank"].ToString();
