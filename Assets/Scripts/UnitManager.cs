@@ -519,19 +519,12 @@ public class UnitManager : MonoBehaviour
 
     private void Update()
     {
-        string[] probabilityArray = unitSelector.GetGradeProbabilitiesAsArray(maxSpawnlevel + 1);
+        string[] probabilityArray = unitSelector.GetGradeProbabilitiesAsArray(-1);
 
         for (int i = 0; i < probabilityArray.Length; i++) {
 
-            if (int.Parse(probabilityArray[i]) > 0)
-            {
-                _rateText[i].color = Color.yellow;
-                _rateText[i].text = probabilityArray[i] + "%";
-            }
-            else
-            {
-                _rateText[i].color = Color.white;
-            }
+            _rateText[i].color = Color.yellow;
+            _rateText[i].text = probabilityArray[i] + "%";
 
         }
 

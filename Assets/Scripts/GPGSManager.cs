@@ -145,7 +145,8 @@ public class GPGSManager : MonoBehaviour
             Debug.LogError("초기화 실패 : " + bro); // 실패일 경우 statusCode 400대 에러 발생
         }
 
-        
+        PlayGamesPlatform.Activate();
+
         //PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
 
         BackendReturnObject _loginAcess = Backend.BMember.LoginWithTheBackendToken();
@@ -154,6 +155,11 @@ public class GPGSManager : MonoBehaviour
             Debug.Log("자동 로그인에 성공했습니다");
         }
         
+    }
+
+    public void SignGoogle()
+    {
+
     }
 
     void Update()
