@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: e5868c8400a8aea47860cc0751eb19b6
+guid: 3be9c27bf2bb55e4a91153dbb7b0244e
+labels:
+- gpsr
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -12,12 +14,7 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
-      : OSXIntel
-    second:
-      enabled: 1
-      settings: {}
-  - first:
-      : OSXIntel64
+      Android: Android
     second:
       enabled: 1
       settings: {}
@@ -29,15 +26,9 @@ PluginImporter:
   - first:
       Editor: Editor
     second:
-      enabled: 1
+      enabled: 0
       settings:
         DefaultValueInitialized: true
-  - first:
-      Standalone: OSXUniversal
-    second:
-      enabled: 1
-      settings:
-        CPU: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
