@@ -1,5 +1,5 @@
-lastUpgrade=01101
-proj.pluginVersion=0.11.01
+lastUpgrade=01014
+proj.pluginVersion=0.10.14
 proj.AppId=871144938051
 and.BundleId=com.nyangdev.rndgame
 proj.classDir=Assets

@@ -1,4 +1,6 @@
 using BackEnd;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -143,19 +145,62 @@ public class GPGSManager : MonoBehaviour
             Debug.LogError("초기화 실패 : " + bro); // 실패일 경우 statusCode 400대 에러 발생
         }
 
-        //PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
-
-        BackendReturnObject _loginAcess = Backend.BMember.LoginWithTheBackendToken();
-        if (_loginAcess.IsSuccess())
-        {
-            Debug.Log("자동 로그인에 성공했습니다");
-        }
+        // GPGS 플러그인 설정
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
+            .Builder()
+            .RequestServerAuthCode(false)
+            .RequestEmail() // 이메일 권한을 얻고 싶지 않다면 해당 줄(RequestEmail)을 지워주세요.
+            .RequestIdToken()
+            .Build();
+        //커스텀 된 정보로 GPGS 초기화
+        PlayGamesPlatform.InitializeInstance(config);
+        PlayGamesPlatform.DebugLogEnabled = true; // 디버그 로그를 보고 싶지 않다면 false로 바꿔주세요.
+                                                  //GPGS 시작.
+        PlayGamesPlatform.Activate();
         
     }
 
-    public void SignGoogle()
+    public void GPGSLogin()
     {
+        // 이미 로그인 된 경우
+        if (Social.localUser.authenticated == true)
+        {
+            BackendReturnObject BRO = Backend.BMember.AuthorizeFederation(GetTokens(), FederationType.Google, "gpgs");
+        }
+        else
+        {
+            Social.localUser.Authenticate((bool success) => {
+                if (success)
+                {
+                    _logText.text = "로그인은 들어옴";
+                    // 로그인 성공 -> 뒤끝 서버에 획득한 구글 토큰으로 가입 요청
+                    BackendReturnObject BRO = Backend.BMember.AuthorizeFederation(GetTokens(), FederationType.Google, "gpgs");
+                }
+                else
+                {
+                    // 로그인 실패
+                    _logText.text = "Login failed for some reason";
+                }
+            });
+        }
+    }
 
+    // 구글 토큰 받아옴
+    public string GetTokens()
+    {
+        if (PlayGamesPlatform.Instance.localUser.authenticated)
+        {
+            // 유저 토큰 받기 첫 번째 방법
+            string _IDtoken = PlayGamesPlatform.Instance.GetIdToken();
+            // 두 번째 방법
+            // string _IDtoken = ((PlayGamesLocalUser)Social.localUser).GetIdToken();
+            return _IDtoken;
+        }
+        else
+        {
+            Debug.Log("접속되어 있지 않습니다. PlayGamesPlatform.Instance.localUser.authenticated :  fail");
+            return null;
+        }
     }
 
     void Update()
@@ -305,7 +350,6 @@ public class GPGSManager : MonoBehaviour
         else
         {
             Backend.BMember.DeleteGuestInfo();
-            GuestLogin();
         }
     }
 

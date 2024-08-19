@@ -77,6 +77,11 @@ public class TitleManager : MonoBehaviour
         }
     }
 
+    public void GoogleLogin()
+    {
+        _gpgsManager.GPGSLogin();
+    }
+
     public void GuestLogin()
     {
         _gpgsManager.GuestLogin();
