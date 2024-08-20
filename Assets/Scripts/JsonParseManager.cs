@@ -280,6 +280,7 @@ public class JsonParseManager : MonoBehaviour
                 Camera.main.GetComponent<CameraShake>().ShakeCamera(0.3f, 0.8f);
                 break;
             case 4:
+                GameObject.Find("Dungeon").transform.localScale = new Vector3(1f, 1f, 1f);
                 LobbyManager.Instance.DungeonArrowObject.GetComponent<UnityEngine.UI.Image>().rectTransform.sizeDelta = new Vector2(9000, 9000);
                 LobbyManager.Instance.DungeonArrowObject.enabled = true;
                 LobbyManager.Instance.SetArrow();

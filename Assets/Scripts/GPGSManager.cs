@@ -134,7 +134,7 @@ public class GPGSManager : MonoBehaviour
 
     void Start()
     {
-        var bro = Backend.Initialize(true); // 뒤끝 초기화
+        var bro = Backend.Initialize(); // 뒤끝 초기화
 
         // 뒤끝 초기화에 대한 응답값
         if (bro.IsSuccess())
@@ -149,7 +149,7 @@ public class GPGSManager : MonoBehaviour
 
         if (_logText == null && GameObject.Find("LogText"))
         {
-            _logText = GameObject.Find("LogText").GetComponent<Text>();
+            //_logText = GameObject.Find("LogText").GetComponent<Text>();
         }
 
         // GPGS 플러그인 설정
@@ -168,7 +168,7 @@ public class GPGSManager : MonoBehaviour
         BackendReturnObject _loginAccess = Backend.BMember.LoginWithTheBackendToken();
         if (_loginAccess.IsSuccess())
         {
-            _logText.text = "자동 로그인 성공 했습니다.";
+            //_logText.text = "자동 로그인 성공 했습니다.";
         }
     }
 
@@ -243,7 +243,7 @@ public class GPGSManager : MonoBehaviour
                 else
                 {
                     // 로그인 실패
-                    _logText.text = "Login failed for some reason";
+                    //_logText.text = "Login failed for some reason";
                 }
             });
         }
@@ -267,13 +267,33 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
+    public void GuestLogin()
+    {
+        BackendReturnObject bro = Backend.BMember.GuestLogin("게스트 로그인으로 로그인함");
+        if (bro.IsSuccess())
+        {
+            Debug.Log("게스트 로그인에 성공했습니다");
+            if (CheckUser())
+            {
+                Transitioner.Instance.TransitionToScene(1);
+            }
+            else
+            {
+                Transitioner.Instance.TransitionToScene(2);
+            }
+        }
+    }
+
+    public void RemoveGuest()
+    {
+        Backend.BMember.DeleteGuestInfo();
+    }
+
     void Update()
     {
-        Backend.AsyncPoll();
-
         if(_logText == null && GameObject.Find("LogText"))
         {
-            _logText = GameObject.Find("LogText").GetComponent<Text>();
+            //_logText = GameObject.Find("LogText").GetComponent<Text>();
         }
 
         Backend.Notification.OnNewNoticeCreated = (string title, string content) => {
@@ -959,6 +979,41 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
+    public void GetMyRankTest()
+    {
+        string userUuid = "b6b7d9f0-5b9d-11ef-a529-8f74572da8f7";
+
+        BackendReturnObject bro = Backend.URank.User.GetMyRank(userUuid);
+
+        if (bro.IsSuccess())
+        {
+            Destroy(GameObject.Find("No_Rank_Text"));
+            LitJson.JsonData rankListJson = bro.GetFlattenJSON();
+            string extraName = string.Empty;
+            RankItem rankItem = new RankItem();
+
+            rankItem.gamerInDate = rankListJson["rows"][0]["gamerInDate"].ToString();
+            rankItem.nickname = rankListJson["rows"][0]["nickname"].ToString();
+            rankItem.score = rankListJson["rows"][0]["score"].ToString();
+            rankItem.index = rankListJson["rows"][0]["index"].ToString();
+            rankItem.rank = rankListJson["rows"][0]["rank"].ToString();
+            rankItem.totalCount = rankListJson["totalCount"].ToString();
+
+            if (rankListJson["rows"][0].ContainsKey(rankItem.extraName))
+            {
+                rankItem.extraData = rankListJson["rows"][0][rankItem.extraName].ToString();
+            }
+
+            Debug.Log(rankItem.ToString());
+
+            RankingUI _rank = Instantiate(LobbyManager.Instance._lobbyUIManager.RankingUI, Vector3.zero, Quaternion.identity);
+            _rank.SetRankUI(int.Parse(rankItem.rank), rankItem.nickname, int.Parse(rankItem.extraData), int.Parse(rankItem.score));
+            _rank.transform.SetParent(GameObject.Find("MyRank").transform);
+            _rank.transform.localScale = new Vector3(1f, 1f, 1f);
+            _rank.GetComponent<RectTransform>().rect.Set(0, 0, 100, 100);
+        }
+    }
+
     public void RankList()
     {
         string userUuid = "b6b7d9f0-5b9d-11ef-a529-8f74572da8f7";
@@ -973,6 +1028,8 @@ public class GPGSManager : MonoBehaviour
             LitJson.JsonData rankListJson = bro.GetFlattenJSON();
 
             string extraName = string.Empty;
+
+            GetMyRankTest();
 
             for (int i = 0; i < rankListJson["rows"].Count; i++)
             {

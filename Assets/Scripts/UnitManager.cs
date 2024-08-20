@@ -28,6 +28,8 @@ public class UnitManager : MonoBehaviour
 
     public int maxSpawnlevel = 0;
 
+    public bool _spawnRateState; //확률표 상태
+
     public UnitSelector unitSelector;
 
     public UnityEngine.UI.Text[] _rateText;
@@ -80,6 +82,11 @@ public class UnitManager : MonoBehaviour
         }
     }
 
+    public void Retry()
+    {
+        Transitioner.Instance.TransitionToScene(3);
+    }
+
     public void Enforce_Normal()
     {
         if (JsonParseManager.Instance.Tutorial)
@@ -90,6 +97,20 @@ public class UnitManager : MonoBehaviour
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpNormalCoin())
         {
             NormalEnforceDmg += 1;
+        }
+    }
+
+    public void GetLoadSpawnRate()
+    {
+        if (_spawnRateState)
+        {
+            GameManager.Instance.UiManager._spawnRateText.text = "일반 소환표";
+            _spawnRateState = false;
+        }
+        else
+        {
+            GameManager.Instance.UiManager._spawnRateText.text = "특수 소환표";
+            _spawnRateState = true;
         }
     }
 
@@ -512,20 +533,55 @@ public class UnitManager : MonoBehaviour
     public void GameSpeed()
     {
         if (Time.timeScale == 1f)
+        {
+            GameManager.Instance.UiManager._SpeedImage.color = Color.yellow;
             Time.timeScale = 2f;
+        }
         else
+        {
+            GameManager.Instance.UiManager._SpeedImage.color = Color.white;
             Time.timeScale = 1f;
+        }
     }
 
     private void Update()
     {
-        string[] probabilityArray = unitSelector.GetGradeProbabilitiesAsArray(-1);
+        if (!_spawnRateState)
+        {
+            string[] probabilityArray = unitSelector.GetGradeProbabilitiesAsArray(-1);
+            GameManager.Instance.UiManager._spawnRateText.color = Color.white;
+            for (int i = 0; i < probabilityArray.Length; i++)
+            {
+                if (float.Parse(probabilityArray[i]) == 0)
+                {
+                    _rateText[i].color = Color.white;
+                }
+                else
+                {
+                    _rateText[i].color = Color.yellow;
+                }
 
-        for (int i = 0; i < probabilityArray.Length; i++) {
+                _rateText[i].text = probabilityArray[i] + "%";
 
-            _rateText[i].color = Color.yellow;
-            _rateText[i].text = probabilityArray[i] + "%";
+            }
+        }
+        else
+        {
+            string[] probabilityArray = unitSelector.GetGradeProbabilitiesAsArray(maxSpawnlevel + 1);
+            GameManager.Instance.UiManager._spawnRateText.color = Color.yellow;
+            for (int i = 0; i < probabilityArray.Length; i++)
+            {
+                if (float.Parse(probabilityArray[i]) == 0)
+                {
+                    _rateText[i].color = Color.white;
+                }
+                else
+                {
+                    _rateText[i].color = Color.yellow;
+                }
+                _rateText[i].text = probabilityArray[i] + "%";
 
+            }
         }
 
         foreach (GameObject searchSoldier in _soldiers)

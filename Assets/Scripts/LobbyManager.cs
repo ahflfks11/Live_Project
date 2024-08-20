@@ -17,6 +17,8 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private GameObject _arrow;
     public bool _tutorial;
 
+    private bool _rankState;
+
     public GameObject[] _LootBox;
 
     public List<UnitData> _GachaList;
@@ -25,6 +27,7 @@ public class LobbyManager : MonoBehaviour
     public LobbyMonster LobbyMonster { get => _lobbyMonster; set => _lobbyMonster = value; }
     public GameObject SpawnEffect { get => spawnEffect; set => spawnEffect = value; }
     public DOTweenVisualManager DungeonArrowObject { get => _dungeonArrowObject; set => _dungeonArrowObject = value; }
+    public bool RankState { get => _rankState; set => _rankState = value; }
 
     private void Awake()
     {
@@ -62,6 +65,11 @@ public class LobbyManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            GPGSManager.Instance.GetMyRankTest();
+        }
+
         if (_dataManager == null && FindObjectOfType<DataManager>())
         {
             _dataManager = FindObjectOfType<DataManager>();
@@ -75,7 +83,6 @@ public class LobbyManager : MonoBehaviour
             {
                 DataManager.Instance.Clear();
                 _gpgsManager.ReadHeroInfo();
-                GPGSManager.Instance.RankList();
             }
         }
     }

@@ -16,14 +16,12 @@ MonoBehaviour:
   signatureKey: 810445d1-4010-11ef-8e9b-9998e7aa41127957
   functionAuthKey: 
   packageName: com.nyangdev.rndgame
-  isAllPlatform: 1
   sendLogReport: 1
-  rateCountActive: 0
   timeOutSec: 100
-  Version: 5.11.9
-  autoRefreshToken: 0
-  retryWhenClientRequestFailError: 0
-  retryWhenServerError: 0
-  retryWhenBadSignatureError: 0
+  Version: 5.12.1
+  autoRefreshToken: 1
+  retryWhenClientRequestFailError: 1
+  retryWhenServerError: 1
   initFailWhenDeviceIdUnknown: 1
   autoLoadLocationProperties: 1
+  waitUntilInitializeFinish: 0

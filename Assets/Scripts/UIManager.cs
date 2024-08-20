@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public Text _timerText;
     public Transform _content;
     public Transform _coin_Text;
+    public Image _SpeedImage;
+    public Text _spawnRateText;
 
     public GameObject _RevolutionImageObject;
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;

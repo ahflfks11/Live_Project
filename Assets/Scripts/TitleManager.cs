@@ -59,6 +59,17 @@ public class TitleManager : MonoBehaviour
             menuPanel.SetActive(true);
             loadingPanel.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            GPGSManager.Instance.GuestLogin();
+            Debug.Log("계정 생성 완료");
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            GPGSManager.Instance.RemoveGuest();
+            Debug.Log("계정 삭제 완료");
+        }
     }
 
     public void VersionUpdate()
