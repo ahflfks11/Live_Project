@@ -38,6 +38,7 @@ public class TitleManager : MonoBehaviour
         if (_gpgsManager == null)
         {
             _gpgsManager = FindObjectOfType<GPGSManager>();
+            _gpgsManager.GpgsInit();
         }
 
         if (Application.platform == RuntimePlatform.Android)
@@ -80,10 +81,5 @@ public class TitleManager : MonoBehaviour
     public void GoogleLogin()
     {
         _gpgsManager.GPGSLogin();
-    }
-
-    public void GuestLogin()
-    {
-        _gpgsManager.GuestLogin();
     }
 }

@@ -106,6 +106,8 @@ public class GPGSManager : MonoBehaviour
 {
     public GameData gameTable = new GameData();
     public Text _logText;
+
+    bool _loginState = false;
     //bool _login;
 
     [SerializeField] string _fieldid = "12285";
@@ -145,6 +147,11 @@ public class GPGSManager : MonoBehaviour
             Debug.LogError("초기화 실패 : " + bro); // 실패일 경우 statusCode 400대 에러 발생
         }
 
+        if (_logText == null && GameObject.Find("LogText"))
+        {
+            _logText = GameObject.Find("LogText").GetComponent<Text>();
+        }
+
         // GPGS 플러그인 설정
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration
             .Builder()
@@ -157,24 +164,81 @@ public class GPGSManager : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true; // 디버그 로그를 보고 싶지 않다면 false로 바꿔주세요.
                                                   //GPGS 시작.
         PlayGamesPlatform.Activate();
-        
+
+        BackendReturnObject _loginAccess = Backend.BMember.LoginWithTheBackendToken();
+        if (_loginAccess.IsSuccess())
+        {
+            _logText.text = "자동 로그인 성공 했습니다.";
+        }
     }
 
-    public void GPGSLogin()
+    public void GpgsInit()
     {
+        _loginState = false;
+    }
+
+    internal void GPGSLogin()
+    {
+        if (_loginState)
+            return;
+
         // 이미 로그인 된 경우
         if (Social.localUser.authenticated == true)
         {
             BackendReturnObject BRO = Backend.BMember.AuthorizeFederation(GetTokens(), FederationType.Google, "gpgs");
+            if (BRO.IsSuccess())
+            {
+                _loginState = true;
+                if (CheckUser())
+                {
+                    Transitioner.Instance.TransitionToScene(1);
+                }
+                else
+                {
+                    Transitioner.Instance.TransitionToScene(2);
+                }
+            }
         }
         else
         {
             Social.localUser.Authenticate((bool success) => {
                 if (success)
                 {
-                    _logText.text = "로그인은 들어옴";
-                    // 로그인 성공 -> 뒤끝 서버에 획득한 구글 토큰으로 가입 요청
-                    BackendReturnObject BRO = Backend.BMember.AuthorizeFederation(GetTokens(), FederationType.Google, "gpgs");
+                    string _id = Backend.BMember.GetGuestID();
+
+                    if (_id == string.Empty)
+                    {
+                        // 로그인 성공 -> 뒤끝 서버에 획득한 구글 토큰으로 가입 요청
+                        BackendReturnObject BRO = Backend.BMember.AuthorizeFederation(GetTokens(), FederationType.Google, "gpgs");
+                        if (BRO.IsSuccess())
+                        {
+                            if (CheckUser())
+                            {
+                                Transitioner.Instance.TransitionToScene(1);
+                            }
+                            else
+                            {
+                                Transitioner.Instance.TransitionToScene(2);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // 로그인 성공 -> 뒤끝 서버에 획득한 구글 토큰으로 가입 요청
+                        BackendReturnObject BRO = Backend.BMember.ChangeCustomToFederation(GetTokens(), FederationType.Google);
+                        if (BRO.IsSuccess())
+                        {
+                            _loginState = true;
+                            if (CheckUser())
+                            {
+                                Transitioner.Instance.TransitionToScene(1);
+                            }
+                            else
+                            {
+                                Transitioner.Instance.TransitionToScene(2);
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -332,27 +396,6 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
-    public void GuestLogin()
-    {
-        BackendReturnObject bro = Backend.BMember.GuestLogin(Backend.BMember.GetGuestID());
-
-        if (bro.IsSuccess())
-        {
-            if (CheckUser())
-            {
-                Transitioner.Instance.TransitionToScene(1);
-            }
-            else
-            {
-                Transitioner.Instance.TransitionToScene(2);
-            }
-        }
-        else
-        {
-            Backend.BMember.DeleteGuestInfo();
-        }
-    }
-
     public void ChangeUserInfo()
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
@@ -470,7 +513,6 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
-    //
     public void ChangeGoldCrystal(int _gold, int _Crystal, TMPro.TMP_Text _goldText, TMPro.TMP_Text _crystalText)
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
@@ -1021,8 +1063,10 @@ public class GPGSManager : MonoBehaviour
     public void LogOut()
     {
         Backend.BMember.Logout((callback) => {
-            _logText.text = "로그아웃 되었습니다.";
-            // 이후 처리
+            if (Social.localUser.authenticated == true)
+            {
+                ((PlayGamesPlatform)Social.Active).SignOut();
+            }
         });
     }
 }
