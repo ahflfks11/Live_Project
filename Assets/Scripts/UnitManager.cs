@@ -23,6 +23,7 @@ public class UnitManager : MonoBehaviour
     private float hiddenEnforceDmg = 0;
 
     private int _tutorialspecialSpawnCount = 0;
+    private int _hiddenCharacterCount = 0;
 
     public int maxCount = 10;
 
@@ -45,6 +46,7 @@ public class UnitManager : MonoBehaviour
     public float RareEnforceDmg { get => rareEnforceDmg; set => rareEnforceDmg = value; }
     public float LegendEnforceDmg { get => legendEnforceDmg; set => legendEnforceDmg = value; }
     public float HiddenEnforceDmg { get => hiddenEnforceDmg; set => hiddenEnforceDmg = value; }
+    public int HiddenCharacterCount { get => _hiddenCharacterCount; set => _hiddenCharacterCount = value; }
 
     public bool CheckSpawn(GameObject[] _data)
     {
@@ -65,6 +67,7 @@ public class UnitManager : MonoBehaviour
                 if (DataManager.Instance.MyHeroList[i]._data.specialUnit)
                 {
                     _soldiers.Add(DataManager.Instance.MyHeroList[i].gameObject);
+                    HiddenCharacterCount++;
                 }
                 else
                 {
@@ -250,6 +253,18 @@ public class UnitManager : MonoBehaviour
         GameManager.Instance.ClickCount++;
 
         GameManager.Instance.Gold -= 20;
+    }
+
+    int HiddenSpawnListCount()
+    {
+        int result = 0;
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            if (_soldiers[i].GetComponent<UnitData>()._data.specialUnit)
+                result++;
+        }
+
+        return result;
     }
 
     public void TutorialGaveSoldier(UnitData.Unit _unit, int unitLevel, int _limitCount)

@@ -32,7 +32,7 @@ public class LobbyManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        GPGSManager.Instance.GetNoticeList();
+        //GPGSManager.Instance.GetNoticeList();
     }
 
     // Start is called before the first frame update
@@ -65,11 +65,6 @@ public class LobbyManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            GPGSManager.Instance.GetMyRankTest();
-        }
-
         if (_dataManager == null && FindObjectOfType<DataManager>())
         {
             _dataManager = FindObjectOfType<DataManager>();
