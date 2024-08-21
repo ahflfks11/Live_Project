@@ -51,12 +51,4 @@ public class DataManager : MonoBehaviour
         MyHeroLevel = new List<int>();
         NowLevel = new List<int>();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            GPGSManager.Instance.RankList();
-        }
-    }
 }

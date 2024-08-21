@@ -1430,6 +1430,7 @@ MonoBehaviour:
   - {fileID: 81308183512584125, guid: 0dd502b18ae67e84abfa7290e105556f, type: 3}
   - {fileID: 6969778619407018939, guid: d525f54efbde46b41b74f2d49139365e, type: 3}
   - {fileID: 677249581176253995, guid: 8ef7d1a96a55bde4d976b4f917a4faae, type: 3}
+  - {fileID: 7752830037742658558, guid: 7c0675641d057b145a359db46eb9725e, type: 3}
 --- !u!1 &237931047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,7 +1736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -59383790}
+  m_AnchoredPosition: {x: 0, y: -60087628}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624
@@ -47764,7 +47765,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 32
   m_TargetDisplay: 0
 --- !u!224 &1340335396
 RectTransform:

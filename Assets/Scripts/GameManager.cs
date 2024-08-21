@@ -129,18 +129,29 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void CreateSpawnEffect(int _effectNumber, Transform parents)
+    public void CreateSpawnEffect(int _effectNumber, Transform parents, bool _specialUnit)
     {
-        GameObject _spawnEffectPrefab = Instantiate(_spawnEffect[_effectNumber], parents.position, Quaternion.identity);
-        _spawnEffectPrefab.transform.SetParent(parents);
-        if (_spawnEffectPrefab.gameObject.tag != "HiddenEffect")
+        if (!_specialUnit)
         {
-            _spawnEffectPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-            _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0.4f, 0f);
-            _spawnEffectPrefab.transform.parent = null;
+            GameObject _spawnEffectPrefab = Instantiate(_spawnEffect[_effectNumber], parents.position, Quaternion.identity);
+            _spawnEffectPrefab.transform.SetParent(parents);
+            if (_spawnEffectPrefab.gameObject.tag != "HiddenEffect")
+            {
+                _spawnEffectPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0.4f, 0f);
+                _spawnEffectPrefab.transform.parent = null;
+            }
+            else
+            {
+                _spawnEffectPrefab.transform.localScale = new Vector3(4f, 4f, 4f);
+                _spawnEffectPrefab.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
+                _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0f, 0f);
+            }
         }
         else
         {
+            GameObject _spawnEffectPrefab = Instantiate(_spawnEffect[4], parents.position, Quaternion.identity);
+            _spawnEffectPrefab.transform.SetParent(parents);
             _spawnEffectPrefab.transform.localScale = new Vector3(6f, 6f, 6f);
             _spawnEffectPrefab.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
             _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0f, 0f);

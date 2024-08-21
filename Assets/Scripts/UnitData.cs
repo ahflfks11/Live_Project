@@ -381,6 +381,7 @@ public class UnitData : MonoBehaviour
 
     private void Update()
     {
+        _animator.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 15 - (int)transform.localPosition.y;
         if (targetEnemy != Vector3.zero)
             MoveTowardsTarget();
 

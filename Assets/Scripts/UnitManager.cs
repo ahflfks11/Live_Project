@@ -196,7 +196,7 @@ public class UnitManager : MonoBehaviour
         _unit.GetComponent<UnitData>().UnitManager = this;
         number++;
         _spawnList.Add(_unit);
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
@@ -214,7 +214,7 @@ public class UnitManager : MonoBehaviour
         _unit = Instantiate(_Solider, _pos, Quaternion.identity);
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
         number++;
         _spawnList.Add(_unit);
 
@@ -243,7 +243,7 @@ public class UnitManager : MonoBehaviour
 
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
         number++;
         _spawnList.Add(_unit);
         int index = _unit.name.IndexOf("(Clone)");
@@ -306,7 +306,7 @@ public class UnitManager : MonoBehaviour
         _unit.GetComponent<UnitData>().UnitManager = this;
         number++;
         _spawnList.Add(_unit);
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
@@ -342,7 +342,7 @@ public class UnitManager : MonoBehaviour
 
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform,_unit.GetComponent<UnitData>()._data.specialUnit);
         number++;
         _spawnList.Add(_unit);
         int index = _unit.name.IndexOf("(Clone)");
@@ -376,7 +376,7 @@ public class UnitManager : MonoBehaviour
             _unit.name = _unit.name.Substring(0, index);
         number++;
         _spawnList.Add(_unit);
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
         if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber == 25)
         {
             tutorialRevolutionSoldierNumber++;
@@ -425,7 +425,7 @@ public class UnitManager : MonoBehaviour
 
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
-        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform);
+        GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
