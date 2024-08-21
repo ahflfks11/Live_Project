@@ -1014,6 +1014,16 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
+    public void Purchase_Game(string _heroList, int _cash, string _userName)
+    {
+        Param _param = new Param();
+        _param.Add("Hero_List",_heroList);
+        _param.Add("Cash", _cash);
+        _param.Add("UserName", _userName);
+
+        Backend.GameData.Insert("Purchase_history", _param);
+    }
+
     public void RankList()
     {
         string userUuid = "b6b7d9f0-5b9d-11ef-a529-8f74572da8f7";

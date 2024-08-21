@@ -195,14 +195,29 @@ public class LobbyManager : MonoBehaviour
             }
         }
 
+        if (_GachaCount > 1)
+            GPGSManager.Instance.Purchase_Game(_tempHeroList, 1600, BackEnd.Backend.UserNickName);
+        else
+            GPGSManager.Instance.Purchase_Game(_tempHeroList, 160, BackEnd.Backend.UserNickName);
+
         if (_gpgsManager != null)
             _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel, _tempNowLevel);
 
         if (_duplicationCount > 0)
             GaveGold(_duplicationCount * 300);
 
+
         return _boxlevel;
         
+    }
+
+    public void GameExit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit(); // 어플리케이션 종료
+#endif
     }
 
     public void SetCoin(string _coin)

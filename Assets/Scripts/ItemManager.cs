@@ -50,9 +50,9 @@ public class ItemManager : MonoBehaviour
 
     public void SpawnItem(int _itemNumber, ItemType _type, int _count, string _itemName, Color _itemTextColor)
     {
-        Vector3 _pos = new Vector3(-1, -6, 0);
+        Vector3 _pos = new Vector3(-3, -6, 0);
         ItemObject _item = Instantiate(_itemObjects, _pos, Quaternion.identity);
-        _item.gameObject.transform.DOMove(new Vector3(-1, -4, 0), 1f);
+        _item.gameObject.transform.DOMove(new Vector3(-3, -4, 0), 1f);
         _item.Spawn(_itemName, _count, _type, _itemNumber, _itemTextColor);
     }
 }

@@ -56,7 +56,10 @@ public class LobbyUIManager : MonoBehaviour
         if (!_rankingPanel.enabled)
         {
             if (!_lobbyManager.RankState)
+            {
                 GPGSManager.Instance.RankList();
+                _lobbyManager.RankState = true;
+            }
             _rankingPanel.enabled = true;
         }
         else
