@@ -257,6 +257,7 @@ MonoBehaviour:
       \uADF8\uAC00 \uAC78\uC5B4\uAC00\uB294 \uAE38\uC774 \uACE7 \uC2E0\uC758 \uACBD\uC9C0\uC785\uB2C8\uB2E4."
     attackCount: 3
     weight: 0.008
+    ingame_Weight: 0.008
     attackDelay: 1.5
     attackSpeed: 1
     soundNumber: 0

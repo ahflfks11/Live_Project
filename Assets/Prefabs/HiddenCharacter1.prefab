@@ -222,6 +222,7 @@ MonoBehaviour:
       \uB192\uC740 \uACF5\uACA9\uB825\uC744 \uBCF4\uC720\uD569\uB2C8\uB2E4."
     attackCount: 8
     weight: 0.1
+    ingame_Weight: 0.01
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 2

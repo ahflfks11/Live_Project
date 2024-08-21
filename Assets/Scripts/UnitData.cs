@@ -35,6 +35,7 @@ public class UnitData : MonoBehaviour
         public string _comment;
         public int attackCount;
         public double weight;
+        public double ingame_Weight;
         public float attackDelay;
         public float attackSpeed;
         public AudioManager.skillSfx soundNumber;

@@ -341,6 +341,7 @@ MonoBehaviour:
       \uC788\uAC8C \uB418\uC5C8\uC2B5\uB2C8\uB2E4."
     attackCount: 4
     weight: 0.1
+    ingame_Weight: 0.1
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 1

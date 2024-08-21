@@ -459,7 +459,8 @@ public class UnitManager : MonoBehaviour
             }
         }
         int rnd_level = unitSelector.GetUnitGrade(-1) - 1;
-        //int rnd_UnitNumber = 
+
+        /*
         List<int> _numberList = new List<int>();
 
         for(int i=0; i<_soldiers.Count; i++)
@@ -469,8 +470,35 @@ public class UnitManager : MonoBehaviour
                 _numberList.Add(i);
             }
         }
-        
-        int rnd_UnitNumber = Random.Range(0, _numberList.Count);
+        */
+
+        List<int> _numberList = new List<int>();
+
+        double sum = 0;
+        int rnd_UnitNumber = 0;
+
+        for (int i = 0; i < _soldiers.Count; i++)
+        {
+            if (_soldiers[i].GetComponent<UnitData>()._data.rarelityLevel == rnd_level)
+            {
+                _numberList.Add(i);
+                sum += _soldiers[i].GetComponent<UnitData>()._data.ingame_Weight;
+            }
+        }
+
+        sum *= Random.value;
+
+        for (int i = 0; i < _numberList.Count; i++)
+        {
+            sum -= _soldiers[_numberList[i]].GetComponent<UnitData>()._data.ingame_Weight;
+            if (sum <= 0)
+            {
+                rnd_UnitNumber = i;
+                break;
+            }
+        }
+
+        //int rnd_UnitNumber = Random.Range(0, _numberList.Count);
 
         /*
         int rnd_UnitNumber = Random.Range(0, _soldiers.Count);
@@ -494,16 +522,32 @@ public class UnitManager : MonoBehaviour
         List<GameObject> _unit = new List<GameObject>();
 
         int rnd_UnitNumber = 0;
+        double sum = 0;
 
         for (int i = 0; i < _soldiers.Count; i++)
         {
             if (_soldiers[i].GetComponent<UnitData>()._data.rarelityLevel == rnd_Number - 1)
             {
                 _unit.Add(_soldiers[i]);
+                sum += _soldiers[i].GetComponent<UnitData>()._data.ingame_Weight;
             }
         }
 
-        int rnd_key = Random.Range(0, _unit.Count);
+        int rnd_key = 0;
+
+        sum *= Random.value;
+
+        for (int i = 0; i < _unit.Count; i++)
+        {
+            sum -= _unit[i].GetComponent<UnitData>()._data.ingame_Weight;
+            if (sum <= 0)
+            {
+                rnd_key = i;
+                break;
+            }
+        }
+
+        //int rnd_key = Random.Range(0, _unit.Count);
 
         for (int i = 0; i < _soldiers.Count; i++)
         {
