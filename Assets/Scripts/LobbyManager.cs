@@ -247,11 +247,13 @@ public class LobbyManager : MonoBehaviour
 
     public void GaveGold(int _gold)
     {
+        _gpgsManager.Purchase_Game("Gold", _gold, BackEnd.Backend.UserNickName);
         _gpgsManager.GaveGold(_gold, _lobbyUIManager._CoinText);
     }
 
     public void GaveCrystal(int _crystal)
     {
+        _gpgsManager.Purchase_Game("Crystal", _crystal, BackEnd.Backend.UserNickName);
         _gpgsManager.GaveCrystal(_crystal, _lobbyUIManager._CashText);
     }
 

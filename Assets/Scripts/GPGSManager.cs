@@ -881,7 +881,7 @@ public class GPGSManager : MonoBehaviour
         var bro = Backend.PlayerData.GetMyData("UserInfo");
 
         bool _valueChange = false;
-
+        
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
@@ -1014,10 +1014,10 @@ public class GPGSManager : MonoBehaviour
         }
     }
 
-    public void Purchase_Game(string _heroList, int _cash, string _userName)
+    public void Purchase_Game(string _type, int _cash, string _userName)
     {
         Param _param = new Param();
-        _param.Add("Hero_List",_heroList);
+        _param.Add("Type", _type);
         _param.Add("Cash", _cash);
         _param.Add("UserName", _userName);
 
