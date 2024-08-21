@@ -14,7 +14,8 @@ public class UnitData : MonoBehaviour
         Archor,
         Magition,
         Ninja,
-        Hidden
+        Hidden,
+        Babari
     }
 
     public enum UnitType

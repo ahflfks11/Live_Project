@@ -195,10 +195,12 @@ public class LobbyManager : MonoBehaviour
             }
         }
 
+        /*
         if (_GachaCount > 1)
             GPGSManager.Instance.Purchase_Game(_tempHeroList, 1600, BackEnd.Backend.UserNickName);
         else
             GPGSManager.Instance.Purchase_Game(_tempHeroList, 160, BackEnd.Backend.UserNickName);
+        */
 
         if (_gpgsManager != null)
             _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel, _tempNowLevel);

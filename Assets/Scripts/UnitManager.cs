@@ -469,7 +469,7 @@ public class UnitManager : MonoBehaviour
                 _numberList.Add(i);
             }
         }
-
+        
         int rnd_UnitNumber = Random.Range(0, _numberList.Count);
 
         /*
