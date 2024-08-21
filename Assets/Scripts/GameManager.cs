@@ -133,9 +133,18 @@ public class GameManager : MonoBehaviour
     {
         GameObject _spawnEffectPrefab = Instantiate(_spawnEffect[_effectNumber], parents.position, Quaternion.identity);
         _spawnEffectPrefab.transform.SetParent(parents);
-        _spawnEffectPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-        _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0.4f, 0f);
-        _spawnEffectPrefab.transform.parent = null;
+        if (_spawnEffectPrefab.gameObject.tag != "HiddenEffect")
+        {
+            _spawnEffectPrefab.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+            _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0.4f, 0f);
+            _spawnEffectPrefab.transform.parent = null;
+        }
+        else
+        {
+            _spawnEffectPrefab.transform.localScale = new Vector3(6f, 6f, 6f);
+            _spawnEffectPrefab.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
+            _spawnEffectPrefab.transform.localPosition = new Vector3(0f, 0f, 0f);
+        }
     }
 
     public void Log(string _text)

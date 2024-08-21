@@ -11,6 +11,7 @@ TagManager:
   - Icon
   - Inven_Icon
   - MySpawnPoint
+  - HiddenEffect
   layers:
   - Default
   - TransparentFX
