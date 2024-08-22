@@ -27,6 +27,8 @@ public class LobbyUIManager : MonoBehaviour
     Gacha_Cotents _multiGachaContent;
     Gacha_Cotents _singleGachaContent;
 
+    bool _readHeroInfo = false;
+
     [SerializeField] CharacterStatus _status;
 
     [SerializeField] private Character_Icon _icon;
@@ -121,6 +123,13 @@ public class LobbyUIManager : MonoBehaviour
         }
         else
         {
+            if (!_readHeroInfo)
+            {
+                DataManager.Instance.Clear();
+                GPGSManager.Instance.ReadHeroInfo();
+                _readHeroInfo = true;
+            }
+
             _character_InvenPanel.enabled = true;
         }
     }

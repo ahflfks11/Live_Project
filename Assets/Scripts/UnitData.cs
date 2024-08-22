@@ -57,7 +57,7 @@ public class UnitData : MonoBehaviour
     }
 
     // 스킬을 발동하는 메서드
-    public void UseSkill(GameObject target)
+    public void UseSkill(EnermyControl target)
     {
         if (skill != null)
         {
@@ -209,7 +209,8 @@ public class UnitData : MonoBehaviour
                 targetEnermy.GetComponent<EnermyControl>().MobHit(_dmg);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
                 DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
-                UseSkill(targetEnermy.gameObject);
+                if (skill != null)
+                    UseSkill(targetEnermy.GetComponent<EnermyControl>());
                 _dmgFont.SetText(_dmg, targetEnermy.transform, _data._type);
                 Destroy(_effect, 1f);
             }
@@ -228,7 +229,8 @@ public class UnitData : MonoBehaviour
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                             DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
                             _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
-                            UseSkill(enermys[i].gameObject);
+                            if (skill != null)
+                                UseSkill(enermys[i].GetComponent<EnermyControl>());
                             Destroy(_effect, 1f);
                         }
                         catch
@@ -247,6 +249,8 @@ public class UnitData : MonoBehaviour
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                             DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
                             _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
+                            if (skill != null)
+                                UseSkill(enermys[i].GetComponent<EnermyControl>());
                             Destroy(_effect, 1f);
                         }
                         catch
@@ -408,7 +412,7 @@ public class UnitData : MonoBehaviour
 
     private void Update()
     {
-        _animator.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 15 - (int)transform.localPosition.y;
+        //_animator.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 15 - (int)transform.localPosition.y;
         if (targetEnemy != Vector3.zero)
             MoveTowardsTarget();
 

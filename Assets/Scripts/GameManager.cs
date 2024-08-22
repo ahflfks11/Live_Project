@@ -170,10 +170,12 @@ public class GameManager : MonoBehaviour
 
     public void CoinDrop(Vector3 _pos, int _coin)
     {
-        Vector3 _tempPos = new Vector3(_pos.x + 0.5f, _pos.y, _pos.z);
-        GameObject coin = Instantiate(_coinDropObject, _tempPos, Quaternion.identity);
-        coin.GetComponentInChildren<TMPro.TMP_Text>().text = "+" + _coin + "G";
-        coin.transform.DOMove(new Vector3(_tempPos.x, _tempPos.y + 0.5f, _tempPos.z), 1f);
+        _coinDropObject.GetComponent<UnityEngine.UI.Text>().text = "+" + _coin;
+        _coinDropObject.GetComponent<DOTweenVisualManager>().enabled = true;
+        //Vector3 _tempPos = new Vector3(_pos.x + 0.5f, _pos.y+5f, _pos.z);
+        //GameObject coin = Instantiate(_coinDropObject, _tempPos, Quaternion.identity);
+        //coin.GetComponentInChildren<TMPro.TMP_Text>().text = "+" + _coin + "G";
+        //coin.transform.DOMove(new Vector3(_tempPos.x, _tempPos.y + 0.5f, _tempPos.z), 1f);
         _gold += _coin;
     }
 

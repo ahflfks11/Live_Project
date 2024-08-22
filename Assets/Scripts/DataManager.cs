@@ -17,6 +17,8 @@ public class DataManager : MonoBehaviour
 
     public Data[] _data;
 
+    bool _heroCheck;
+
     //보유한 영웅 리스트
     [SerializeField] private List<UnitData> myHeroList = new List<UnitData>();
     //보유한 영웅의 중복 리스트
@@ -47,8 +49,27 @@ public class DataManager : MonoBehaviour
 
     public void Clear()
     {
+        GameObject[] _icons = GameObject.FindGameObjectsWithTag("Inven_Icon");
+
+        if (_icons.Length != 0)
+        {
+            for (int i = _icons.Length - 1; i >= 0; i--)
+            {
+                Destroy(_icons[i]);
+            }
+        }
         MyHeroList = new List<UnitData>();
         MyHeroLevel = new List<int>();
         NowLevel = new List<int>();
+    }
+
+    private void Update()
+    {
+        if(!_heroCheck && !LobbyManager.Instance._tutorial)
+        {
+            Clear();
+            GPGSManager.Instance.ReadHeroInfo();
+            _heroCheck = true;
+        }
     }
 }

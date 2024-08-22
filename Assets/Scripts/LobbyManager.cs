@@ -76,8 +76,7 @@ public class LobbyManager : MonoBehaviour
             _gpgsManager.SetValue(_lobbyUIManager._CoinText, _lobbyUIManager._CashText);
             if (!_tutorial)
             {
-                DataManager.Instance.Clear();
-                _gpgsManager.ReadHeroInfo();
+
             }
         }
     }
@@ -194,13 +193,6 @@ public class LobbyManager : MonoBehaviour
                 _tempNowLevel += ",";
             }
         }
-
-        /*
-        if (_GachaCount > 1)
-            GPGSManager.Instance.Purchase_Game(_tempHeroList, 1600, BackEnd.Backend.UserNickName);
-        else
-            GPGSManager.Instance.Purchase_Game(_tempHeroList, 160, BackEnd.Backend.UserNickName);
-        */
 
         if (_gpgsManager != null)
             _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel, _tempNowLevel);

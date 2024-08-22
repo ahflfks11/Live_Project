@@ -28,6 +28,10 @@ public class EnermyControl : MonoBehaviour
 
     float maxHP;
 
+    float _originSpeed;
+
+    float _nowSpeed;
+
     public void MobHit(float _dmg)
     {
         _data.HP -= _dmg;
@@ -36,6 +40,26 @@ public class EnermyControl : MonoBehaviour
     private void Start()
     {
         maxHP = _data.HP;
+        _originSpeed = _data.speed;
+        _nowSpeed = _data.speed;
+    }
+
+    public void Slow(float _amount, float _duration)
+    {
+        StopAllCoroutines();
+        _nowSpeed *= _amount;
+        StartCoroutine(RemoveSkillAfterDelay(_duration, "Slow"));
+    }
+
+    private IEnumerator RemoveSkillAfterDelay(float _duration, string _type)
+    {
+        yield return new WaitForSeconds(_duration);
+        switch (_type)
+        {
+            case "Slow":
+                _nowSpeed = _originSpeed;
+                break;
+        }
     }
 
     private void Update()
@@ -90,7 +114,7 @@ public class EnermyControl : MonoBehaviour
 
         if (Vector3.Distance(transform.position, wayPoint[wayNumber].position) > 0.01f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, wayPoint[wayNumber].position, _data.speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, wayPoint[wayNumber].position, _nowSpeed * Time.deltaTime);
         }
         else
         {
