@@ -110,6 +110,8 @@ public class GPGSManager : MonoBehaviour
     bool _loginState = false;
     //bool _login;
 
+    private int level;
+
     [SerializeField] string _fieldid = "12285";
 
     List<RankItem> rankItemList = new List<RankItem>();
@@ -117,6 +119,8 @@ public class GPGSManager : MonoBehaviour
     private static GPGSManager instance = null;
 
     public static GPGSManager Instance { get => instance; set => instance = value; }
+    public int Level { get => level; set => level = value; }
+
     //public bool Login { get => _login; set => _login = value; }
 
     private void Awake()
@@ -394,7 +398,7 @@ public class GPGSManager : MonoBehaviour
         if (bro.FlattenRows().Count > 0)
         {
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
-            int level = int.Parse(bro.FlattenRows()[0]["Cash"].ToString());
+            level = int.Parse(bro.FlattenRows()[0]["Level"].ToString());
             _coinText.text = bro.FlattenRows()[0]["Gold"].ToString();
             _cashText.text = bro.FlattenRows()[0]["Cash"].ToString();
         }

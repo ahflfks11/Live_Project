@@ -58,7 +58,7 @@ public class UnitManager : MonoBehaviour
 
     private void Start()
     {
-        if (DataManager.Instance.MyHeroList.Count > 0)
+        if (DataManager.Instance.MyHeroList.Count > 0 && GPGSManager.Instance.Level > -1)
         {
             _soldiers = new List<GameObject>();
 
@@ -79,6 +79,17 @@ public class UnitManager : MonoBehaviour
                         }
                     }
                 }
+            }
+
+            _soldiers = _soldiers.Distinct().ToList();
+        }
+        else
+        {
+            _soldiers = new List<GameObject>();
+
+            for (int i = 0; i < DataManager.Instance._data.Length; i++)
+            {
+                _soldiers.Add(DataManager.Instance._data[i]._unit.gameObject);
             }
 
             _soldiers = _soldiers.Distinct().ToList();

@@ -46,6 +46,30 @@ public class UnitData : MonoBehaviour
         public bool specialUnit;
     };
 
+    [SerializeField]
+    // 캐릭터가 가진 스킬
+    private UnitSkill skill;
+
+    // 스킬을 설정하는 메서드
+    public void SetSkill(UnitSkill newSkill)
+    {
+        skill = newSkill;
+    }
+
+    // 스킬을 발동하는 메서드
+    public void UseSkill(GameObject target)
+    {
+        if (skill != null)
+        {
+            skill.ApplySkill(target);
+        }
+        else
+        {
+            // 스킬이 없을 경우 아무 작업도 하지 않음
+            Debug.LogWarning("Skill not set! No effect applied.");
+        }
+    }
+
     //effect
     public GameObject _Weapon;
 
@@ -109,6 +133,8 @@ public class UnitData : MonoBehaviour
         }
         _status = gameObject.GetComponentInChildren<UnitStatus>();
         _status.gameObject.SetActive(false);
+        if (skill != null)
+            SetSkill(skill);
         FindClosestEnemy();
     }
 
@@ -183,7 +209,7 @@ public class UnitData : MonoBehaviour
                 targetEnermy.GetComponent<EnermyControl>().MobHit(_dmg);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
                 DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
-
+                UseSkill(targetEnermy.gameObject);
                 _dmgFont.SetText(_dmg, targetEnermy.transform, _data._type);
                 Destroy(_effect, 1f);
             }
@@ -202,6 +228,7 @@ public class UnitData : MonoBehaviour
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                             DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
                             _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
+                            UseSkill(enermys[i].gameObject);
                             Destroy(_effect, 1f);
                         }
                         catch
