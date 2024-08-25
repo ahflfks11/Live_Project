@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _bossCount = 0;
 
     public UnitData[] _unitObject;
-    public GameObject Exclamation;
+    public GameObject[] _specialUIEffect; //히든 출현 or 전설 출현 이펙트
 
     public GameObject _gameOverText;
 
@@ -127,6 +127,21 @@ public class GameManager : MonoBehaviour
     public void Lobby()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void CreateSpecialUIEffect(bool _specialUnit, Vector3 _pos, int _level)
+    {
+        GameObject _specialUIEffectPrefab;
+
+        if (_specialUnit)
+        {
+            _specialUIEffectPrefab = Instantiate(_specialUIEffect[1], _pos, Quaternion.identity);
+        }
+        else
+        {
+            if (_level > 2)
+                _specialUIEffectPrefab = Instantiate(_specialUIEffect[0], _pos, Quaternion.identity);
+        }
     }
 
     public void CreateSpawnEffect(int _effectNumber, Transform parents, bool _specialUnit)

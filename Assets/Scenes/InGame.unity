@@ -1406,8 +1406,9 @@ MonoBehaviour:
   _enermyCount: 0
   _bossCount: 0
   _unitObject: []
-  Exclamation: {fileID: 5980835425842424940, guid: 8c2f92f010f4c3a4488822cff42e4239,
-    type: 3}
+  _specialUIEffect:
+  - {fileID: 8538883803435981912, guid: cdbc61cb645acf44596242258fdfce7a, type: 3}
+  - {fileID: 1195214477782363205, guid: 4e43e37cec8cb5a40b4b815fa4932f95, type: 3}
   _gameOverText: {fileID: 0}
   _rareColor:
   - {r: 1, g: 1, b: 1, a: 0.49019608}
@@ -1735,7 +1736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91524210}
+  m_AnchoredPosition: {x: 0, y: -91547440}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624

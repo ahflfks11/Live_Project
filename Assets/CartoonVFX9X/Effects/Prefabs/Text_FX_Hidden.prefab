@@ -42,7 +42,7 @@ ParticleSystem:
   m_GameObject: {fileID: 855721439697045028}
   serializedVersion: 8
   lengthInSec: 0.2
-  simulationSpeed: 0.5
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -4864,7 +4864,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 65
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4908,6 +4908,7 @@ GameObject:
   - component: {fileID: 3750960135015498424}
   - component: {fileID: 3205769009971843363}
   - component: {fileID: 4263664688340927598}
+  - component: {fileID: 4842924090107150079}
   m_Layer: 0
   m_Name: Text_FX_Hidden
   m_TagString: Untagged
@@ -4943,7 +4944,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1195214477782363205}
   serializedVersion: 8
   lengthInSec: 0.2
-  simulationSpeed: 0.5
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -9731,6 +9732,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4842924090107150079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195214477782363205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00de380eae8aae7448a31551ef1c916b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selfdestruct_in: 5
 --- !u!1 &5303483147789695105
 GameObject:
   m_ObjectHideFlags: 0
@@ -9773,7 +9787,7 @@ ParticleSystem:
   m_GameObject: {fileID: 5303483147789695105}
   serializedVersion: 8
   lengthInSec: 0.2
-  simulationSpeed: 0.5
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -14586,7 +14600,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 60
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14661,7 +14675,7 @@ ParticleSystem:
   m_GameObject: {fileID: 7827658162724358412}
   serializedVersion: 8
   lengthInSec: 0.2
-  simulationSpeed: 0.5
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -19474,7 +19488,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 60
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -19549,7 +19563,7 @@ ParticleSystem:
   m_GameObject: {fileID: 8081504438333495446}
   serializedVersion: 8
   lengthInSec: 0.2
-  simulationSpeed: 0.5
+  simulationSpeed: 0.2
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -24371,7 +24385,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 60
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

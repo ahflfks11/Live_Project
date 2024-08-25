@@ -318,6 +318,7 @@ public class UnitManager : MonoBehaviour
         number++;
         _spawnList.Add(_unit);
         GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
+        GameManager.Instance.CreateSpecialUIEffect(_unit.GetComponent<UnitData>()._data.specialUnit, new Vector3(1, -6f, 0), _unit.GetComponent<UnitData>()._data.rarelityLevel);
         int index = _unit.name.IndexOf("(Clone)");
         if (index > 0)
             _unit.name = _unit.name.Substring(0, index);
@@ -354,6 +355,7 @@ public class UnitManager : MonoBehaviour
         _unit.GetComponent<UnitData>().number = number;
         _unit.GetComponent<UnitData>().UnitManager = this;
         GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform,_unit.GetComponent<UnitData>()._data.specialUnit);
+        GameManager.Instance.CreateSpecialUIEffect(_unit.GetComponent<UnitData>()._data.specialUnit, new Vector3(1, -6f,0), _unit.GetComponent<UnitData>()._data.rarelityLevel);
         number++;
         _spawnList.Add(_unit);
         int index = _unit.name.IndexOf("(Clone)");
@@ -388,6 +390,7 @@ public class UnitManager : MonoBehaviour
         number++;
         _spawnList.Add(_unit);
         GameManager.Instance.CreateSpawnEffect(_unit.GetComponent<UnitData>()._data.rarelityLevel, _unit.transform, _unit.GetComponent<UnitData>()._data.specialUnit);
+        GameManager.Instance.CreateSpecialUIEffect(_unit.GetComponent<UnitData>()._data.specialUnit, new Vector3(1, -6f, 0), _unit.GetComponent<UnitData>()._data.rarelityLevel);
         if (JsonParseManager.Instance.Tutorial && JsonParseManager.Instance._txtNumber == 25)
         {
             tutorialRevolutionSoldierNumber++;
