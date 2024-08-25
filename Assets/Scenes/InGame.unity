@@ -341,11 +341,22 @@ MonoBehaviour:
   - {fileID: 2303154679696713975, guid: 4b8d9de9886f27b42b70c1458d9722b2, type: 3}
   - {fileID: 4481977890049485102, guid: 4bddedeb863e09d4fb9f7ea1052740c2, type: 3}
   - {fileID: 8159969345569078677, guid: 8e6093d6355c141489994167abbf6408, type: 3}
+  - {fileID: 254335059539827198, guid: db049454948ae6f47b861efbb3f481be, type: 3}
+  - {fileID: 130027310366843013, guid: 5f3b1f339bb29144982342ef8bd3317b, type: 3}
+  - {fileID: 6137834245123026121, guid: 2271226a4f7cd204399377bb1546400e, type: 3}
+  - {fileID: 8166578553043599176, guid: ffcfc0fff72459d4d856ae67eb9e86f4, type: 3}
+  - {fileID: 6291980099586918609, guid: 2e52f1d4f7c50a44c8685bcead89b53f, type: 3}
+  - {fileID: 2260551479057547878, guid: 3f96f561c05f7ee41a07ba49d1d9486e, type: 3}
+  - {fileID: 8445832480675961326, guid: 45c7c7d203851084d9e509a1251f8320, type: 3}
+  - {fileID: 7125510923531439151, guid: cb462a5235f91f541aa4043866572d90, type: 3}
+  - {fileID: 988276689349145380, guid: 1d2408e4b7a617840b30bd5cd87a29fa, type: 3}
+  - {fileID: 878452580888439595, guid: f9684c3eeaa7c224cb72c7165a8a1f8d, type: 3}
   _bossList:
   - {fileID: 728794643641579665, guid: e13b29d9833cf0a4b92e92c6d2f16ea8, type: 3}
   - {fileID: 2326240364081872015, guid: 4549f756a47c9e145a2a650dbd9a49e8, type: 3}
   - {fileID: 1630434893059766265, guid: e2a1b47993ba3ee4caab86c63b43354e, type: 3}
   - {fileID: 4904259153572702183, guid: 810a4e7cc0c2f4347906a3cff18a368a, type: 3}
+  - {fileID: 4667267172937822123, guid: b17b52aba8e7d114da0b2afae6fa0400, type: 3}
   wayPoint:
   - {fileID: 2010263068}
   - {fileID: 927396796}
@@ -1415,7 +1426,7 @@ MonoBehaviour:
   - {r: 0, g: 0.63304996, b: 1, a: 0.49019608}
   - {r: 0.93840027, g: 0, b: 1, a: 0.49019608}
   - {r: 1, g: 0.1373159, b: 0, a: 0.49019608}
-  _hiddenColor: {r: 0, g: 0.8089638, b: 1, a: 0.49019608}
+  _hiddenColor: {r: 0, g: 1, b: 0.85651875, a: 0.49019608}
   _SpawnComplete: 0
   _isBoss: 0
   gameSpeed: 0
@@ -1736,7 +1747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91547440}
+  m_AnchoredPosition: {x: 0, y: -91660960}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624

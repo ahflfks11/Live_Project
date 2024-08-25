@@ -329,16 +329,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitManager: {fileID: 0}
+  skill: {fileID: 0}
   _Weapon: {fileID: 6949032675933054048, guid: f0c565221136f7d4a98e514b10a645a4, type: 3}
   _data:
     _unit: 6
     _type: 1
     _multiUnit: []
-    _unit_name: "\uACAC\uC2B5 \uAD81\uC218"
-    _comment: "\uAE34 \uC0AC\uAC70\uB9AC\uB97C \uAC00\uC9C0\uACE0 \uC788\uC73C\uB098
-      \uACF5\uACA9\uB825\uC740 \uC57D\uD569\uB2C8\uB2E4. \uAE34 \uC0AC\uAC70\uB9AC\uB97C
-      \uC774\uC6A9\uD558\uC5EC \uC804\uD22C\uB97C \uD558\uB294 \uAC83\uC774 \uAD81\uC218\uC758
-      \uD2B9\uC9D5\uC785\uB2C8\uB2E4."
+    _unit_name: "\uB3D9\uB124 \uC2F8\uC6C0\uAFBC"
+    _comment: "\uB9C8\uC744\uC758 \uD754\uD55C \uC2F8\uC6C0\uAFBC\uC785\uB2C8\uB2E4.
+      \uD3C9\uD654\uB85C\uC6B8 \uB54C\uB294 \uB9C8\uC744\uC758 \uACE8\uCE6B\uAC70\uB9AC\uC9C0\uB9CC
+      \uB9C8\uC744\uC774 \uC704\uD5D8\uD560 \uB54C\uB294 \uB4EC\uC9C1\uD55C \uC6A9\uBCD1\uC785\uB2C8\uB2E4."
     attackCount: 1
     weight: 0.8
     ingame_Weight: 0.8

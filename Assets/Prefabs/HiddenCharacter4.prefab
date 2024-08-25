@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _unitManager: {fileID: 0}
   skill: {fileID: 11400000, guid: 6fbb0543c49d2b142ab508cd8619efc5, type: 2}
-  _Weapon: {fileID: 3626259152316059793, guid: 8cb364e09697dcd43b410fe6ed742c66, type: 3}
+  _Weapon: {fileID: 6676747554573539635, guid: 85d45011e16149f458eda6d9b18d1b91, type: 3}
   _data:
     _unit: 5
     _type: 0
