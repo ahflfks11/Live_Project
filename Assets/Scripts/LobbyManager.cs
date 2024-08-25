@@ -259,7 +259,7 @@ public class LobbyManager : MonoBehaviour
         if (GameObject.Find("LootBox"))
             return;
 
-        if (_gpgsManager.LeastCrystal(1600, _lobbyUIManager._CashText))
+        if (_gpgsManager.LeastCrystal(1280, _lobbyUIManager._CashText))
         {
             Destroy(GameObject.Find("LootBox"));
             int _boxlevel = SetupGachaList(8);

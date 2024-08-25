@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 1366d659169b28f47a1fe1d02890fb8e, type: 3}
   m_Name: Lv1Slow
-  m_EditorClassIdentifier: Assembly-CSharp::SlowSkill
-  slowAmount: 0.3
-  duration: 1.5
+  m_EditorClassIdentifier: 
+  slowAmount: 0.85
+  duration: 0.5
