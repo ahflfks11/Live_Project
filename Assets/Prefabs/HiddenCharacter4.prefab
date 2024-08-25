@@ -144,7 +144,7 @@ MonoBehaviour:
     soundNumber: 2
     speed: 6
     dmg: 5
-    rarelityLevel: 0
+    rarelityLevel: 2
     EvolutionAvailability: 0
     specialUnit: 1
   number: 0
