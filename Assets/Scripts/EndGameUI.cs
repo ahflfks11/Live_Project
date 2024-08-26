@@ -17,7 +17,7 @@ public class EndGameUI : MonoBehaviour
 
     public void SetUI(int _stage, int _legendCount, int _rareCount)
     {
-        if(_stage < 40)
+        if(_stage < 50)
         {
             resultImages[0].gameObject.SetActive(true);
         }
