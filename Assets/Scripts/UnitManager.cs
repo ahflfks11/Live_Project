@@ -105,19 +105,6 @@ public class UnitManager : MonoBehaviour
         Transitioner.Instance.TransitionToScene(3);
     }
 
-    public void Enforce_Normal()
-    {
-        if (JsonParseManager.Instance.Tutorial)
-        {
-            return;
-        }
-
-        if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpNormalCoin())
-        {
-            NormalEnforceDmg += 1;
-        }
-    }
-
     public void GetLoadSpawnRate()
     {
         if (_spawnRateState)
@@ -132,11 +119,24 @@ public class UnitManager : MonoBehaviour
         }
     }
 
+    public void Enforce_Normal()
+    {
+        if (JsonParseManager.Instance.Tutorial)
+        {
+            return;
+        }
+
+        if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpNormalCoin())
+        {
+            NormalEnforceDmg += 3;
+        }
+    }
+
     public void Enforce_Rare()
     {
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpRareCoin())
         {
-            rareEnforceDmg += 1;
+            rareEnforceDmg += 3;
         }
 
         if (JsonParseManager.Instance.Tutorial)
@@ -154,7 +154,7 @@ public class UnitManager : MonoBehaviour
 
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpLegendCoin())
         {
-            legendEnforceDmg += 1;
+            legendEnforceDmg += 5;
         }
     }
 
@@ -167,7 +167,7 @@ public class UnitManager : MonoBehaviour
 
         if (GameManager.Instance.UiManager.EnforceUI.SetDmgUpHiddenCoin())
         {
-            hiddenEnforceDmg += 1;
+            hiddenEnforceDmg += 10;
         }
     }
 

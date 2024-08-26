@@ -40,6 +40,11 @@ public class EnforceUI : MonoBehaviour
 
     public void Start()
     {
+        _dmgUpNormalCoinText.text = _normalEnforce_Coin[_normalLevel].ToString();
+        _dmgUpRareCoinText.text = _rareEnforce_Coin[_rareLevel].ToString();
+        _dmgUpLegendCoinText.text = _legendEnforce_Coin[_legendLevel].ToString();
+        _dmgUpHiddenCoinText.text = _hiddenEnforce_Coin[_hiddenLevel].ToString();
+
         if (JsonParseManager.Instance.Tutorial)
         {
             _arrow.SetActive(true);
@@ -52,62 +57,109 @@ public class EnforceUI : MonoBehaviour
 
     public bool SetDmgUpNormalCoin()
     {
-        if (_normalEnforce_Coin[_normalLevel] > GameManager.Instance.Gold)
+
+        if (_normalLevel + 1 <= _normalEnforce_Coin.Count)
+        {
+            if (_normalEnforce_Coin[_normalLevel] > GameManager.Instance.Gold)
+                return false;
+        }
+        else
+        {
             return false;
+        }
 
         GameManager.Instance.Gold -= (int)_normalEnforce_Coin[_normalLevel];
+        _normalLevel++;
 
-        if (_normalLevel + 1 < _normalEnforce_Coin.Count)
-            _normalLevel++;
-
-        _dmgUpNormalCoinText.text = _normalEnforce_Coin[_normalLevel].ToString();
+        if (_normalLevel + 1 > _normalEnforce_Coin.Count)
+        {
+            _dmgUpNormalCoinText.text = "MAX";
+        }
+        else
+        {
+            _dmgUpNormalCoinText.text = _normalEnforce_Coin[_normalLevel].ToString();
+        }
 
         return true;
     }
 
     public bool SetDmgUpRareCoin()
     {
-        if (_rareEnforce_Coin[_rareLevel] > GameManager.Instance.Gold)
+        if (_rareLevel + 1 <= _rareEnforce_Coin.Count)
+        {
+            if (_rareEnforce_Coin[_rareLevel] > GameManager.Instance.Gold)
+                return false;
+        }
+        else
+        {
             return false;
+        }
 
         GameManager.Instance.Gold -= (int)_rareEnforce_Coin[_rareLevel];
+        _rareLevel++;
 
-        if (_rareLevel + 1 < _rareEnforce_Coin.Count)
-            _rareLevel++;
-
-        _dmgUpRareCoinText.text = _rareEnforce_Coin[_rareLevel].ToString();
+        if (_rareLevel + 1 > _rareEnforce_Coin.Count)
+        {
+            _dmgUpRareCoinText.text = "MAX";
+        }
+        else
+        {
+            _dmgUpRareCoinText.text = _rareEnforce_Coin[_rareLevel].ToString();
+        }
 
         return true;
     }
 
     public bool SetDmgUpLegendCoin()
     {
-        if (_legendEnforce_Coin[_legendLevel] > GameManager.Instance.Gold)
+        if (_legendLevel + 1 <= _legendEnforce_Coin.Count)
+        {
+            if (_legendEnforce_Coin[_legendLevel] > GameManager.Instance.Gold)
+                return false;
+        }
+        else
+        {
             return false;
-        
+        }
+
         GameManager.Instance.Gold -= (int)_legendEnforce_Coin[_legendLevel];
+        _legendLevel++;
 
-        if (_legendLevel + 1 < _legendEnforce_Coin.Count)
-            _legendLevel++;
-
-        _dmgUpLegendCoinText.text = _legendEnforce_Coin[_legendLevel].ToString();
-
+        if (_legendLevel + 1 > _legendEnforce_Coin.Count)
+        {
+            _dmgUpLegendCoinText.text = "MAX";
+        }
+        else
+        {
+            _dmgUpLegendCoinText.text = _legendEnforce_Coin[_legendLevel].ToString();
+        }
 
         return true;
     }
 
     public bool SetDmgUpHiddenCoin()
     {
-        if (_hiddenEnforce_Coin[_hiddenLevel] > GameManager.Instance.Gold)
+        if (_hiddenLevel + 1 <= _hiddenEnforce_Coin.Count)
+        {
+            if (_hiddenEnforce_Coin[_hiddenLevel] > GameManager.Instance.Gold)
+                return false;
+        }
+        else
+        {
             return false;
-        
+        }
+
         GameManager.Instance.Gold -= (int)_hiddenEnforce_Coin[_hiddenLevel];
+        _hiddenLevel++;
 
-        if (_hiddenLevel + 1 < _hiddenEnforce_Coin.Count)
-            _hiddenLevel++;
-
-        _dmgUpHiddenCoinText.text = _hiddenEnforce_Coin[_hiddenLevel].ToString();
-
+        if(_hiddenLevel + 1 > _hiddenEnforce_Coin.Count)
+        {
+            _dmgUpHiddenCoinText.text = "MAX";
+        }
+        else
+        {
+            _dmgUpHiddenCoinText.text = _hiddenEnforce_Coin[_hiddenLevel].ToString();
+        }
 
         return true;
     }

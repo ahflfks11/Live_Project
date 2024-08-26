@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         _enemyGenerator = FindObjectOfType<EnermyGenerator>();
         ClickCount = 0;
         myArea = GameObject.Find("SpawnPoint").transform;
+        Time.timeScale = 1f;
 
         if (JsonParseManager.Instance.Tutorial)
         {

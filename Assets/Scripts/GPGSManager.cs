@@ -1020,6 +1020,9 @@ public class GPGSManager : MonoBehaviour
 
     public void Purchase_Game(string _type, int _cash, string _userName)
     {
+        if (GPGSManager.Instance.Level < 0)
+            return;
+
         Param _param = new Param();
         _param.Add("Type", _type);
         _param.Add("Cash", _cash);

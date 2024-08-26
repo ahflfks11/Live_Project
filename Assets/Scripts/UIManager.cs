@@ -102,12 +102,14 @@ public class UIManager : MonoBehaviour
 
         if (!_clear)
         {
-            GPGSManager.Instance.ClearStage(GameManager.Instance.Wave, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave), 100 * GameManager.Instance.Wave, _legendCount, _rareCount);
+            if (GPGSManager.Instance.Level >= 0)
+                GPGSManager.Instance.ClearStage(GameManager.Instance.Wave, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave), 100 * GameManager.Instance.Wave, _legendCount, _rareCount);
             _endGamePanel.SetUI(GameManager.Instance.Wave, _legendCount, _rareCount);
         }
         else
         {
-            GPGSManager.Instance.ClearStage(GameManager.Instance.Wave + 1, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave + 1), 100 * GameManager.Instance.Wave + 1, _legendCount, _rareCount);
+            if (GPGSManager.Instance.Level >= 0)
+                GPGSManager.Instance.ClearStage(GameManager.Instance.Wave + 1, GameManager.Instance.CalculateCrystals(GameManager.Instance.Wave + 1), 100 * GameManager.Instance.Wave + 1, _legendCount, _rareCount);
             _endGamePanel.SetUI(GameManager.Instance.Wave + 1, _legendCount, _rareCount);
         }
     }
