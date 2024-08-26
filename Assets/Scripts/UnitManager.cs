@@ -98,6 +98,10 @@ public class UnitManager : MonoBehaviour
 
     public void Retry()
     {
+        if (!GameManager.Instance.GameStart)
+            return;
+
+        GameManager.Instance.GameStart = false;
         Transitioner.Instance.TransitionToScene(3);
     }
 

@@ -13,6 +13,10 @@ public class EnermyControl : MonoBehaviour
     [SerializeField] bool _isLastBoss;
     [SerializeField] ItemManager.SetItem _itemData;
     public bool _isBoss;
+    MonsterStatus _status;
+
+    bool _isStatus;
+
     public Transform[] WayPoint { get => wayPoint; set => wayPoint = value; }
 
     [System.Serializable]
@@ -39,16 +43,28 @@ public class EnermyControl : MonoBehaviour
 
     private void Start()
     {
+        _status = GetComponentInChildren<MonsterStatus>();
         maxHP = _data.HP;
         _originSpeed = _data.speed;
         _nowSpeed = _data.speed;
     }
 
-    public void Slow(float _amount, float _duration)
+    public void Slow(float _amount, float _duration, bool _duplication)
     {
         StopAllCoroutines();
-        _nowSpeed *= _amount;
+
+        if (!_duplication)
+        {
+            _nowSpeed = _data.speed * _amount;
+        }
+        else
+        {
+            _nowSpeed *= _amount;
+        }
+
+        _status.SetStatus("이동 속도 감소", _amount);
         StartCoroutine(RemoveSkillAfterDelay(_duration, "Slow"));
+        _isStatus = true;
     }
 
     private IEnumerator RemoveSkillAfterDelay(float _duration, string _type)
@@ -60,6 +76,9 @@ public class EnermyControl : MonoBehaviour
                 _nowSpeed = _originSpeed;
                 break;
         }
+
+        _isStatus = false;
+        _status.ResetStatus();
     }
 
     private void Update()
@@ -78,8 +97,10 @@ public class EnermyControl : MonoBehaviour
 
             GameManager.Instance.Gold += _data.gainGold;
             EnermyCoinText _coin = Instantiate(GameManager.Instance.CoinText, transform.position, Quaternion.identity);
+
             _coin.SetCoin(_data.gainGold);
             GameManager.Instance.EnermyCount--;
+
             if (_isBoss)
             {
                 if (JsonParseManager.Instance.Tutorial)

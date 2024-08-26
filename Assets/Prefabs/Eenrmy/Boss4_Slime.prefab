@@ -304,7 +304,7 @@ MonoBehaviour:
   _hpText: {fileID: 9155379043028954341}
   _isLastBoss: 0
   _itemData:
-    _name: 
+    _name: "\uC804\uC124 \uC18C\uD658\uAD8C"
     _type: 1
     itemID: 3
     _itemCount: 2

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowAmount: 0.5
   duration: 2
+  _duplication: 1
