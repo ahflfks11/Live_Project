@@ -102,6 +102,33 @@ public class RankItem
     }
 }
 
+// 뒤끝의 기본 제공 차트를 이용하면 만든 아이템입니다.  
+// 업로드하신 차트의 컬럼명에 맞게 변수를 변경해주시기 바랍니다.  
+public class CouponItem
+{
+    public string uuid;
+    public string chartFileName;
+    public string itemID;
+    public string itemName;
+    public int num;
+    public int itemtype;
+    public int itemValues;
+    public int itemCount;
+    public string itemComment;
+    public override string ToString()
+    {
+        return $"itemID : {itemID}\n" +
+        $"itemName : {itemName}\n" +
+        $"num : {num}\n" +
+        $"itemtype : {itemtype}\n"+
+        $"itemValues : {itemValues}\n"+
+        $"itemCount : {itemCount}\n" +
+        $"itemComment : {itemComment}\n" +
+        $"chartFileName : {chartFileName}\n" +
+        $"uuid : {uuid}\n";
+    }
+}
+
 public class GPGSManager : MonoBehaviour
 {
     public GameData gameTable = new GameData();
@@ -307,6 +334,44 @@ public class GPGSManager : MonoBehaviour
                 $"| content : {content}\n"
             );
         };
+    }
+
+    //쿠폰
+    public void UseCoupons(string _code)
+    {
+        var bro = Backend.Coupon.UseCoupon(_code);
+
+        if (!bro.IsSuccess())
+        {
+            Debug.LogError(bro.ToString());
+            return;
+        }
+
+        List<CouponItem> couponItemList = new List<CouponItem>();
+
+        LitJson.JsonData json = bro.GetReturnValuetoJSON();
+
+        for (int i = 0; i < json["itemObject"].Count; i++)
+        {
+            CouponItem couponItem = new CouponItem();
+
+            couponItem.uuid = json["uuid"].ToString();
+            couponItem.itemCount = int.Parse(json["itemObject"][i]["itemCount"].ToString());
+            couponItem.itemID = json["itemObject"][i]["item"]["itemid"].ToString();
+            couponItem.itemName = json["itemObject"][i]["item"]["itemname"].ToString();
+            couponItem.num = int.Parse(json["itemObject"][i]["item"]["num"].ToString());
+            couponItem.itemtype = int.Parse(json["itemObject"][i]["item"]["itemtype"].ToString());
+            couponItem.itemValues = int.Parse(json["itemObject"][i]["item"]["itemValues"].ToString());
+            couponItem.itemComment = json["itemObject"][i]["item"]["itemComment"].ToString();
+            couponItem.chartFileName = json["itemObject"][i]["item"]["chartFileName"].ToString();
+
+            couponItemList.Add(couponItem);
+        }
+
+        foreach (var couponItem in couponItemList)
+        {
+            Debug.Log(couponItem.ToString());
+        }
     }
 
     public void GetNoticeList()

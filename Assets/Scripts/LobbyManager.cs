@@ -87,6 +87,11 @@ public class LobbyManager : MonoBehaviour
         _arrow.SetActive(true);
     }
 
+    public void LoadAd()
+    {
+        AdmobManager.Instance.ShowAd();
+    }
+
     public int SetupGachaList(int _GachaCount)
     {
         int _boxlevel = 0;
