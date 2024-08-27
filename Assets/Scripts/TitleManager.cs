@@ -63,7 +63,6 @@ public class TitleManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             GPGSManager.Instance.GuestLogin();
-            Debug.Log("계정 생성 완료");
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {

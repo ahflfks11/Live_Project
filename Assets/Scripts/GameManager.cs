@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     bool _gameStart;
     bool _gameStop;
 
+    bool _isAutoRevolution;
+
     [SerializeField] bool _isBoss = false;
 
     [SerializeField] private float gameSpeed = 0;
@@ -201,6 +203,22 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.PlayInGameBgm(true);
     }
 
+    public void AutoRevolution()
+    {
+        for (int i = 0; i < _unitObject.Length; i++)
+        {
+            _unitObject[i].Revolution();
+        }
+    }
+
+    public void SetRevolutionBtn()
+    {
+        if (!_isAutoRevolution)
+            _isAutoRevolution = true;
+        else
+            _isAutoRevolution = false;
+    }
+
     private void Update()
     {
         _unitObject = FindObjectsOfType<UnitData>();
@@ -260,5 +278,8 @@ public class GameManager : MonoBehaviour
                 UiManager.Wave(Wave);
             }
         }
+
+        if (_isAutoRevolution)
+            AutoRevolution();
     }
 }

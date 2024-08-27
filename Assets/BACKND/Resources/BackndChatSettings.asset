@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 427267732, guid: 395391a9cc9816f4b8a2b6d3f3a076f3, type: 3}
   m_Name: BackndChatSettings
   m_EditorClassIdentifier: 
-  chatUUID: 
-  version: 
+  chatUUID: 87bb498e-3513-4d00-8a15-5ac7f35da841
+  version: 1.2.1
   sendLogReport: 1
