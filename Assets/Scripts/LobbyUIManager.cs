@@ -106,14 +106,12 @@ public class LobbyUIManager : MonoBehaviour
 
     public void GachaShopPanel()
     {
-        if (_gachaShopUI)
-        {
-            _gachaShopUI.enabled =false;
-        }
-        else
-        {
-            _gachaShopUI.enabled =true;
-        }
+        _gachaShopUI.enabled = true;
+    }
+
+    public void GachaShopPanel_Close()
+    {
+        _gachaShopUI.enabled = false;
     }
 
     public void ChacterInvenPanel()

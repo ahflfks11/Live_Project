@@ -112,18 +112,20 @@ public class CouponItem
     public string itemName;
     public int num;
     public int itemtype;
-    public int itemValues;
+    public int Crystal;
+    public int Goid;
+    public int item;
+    public int special;
+    public string Title;
     public int itemCount;
-    public string itemComment;
     public override string ToString()
     {
         return $"itemID : {itemID}\n" +
         $"itemName : {itemName}\n" +
         $"num : {num}\n" +
         $"itemtype : {itemtype}\n"+
-        $"itemValues : {itemValues}\n"+
+        $"itemValues : {Crystal}\n"+
         $"itemCount : {itemCount}\n" +
-        $"itemComment : {itemComment}\n" +
         $"chartFileName : {chartFileName}\n" +
         $"uuid : {uuid}\n";
     }
@@ -343,7 +345,8 @@ public class GPGSManager : MonoBehaviour
 
         if (!bro.IsSuccess())
         {
-            Debug.LogError(bro.ToString());
+            Debug.Log(bro.ToString());
+            //Debug.LogError(bro.ToString());
             return false;
         }
 
@@ -361,15 +364,17 @@ public class GPGSManager : MonoBehaviour
             couponItem.itemName = json["itemObject"][i]["item"]["itemname"].ToString();
             couponItem.num = int.Parse(json["itemObject"][i]["item"]["num"].ToString());
             couponItem.itemtype = int.Parse(json["itemObject"][i]["item"]["itemtype"].ToString());
-            couponItem.itemValues = int.Parse(json["itemObject"][i]["item"]["itemValues"].ToString());
-            couponItem.itemComment = json["itemObject"][i]["item"]["itemComment"].ToString();
+            couponItem.Crystal = int.Parse(json["itemObject"][i]["item"]["Crystal"].ToString());
+            couponItem.Goid = int.Parse(json["itemObject"][i]["item"]["Gold"].ToString());
+            couponItem.item = int.Parse(json["itemObject"][i]["item"]["Item"].ToString());
+            couponItem.special = int.Parse(json["itemObject"][i]["item"]["Special"].ToString());
+            couponItem.Title = json["itemObject"][i]["item"]["Title"].ToString();
             couponItem.chartFileName = json["itemObject"][i]["item"]["chartFileName"].ToString();
 
-            switch (couponItem.itemtype)
+            
+            if (couponItem.Crystal != 0 || couponItem.Goid != 0)
             {
-                case 0:
-                    GaveCrystal(couponItem.itemValues, LobbyManager.Instance._lobbyUIManager._CashText);
-                    break;
+                GaveReward(couponItem.Crystal, couponItem.Goid, LobbyManager.Instance._lobbyUIManager._CashText, LobbyManager.Instance._lobbyUIManager._CoinText);
             }
 
             couponItemList.Add(couponItem);
@@ -925,8 +930,6 @@ public class GPGSManager : MonoBehaviour
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
 
-        bool _valueChange = false;
-
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
             string inDate = bro.FlattenRows()[0]["inDate"].ToString();
@@ -936,21 +939,26 @@ public class GPGSManager : MonoBehaviour
 
             //데이터 수정
             var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
-
-            if (_result.IsSuccess())
-            {
-                _valueChange = true;
-            }
+            _goldText.text = (int.Parse(_goldText.text) + _gold).ToString();
         }
+    }
 
-        if (_valueChange)
+    public void GaveReward(int _crystal, int _gold, TMPro.TMP_Text _crystalText, TMPro.TMP_Text _goldText)
+    {
+        var bro = Backend.PlayerData.GetMyData("UserInfo");
+
+        if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
-            var _data = Backend.PlayerData.GetMyData("UserInfo");
+            string inDate = bro.FlattenRows()[0]["inDate"].ToString();
 
-            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
-            {
-                _goldText.text = _data.FlattenRows()[0]["Gold"].ToString();
-            }
+            Param _updateParam = new Param();
+            _updateParam.AddCalculation("Cash", GameInfoOperator.addition, _crystal);
+            _updateParam.AddCalculation("Gold", GameInfoOperator.addition, _gold);
+
+            //데이터 수정
+            var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
+            _crystalText.text = (int.Parse(_crystalText.text) + _crystal).ToString();
+            _goldText.text = (int.Parse(_goldText.text) + _gold).ToString();
         }
     }
 
@@ -958,8 +966,6 @@ public class GPGSManager : MonoBehaviour
     public void GaveCrystal(int _Crystal, TMPro.TMP_Text _crystalText)
     {
         var bro = Backend.PlayerData.GetMyData("UserInfo");
-
-        bool _valueChange = false;
         
         if (bro.FlattenRows().Count > 0 && bro.IsSuccess())
         {
@@ -970,21 +976,7 @@ public class GPGSManager : MonoBehaviour
 
             //데이터 수정
             var _result = Backend.GameData.UpdateWithCalculationV2("UserInfo", inDate, Backend.UserInDate, _updateParam);
-
-            if (_result.IsSuccess())
-            {
-                _valueChange = true;
-            }
-        }
-
-        if (_valueChange)
-        {
-            var _data = Backend.PlayerData.GetMyData("UserInfo");
-
-            if (_data.FlattenRows().Count > 0 && _data.IsSuccess())
-            {
-                _crystalText.text = _data.FlattenRows()[0]["Cash"].ToString();
-            }
+            _crystalText.text = (int.Parse(_crystalText.text) + _Crystal).ToString();
         }
     }
 
