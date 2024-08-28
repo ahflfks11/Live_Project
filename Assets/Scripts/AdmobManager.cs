@@ -1,122 +1,81 @@
 using UnityEngine;
+using GoogleMobileAds;
 using GoogleMobileAds.Api;
-using UnityEngine.UI;
 using System;
 
 public class AdmobManager : MonoBehaviour
 {
-    private static AdmobManager instance;
-    private InterstitialAd _interstitialAd;
-    public string _adUnitId;
 
-    public static AdmobManager Instance { get => instance; set => instance = value; }
+#if UNITY_ANDROID
+    private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
+#elif UNITY_IPHONE
+  private string _adUnitId = "ca-app-pub-3940256099942544/1712485313";
+#else
+  private string _adUnitId = "unused";
+#endif
 
-    private void Awake()
+    private RewardedAd rewardedAd;
+    
+    // Start is called before the first frame update
+    void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
             // This callback is called once the MobileAds SDK is initialized.
         });
     }
 
-    public void Start()
+    private void Start()
     {
-        LoadInterstitialAd();
+        LoadRewardedAd();
     }
 
-    public void ShowAd()
+    /// <summary>
+    /// Loads the rewarded ad.
+    /// </summary>
+    public void LoadRewardedAd()
     {
-        if (_interstitialAd != null && _interstitialAd.CanShowAd())
+        if(rewardedAd != null)
         {
-            Debug.Log("Showing interstitial ad.");
-            _interstitialAd.Show();
-        }
-        else
-        {
-            LoadInterstitialAd(); //광고 재로드
-            Debug.LogError("Interstitial ad is not ready yet.");
-        }
-    }
-
-    private void RegisterEventHandlers(InterstitialAd interstitialAd)
-    {
-        // 광고 지급 관련 이벤트
-        interstitialAd.OnAdPaid += (AdValue adValue) =>
-        {
-            GPGSManager.Instance.GaveCrystal(100, LobbyManager.Instance._lobbyUIManager._CashText);
-            Debug.Log(String.Format("Interstitial ad paid {0} {1}.",
-                adValue.Value,
-                adValue.CurrencyCode));
-
-            Debug.Log(adValue.Value + ", " + adValue.CurrencyCode);
-        };
-        // 
-        interstitialAd.OnAdImpressionRecorded += () =>
-        {
-            Debug.Log("Interstitial ad recorded an impression.");
-        };
-        // 광고가 클릭되었을때 이벤트
-        interstitialAd.OnAdClicked += () =>
-        {
-            Debug.Log("Interstitial ad was clicked.");
-        };
-        // 전면 광고가 열렸을때 호출
-        interstitialAd.OnAdFullScreenContentOpened += () =>
-        {
-            Debug.Log("Interstitial ad full screen content opened.");
-        };
-        // 전면 광고가 닫혔을때 호출
-        interstitialAd.OnAdFullScreenContentClosed += () =>
-        {
-            Debug.Log("close Scene");
-        };
-        // 전면 광고가 열리지 못했을때 호출
-        interstitialAd.OnAdFullScreenContentFailed += (AdError error) =>
-        {
-            Debug.LogError("Interstitial ad failed to open full screen content " +
-                           "with error : " + error);
-        };
-    }
-
-    public void LoadInterstitialAd()
-    {
-        // 이전에 로드된 광고가 있는지 확인하고 있다면 제거하고 해제한다.
-        if (_interstitialAd != null)
-        {
-            _interstitialAd.Destroy();
-            _interstitialAd = null;
+            rewardedAd.Destroy();
+            rewardedAd = null;
         }
 
-        // 새로 광고를 로드하기위한 요청을 생성한다.
+        Debug.Log("Loading the rewarded ad");
+
         var adRequest = new AdRequest();
 
-        // 광고단위 ID _adUnitId와 adRequest 객체를 전달받아 광고를 로드한다.
-        InterstitialAd.Load(_adUnitId, adRequest,
-        (InterstitialAd ad, LoadAdError error) =>
+        RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+         {
+             if (error != null || ad == null)
+             {
+                 Debug.LogError("Reward ad  failed to load an ad " +
+                     "with error : " + error);
+
+                 return;
+             }
+
+             Debug.Log("Rewarded ad loaded with response : "
+                 + ad.GetResponseInfo());
+
+             rewardedAd = ad;
+         });
+    }
+
+    public void ShowRewardedAd()
+    {
+        const string rewardMsg =
+            "Rewarded ad rewarded the user. Type: {0}, amount: {1}.";
+
+        if (rewardedAd != null && rewardedAd.CanShowAd())
         {
-            if (error != null || ad == null)
+            rewardedAd.Show((Reward reward) =>
             {
-                Debug.LogError("interstitial ad failed to load an ad " +
-                                       "with error : " + error);
-                return;
-            }
+                // TODO: Reward the user.
+                Debug.Log(string.Format(rewardMsg, reward.Type, reward.Amount));
 
-            Debug.Log("Interstitial ad loaded with response : "
-                    + ad.GetResponseInfo());
-
-            _interstitialAd = ad;
-        // 성공한 경우 로드된 광고에 대한 이벤트 핸들러를 등록한다.
-        RegisterEventHandlers(_interstitialAd);
-        });
+                GPGSManager.Instance.GaveCrystal(100, LobbyManager.Instance._lobbyUIManager._CashText);
+            });
+        }
     }
 }
