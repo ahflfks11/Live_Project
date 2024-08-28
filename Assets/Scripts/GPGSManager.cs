@@ -365,6 +365,13 @@ public class GPGSManager : MonoBehaviour
             couponItem.itemComment = json["itemObject"][i]["item"]["itemComment"].ToString();
             couponItem.chartFileName = json["itemObject"][i]["item"]["chartFileName"].ToString();
 
+            switch (couponItem.itemtype)
+            {
+                case 0:
+                    GaveCrystal(couponItem.itemValues, LobbyManager.Instance._lobbyUIManager._CashText);
+                    break;
+            }
+
             couponItemList.Add(couponItem);
         }
 
