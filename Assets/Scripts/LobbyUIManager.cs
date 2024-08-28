@@ -24,6 +24,7 @@ public class LobbyUIManager : MonoBehaviour
     [SerializeField] private Transform _Inven_Contents;
     [SerializeField] private ErrorGame _errorPanel;
     [SerializeField] private RankingUI _rankingUI;
+    [SerializeField] private CouponUI _couponUI;
     Gacha_Cotents _multiGachaContent;
     Gacha_Cotents _singleGachaContent;
 
@@ -105,7 +106,7 @@ public class LobbyUIManager : MonoBehaviour
 
     public void GachaShopPanel()
     {
-        if (_gachaShopUI.enabled)
+        if (_gachaShopUI)
         {
             _gachaShopUI.enabled =false;
         }
@@ -131,6 +132,18 @@ public class LobbyUIManager : MonoBehaviour
             }
 
             _character_InvenPanel.enabled = true;
+        }
+    }
+
+    public void CouponPanel()
+    {
+        if (_couponUI.VisualManager.enabled)
+        {
+            _couponUI.VisualManager.enabled = false;
+        }
+        else
+        {
+            _couponUI.VisualManager.enabled = true;
         }
     }
 

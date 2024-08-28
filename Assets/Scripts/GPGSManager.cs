@@ -337,14 +337,14 @@ public class GPGSManager : MonoBehaviour
     }
 
     //ÄíÆù
-    public void UseCoupons(string _code)
+    public bool UseCoupons(string _code)
     {
         var bro = Backend.Coupon.UseCoupon(_code);
 
         if (!bro.IsSuccess())
         {
             Debug.LogError(bro.ToString());
-            return;
+            return false;
         }
 
         List<CouponItem> couponItemList = new List<CouponItem>();
@@ -379,6 +379,8 @@ public class GPGSManager : MonoBehaviour
         {
             Debug.Log(couponItem.ToString());
         }
+
+        return true;
     }
 
     public void GetNoticeList()
@@ -951,6 +953,7 @@ public class GPGSManager : MonoBehaviour
             }
         }
     }
+
 
     public void GaveCrystal(int _Crystal, TMPro.TMP_Text _crystalText)
     {

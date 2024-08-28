@@ -203,7 +203,7 @@ public class LobbyManager : MonoBehaviour
             _gpgsManager.WriteHeroInfo(_tempHeroList, _tempHeroLevel, _tempNowLevel);
 
         if (_duplicationCount > 0)
-            GaveGold(_duplicationCount * 300);
+            GaveGold_Default(_duplicationCount * 300);
 
 
         return _boxlevel;
@@ -250,9 +250,19 @@ public class LobbyManager : MonoBehaviour
         _gpgsManager.GaveGold(_gold, _lobbyUIManager._CoinText);
     }
 
+    public void GaveGold_Default(int _gold)
+    {
+        _gpgsManager.GaveGold(_gold, _lobbyUIManager._CoinText);
+    }
+
     public void GaveCrystal(int _crystal)
     {
         _gpgsManager.Purchase_Game("Crystal", _crystal, BackEnd.Backend.UserNickName);
+        _gpgsManager.GaveCrystal(_crystal, _lobbyUIManager._CashText);
+    }
+
+    public void GaveCrystal_Default(int _crystal)
+    {
         _gpgsManager.GaveCrystal(_crystal, _lobbyUIManager._CashText);
     }
 
