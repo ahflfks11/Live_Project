@@ -535,10 +535,17 @@ public class GPGSManager : MonoBehaviour
     {
         if (_nick != string.Empty)
         {
-            Backend.BMember.CreateNickname(_nick);
-            CreateUserData();
-            SetValue(FindObjectOfType<LobbyUIManager>()._CoinText, FindObjectOfType<LobbyUIManager>()._CashText);
-            return true;
+            var bro = Backend.BMember.CreateNickname(_nick);
+            if (bro.IsSuccess())
+            {
+                CreateUserData();
+                SetValue(FindObjectOfType<LobbyUIManager>()._CoinText, FindObjectOfType<LobbyUIManager>()._CashText);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {

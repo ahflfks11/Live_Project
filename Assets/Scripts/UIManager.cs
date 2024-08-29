@@ -26,8 +26,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _tutorialArrow;
     [SerializeField] private EndGameUI _endGamePanel;
 
+    [SerializeField] private Toggle _autoRevolutionToggle;
+
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
     public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
+    public Toggle AutoRevolutionToggle { get => _autoRevolutionToggle; set => _autoRevolutionToggle = value; }
 
     public void OpenPanel(UnitData _data)
     {
@@ -78,6 +81,11 @@ public class UIManager : MonoBehaviour
                 //_RevolutionPanel.SetActive(true);
             }
         }
+    }
+
+    public void SetAutoRevolutionToggle(bool _state)
+    {
+        AutoRevolutionToggle.isOn = _state;
     }
 
     public void EndGameUI(bool _clear)

@@ -14,6 +14,7 @@ public class LobbyUIManager : MonoBehaviour
     public TMP_Text _CashText;
     public GameObject _shopUI;
     public Transform _rankTransform;
+    public TMP_Text _cancel_Nickname;
     public Sprite[] _rankImg;
     public DOTweenVisualManager _multiGachaUIPanel;
     public DOTweenVisualManager _singleGachaUIPanel;
@@ -202,8 +203,11 @@ public class LobbyUIManager : MonoBehaviour
 
     public void NickDecision()
     {
-        if (_NickLabel.text == "")
+        if (_NickLabel.text == "" || string.IsNullOrWhiteSpace(_NickLabel.text))
+        {
+            _cancel_Nickname.text = "입력받지 않은 닉네임입니다.";
             return;
+        }
 
         if (_gpgsManager != null)
         {
@@ -211,6 +215,11 @@ public class LobbyUIManager : MonoBehaviour
             {
                 //_lobbyManager.CharacterAttack();
                 _name.text = _gpgsManager.TakeNick();
+            }
+            else
+            {
+                _cancel_Nickname.text = "중복된 닉네임이거나 공백이 포함되어 있습니다.";
+                return;
             }
         }
         if (JsonParseManager.Instance._txtNumber != 7)

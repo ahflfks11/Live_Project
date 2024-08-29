@@ -121,7 +121,6 @@ public class DialogueManager : MonoBehaviour
         {
             _dialogueBox.enabled = false;
             _signPanel.enabled = true;
-            Debug.Log("test");
             //gameObject.SetActive(false);
         }
     }

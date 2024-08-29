@@ -98,6 +98,23 @@ public class GameManager : MonoBehaviour
         myArea = GameObject.Find("SpawnPoint").transform;
         Time.timeScale = 1f;
 
+        if (PlayerPrefs.HasKey("AutoRevolution"))
+        {
+            if (PlayerPrefs.GetInt("AutoRevolution") == 0)
+            {
+                uiManager.SetAutoRevolutionToggle(false);
+            }
+            else
+            {
+                uiManager.SetAutoRevolutionToggle(true);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("AutoRevolution", 0);
+            PlayerPrefs.Save();
+        }
+
         if (JsonParseManager.Instance.Tutorial)
         {
             _gold = 3;
@@ -214,9 +231,15 @@ public class GameManager : MonoBehaviour
     public void SetRevolutionBtn()
     {
         if (!_isAutoRevolution)
-            _isAutoRevolution = true;
+        {
+            PlayerPrefs.SetInt("AutoRevolution", 1);
+            PlayerPrefs.Save();
+        }
         else
-            _isAutoRevolution = false;
+        {
+            PlayerPrefs.SetInt("AutoRevolution", 0);
+            PlayerPrefs.Save();
+        }
     }
 
     private void Update()
@@ -278,6 +301,8 @@ public class GameManager : MonoBehaviour
                 UiManager.Wave(Wave);
             }
         }
+
+        _isAutoRevolution = uiManager.AutoRevolutionToggle.isOn;
 
         if (_isAutoRevolution)
             AutoRevolution();
