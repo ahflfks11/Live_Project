@@ -14,7 +14,7 @@ public class AdmobManager : MonoBehaviour
   private string _adUnitId = "unused";
 #endif
 
-    private RewardedAd rewardedAd;
+    private RewardedInterstitialAd rewardedAd;
     
     // Start is called before the first frame update
     void Awake()
@@ -45,7 +45,7 @@ public class AdmobManager : MonoBehaviour
 
         var adRequest = new AdRequest();
 
-        RewardedAd.Load(_adUnitId, adRequest, (RewardedAd ad, LoadAdError error) =>
+        RewardedInterstitialAd.Load(_adUnitId, adRequest, (RewardedInterstitialAd ad, LoadAdError error) =>
          {
              if (error != null || ad == null)
              {
