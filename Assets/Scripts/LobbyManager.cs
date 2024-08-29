@@ -87,6 +87,11 @@ public class LobbyManager : MonoBehaviour
         _arrow.SetActive(true);
     }
 
+    public void OpenURL(string _link)
+    {
+        Application.OpenURL(_link);
+    }
+
     public int SetupGachaList(int _GachaCount)
     {
         int _boxlevel = 0;
