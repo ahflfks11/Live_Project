@@ -140,13 +140,13 @@ MonoBehaviour:
       0.8\uCD08\uAC04 30% \uC774\uC18D \uAC10\uC18C, \uC911\uCCA9 \uBD88\uAC00</color>)"
     attackCount: 15
     weight: 0.1
-    ingame_Weight: 0.01
+    ingame_Weight: 100
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 2
     speed: 6
     dmg: 5
-    rarelityLevel: 2
+    rarelityLevel: 0
     EvolutionAvailability: 0
     specialUnit: 1
   number: 0

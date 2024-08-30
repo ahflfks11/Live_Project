@@ -55,6 +55,9 @@ public class EnermyControl : MonoBehaviour
 
         if (!_duplication)
         {
+            if (_nowSpeed != _data.speed)
+                return;
+
             _nowSpeed = _data.speed * _amount;
         }
         else
