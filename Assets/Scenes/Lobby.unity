@@ -2910,7 +2910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2064075, y: 2609750}
+  m_AnchoredPosition: {x: -2158905, y: 2729650}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &239422312
@@ -2971,7 +2971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44817300, y: 79675200}
+  m_AnchoredPosition: {x: -44935020, y: 79884480}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &248474451
@@ -3034,6 +3034,7 @@ MonoBehaviour:
   _CashText: {fileID: 340893926}
   _shopUI: {fileID: 718898692}
   _rankTransform: {fileID: 2014359408}
+  _cancel_Nickname: {fileID: 0}
   _rankImg:
   - {fileID: 21300000, guid: d2c2fa4b48be9f449b5fd2168313bdb4, type: 3}
   - {fileID: 21300000, guid: bc3ee96b8bb22d0478aae4cb8eccda4e, type: 3}
@@ -5845,10 +5846,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 432800902}
-    - targetCorrespondingSourceObject: {fileID: 5152402959569814541, guid: 9ce4dd87c8ddf4247af6c3130f099c33,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 432800903}
   m_SourcePrefab: {fileID: 100100000, guid: 9ce4dd87c8ddf4247af6c3130f099c33, type: 3}
 --- !u!224 &432800899 stripped
 RectTransform:
@@ -5917,47 +5914,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432800901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &432800903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432800900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: crystal_buy_500
-  buttonType: 0
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseComplete:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1899173034}
-        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: GaveCrystal
-        m_Mode: 3
+      - m_Target: {fileID: 1024656785}
+        m_TargetAssemblyTypeName: Samples.Purchasing.Core.BuyingConsumables.BuyingConsumables,
+          Assembly-CSharp
+        m_MethodName: BuyDiamondSmall
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  onProductFetched:
-    m_PersistentCalls:
-      m_Calls: []
-  button: {fileID: 432800902}
 --- !u!1 &433895403
 GameObject:
   m_ObjectHideFlags: 0
@@ -11140,10 +11110,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 998320345}
-    - targetCorrespondingSourceObject: {fileID: 5152402959569814541, guid: 9ce4dd87c8ddf4247af6c3130f099c33,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 998320346}
   m_SourcePrefab: {fileID: 100100000, guid: 9ce4dd87c8ddf4247af6c3130f099c33, type: 3}
 --- !u!224 &998320342 stripped
 RectTransform:
@@ -11212,47 +11178,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 998320344}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &998320346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998320343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: gold_buy_50000
-  buttonType: 0
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseComplete:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1899173034}
-        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: GaveGold
-        m_Mode: 3
+      - m_Target: {fileID: 1024656785}
+        m_TargetAssemblyTypeName: Samples.Purchasing.Core.BuyingConsumables.BuyingConsumables,
+          Assembly-CSharp
+        m_MethodName: BuyGoldLarge
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 50000
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  onProductFetched:
-    m_PersistentCalls:
-      m_Calls: []
-  button: {fileID: 998320345}
 --- !u!1 &1006935336
 GameObject:
   m_ObjectHideFlags: 0
@@ -11467,6 +11406,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1024656784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1024656786}
+  - component: {fileID: 1024656785}
+  m_Layer: 0
+  m_Name: IAPManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1024656785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024656784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c255769320ae4417ea6e6112b8642521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1024656786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024656784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.018051, y: -0.10738619, z: -8.982068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025064291
 GameObject:
   m_ObjectHideFlags: 0
@@ -12117,10 +12100,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5152402959569814541, guid: 9ce4dd87c8ddf4247af6c3130f099c33,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1077688888}
-    - targetCorrespondingSourceObject: {fileID: 5152402959569814541, guid: 9ce4dd87c8ddf4247af6c3130f099c33,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1077688889}
   m_SourcePrefab: {fileID: 100100000, guid: 9ce4dd87c8ddf4247af6c3130f099c33, type: 3}
 --- !u!224 &1077688885 stripped
@@ -12147,46 +12126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1077688888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077688886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: gold_buy_5000
-  buttonType: 0
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1899173034}
-        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: GaveGold
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10000
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  onProductFetched:
-    m_PersistentCalls:
-      m_Calls: []
-  button: {fileID: 1077688889}
 --- !u!114 &1077688889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12230,7 +12169,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1077688887}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1024656785}
+        m_TargetAssemblyTypeName: Samples.Purchasing.Core.BuyingConsumables.BuyingConsumables,
+          Assembly-CSharp
+        m_MethodName: BuyGoldSmall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1078252634
 GameObject:
   m_ObjectHideFlags: 0
@@ -12673,7 +12625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 24247258}
+  m_AnchoredPosition: {x: 0, y: 24338818}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1132163028
@@ -17856,10 +17808,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5152402959569814541, guid: 9ce4dd87c8ddf4247af6c3130f099c33,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1475336719}
-    - targetCorrespondingSourceObject: {fileID: 5152402959569814541, guid: 9ce4dd87c8ddf4247af6c3130f099c33,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1475336720}
   m_SourcePrefab: {fileID: 100100000, guid: 9ce4dd87c8ddf4247af6c3130f099c33, type: 3}
 --- !u!224 &1475336716 stripped
@@ -17886,46 +17834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1475336719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475336717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b79b5624d944058bd39aad2b90fb275, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  productId: crystal_buy_1000
-  buttonType: 0
-  consumePurchase: 1
-  onTransactionsRestored:
-    m_PersistentCalls:
-      m_Calls: []
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1899173034}
-        m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: GaveCrystal
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1600
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-  onProductFetched:
-    m_PersistentCalls:
-      m_Calls: []
-  button: {fileID: 1475336720}
 --- !u!114 &1475336720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17969,7 +17877,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1475336718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1024656785}
+        m_TargetAssemblyTypeName: Samples.Purchasing.Core.BuyingConsumables.BuyingConsumables,
+          Assembly-CSharp
+        m_MethodName: BuyDiamondLarge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1491529943
 GameObject:
   m_ObjectHideFlags: 0
@@ -18917,7 +18838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44883180, y: 79792320}
+  m_AnchoredPosition: {x: -45000900, y: 80001600}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1651099030
@@ -22944,7 +22865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19062000, y: 26210250}
+  m_AnchoredPosition: {x: -19149200, y: 26330150}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2014359409
@@ -26093,3 +26014,4 @@ SceneRoots:
   - {fileID: 298447658}
   - {fileID: 1369262050}
   - {fileID: 1298328683}
+  - {fileID: 1024656786}

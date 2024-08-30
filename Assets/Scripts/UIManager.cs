@@ -27,10 +27,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private EndGameUI _endGamePanel;
 
     [SerializeField] private Toggle _autoRevolutionToggle;
+    [SerializeField] private Toggle _pauseToggle;
 
     public EnforceUI EnforceUI { get => _enforceUI; set => _enforceUI = value; }
     public DOTweenVisualManager SkipUIPanel { get => _skipUIPanel; set => _skipUIPanel = value; }
     public Toggle AutoRevolutionToggle { get => _autoRevolutionToggle; set => _autoRevolutionToggle = value; }
+    public Toggle PauseToggle { get => _pauseToggle; set => _pauseToggle = value; }
 
     public void OpenPanel(UnitData _data)
     {

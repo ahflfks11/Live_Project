@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     bool _gameStop;
 
     bool _isAutoRevolution;
+    float _timeScaleValue;
 
     [SerializeField] bool _isBoss = false;
 
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
     public bool GameStop { get => _gameStop; set => _gameStop = value; }
     public EnermyGenerator EnemyGenerator { get => _enemyGenerator; set => _enemyGenerator = value; }
     public int[] RarilitySpawnCount { get => _RarilitySpawnCount; set => _RarilitySpawnCount = value; }
+    public float TimeScaleValue { get => _timeScaleValue; set => _timeScaleValue = value; }
 
     public void GameInit()
     {
@@ -97,7 +99,7 @@ public class GameManager : MonoBehaviour
         ClickCount = 0;
         myArea = GameObject.Find("SpawnPoint").transform;
         Time.timeScale = 1f;
-
+        TimeScaleValue = Time.timeScale;
         if (PlayerPrefs.HasKey("AutoRevolution"))
         {
             if (PlayerPrefs.GetInt("AutoRevolution") == 0)
@@ -306,5 +308,14 @@ public class GameManager : MonoBehaviour
 
         if (_isAutoRevolution)
             AutoRevolution();
+
+        if (uiManager.PauseToggle.isOn)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = TimeScaleValue;
+        }
     }
 }

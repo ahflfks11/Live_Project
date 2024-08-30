@@ -102,7 +102,7 @@ public class UnitManager : MonoBehaviour
             return;
 
         GameManager.Instance.GameStart = false;
-        Transitioner.Instance.TransitionToScene(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 
     public void GetLoadSpawnRate()
@@ -619,6 +619,8 @@ public class UnitManager : MonoBehaviour
             GameManager.Instance.UiManager._SpeedImage.color = Color.white;
             Time.timeScale = 1f;
         }
+
+        GameManager.Instance.TimeScaleValue = Time.timeScale;
     }
 
     private void Update()
