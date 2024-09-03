@@ -14,6 +14,7 @@ public class EnermyGenerator : MonoBehaviour
     Coroutine _launcher;
 
     [SerializeField] private EnermyControl _tutorialBossPrefab;
+    [SerializeField] private EnermyControl[] _missionBossPrefab;
 
     bool _bossSpawn;
 
@@ -87,6 +88,14 @@ public class EnermyGenerator : MonoBehaviour
         GameObject _enermy = Instantiate(_tutorialBossPrefab.gameObject, wayPoint[0].position, Quaternion.identity);
         _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
         _enermy.gameObject.name = "Boss";
+        GameManager.Instance.EnermyCount++;
+    }
+
+    public void MissionBossSpawn(int _missionNumber)
+    {
+        GameObject _enermy = Instantiate(_missionBossPrefab[_missionNumber].gameObject, wayPoint[0].position, Quaternion.identity);
+        _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+        _enermy.gameObject.name = "MissionBoss" + _missionNumber;
         GameManager.Instance.EnermyCount++;
     }
 

@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _limitUIObject;
     [SerializeField] private DOTweenVisualManager _tutorialArrow;
     [SerializeField] private EndGameUI _endGamePanel;
+    [SerializeField] private MissionUI _missionPanel;
 
     [SerializeField] private Toggle _autoRevolutionToggle;
     [SerializeField] private Toggle _pauseToggle;
@@ -135,6 +136,14 @@ public class UIManager : MonoBehaviour
     public void LimitUI(bool _status)
     {
         _limitUIObject.enabled = _status;
+    }
+
+    public void MissionPanel()
+    {
+        if (JsonParseManager.Instance.Tutorial)
+            return;
+
+        _missionPanel.SetUI();
     }
 
     public void SetArrow(Transform _parents, Vector3 vec, string _objectName)
