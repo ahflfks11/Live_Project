@@ -15,7 +15,7 @@ public class EnermyControl : MonoBehaviour
     public bool _isBoss;
     MonsterStatus _status;
 
-    bool _isStatus;
+    public int _eliteNumber = -1;
 
     public Transform[] WayPoint { get => wayPoint; set => wayPoint = value; }
 
@@ -67,7 +67,6 @@ public class EnermyControl : MonoBehaviour
 
         _status.SetStatus("이동 속도 감소", _amount);
         StartCoroutine(RemoveSkillAfterDelay(_duration, "Slow"));
-        _isStatus = true;
     }
 
     private IEnumerator RemoveSkillAfterDelay(float _duration, string _type)
@@ -80,7 +79,6 @@ public class EnermyControl : MonoBehaviour
                 break;
         }
 
-        _isStatus = false;
         _status.ResetStatus();
     }
 
@@ -119,14 +117,19 @@ public class EnermyControl : MonoBehaviour
                     else
                     {
                         GameManager.Instance.UiManager.SkipUI();
+                        GameManager.Instance.BossCount++;
                     }
                 }
-
             }
 
             if (_itemData._type != ItemManager.ItemType.None)
             {
                 ItemManager.Instance.SpawnItem(_itemData.itemID, _itemData._type, _itemData._itemCount, _itemData._name, _itemData._itemColor);
+            }
+
+            if (_eliteNumber > -1)
+            {
+                GameManager.Instance.EliteSpawnState[_eliteNumber] = EliteSpawnType.소환해제;
             }
 
             Destroy(this.gameObject);

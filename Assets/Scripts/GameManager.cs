@@ -2,6 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 
+public enum EliteSpawnType
+{
+    소환가능,
+    소환중,
+    소환해제
+}
+
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance = null;
@@ -52,6 +59,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _spawnEffect;
 
+    private EliteSpawnType[] _eliteSpawnState;
+
     private void Awake()
     {
         instance = this;
@@ -90,6 +99,7 @@ public class GameManager : MonoBehaviour
     public EnermyGenerator EnemyGenerator { get => _enemyGenerator; set => _enemyGenerator = value; }
     public int[] RarilitySpawnCount { get => _RarilitySpawnCount; set => _RarilitySpawnCount = value; }
     public float TimeScaleValue { get => _timeScaleValue; set => _timeScaleValue = value; }
+    public EliteSpawnType[] EliteSpawnState { get => _eliteSpawnState; set => _eliteSpawnState = value; }
 
     public void GameInit()
     {
@@ -100,6 +110,7 @@ public class GameManager : MonoBehaviour
         myArea = GameObject.Find("SpawnPoint").transform;
         Time.timeScale = 1f;
         TimeScaleValue = Time.timeScale;
+
         if (PlayerPrefs.HasKey("AutoRevolution"))
         {
             if (PlayerPrefs.GetInt("AutoRevolution") == 0)
@@ -294,7 +305,7 @@ public class GameManager : MonoBehaviour
                     }
 
                     IsBoss = false;
-                    BossCount++;
+                    //BossCount++;
                 }
 
                 SetTime = LimitTimer;

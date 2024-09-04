@@ -465,8 +465,9 @@ MonoBehaviour:
     _itemCount: 1
     _itemColor: {r: 1, g: 0.15686275, b: 0.9019608, a: 1}
   _isBoss: 0
+  _eliteNumber: 0
   _data:
-    HP: 12000
+    HP: 8000
     defence: 0
     gainGold: 0
     speed: 3
