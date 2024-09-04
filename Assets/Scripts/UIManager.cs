@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _tutorialArrow;
     [SerializeField] private EndGameUI _endGamePanel;
     [SerializeField] private MissionUI _missionPanel;
+    [SerializeField] private RemoveUI _removePanel;
 
     [SerializeField] private Toggle _autoRevolutionToggle;
     [SerializeField] private Toggle _pauseToggle;
@@ -144,6 +145,11 @@ public class UIManager : MonoBehaviour
             return;
 
         _missionPanel.SetUI();
+    }
+
+    public void RemovePanel()
+    {
+        _removePanel.SetUI();
     }
 
     public void SetArrow(Transform _parents, Vector3 vec, string _objectName)

@@ -341,6 +341,20 @@ public class UnitData : MonoBehaviour
         }
     }
 
+    public void DestroyThisObject()
+    {
+        for (int i = UnitManager._spawnList.Count - 1; i >= 0; i--)
+        {
+            if (UnitManager._spawnList[i] == this.gameObject)
+            {
+                UnitManager._spawnList.Remove(this.gameObject);
+                break;
+            }
+        }
+
+        Destroy(this.gameObject);
+    }
+
     public void Revolution()
     {
         if (!_data.EvolutionAvailability)
