@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _statusText: {fileID: 8258799258244150379}
-  _defenceIcon: {fileID: 5608332305867189399}
+  _defenceIcon: {fileID: 5608332305867189400}
   _defenceText: {fileID: 9139210181202611200}
 --- !u!1 &5373217590267544249
 GameObject:

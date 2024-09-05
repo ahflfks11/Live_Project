@@ -8,8 +8,10 @@ public class RemoveUI : MonoBehaviour
 
     public Toggle _commonToggle;
     public Toggle _unCommonToggle;
+    public Toggle _rareToggle;
     int _commonGold = 3;
     int _unCommonGold = 9;
+    int _rareGold = 27;
     AudioSource _myAudio;
     [SerializeField] Text _goldText;
     void Start()
@@ -30,7 +32,7 @@ public class RemoveUI : MonoBehaviour
     {
         int Gold = 0;
 
-        if (!_commonToggle.isOn && !_unCommonToggle.isOn)
+        if (!_commonToggle.isOn && !_unCommonToggle.isOn && !_rareToggle.isOn)
             return;
 
         for (int i = GameManager.Instance._unitObject.Length - 1; i >= 0; i--)
@@ -49,6 +51,15 @@ public class RemoveUI : MonoBehaviour
                 if (GameManager.Instance._unitObject[i]._data.rarelityLevel == 1 && !GameManager.Instance._unitObject[i]._data.specialUnit)
                 {
                     Gold += _unCommonGold;
+                    GameManager.Instance._unitObject[i].DestroyThisObject();
+                }
+            }
+
+            if (_rareToggle.isOn)
+            {
+                if (GameManager.Instance._unitObject[i]._data.rarelityLevel == 2 && !GameManager.Instance._unitObject[i]._data.specialUnit)
+                {
+                    Gold += _rareGold;
                     GameManager.Instance._unitObject[i].DestroyThisObject();
                 }
             }
@@ -81,6 +92,14 @@ public class RemoveUI : MonoBehaviour
                 if (GameManager.Instance._unitObject[i]._data.rarelityLevel == 1 && !GameManager.Instance._unitObject[i]._data.specialUnit)
                 {
                     Gold += _unCommonGold;
+                }
+            }
+
+            if (_rareToggle.isOn)
+            {
+                if (GameManager.Instance._unitObject[i]._data.rarelityLevel == 2 && !GameManager.Instance._unitObject[i]._data.specialUnit)
+                {
+                    Gold += _rareGold;
                 }
             }
         }
