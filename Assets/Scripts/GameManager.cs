@@ -4,6 +4,7 @@ using DG.Tweening;
 
 public enum EliteSpawnType
 {
+    소환불가,
     소환가능,
     소환중,
     소환해제

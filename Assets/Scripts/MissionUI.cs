@@ -17,6 +17,10 @@ public class MissionUI : MonoBehaviour
 
     [SerializeField] private int[] _spawnCool;
 
+    [SerializeField] private Text[] _remainCoolTimeText;
+
+    float[] _remainCoolTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,15 @@ public class MissionUI : MonoBehaviour
 
         for (int i = 0; i < GameManager.Instance.EliteSpawnState.Length; i++)
         {
-            GameManager.Instance.EliteSpawnState[i] = EliteSpawnType.소환가능;
+            GameManager.Instance.EliteSpawnState[i] = EliteSpawnType.소환불가;
+        }
+
+        _remainCoolTime = new float[_spawnCool.Length];
+
+        for (int i = 0; i < _remainCoolTime.Length; i++)
+        {
+            _remainCoolTime[i] = _spawnCool[i];
+            _remainCoolTimeText[i].text = "";
         }
     }
 
@@ -59,6 +71,7 @@ public class MissionUI : MonoBehaviour
                     if (_Lock[i].activeSelf)
                     {
                         _Lock[i].SetActive(false);
+                        GameManager.Instance.EliteSpawnState[i] = EliteSpawnType.소환가능;
                     }
                 }
             }
@@ -69,6 +82,7 @@ public class MissionUI : MonoBehaviour
                     if (_Lock[i].activeSelf)
                     {
                         _Lock[i].SetActive(false);
+                        GameManager.Instance.EliteSpawnState[i] = EliteSpawnType.소환가능;
                     }
                 }
             }
@@ -79,13 +93,18 @@ public class MissionUI : MonoBehaviour
             if (GameManager.Instance.EliteSpawnState[i] == EliteSpawnType.소환중)
             {
                 _coolTimeImages[i].fillAmount = 1;
+                _remainCoolTime[i] = _spawnCool[i];
+                _remainCoolTimeText[i].text = "소환중";
             }
             else if (GameManager.Instance.EliteSpawnState[i] == EliteSpawnType.소환해제)
             {
-                _coolTimeImages[i].fillAmount -= 1 * Time.smoothDeltaTime / _spawnCool[i];
+                _remainCoolTime[i] -= Time.unscaledDeltaTime;
+                _coolTimeImages[i].fillAmount = _remainCoolTime[i] / _spawnCool[i];
+                _remainCoolTimeText[i].text = Mathf.Ceil(_remainCoolTime[i]).ToString() + "s";
 
                 if (_coolTimeImages[i].fillAmount == 0)
                 {
+                    _remainCoolTimeText[i].text = "";
                     GameManager.Instance.EliteSpawnState[i] = EliteSpawnType.소환가능;
                 }
             }
