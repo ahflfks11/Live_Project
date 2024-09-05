@@ -34,6 +34,7 @@ public class UnitData : MonoBehaviour
         public string _unit_name;
         public string _comment;
         public int attackCount;
+        public int weakDefence; //방어력 감소
         public double weight;
         public double ingame_Weight;
         public float attackDelay;
@@ -206,12 +207,12 @@ public class UnitData : MonoBehaviour
         {
             if (targetEnermy != null && !onselect && _Weapon != null)
             {
-                targetEnermy.GetComponent<EnermyControl>().MobHit(_dmg);
+                float _mobHitDmg = targetEnermy.GetComponent<EnermyControl>().MobHit(_dmg, _data.weakDefence);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
                 DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
                 if (skill != null)
                     UseSkill(targetEnermy.GetComponent<EnermyControl>());
-                _dmgFont.SetText(_dmg, targetEnermy.transform, _data._type);
+                _dmgFont.SetText(_mobHitDmg, targetEnermy.transform, _data._type);
                 Destroy(_effect, 1f);
             }
         }
@@ -225,10 +226,10 @@ public class UnitData : MonoBehaviour
                     {
                         try
                         {
-                            enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
+                            float _mobHitDmg = enermys[i].GetComponent<EnermyControl>().MobHit(_dmg , _data.weakDefence);
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                             DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                            _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
+                            _dmgFont.SetText(_mobHitDmg, enermys[i].transform, _data._type);
                             if (skill != null)
                                 UseSkill(enermys[i].GetComponent<EnermyControl>());
                             Destroy(_effect, 1f);
@@ -245,10 +246,10 @@ public class UnitData : MonoBehaviour
                     {
                         try
                         {
-                            enermys[i].GetComponent<EnermyControl>().MobHit(_dmg);
+                            float _mobHitDmg = enermys[i].GetComponent<EnermyControl>().MobHit(_dmg, _data.weakDefence);
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
                             DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
-                            _dmgFont.SetText(_dmg, enermys[i].transform, _data._type);
+                            _dmgFont.SetText(_mobHitDmg, enermys[i].transform, _data._type);
                             if (skill != null)
                                 UseSkill(enermys[i].GetComponent<EnermyControl>());
                             Destroy(_effect, 1f);
@@ -269,7 +270,7 @@ public class UnitData : MonoBehaviour
     {
         if (targetEnermy != null && !onselect)
         {
-            targetEnermy.GetComponent<EnermyControl>().MobHit(_takeDmg);
+            float _mobHitDmg = targetEnermy.GetComponent<EnermyControl>().MobHit(_takeDmg, _data.weakDefence);
         }
     }
 
@@ -407,6 +408,8 @@ public class UnitData : MonoBehaviour
                     UnitManager.RevolutionSpawn(i, transform.position, false);
                 }
             }
+
+            GameManager.Instance.SetSfx(1);
             Destroy(this.gameObject);
         }
     }

@@ -149,6 +149,9 @@ public class UIManager : MonoBehaviour
 
     public void RemovePanel()
     {
+        if (JsonParseManager.Instance.Tutorial)
+            return;
+
         _removePanel.SetUI();
     }
 

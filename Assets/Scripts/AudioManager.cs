@@ -19,6 +19,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("#SFX")]
     public AudioClip[] sfxClips;
+    public AudioClip[] _uiSfx;
     public float sfxVolume;
     public int channels;
     AudioSource[] sfxPlayers;
@@ -114,6 +115,11 @@ public class AudioManager : MonoBehaviour
         }
 
         sfxVolume = _volume;
+    }
+
+    public AudioClip SetClip(int _ClipNumber)
+    {
+        return _uiSfx[_ClipNumber];
     }
 
     public void SetBackGroundVolume(float _volume)

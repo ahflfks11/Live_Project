@@ -36,9 +36,18 @@ public class EnermyControl : MonoBehaviour
 
     float _nowSpeed;
 
-    public void MobHit(float _dmg)
+    public float MobHit(float _dmg, float _weakDefence)
     {
-        _data.HP -= _dmg;
+        float _tempDefence = _data.defence - _weakDefence;
+        float _tempDmg = _dmg - _tempDefence;
+
+        if (_dmg <= _tempDefence) {
+            _tempDmg = 1;
+        }
+
+        _data.HP -= _tempDmg;
+
+        return _tempDmg;
     }
 
     private void Start()

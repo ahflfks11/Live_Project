@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     bool _isAutoRevolution;
     float _timeScaleValue;
+    AudioSource _sfxAudio;
 
     [SerializeField] bool _isBoss = false;
 
@@ -110,7 +111,7 @@ public class GameManager : MonoBehaviour
         myArea = GameObject.Find("SpawnPoint").transform;
         Time.timeScale = 1f;
         TimeScaleValue = Time.timeScale;
-
+        _sfxAudio = GetComponent<AudioSource>();
         if (PlayerPrefs.HasKey("AutoRevolution"))
         {
             if (PlayerPrefs.GetInt("AutoRevolution") == 0)
@@ -214,6 +215,12 @@ public class GameManager : MonoBehaviour
     public void Warning()
     {
         GameObject _bossWarningObject = Instantiate(_warningBoss, _warningBoss.transform.position, Quaternion.identity);
+    }
+
+    public void SetSfx(int _sfxNumber)
+    {
+        _sfxAudio.clip = AudioManager.instance.SetClip(_sfxNumber);
+        _sfxAudio.Play();
     }
 
     public void CoinDrop(Vector3 _pos, int _coin)

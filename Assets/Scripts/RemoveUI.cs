@@ -10,11 +10,12 @@ public class RemoveUI : MonoBehaviour
     public Toggle _unCommonToggle;
     int _commonGold = 3;
     int _unCommonGold = 9;
-
+    AudioSource _myAudio;
     [SerializeField] Text _goldText;
     void Start()
     {
         _visualManager = GetComponent<DOTweenVisualManager>();
+        _myAudio = GetComponent<AudioSource>();
     }
 
     public void SetUI()
@@ -54,6 +55,8 @@ public class RemoveUI : MonoBehaviour
         }
 
         GameManager.Instance.Gold += Gold;
+        _myAudio.clip = AudioManager.instance.SetClip(0);
+        _myAudio.Play();
     }
 
     private void Update()
