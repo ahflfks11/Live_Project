@@ -5,7 +5,7 @@ public class MonsterStatus : MonoBehaviour
 {
     //상태 이상 정보
     [SerializeField] private Text _statusText;
-    [SerializeField] private Image _defenceIcon;
+    [SerializeField] private GameObject _defenceIcon;
     [SerializeField] private Text _defenceText;
 
     public void SetStatus(string _status, float _statusSpeed)
@@ -16,8 +16,8 @@ public class MonsterStatus : MonoBehaviour
 
     public void DefenceStatus(float _defence)
     {
-        if (!_defenceIcon.enabled)
-            _defenceIcon.enabled = true;
+        if (!_defenceIcon.activeSelf)
+            _defenceIcon.SetActive(true);
 
         _defenceText.text = _defence.ToString();
     }
