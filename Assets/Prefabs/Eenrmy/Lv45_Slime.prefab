@@ -235,10 +235,11 @@ MonoBehaviour:
     _itemCount: 0
     _itemColor: {r: 0, g: 0, b: 0, a: 0}
   _isBoss: 0
+  _eliteNumber: -1
   _data:
     HP: 23000
     defence: 0
-    gainGold: 2
+    gainGold: 3
     speed: 14
 --- !u!61 &5070085549920223025
 BoxCollider2D:

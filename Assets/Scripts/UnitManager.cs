@@ -22,6 +22,8 @@ public class UnitManager : MonoBehaviour
     private float legendEnforceDmg = 0;
     private float hiddenEnforceDmg = 0;
 
+    private float _globalWeakDefence = 0;
+
     private int _tutorialspecialSpawnCount = 0;
     private int _hiddenCharacterCount = 0;
 
@@ -47,6 +49,7 @@ public class UnitManager : MonoBehaviour
     public float LegendEnforceDmg { get => legendEnforceDmg; set => legendEnforceDmg = value; }
     public float HiddenEnforceDmg { get => hiddenEnforceDmg; set => hiddenEnforceDmg = value; }
     public int HiddenCharacterCount { get => _hiddenCharacterCount; set => _hiddenCharacterCount = value; }
+    public float GlobalWeakDefence { get => _globalWeakDefence; set => _globalWeakDefence = value; }
 
     public bool CheckSpawn(GameObject[] _data)
     {

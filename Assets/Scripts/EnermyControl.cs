@@ -53,6 +53,10 @@ public class EnermyControl : MonoBehaviour
     private void Start()
     {
         _status = GetComponentInChildren<MonsterStatus>();
+        if (_data.defence != 0)
+        {
+            _status.DefenceStatus(_data.defence - GameManager.Instance.UnitManager.GlobalWeakDefence);
+        }
         maxHP = _data.HP;
         _originSpeed = _data.speed;
         _nowSpeed = _data.speed;
