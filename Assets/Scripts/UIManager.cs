@@ -239,9 +239,18 @@ public class UIManager : MonoBehaviour
 
     public void Wave(float _level)
     {
-        GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
-        text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("WAVE" + _level);
-        waveText.text = "WAVE" + _level;
+        if (_level == -1)
+        {
+            GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
+            text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("WAVE" + _level);
+            waveText.text = "Rest Time";
+        }
+        else
+        {
+            GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
+            text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("WAVE" + _level);
+            waveText.text = "WAVE" + _level;
+        }
     }
 
     public void BossWave()

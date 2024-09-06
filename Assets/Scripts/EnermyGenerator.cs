@@ -18,38 +18,44 @@ public class EnermyGenerator : MonoBehaviour
 
     bool _bossSpawn;
 
-
     public IEnumerator GeneratorLauncher()
     {
         while (true)
         {
-            if (!GameManager.Instance.IsBoss)
+            if (GameManager.Instance.RestTimeState)
             {
-                if (stageLimitNumber <= tempStageLimitNumber)
-                {
-                    yield return null;
-                }
-                else
-                {
-                    GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
-                    _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
-                    tempStageLimitNumber++;
-                    GameManager.Instance.EnermyCount++;
-                    yield return new WaitForSeconds(createTime - GameManager.Instance.GameSpeed);
-                }
+                yield return null;
             }
             else
             {
-                if (!_bossSpawn)
+                if (!GameManager.Instance.IsBoss)
                 {
-                    GameObject _enermy = Instantiate(_bossList[GameManager.Instance.BossCount].gameObject, wayPoint[0].position, Quaternion.identity);
-                    _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
-                    GameManager.Instance.EnermyCount++;
-                    _enermy.gameObject.name = "Boss";
-                    _bossSpawn = true;
+                    if (stageLimitNumber <= tempStageLimitNumber)
+                    {
+                        yield return null;
+                    }
+                    else
+                    {
+                        GameObject _enermy = Instantiate(_enermyList[wave - 1].gameObject, wayPoint[0].position, Quaternion.identity);
+                        _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+                        tempStageLimitNumber++;
+                        GameManager.Instance.EnermyCount++;
+                        yield return new WaitForSeconds(createTime - GameManager.Instance.GameSpeed);
+                    }
                 }
+                else
+                {
+                    if (!_bossSpawn)
+                    {
+                        GameObject _enermy = Instantiate(_bossList[GameManager.Instance.BossCount].gameObject, wayPoint[0].position, Quaternion.identity);
+                        _enermy.GetComponent<EnermyControl>().WayPoint = wayPoint;
+                        GameManager.Instance.EnermyCount++;
+                        _enermy.gameObject.name = "Boss";
+                        _bossSpawn = true;
+                    }
 
-                yield return null;
+                    yield return null;
+                }
             }
         }
     }

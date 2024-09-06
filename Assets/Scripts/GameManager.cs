@@ -45,6 +45,12 @@ public class GameManager : MonoBehaviour
     bool _gameStop;
 
     bool _isAutoRevolution;
+
+    bool _restTimeState;
+    bool _tempRestTimeState;
+
+    float _restTime = 60;
+
     float _timeScaleValue;
     AudioSource _sfxAudio;
 
@@ -104,6 +110,7 @@ public class GameManager : MonoBehaviour
     public float TimeScaleValue { get => _timeScaleValue; set => _timeScaleValue = value; }
     public EliteSpawnType[] EliteSpawnState { get => _eliteSpawnState; set => _eliteSpawnState = value; }
     public int LegendCount { get => _legendCount; set => _legendCount = value; }
+    public bool RestTimeState { get => _restTimeState; set => _restTimeState = value; }
 
     public void GameInit()
     {
@@ -278,6 +285,13 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        if (_tempRestTimeState != RestTimeState)
+        {
+            SetTime = _restTime;
+            RestTimeState = _tempRestTimeState;
+            return;
+        }
+
         SetTime -= Time.deltaTime;
 
         if (SetTime >= 60f)
@@ -294,6 +308,20 @@ public class GameManager : MonoBehaviour
 
         if (SetTime <= 0f)
         {
+            if (_restTimeState)
+            {
+                _restTimeState = false;
+            }
+            else
+            {
+                if (Wave + 1 == 65)
+                {
+                    _tempRestTimeState = true;
+                    UiManager.Wave(-1);
+                    return;
+                }
+            }
+
             if ((_wave + 1) % 10 == 0 && !IsBoss)
             {
                 IsBoss = true;
@@ -337,6 +365,14 @@ public class GameManager : MonoBehaviour
         else
         {
             Time.timeScale = TimeScaleValue;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (!_tempRestTimeState)
+                _tempRestTimeState = true;
+            else
+                _tempRestTimeState = false;
         }
     }
 }
