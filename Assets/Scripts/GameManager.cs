@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private int _requireGold;
     int clickCount;
     [SerializeField] private float _limitTimer = 40f;
+    private int _legendCount;
     //소환 스크롤
     [SerializeField] private int[] _RarilitySpawnCount = { 0, 0, 0, 0 };
     private float _bossTimer = 90f;
@@ -102,6 +103,7 @@ public class GameManager : MonoBehaviour
     public int[] RarilitySpawnCount { get => _RarilitySpawnCount; set => _RarilitySpawnCount = value; }
     public float TimeScaleValue { get => _timeScaleValue; set => _timeScaleValue = value; }
     public EliteSpawnType[] EliteSpawnState { get => _eliteSpawnState; set => _eliteSpawnState = value; }
+    public int LegendCount { get => _legendCount; set => _legendCount = value; }
 
     public void GameInit()
     {

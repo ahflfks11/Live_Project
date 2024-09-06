@@ -137,6 +137,11 @@ public class UnitData : MonoBehaviour
         if (skill != null)
             SetSkill(skill);
         FindClosestEnemy();
+
+        if(_data.rarelityLevel == 3)
+        {
+            GameManager.Instance.LegendCount++;
+        }
     }
 
     void FindClosestEnemy()

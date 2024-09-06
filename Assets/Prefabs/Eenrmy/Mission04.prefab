@@ -212,7 +212,7 @@ MonoBehaviour:
     HP: 64000
     defence: 0
     gainGold: 60
-    speed: 6
+    speed: 10
 --- !u!61 &91710993144952611
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -727,8 +727,9 @@ MonoBehaviour:
       (<color=#ffcf28>\uD328\uC2DC\uBE0C \uD6A8\uACFC : \uD0C0\uACA9 \uB300\uC0C1
       5\uCD08\uAC04 50% \uC774\uC18D \uAC10\uC18C, \uC911\uCCA9 \uAC00\uB2A5</color>)"
     attackCount: 5
+    weakDefence: 0
     weight: 0.1
-    ingame_Weight: 0.01
+    ingame_Weight: 0.001
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 2

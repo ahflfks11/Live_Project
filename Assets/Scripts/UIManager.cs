@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Image _SpeedImage;
     public Text _spawnRateText;
     public Text _hiddenPossibleText;
+    public Text _legendCountText;
 
     public GameObject _RevolutionImageObject;
     [SerializeField] private DOTweenVisualManager _EnforceShopPanel;
@@ -250,20 +251,14 @@ public class UIManager : MonoBehaviour
         waveText.text = "Boss Wave";
     }
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Wave(GameManager.Instance.Wave);
-    }
-
     // Update is called once per frame
     void Update()
     {
         _goldText.text = string.Format("{0:#,0}", GameManager.Instance.Gold);
         _monsterText.text = GameManager.Instance.EnermyCount.ToString();
         _requireText.text = GameManager.Instance.RequireGold + " G";
+
+        _legendCountText.text = GameManager.Instance.LegendCount.ToString();
 
         if (GameManager.Instance.Sectime >= 10f)
         {

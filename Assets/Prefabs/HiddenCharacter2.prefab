@@ -135,8 +135,9 @@ MonoBehaviour:
     _unit_name: "[\uD788\uB4E0] \uCD08\uB300\uBC1B\uC9C0 \uC54A\uC740 \uC790"
     _comment: ...
     attackCount: 1
+    weakDefence: 0
     weight: 0.1
-    ingame_Weight: 0.01
+    ingame_Weight: 0.001
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 2
