@@ -202,14 +202,14 @@ MonoBehaviour:
   _isLastBoss: 0
   _itemData:
     _name: "\uC804\uC124 \uC18C\uD658\uAD8C"
-    _type: 0
+    _type: 1
     itemID: 3
-    _itemCount: 2
+    _itemCount: 1
     _itemColor: {r: 1, g: 0, b: 0.38039216, a: 1}
   _isBoss: 0
   _eliteNumber: 3
   _data:
-    HP: 36000
+    HP: 64000
     defence: 0
     gainGold: 60
     speed: 6

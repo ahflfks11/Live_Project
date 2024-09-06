@@ -18,13 +18,13 @@ public class DamageFonts : MonoBehaviour
             _dmgText.font = _textList[1];
 
         _dmgText.text = _dmg.ToString();
-        transform.DOMove(new Vector3(_pos.position.x + 0.5f, _pos.position.y + 0.5f, 0f), 1f);
+        transform.DOMove(new Vector3(_pos.position.x + 0.5f, _pos.position.y + 0.5f, 0f), 0.5f);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 2f);
+        Destroy(this.gameObject, 1f);
     }
 
     // Update is called once per frame
