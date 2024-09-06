@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Lean.Pool;
 
 public class UnitManager : MonoBehaviour
 {
@@ -120,6 +121,12 @@ public class UnitManager : MonoBehaviour
             GameManager.Instance.UiManager._spawnRateText.text = "특수 소환표";
             _spawnRateState = true;
         }
+    }
+
+    public DamageFonts AddDamageFont(Transform Mob)
+    {
+        DamageFonts dmgFont = LeanPool.Spawn<DamageFonts>(_dmgFont, Mob.position, Quaternion.identity, null);
+        return dmgFont;
     }
 
     public void Enforce_Normal()

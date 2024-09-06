@@ -209,7 +209,8 @@ public class UnitData : MonoBehaviour
             {
                 float _mobHitDmg = targetEnermy.GetComponent<EnermyControl>().MobHit(_dmg, _data.weakDefence);
                 GameObject _effect = Instantiate(_Weapon, targetEnermy.transform.position, Quaternion.identity);
-                DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
+                //DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, targetEnermy.transform.position, Quaternion.identity);
+                DamageFonts _dmgFont = GameManager.Instance.UnitManager.AddDamageFont(targetEnermy.transform);
                 if (skill != null)
                     UseSkill(targetEnermy.GetComponent<EnermyControl>());
                 _dmgFont.SetText(_mobHitDmg, targetEnermy.transform, _data._type);
@@ -228,7 +229,8 @@ public class UnitData : MonoBehaviour
                         {
                             float _mobHitDmg = enermys[i].GetComponent<EnermyControl>().MobHit(_dmg , _data.weakDefence);
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
-                            DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                            //DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                            DamageFonts _dmgFont = GameManager.Instance.UnitManager.AddDamageFont(enermys[i].transform);
                             _dmgFont.SetText(_mobHitDmg, enermys[i].transform, _data._type);
                             if (skill != null)
                                 UseSkill(enermys[i].GetComponent<EnermyControl>());
@@ -248,7 +250,8 @@ public class UnitData : MonoBehaviour
                         {
                             float _mobHitDmg = enermys[i].GetComponent<EnermyControl>().MobHit(_dmg, _data.weakDefence);
                             GameObject _effect = Instantiate(_Weapon, enermys[i].transform.position, Quaternion.identity);
-                            DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                            //DamageFonts _dmgFont = Instantiate(_unitManager.DmgFont, enermys[i].transform.position, Quaternion.identity);
+                            DamageFonts _dmgFont = GameManager.Instance.UnitManager.AddDamageFont(enermys[i].transform);
                             _dmgFont.SetText(_mobHitDmg, enermys[i].transform, _data._type);
                             if (skill != null)
                                 UseSkill(enermys[i].GetComponent<EnermyControl>());
