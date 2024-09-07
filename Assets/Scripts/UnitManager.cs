@@ -113,7 +113,6 @@ public class UnitManager : MonoBehaviour
     public void Develop_ControlWave()
     {
         string _waveValue = transform.GetComponent<TMPro.TMP_InputField>().text;
-        Debug.Log(_waveValue);
     }
 
     public void Retry()

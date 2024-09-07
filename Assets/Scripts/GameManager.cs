@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int _wave = 1;
     [SerializeField] private int _enermyCount = 0;
-    [SerializeField] private int _bossCount = 0;
+    [SerializeField] private int _bossCount = -1;
+    private int _killBoss = 0;
 
     public UnitData[] _unitObject;
     public GameObject[] _specialUIEffect; //히든 출현 or 전설 출현 이펙트
@@ -111,6 +112,8 @@ public class GameManager : MonoBehaviour
     public EliteSpawnType[] EliteSpawnState { get => _eliteSpawnState; set => _eliteSpawnState = value; }
     public int LegendCount { get => _legendCount; set => _legendCount = value; }
     public bool RestTimeState { get => _restTimeState; set => _restTimeState = value; }
+    public int KillBoss { get => _killBoss; set => _killBoss = value; }
+    public bool TempRestTimeState { get => _tempRestTimeState; set => _tempRestTimeState = value; }
 
     public void GameInit()
     {
@@ -285,10 +288,10 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (_tempRestTimeState != RestTimeState)
+        if (TempRestTimeState != RestTimeState)
         {
             SetTime = _restTime;
-            RestTimeState = _tempRestTimeState;
+            RestTimeState = TempRestTimeState;
             return;
         }
 
@@ -310,14 +313,16 @@ public class GameManager : MonoBehaviour
         {
             if (_restTimeState)
             {
-                _tempRestTimeState = false;
-                _restTimeState = _tempRestTimeState;
+                TempRestTimeState = false;
+                uiManager.SetRestImage(false);
+                _restTimeState = TempRestTimeState;
             }
             else
             {
                 if (Wave + 1 == 65)
                 {
-                    _tempRestTimeState = true;
+                    TempRestTimeState = true;
+                    uiManager.SetRestImage(true);
                     UiManager.Wave(-1);
                     return;
                 }
@@ -371,10 +376,10 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (!_tempRestTimeState)
-                _tempRestTimeState = true;
+            if (!TempRestTimeState)
+                TempRestTimeState = true;
             else
-                _tempRestTimeState = false;
+                TempRestTimeState = false;
         }
     }
 }

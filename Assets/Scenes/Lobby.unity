@@ -3028,7 +3028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8265, y: 10450}
+  m_AnchoredPosition: {x: -25230, y: 31900}
   m_SizeDelta: {x: 0, y: 950}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &239422312
@@ -3089,7 +3089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -45685620, y: 81218880}
+  m_AnchoredPosition: {x: -45706680, y: 81256320}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &248474451
@@ -5674,7 +5674,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<link=\"https://cafe.naver.com/legenddefence/17\">\uC5C5\uB370\uC774\uD2B8
+  m_text: "<link=\"https://cafe.naver.com/legenddefence/32\">\uC5C5\uB370\uC774\uD2B8
     \uB0B4\uC5ED \uC548\uB0B4</link>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1eb9ea38b84e57e4094b33dcddbb8037, type: 2}
@@ -11581,7 +11581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693b239b94d056d4299b569469367fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environment: production
 --- !u!1 &1025064291
 GameObject:
   m_ObjectHideFlags: 0
@@ -12757,7 +12756,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 24922618}
+  m_AnchoredPosition: {x: 0, y: 24938998}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1132163028
@@ -18970,7 +18969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -45751500, y: 81336000}
+  m_AnchoredPosition: {x: -45772560, y: 81373440}
   m_SizeDelta: {x: -0.00024414062, y: 1920}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1651099030
@@ -22997,7 +22996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19705200, y: 27094650}
+  m_AnchoredPosition: {x: -19720800, y: 27116100}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2014359409

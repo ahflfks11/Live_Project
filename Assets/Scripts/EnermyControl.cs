@@ -131,6 +131,7 @@ public class EnermyControl : MonoBehaviour
                     {
                         GameManager.Instance.UiManager.SkipUI();
                         //GameManager.Instance.BossCount++;
+                        GameManager.Instance.KillBoss = GameManager.Instance.BossCount + 1;
                     }
                 }
             }

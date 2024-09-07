@@ -77,7 +77,7 @@ public class MissionUI : MonoBehaviour
             }
             else
             {
-                if (GameManager.Instance.BossCount >= Mathf.Abs(_LimitWave[i]))
+                if ((GameManager.Instance.BossCount >= Mathf.Abs(_LimitWave[i]) - 1 && GameManager.Instance.KillBoss == Mathf.Abs(_LimitWave[i])) || GameManager.Instance.BossCount > Mathf.Abs(_LimitWave[i]) - 1)
                 {
                     if (_Lock[i].activeSelf)
                     {

@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private DOTweenVisualManager _arrow;
     [SerializeField] private DOTweenVisualManager _limitUIObject;
     [SerializeField] private DOTweenVisualManager _tutorialArrow;
+    [SerializeField] private DOTweenVisualManager _restBattleWarningObject; //전투 준비 패널
     [SerializeField] private EndGameUI _endGamePanel;
     [SerializeField] private MissionUI _missionPanel;
     [SerializeField] private RemoveUI _removePanel;
@@ -95,10 +96,18 @@ public class UIManager : MonoBehaviour
         if (GameObject.Find("Boss"))
         {
             Destroy(GameObject.Find("Boss"));
-            GameManager.Instance.IsBoss = false;
         }
+
+        GameManager.Instance.IsBoss = false;
+        GameManager.Instance.TempRestTimeState = false;
+        GameManager.Instance.RestTimeState = false;
         GameManager.Instance.Wave = int.Parse(_develop_WaveText.text) - 1;
         GameManager.Instance.SetTime = 0f;
+    }
+
+    public void SetRestImage(bool _state)
+    {
+        _restBattleWarningObject.enabled = _state;
     }
 
     public void SetAutoRevolutionToggle(bool _state)

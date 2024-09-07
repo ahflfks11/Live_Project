@@ -24,6 +24,7 @@ public class EnermyGenerator : MonoBehaviour
         {
             if (GameManager.Instance.RestTimeState)
             {
+                tempStageLimitNumber = stageLimitNumber;
                 yield return null;
             }
             else
