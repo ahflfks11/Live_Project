@@ -366,7 +366,7 @@ MonoBehaviour:
   _data:
     HP: 63000
     defence: 0
-    gainGold: 4
+    gainGold: 3
     speed: 24
 --- !u!61 &2618853846905101336
 BoxCollider2D:

@@ -100,6 +100,22 @@ public class UnitManager : MonoBehaviour
         }
     }
 
+    public void DevelopMode()
+    {
+        if (GPGSManager.Instance.Level != -1)
+            return;
+
+        GameManager.Instance.Gold += 1000;
+        GameManager.Instance.RarilitySpawnCount[2] += 50;
+        GameManager.Instance.RarilitySpawnCount[3] += 60;
+    }
+
+    public void Develop_ControlWave()
+    {
+        string _waveValue = transform.GetComponent<TMPro.TMP_InputField>().text;
+        Debug.Log(_waveValue);
+    }
+
     public void Retry()
     {
         if (!GameManager.Instance.GameStart)

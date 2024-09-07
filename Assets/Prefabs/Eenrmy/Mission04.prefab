@@ -209,7 +209,7 @@ MonoBehaviour:
   _isBoss: 0
   _eliteNumber: 3
   _data:
-    HP: 64000
+    HP: 68000
     defence: 0
     gainGold: 60
     speed: 10

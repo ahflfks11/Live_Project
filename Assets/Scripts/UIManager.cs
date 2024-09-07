@@ -28,6 +28,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private EndGameUI _endGamePanel;
     [SerializeField] private MissionUI _missionPanel;
     [SerializeField] private RemoveUI _removePanel;
+    [SerializeField] private GameObject _developMode_Btn;
+    [SerializeField] private TMPro.TMP_InputField _develop_WaveText;
 
     [SerializeField] private Toggle _autoRevolutionToggle;
     [SerializeField] private Toggle _pauseToggle;
@@ -86,6 +88,17 @@ public class UIManager : MonoBehaviour
                 //_RevolutionPanel.SetActive(true);
             }
         }
+    }
+
+    public void SetWave()
+    {
+        if (GameObject.Find("Boss"))
+        {
+            Destroy(GameObject.Find("Boss"));
+            GameManager.Instance.IsBoss = false;
+        }
+        GameManager.Instance.Wave = int.Parse(_develop_WaveText.text) - 1;
+        GameManager.Instance.SetTime = 0f;
     }
 
     public void SetAutoRevolutionToggle(bool _state)
@@ -242,7 +255,7 @@ public class UIManager : MonoBehaviour
         if (_level == -1)
         {
             GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
-            text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("WAVE" + _level);
+            text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("Rest Time");
             waveText.text = "Rest Time";
         }
         else
@@ -258,6 +271,18 @@ public class UIManager : MonoBehaviour
         GameObject text_wave_Object = Instantiate(_waveText.gameObject, Vector2.zero, Quaternion.identity);
         text_wave_Object.GetComponent<CartoonFX.CFXR_ParticleText>().UpdateText("Boss Wave");
         waveText.text = "Boss Wave";
+    }
+
+    private void Start()
+    {
+        if (GPGSManager.Instance.Level != -1)
+        {
+            _developMode_Btn.SetActive(false);
+        }
+        else
+        {
+            _developMode_Btn.SetActive(true);
+        }
     }
 
     // Update is called once per frame

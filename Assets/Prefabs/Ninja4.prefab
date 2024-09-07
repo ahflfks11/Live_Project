@@ -256,7 +256,8 @@ MonoBehaviour:
     _unit_name: "\uC804\uC124\uC758 \uCFE0\uB178\uC774\uCE58"
     _comment: "\uCFE0\uB178\uC774\uCE58\uC758 \uC5ED\uC0AC\uB294 \uC774\uC81C \uADF8\uB140\uC77C\uC9C0\uB3C4
       \uBAA8\uB985\uB2C8\uB2E4."
-    attackCount: 3
+    attackCount: 5
+    weakDefence: 0
     weight: 0.008
     ingame_Weight: 0.008
     attackDelay: 1.5

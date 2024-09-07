@@ -392,9 +392,9 @@ MonoBehaviour:
   _isBoss: 0
   _eliteNumber: -1
   _data:
-    HP: 80000
+    HP: 49300
     defence: 5
-    gainGold: 4
+    gainGold: 3
     speed: 10
 --- !u!61 &1877495792079586760
 BoxCollider2D:

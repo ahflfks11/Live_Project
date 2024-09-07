@@ -310,7 +310,8 @@ public class GameManager : MonoBehaviour
         {
             if (_restTimeState)
             {
-                _restTimeState = false;
+                _tempRestTimeState = false;
+                _restTimeState = _tempRestTimeState;
             }
             else
             {
@@ -324,6 +325,7 @@ public class GameManager : MonoBehaviour
 
             if ((_wave + 1) % 10 == 0 && !IsBoss)
             {
+                BossCount = ((_wave + 1) / 10) - 1;
                 IsBoss = true;
                 SetTime = _bossTimer;
                 UiManager.BossWave();
