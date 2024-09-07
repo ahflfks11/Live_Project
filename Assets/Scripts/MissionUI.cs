@@ -19,6 +19,8 @@ public class MissionUI : MonoBehaviour
 
     [SerializeField] private Text[] _remainCoolTimeText;
 
+    [SerializeField] private Image _missionIcon;
+
     float[] _remainCoolTime;
 
     // Start is called before the first frame update
@@ -88,6 +90,8 @@ public class MissionUI : MonoBehaviour
             }
         }
 
+        bool _notCool = false;
+
         for (int i = 0; i < GameManager.Instance.EliteSpawnState.Length; i++)
         {
             if (GameManager.Instance.EliteSpawnState[i] == EliteSpawnType.소환중)
@@ -108,6 +112,19 @@ public class MissionUI : MonoBehaviour
                     GameManager.Instance.EliteSpawnState[i] = EliteSpawnType.소환가능;
                 }
             }
+            else if (GameManager.Instance.EliteSpawnState[i] == EliteSpawnType.소환가능)
+            {
+                _notCool = true;
+            }
+        }
+
+        if (_notCool)
+        {
+            _missionIcon.color = Color.white;
+        }
+        else
+        {
+            _missionIcon.color = Color.red;
         }
     }
 }

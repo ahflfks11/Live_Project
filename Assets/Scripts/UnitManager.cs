@@ -369,15 +369,37 @@ public class UnitManager : MonoBehaviour
 
         List<GameObject> _units = new List<GameObject>();
 
+        double sum = 0;
+        
+        UnitData _unitData = null;
+
         for (int i = 0; i < GameManager.Instance.UnitManager._soldiers.Count; i++)
         {
-            if (GameManager.Instance.UnitManager._soldiers[i].GetComponent<UnitData>()._data.rarelityLevel == _spawnlevel)
+            _unitData = GameManager.Instance.UnitManager._soldiers[i].GetComponent<UnitData>();
+
+            if (_unitData._data.rarelityLevel == _spawnlevel)
             {
                 _units.Add(GameManager.Instance.UnitManager._soldiers[i]);
+                sum += _unitData._data.ingame_Weight;
             }
         }
 
-        int rndNumber = Random.Range(0, _units.Count);
+        sum *= Random.value;
+        
+        int rndNumber = 0;
+
+        for (int i = 0; i < _units.Count; i++)
+        {
+            sum -= _units[i].GetComponent<UnitData>()._data.ingame_Weight;
+
+            if (sum <= 0)
+            {
+                rndNumber = i;
+                break;
+            }
+        }
+
+        //int rndNumber = Random.Range(0, _units.Count);
 
         _unit = Instantiate(_units[rndNumber], _pos, Quaternion.identity);
 

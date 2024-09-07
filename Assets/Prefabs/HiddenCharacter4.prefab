@@ -141,13 +141,13 @@ MonoBehaviour:
     attackCount: 15
     weakDefence: 0
     weight: 0.1
-    ingame_Weight: 0.001
+    ingame_Weight: 0.01
     attackDelay: 1.5
     attackSpeed: 5
     soundNumber: 2
     speed: 6
     dmg: 5
-    rarelityLevel: 2
+    rarelityLevel: 1
     EvolutionAvailability: 0
     specialUnit: 1
   number: 0

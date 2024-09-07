@@ -3205,7 +3205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -62355956}
+  m_AnchoredPosition: {x: 0, y: -62557584}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &270323624
@@ -8549,6 +8549,7 @@ MonoBehaviour:
   - {fileID: 1486843230}
   - {fileID: 642916197}
   - {fileID: 605855974}
+  _missionIcon: {fileID: 162259560}
 --- !u!1 &889934380
 GameObject:
   m_ObjectHideFlags: 0
@@ -53921,7 +53922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11475750, y: 14535950}
+  m_AnchoredPosition: {x: -11617875, y: 14715975}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1493720766
@@ -60247,7 +60248,7 @@ PrefabInstance:
     - target: {fileID: 5657311026113741365, guid: f26595a01172249418792aa77c07ad37,
         type: 3}
       propertyPath: m_Text
-      value: HP 8000
+      value: HP 3000
       objectReference: {fileID: 0}
     - target: {fileID: 7088957883923948841, guid: f26595a01172249418792aa77c07ad37,
         type: 3}
