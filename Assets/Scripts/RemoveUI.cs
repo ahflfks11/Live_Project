@@ -10,8 +10,8 @@ public class RemoveUI : MonoBehaviour
     public Toggle _unCommonToggle;
     public Toggle _rareToggle;
     int _commonGold = 3;
-    int _unCommonGold = 9;
-    int _rareGold = 27;
+    int _unCommonGold = 6;
+    int _rareGold = 15;
     AudioSource _myAudio;
     [SerializeField] Text _goldText;
     void Start()

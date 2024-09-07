@@ -204,14 +204,14 @@ MonoBehaviour:
     _name: "\uC804\uC124 \uC18C\uD658\uAD8C"
     _type: 1
     itemID: 3
-    _itemCount: 1
+    _itemCount: 2
     _itemColor: {r: 1, g: 0, b: 0.38039216, a: 1}
   _isBoss: 0
   _eliteNumber: 3
   _data:
     HP: 68000
     defence: 0
-    gainGold: 60
+    gainGold: 50
     speed: 10
 --- !u!61 &91710993144952611
 BoxCollider2D:

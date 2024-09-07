@@ -43,15 +43,15 @@ public class UnitSelector : MonoBehaviour
         switch (playerLevel)
         {
             case -1:
-                return new List<float> { 95f, 4f, 0.9f, 0.01f };
+                return new List<float> { 95f, 4f, 0.99f, 0.01f };
             case 1:
                 return new List<float> { 80f, 20f, 0f, 0f };
             case 2:
                 return new List<float> { 53f, 42f, 5f, 0f };
             case 3:
-                return new List<float> { 30f, 44f, 25f, 1f };
+                return new List<float> { 40f, 44f, 15f, 1f };
             case 4:
-                return new List<float> { 2f, 45f, 45f, 8f };
+                return new List<float> { 10f, 55f, 30f, 5f };
             default:
                 return new List<float> { 100f, 0f, 0f, 0f };
         }
